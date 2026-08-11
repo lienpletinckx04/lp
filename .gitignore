@@ -1,0 +1,9 @@
+# Ruwe clips en gerenderde reels blijven lokaal
+broll/clips/*
+!broll/clips/LEESMIJ.txt
+broll/out/*
+!broll/out/LEESMIJ.txt
+broll/.tmp/
+broll/*.ttf
+
+.DS_Store

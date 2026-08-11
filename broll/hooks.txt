@@ -1,0 +1,68 @@
+# AskLien.ai — hookbank voor trial reels
+#
+# 1 hook per lijn. Regels die met # beginnen en lege regels worden genegeerd.
+# make-reels.sh leest dit bestand van boven naar beneden en koppelt hook 1 aan clip 1,
+# hook 2 aan clip 2, enzovoort. Op = terug naar boven.
+#
+# Regels voor een goede trial-hook:
+#   - max 8 woorden, leesbaar in 1 seconde
+#   - spreek de niet-volger aan, niet je bestaande publiek
+#   - geen "hey allemaal", geen intro, meteen de spanning
+#   - één idee per hook, geen komma-constructies
+#
+# Zet je beste 10 bovenaan. Wat werkt, blijft. Wat flopt, schrap je.
+
+# --- Pijn / herkenning ---
+AI gebruiken en toch niks opschieten
+Je werkt nog altijd zoals in 2019
+Iedereen praat over AI. Niemand zet het aan.
+Je verliest 6 uur per week aan mailen
+Je hebt ChatGPT. En verder niks veranderd.
+Dit kost jou elke week een halve werkdag
+De reden dat AI niet werkt bij jou
+
+# --- Contrarian ---
+Stop met prompts kopiëren van Instagram
+Een betere prompt gaat je niet redden
+ChatGPT is niet je probleem
+AI vervangt je niet. Slecht ingesteld wel.
+Gratis AI-tools kosten je het meeste tijd
+Je hebt geen 20 AI-tools nodig. Je hebt er 1.
+
+# --- Belofte / resultaat ---
+Zo maak ik van AI een echte medewerker
+Dit deed 4 uur werk in 6 minuten
+Eén setup, en je hoeft nooit meer te prompten
+AI die jouw manier van schrijven kent
+Van blanco pagina naar klaar in 3 minuten
+
+# --- Claude-specifiek ---
+Claude kan dit. ChatGPT niet.
+De Claude-functie die niemand gebruikt
+Waarom ik overstapte van ChatGPT naar Claude
+Dit is wat een Claude Skill echt doet
+Claude onthoudt jouw bedrijf. Als je dit doet.
+
+# --- Behind the scenes / autoriteit ---
+Hoe mijn AI-medewerker mijn dag start
+Wat er op mijn scherm staat om 7 uur
+Ik run mijn bedrijf met 3 AI-systemen
+Dit bouwde ik gisteren voor een klant
+Wat ik zie bij elke KMO die ik doorlicht
+
+# --- Mythes ---
+Nee, AI schrijft dit niet zomaar over
+"AI klinkt te robotachtig" — je doet iets fout
+AI is niet te duur. Je gebruikt het te duur.
+Je data is niet onveilig. Dit wel.
+
+# --- Vraag / trigger ---
+Wat zou jij doen met 6 uur extra per week?
+Welke taak haat jij het meest?
+Hoeveel tabbladen heb jij nu open?
+Doe jij dit ook nog manueel?
+
+# --- Zacht / persoonlijk ---
+Ik dacht ook dat AI niks voor mij was
+Twee jaar geleden wist ik hier niks van
+Dit is waarom ik in het Nederlands lesgeef

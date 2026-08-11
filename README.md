@@ -7,6 +7,11 @@ Statische website in de nieuwe huisstijl: vermiljoen (#ff4d24), crème (#f6f1e7)
 - `challenge.html` — Challenge "Gebruik Claude zoals het hoort" (€397)
 - `voorsprong.html` — Membership Voorsprong (founding €19/maand)
 
+## B-roll systeem
+`broll/` — ruwe telefoonclips omzetten naar postklare Instagram reels (1080x1920, hook in beeld,
+geen editing). Browserversie in `broll/index.html`, bulk via `broll/make-reels.sh`.
+Zie `broll/README.md`.
+
 ## Nog invullen
 - Foto's: vervang de `.img-slot` placeholders door `<img>`-tags (hero, podium, over-Lien, sfeerbeeld, ledenzone-screenshot)
 - Testimonials op `challenge.html` ([Quote van een deelnemer])
