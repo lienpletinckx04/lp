@@ -23,7 +23,8 @@ a:hover { color: #ff4d24; }
 
 /* Foto-placeholders: vervang door <img> zodra de foto's er zijn */
 .img-slot { background: #ede5d3; border: 2px dashed #d8cdb4; border-radius: 20px; display: flex; align-items: center; justify-content: center; text-align: center; color: #8a8378; font-size: 14px; font-weight: 500; padding: 16px; box-sizing: border-box; max-width: 100%; }
-.img-slot img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+.img-slot img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; display: block; }
+.img-slot.img-filled { background: none; border: none; padding: 0; }
 
 /* Responsief: mockups zijn desktop-first, alles klapt hier netjes samen */
 @media (max-width: 960px) {
