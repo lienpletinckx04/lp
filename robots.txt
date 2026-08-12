@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /inschrijven.html
+Disallow: /voorsprong-inschrijven.html
+Disallow: /bedankt-challenge.html
+Disallow: /bedankt-voorsprong.html
+
+Sitemap: https://asklien.ai/sitemap.xml
