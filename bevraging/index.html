@@ -93,6 +93,11 @@
     </div>
 
     <div class="veld">
+      <label class="hoofdlabel">Wat heb je écht uit de challenge gehaald? Wat gebruik je vandaag nog?</label>
+      <textarea name="Echt uitgehaald" rows="3" required placeholder="Bv. mijn Projects staan op punt, ik gebruik skills voor mijn offertes, ik bespaar X uur per week..."></textarea>
+    </div>
+
+    <div class="veld">
       <label class="hoofdlabel">Wat vond je het sterkst aan de challenge?</label>
       <textarea name="Sterkste punt" rows="3" required></textarea>
     </div>
@@ -149,9 +154,8 @@
     </div>
 
     <div class="veld">
-      <label class="hoofdlabel">Welke tools gebruik of volg je nu al? (meerdere mogelijk)</label>
+      <label class="hoofdlabel">Welke tools gebruik je naast Claude? (meerdere mogelijk)</label>
       <div style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
-        <label class="checkrow"><input type="checkbox" name="Tools nu" value="Claude"> Claude</label>
         <label class="checkrow"><input type="checkbox" name="Tools nu" value="ChatGPT"> ChatGPT</label>
         <label class="checkrow"><input type="checkbox" name="Tools nu" value="Gemini"> Gemini</label>
         <label class="checkrow"><input type="checkbox" name="Tools nu" value="Canva AI"> Canva (AI-functies)</label>
@@ -206,8 +210,78 @@
       <textarea name="Nieuwsbrief suggestie" rows="2" placeholder="Bv. meer praktische prompts, kortere updates, meer voorbeelden uit sectoren..."></textarea>
     </div>
 
+    <!-- OVER JOUW BUSINESS -->
+    <div class="sectiekop"><span class="nr">07</span><h2>Over jouw business</h2></div>
+
+    <div class="veld">
+      <label class="hoofdlabel">In welke sector werk je?</label>
+      <input type="text" name="Sector" placeholder="Bv. boekhouding, marketing, retail, zorg, bouw...">
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Wat beschrijft jou het best?</label>
+      <select name="Profiel" required>
+        <option value="">Kies</option>
+        <option>Solo-ondernemer / freelancer</option>
+        <option>Zaakvoerder van een KMO (2-10 mensen)</option>
+        <option>Zaakvoerder van een KMO (10+ mensen)</option>
+        <option>Werknemer</option>
+        <option>Iets anders</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Wat heeft AI (of de challenge) jou al concreet opgeleverd?</label>
+      <textarea name="Resultaat" rows="3" placeholder="Bv. uren tijdswinst per week, een taak die nu vanzelf loopt, een klant die je won..."></textarea>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Mag ik jouw antwoord hierboven (met je voornaam) gebruiken als testimonial?</label>
+      <select name="Testimonial toestemming">
+        <option value="">Kies</option>
+        <option>Ja, met mijn voornaam</option>
+        <option>Ja, maar anoniem</option>
+        <option>Liever niet</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Waar loop je nu het meest op vast met AI in je werk?</label>
+      <textarea name="Grootste struggle" rows="3" placeholder="Bv. te weinig tijd om bij te blijven, weet niet waar te beginnen met automatiseren, resultaten zijn te generiek..."></textarea>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Hoe kwam je oorspronkelijk bij AskLien terecht?</label>
+      <select name="Kanaal" required>
+        <option value="">Kies</option>
+        <option>Instagram</option>
+        <option>LinkedIn</option>
+        <option>De nieuwsbrief</option>
+        <option>Via iemand die me het aanraadde</option>
+        <option>Een event of lezing waar Lien sprak</option>
+        <option>Google / zelf gezocht</option>
+        <option>Anders / weet ik niet meer</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Stel dat ik iets voor jou persoonlijk zou uitwerken (audit, setup, traject) — wat zou jou over de streep trekken?</label>
+      <textarea name="Over de streep" rows="2" placeholder="Bv. een concreet voorbeeld uit mijn sector, een duidelijke prijs, eerst een kort gesprek..."></textarea>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Wat vind je van de prijs van Voorsprong? (€19 founding / €27 normaal per maand)</label>
+      <select name="Prijsgevoel Voorsprong">
+        <option value="">Kies</option>
+        <option>Meer dan fair, easy beslissing</option>
+        <option>Fair, maar ik twijfel nog over de waarde voor mij</option>
+        <option>Aan de hoge kant voor wat ik denk te gebruiken</option>
+        <option>Ik weet nog te weinig over wat erin zit</option>
+      </select>
+    </div>
+
     <!-- SLOT -->
-    <div class="sectiekop"><span class="nr">07</span><h2>Tot slot</h2></div>
+    <div class="sectiekop"><span class="nr">08</span><h2>Tot slot</h2></div>
 
     <div class="veld">
       <label class="hoofdlabel">Zou je AskLien aanraden aan een collega of vriend(in)?</label>
