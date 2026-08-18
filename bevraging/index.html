@@ -31,7 +31,7 @@
   <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
     <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
     <div style="display:flex; align-items:center; gap:10px; font-size:14px; font-weight:500; color:#8a8378;">
-      <span style="width:8px; height:8px; border-radius:50%; background:#2fa36b;"></span>±5 minuten
+      <span style="width:8px; height:8px; border-radius:50%; background:#2fa36b;"></span>±7 minuten
     </div>
   </div>
 </nav>
@@ -67,8 +67,12 @@
       <label class="hoofdlabel">Welke editie van de challenge deed je mee?</label>
       <select name="Editie" required>
         <option value="">Kies je editie</option>
-        <option>Augustus 2026</option>
-        <option>Een eerdere editie</option>
+        <option>Maart 2026</option>
+        <option>April 2026</option>
+        <option>Juni 2026</option>
+        <option>Claude LIVE dag in Gent</option>
+        <option>Juli 2026</option>
+        <option>Meerdere edities</option>
         <option>Ik weet het niet meer precies</option>
       </select>
     </div>
@@ -90,6 +94,17 @@
         <label><input type="radio" name="Score challenge" value="9"><span>9</span></label>
         <label><input type="radio" name="Score challenge" value="10"><span>10</span></label>
       </div>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Hoe zelfzeker voel je je nu met Claude, vergeleken met vóór de challenge?</label>
+      <select name="Zelfvertrouwen evolutie" required>
+        <option value="">Kies</option>
+        <option>Dag en nacht verschil, ik werk er dagelijks mee</option>
+        <option>Veel zekerder, maar ik gebruik nog niet alles</option>
+        <option>Iets zekerder, maar het zakt weg zonder opvolging</option>
+        <option>Eerlijk? Ik ben er niet veel mee blijven doen</option>
+      </select>
     </div>
 
     <div class="veld">
@@ -140,6 +155,32 @@
 
     <!-- LEREN & TOOLS -->
     <div class="sectiekop"><span class="nr">04</span><h2>Hoe en wat jij wil leren</h2></div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Hoe vaak gebruik je Claude vandaag?</label>
+      <select name="Claude frequentie" required>
+        <option value="">Kies</option>
+        <option>Meerdere keren per dag</option>
+        <option>Dagelijks</option>
+        <option>Een paar keer per week</option>
+        <option>Een paar keer per maand</option>
+        <option>Zelden of nooit meer</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Welke Claude-functies gebruik je actief? (meerdere mogelijk)</label>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
+        <label class="checkrow"><input type="checkbox" name="Claude functies" value="Projects"> Projects</label>
+        <label class="checkrow"><input type="checkbox" name="Claude functies" value="Skills"> Skills</label>
+        <label class="checkrow"><input type="checkbox" name="Claude functies" value="Artifacts"> Artifacts (documenten, pagina's, tools laten bouwen)</label>
+        <label class="checkrow"><input type="checkbox" name="Claude functies" value="Connectors"> Connectors (Gmail, agenda, Drive...)</label>
+        <label class="checkrow"><input type="checkbox" name="Claude functies" value="Geplande taken"> Geplande taken</label>
+        <label class="checkrow"><input type="checkbox" name="Claude functies" value="Voice mode"> Voice mode</label>
+        <label class="checkrow"><input type="checkbox" name="Claude functies" value="Claude Code / Cowork"> Claude Code of Cowork</label>
+        <label class="checkrow"><input type="checkbox" name="Claude functies" value="Enkel gewone chat"> Eigenlijk vooral de gewone chat</label>
+      </div>
+    </div>
 
     <div class="veld">
       <label class="hoofdlabel">Hoe leer jij het liefst? (meerdere mogelijk)</label>
@@ -208,6 +249,29 @@
     <div class="veld">
       <label class="hoofdlabel">Wat zou de nieuwsbrief voor jou waardevoller maken?</label>
       <textarea name="Nieuwsbrief suggestie" rows="2" placeholder="Bv. meer praktische prompts, kortere updates, meer voorbeelden uit sectoren..."></textarea>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Waar zou je in de toekomst aan meedoen of interesse in hebben? (meerdere mogelijk)</label>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
+        <label class="checkrow"><input type="checkbox" name="Toekomstig aanbod" value="Vervolg-challenge automatisaties"> Een vervolg-challenge rond automatisaties en agents</label>
+        <label class="checkrow"><input type="checkbox" name="Toekomstig aanbod" value="Live dag zoals in Gent"> Nog eens een live dag (zoals de Claude LIVE dag in Gent)</label>
+        <label class="checkrow"><input type="checkbox" name="Toekomstig aanbod" value="1-op-1 traject"> Een 1-op-1 traject op maat van mijn business</label>
+        <label class="checkrow"><input type="checkbox" name="Toekomstig aanbod" value="Teamtraining"> Een training voor mijn team of bedrijf</label>
+        <label class="checkrow"><input type="checkbox" name="Toekomstig aanbod" value="AI audit"> Een AI audit van mijn processen</label>
+        <label class="checkrow"><input type="checkbox" name="Toekomstig aanbod" value="Enkel Voorsprong"> Voorlopig enkel Voorsprong</label>
+      </div>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Zou je naar een volgende live dag komen, en wat is die je waard?</label>
+      <select name="Live dag interesse">
+        <option value="">Kies</option>
+        <option>Zeker, ook als die betalend is (tot ±€150)</option>
+        <option>Zeker, ook als die betalend is (tot ±€300)</option>
+        <option>Enkel als die gratis of goedkoop is</option>
+        <option>Live is niks voor mij, liever online</option>
+      </select>
     </div>
 
     <!-- OVER JOUW BUSINESS -->
@@ -305,6 +369,25 @@
         <option>Misschien</option>
         <option>Eerder niet</option>
       </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Mag ik je eventueel bellen voor een kort feedbackgesprek (15 min)?</label>
+      <select name="Feedbackgesprek">
+        <option value="">Kies</option>
+        <option>Ja, graag zelfs</option>
+        <option>Liever niet</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Volg je me al op sociale media? (meerdere mogelijk)</label>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
+        <label class="checkrow"><input type="checkbox" name="Volgt op" value="Instagram"> Instagram (@asklien.ai)</label>
+        <label class="checkrow"><input type="checkbox" name="Volgt op" value="LinkedIn"> LinkedIn</label>
+        <label class="checkrow"><input type="checkbox" name="Volgt op" value="Nieuwsbrief"> Enkel de nieuwsbrief</label>
+        <label class="checkrow"><input type="checkbox" name="Volgt op" value="Nee"> Nog niet</label>
+      </div>
     </div>
 
     <div class="veld">
