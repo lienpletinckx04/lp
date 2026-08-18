@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bevraging challenge-deelnemers — AskLien.ai</title>
+<meta name="description" content="Jouw mening over Claude in 10 dagen, en wat jij in Voorsprong wil zien. Invullen duurt 2 minuten en je maakt kans op een gratis AI audit.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .veld { display:flex; flex-direction:column; gap:6px; }
+  .veld label { font-size:14px; font-weight:600; }
+  .veld input[type=text], .veld input[type=email], .veld select, .veld textarea { padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; background:#fff; }
+  .checkrow { display:flex; align-items:flex-start; gap:10px; font-size:14.5px; line-height:1.5; color:#57534a; }
+  .checkrow input { margin-top:3px; accent-color:#ff4d24; width:16px; height:16px; }
+  .scorerow { display:flex; gap:8px; flex-wrap:wrap; }
+  .scorerow label { display:flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #e6ddcb; border-radius:8px; font-weight:600; cursor:pointer; background:#fff; }
+  .scorerow input { display:none; }
+  .scorerow input:checked + span { color:#fff; }
+  .scorerow label:has(input:checked) { background:#ff4d24; border-color:#ff4d24; color:#fff; }
+</style>
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; align-items:center; gap:10px; font-size:14px; font-weight:500; color:#8a8378;">
+      <span style="width:8px; height:8px; border-radius:50%; background:#2fa36b;"></span>2 minuten
+    </div>
+  </div>
+</nav>
+
+<header style="max-width:760px; margin:0 auto; padding:64px 32px 16px; text-align:center;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">VOOR CHALLENGE-DEELNEMERS</div>
+  <h1 style="margin:0 0 16px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,52px); letter-spacing:-2px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Jouw mening, mijn plannen<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:17px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Vul dit in en je maakt kans op een <strong>gratis AI audit t.w.v. €1.750</strong> (remote — op verplaatsing kan mits bijbetaling van de verplaatsing). De winnaar maak ik bekend op de live sessie van donderdag 3 september.</p>
+</header>
+
+<section style="max-width:680px; margin:0 auto; padding:24px 32px 120px;">
+  <form data-reveal action="https://formsubmit.co/hello@asklien.ai" method="POST" style="display:flex; flex-direction:column; gap:22px; background:#fff; border-radius:20px; padding:40px;">
+    <input type="hidden" name="_subject" value="Bevraging challenge-deelnemer ingevuld">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://asklien.ai/bedankt-bevraging.html">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div class="veld">
+        <label>Naam</label>
+        <input type="text" name="Naam" required>
+      </div>
+      <div class="veld">
+        <label>E-mail (voor de winactie)</label>
+        <input type="email" name="Email" required>
+      </div>
+    </div>
+
+    <div class="veld">
+      <label>Welke editie van de challenge deed je mee?</label>
+      <select name="Editie" required>
+        <option value="">Kies je editie</option>
+        <option>Augustus 2026</option>
+        <option>Een eerdere editie</option>
+        <option>Ik weet het niet meer precies</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label>Hoe zou je de challenge scoren? (1 = niet goed, 10 = top)</label>
+      <div class="scorerow">
+        <label><input type="radio" name="Score" value="1" required><span>1</span></label>
+        <label><input type="radio" name="Score" value="2"><span>2</span></label>
+        <label><input type="radio" name="Score" value="3"><span>3</span></label>
+        <label><input type="radio" name="Score" value="4"><span>4</span></label>
+        <label><input type="radio" name="Score" value="5"><span>5</span></label>
+        <label><input type="radio" name="Score" value="6"><span>6</span></label>
+        <label><input type="radio" name="Score" value="7"><span>7</span></label>
+        <label><input type="radio" name="Score" value="8"><span>8</span></label>
+        <label><input type="radio" name="Score" value="9"><span>9</span></label>
+        <label><input type="radio" name="Score" value="10"><span>10</span></label>
+      </div>
+    </div>
+
+    <div class="veld">
+      <label>Wat vond je het sterkst aan de challenge?</label>
+      <textarea name="Sterkste punt" rows="3" required style="padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; resize:vertical;"></textarea>
+    </div>
+
+    <div class="veld">
+      <label>Wat kan beter, of wat miste je?</label>
+      <textarea name="Kan beter" rows="3" style="padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; resize:vertical;"></textarea>
+    </div>
+
+    <div class="veld">
+      <label>Waar wil jij dat Voorsprong op focust? (meerdere mogelijk)</label>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
+        <label class="checkrow"><input type="checkbox" name="Voorsprong interesse" value="Nieuwe Claude-features uitgelegd"> Nieuwe Claude-features, telkens snel uitgelegd</label>
+        <label class="checkrow"><input type="checkbox" name="Voorsprong interesse" value="Kant-en-klare skills en templates"> Kant-en-klare skills en templates</label>
+        <label class="checkrow"><input type="checkbox" name="Voorsprong interesse" value="Automatisaties en koppelingen"> Automatisaties en koppelingen (mail, agenda, tools)</label>
+        <label class="checkrow"><input type="checkbox" name="Voorsprong interesse" value="Andere AI-tools naast Claude"> Andere AI-tools naast Claude (ChatGPT, beeld, video)</label>
+        <label class="checkrow"><input type="checkbox" name="Voorsprong interesse" value="Use-cases per sector"> Concrete use-cases per sector of beroep</label>
+        <label class="checkrow"><input type="checkbox" name="Voorsprong interesse" value="Meer live sessies"> Meer live sessies en samen bouwen</label>
+      </div>
+    </div>
+
+    <div class="veld">
+      <label>Welke vraag wil je zeker beantwoord zien op de live sessie van 3 september?</label>
+      <textarea name="Vraag voor live sessie" rows="3" style="padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; resize:vertical;"></textarea>
+    </div>
+
+    <div class="veld">
+      <label>Nog iets dat je kwijt wil?</label>
+      <textarea name="Extra" rows="2" style="padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; resize:vertical;"></textarea>
+    </div>
+
+    <button type="submit" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:16px; border-radius:10px; border:none; cursor:pointer; margin-top:4px;">Verstuur en doe mee aan de winactie →</button>
+    <p style="margin:0; font-size:13px; color:#8a8378; text-align:center;">Je gegevens gebruik ik enkel voor deze bevraging en de winactie.</p>
+  </form>
+</section>
+
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="/voorsprong/">Voorsprong</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx</div>
+  </div>
+</footer>
+
+<script src="/js/site.js"></script>
+</body>
+</html>
