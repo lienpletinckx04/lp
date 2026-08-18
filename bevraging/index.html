@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bevraging challenge-deelnemers — AskLien.ai</title>
-<meta name="description" content="Jouw mening over Claude in 10 dagen, en wat jij in Voorsprong wil zien. Invullen duurt 2 minuten en je maakt kans op een gratis AI audit.">
+<meta name="description" content="Jouw mening over de challenge, de hub en wat jij nog wil leren. Invullen duurt 5 minuten en je maakt kans op een gratis AI audit.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,15 +12,17 @@
 <link rel="stylesheet" href="/css/style.css">
 <style>
   .veld { display:flex; flex-direction:column; gap:6px; }
-  .veld label { font-size:14px; font-weight:600; }
-  .veld input[type=text], .veld input[type=email], .veld select, .veld textarea { padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; background:#fff; }
-  .checkrow { display:flex; align-items:flex-start; gap:10px; font-size:14.5px; line-height:1.5; color:#57534a; }
-  .checkrow input { margin-top:3px; accent-color:#ff4d24; width:16px; height:16px; }
+  .veld label.hoofdlabel { font-size:14.5px; font-weight:600; }
+  .veld input[type=text], .veld input[type=email], .veld select, .veld textarea { padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; background:#fff; resize:vertical; }
+  .checkrow { display:flex; align-items:flex-start; gap:10px; font-size:14.5px; line-height:1.5; color:#57534a; cursor:pointer; }
+  .checkrow input { margin-top:3px; accent-color:#ff4d24; width:16px; height:16px; flex-shrink:0; }
   .scorerow { display:flex; gap:8px; flex-wrap:wrap; }
-  .scorerow label { display:flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #e6ddcb; border-radius:8px; font-weight:600; cursor:pointer; background:#fff; }
+  .scorerow label { display:flex; align-items:center; justify-content:center; width:42px; height:42px; border:1px solid #e6ddcb; border-radius:8px; font-weight:600; cursor:pointer; background:#fff; }
   .scorerow input { display:none; }
-  .scorerow input:checked + span { color:#fff; }
   .scorerow label:has(input:checked) { background:#ff4d24; border-color:#ff4d24; color:#fff; }
+  .sectiekop { display:flex; align-items:center; gap:12px; margin:14px 0 2px; }
+  .sectiekop .nr { font-family:'Archivo'; font-weight:900; font-size:22px; color:#ff4d24; }
+  .sectiekop h2 { margin:0; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px; }
 </style>
 </head>
 <body id="top">
@@ -29,7 +31,7 @@
   <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
     <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
     <div style="display:flex; align-items:center; gap:10px; font-size:14px; font-weight:500; color:#8a8378;">
-      <span style="width:8px; height:8px; border-radius:50%; background:#2fa36b;"></span>2 minuten
+      <span style="width:8px; height:8px; border-radius:50%; background:#2fa36b;"></span>±5 minuten
     </div>
   </div>
 </nav>
@@ -47,19 +49,22 @@
     <input type="hidden" name="_next" value="https://asklien.ai/bedankt-bevraging.html">
     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
+    <!-- OVER JOU -->
+    <div class="sectiekop"><span class="nr">01</span><h2>Over jou</h2></div>
+
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
       <div class="veld">
-        <label>Naam</label>
+        <label class="hoofdlabel">Naam</label>
         <input type="text" name="Naam" required>
       </div>
       <div class="veld">
-        <label>E-mail (voor de winactie)</label>
+        <label class="hoofdlabel">E-mail (voor de winactie)</label>
         <input type="email" name="Email" required>
       </div>
     </div>
 
     <div class="veld">
-      <label>Welke editie van de challenge deed je mee?</label>
+      <label class="hoofdlabel">Welke editie van de challenge deed je mee?</label>
       <select name="Editie" required>
         <option value="">Kies je editie</option>
         <option>Augustus 2026</option>
@@ -68,34 +73,104 @@
       </select>
     </div>
 
+    <!-- DE CHALLENGE -->
+    <div class="sectiekop"><span class="nr">02</span><h2>De challenge</h2></div>
+
     <div class="veld">
-      <label>Hoe zou je de challenge scoren? (1 = niet goed, 10 = top)</label>
+      <label class="hoofdlabel">Hoe zou je de challenge scoren? (1 = niet goed, 10 = top)</label>
       <div class="scorerow">
-        <label><input type="radio" name="Score" value="1" required><span>1</span></label>
-        <label><input type="radio" name="Score" value="2"><span>2</span></label>
-        <label><input type="radio" name="Score" value="3"><span>3</span></label>
-        <label><input type="radio" name="Score" value="4"><span>4</span></label>
-        <label><input type="radio" name="Score" value="5"><span>5</span></label>
-        <label><input type="radio" name="Score" value="6"><span>6</span></label>
-        <label><input type="radio" name="Score" value="7"><span>7</span></label>
-        <label><input type="radio" name="Score" value="8"><span>8</span></label>
-        <label><input type="radio" name="Score" value="9"><span>9</span></label>
-        <label><input type="radio" name="Score" value="10"><span>10</span></label>
+        <label><input type="radio" name="Score challenge" value="1" required><span>1</span></label>
+        <label><input type="radio" name="Score challenge" value="2"><span>2</span></label>
+        <label><input type="radio" name="Score challenge" value="3"><span>3</span></label>
+        <label><input type="radio" name="Score challenge" value="4"><span>4</span></label>
+        <label><input type="radio" name="Score challenge" value="5"><span>5</span></label>
+        <label><input type="radio" name="Score challenge" value="6"><span>6</span></label>
+        <label><input type="radio" name="Score challenge" value="7"><span>7</span></label>
+        <label><input type="radio" name="Score challenge" value="8"><span>8</span></label>
+        <label><input type="radio" name="Score challenge" value="9"><span>9</span></label>
+        <label><input type="radio" name="Score challenge" value="10"><span>10</span></label>
       </div>
     </div>
 
     <div class="veld">
-      <label>Wat vond je het sterkst aan de challenge?</label>
-      <textarea name="Sterkste punt" rows="3" required style="padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; resize:vertical;"></textarea>
+      <label class="hoofdlabel">Wat vond je het sterkst aan de challenge?</label>
+      <textarea name="Sterkste punt" rows="3" required></textarea>
     </div>
 
     <div class="veld">
-      <label>Wat kan beter, of wat miste je?</label>
-      <textarea name="Kan beter" rows="3" style="padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; resize:vertical;"></textarea>
+      <label class="hoofdlabel">Wat miste je, of wat kon beter?</label>
+      <textarea name="Gemist of beter" rows="3"></textarea>
+    </div>
+
+    <!-- DE HUB / LEERPLATFORM -->
+    <div class="sectiekop"><span class="nr">03</span><h2>De hub (het leerplatform)</h2></div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Hoe vlot vind je je weg op hub.asklien.ai?</label>
+      <select name="Hub gebruiksgemak" required>
+        <option value="">Kies</option>
+        <option>Heel vlot, alles staat waar ik het verwacht</option>
+        <option>Meestal vlot, af en toe zoeken</option>
+        <option>Ik moet vaak zoeken naar wat ik nodig heb</option>
+        <option>Ik gebruik de hub eigenlijk amper</option>
+      </select>
     </div>
 
     <div class="veld">
-      <label>Waar wil jij dat Voorsprong op focust? (meerdere mogelijk)</label>
+      <label class="hoofdlabel">Wat vind je van het leermateriaal? (video's, lessen, spiekbriefjes, templates)</label>
+      <select name="Leermateriaal kwaliteit" required>
+        <option value="">Kies</option>
+        <option>Top, precies wat ik nodig heb</option>
+        <option>Goed, maar mag dieper gaan</option>
+        <option>Goed, maar mag eenvoudiger/trager</option>
+        <option>Te veel, ik zie door de bomen het bos niet</option>
+        <option>Ik heb het nog niet echt gebruikt</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Is er iets aan de hub dat je frustreert, of iets dat je er graag bij zou krijgen?</label>
+      <textarea name="Hub feedback" rows="3" placeholder="Bv. zoeken, structuur, iets dat je niet terugvindt, een functie die je mist..."></textarea>
+    </div>
+
+    <!-- LEREN & TOOLS -->
+    <div class="sectiekop"><span class="nr">04</span><h2>Hoe en wat jij wil leren</h2></div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Hoe leer jij het liefst? (meerdere mogelijk)</label>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
+        <label class="checkrow"><input type="checkbox" name="Leervoorkeur" value="Korte video's"> Korte video's (5-10 min)</label>
+        <label class="checkrow"><input type="checkbox" name="Leervoorkeur" value="Live sessies"> Live sessies waar ik vragen kan stellen</label>
+        <label class="checkrow"><input type="checkbox" name="Leervoorkeur" value="Stap-voor-stap gidsen"> Geschreven stap-voor-stap gidsen</label>
+        <label class="checkrow"><input type="checkbox" name="Leervoorkeur" value="Kant-en-klare templates"> Kant-en-klare templates/skills die ik meteen gebruik</label>
+        <label class="checkrow"><input type="checkbox" name="Leervoorkeur" value="Opdrachten en challenges"> Opdrachten en mini-challenges</label>
+        <label class="checkrow"><input type="checkbox" name="Leervoorkeur" value="1-op-1 begeleiding"> 1-op-1 begeleiding</label>
+      </div>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Welke tools gebruik of volg je nu al? (meerdere mogelijk)</label>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
+        <label class="checkrow"><input type="checkbox" name="Tools nu" value="Claude"> Claude</label>
+        <label class="checkrow"><input type="checkbox" name="Tools nu" value="ChatGPT"> ChatGPT</label>
+        <label class="checkrow"><input type="checkbox" name="Tools nu" value="Gemini"> Gemini</label>
+        <label class="checkrow"><input type="checkbox" name="Tools nu" value="Canva AI"> Canva (AI-functies)</label>
+        <label class="checkrow"><input type="checkbox" name="Tools nu" value="Make/Zapier/n8n"> Automatisatie (Make, Zapier, n8n)</label>
+        <label class="checkrow"><input type="checkbox" name="Tools nu" value="Beeld/video AI"> Beeld- of video-AI (Midjourney, Higgsfield, ...)</label>
+        <label class="checkrow"><input type="checkbox" name="Tools nu" value="Andere"> Andere (vul hieronder in)</label>
+      </div>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Welke tools of onderwerpen wil je nog graag leren kennen?</label>
+      <textarea name="Tools willen leren" rows="3" placeholder="Bv. automatisaties, AI voor video, Claude Code, agents, ..."></textarea>
+    </div>
+
+    <!-- VOORSPRONG -->
+    <div class="sectiekop"><span class="nr">05</span><h2>Voorsprong (het membership)</h2></div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Waar wil jij dat Voorsprong op focust? (meerdere mogelijk)</label>
       <div style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
         <label class="checkrow"><input type="checkbox" name="Voorsprong interesse" value="Nieuwe Claude-features uitgelegd"> Nieuwe Claude-features, telkens snel uitgelegd</label>
         <label class="checkrow"><input type="checkbox" name="Voorsprong interesse" value="Kant-en-klare skills en templates"> Kant-en-klare skills en templates</label>
@@ -107,13 +182,47 @@
     </div>
 
     <div class="veld">
-      <label>Welke vraag wil je zeker beantwoord zien op de live sessie van 3 september?</label>
-      <textarea name="Vraag voor live sessie" rows="3" style="padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; resize:vertical;"></textarea>
+      <label class="hoofdlabel">Welke vraag wil je zeker beantwoord zien op de live sessie van donderdag 3 september?</label>
+      <textarea name="Vraag voor live sessie" rows="3"></textarea>
+    </div>
+
+    <!-- NIEUWSBRIEF -->
+    <div class="sectiekop"><span class="nr">06</span><h2>De nieuwsbrief</h2></div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Wat vind je van mijn nieuwsbrief?</label>
+      <select name="Nieuwsbrief mening" required>
+        <option value="">Kies</option>
+        <option>Lees ik elke keer, top zo</option>
+        <option>Lees ik af en toe, mag korter</option>
+        <option>Lees ik af en toe, mag juist meer diepgang</option>
+        <option>Ik lees 'm eigenlijk zelden</option>
+        <option>Ik ontvang 'm niet (of wist het niet)</option>
+      </select>
     </div>
 
     <div class="veld">
-      <label>Nog iets dat je kwijt wil?</label>
-      <textarea name="Extra" rows="2" style="padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; resize:vertical;"></textarea>
+      <label class="hoofdlabel">Wat zou de nieuwsbrief voor jou waardevoller maken?</label>
+      <textarea name="Nieuwsbrief suggestie" rows="2" placeholder="Bv. meer praktische prompts, kortere updates, meer voorbeelden uit sectoren..."></textarea>
+    </div>
+
+    <!-- SLOT -->
+    <div class="sectiekop"><span class="nr">07</span><h2>Tot slot</h2></div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Zou je AskLien aanraden aan een collega of vriend(in)?</label>
+      <select name="Aanraden" required>
+        <option value="">Kies</option>
+        <option>Al gedaan!</option>
+        <option>Zeker</option>
+        <option>Misschien</option>
+        <option>Eerder niet</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Nog iets dat je kwijt wil?</label>
+      <textarea name="Extra" rows="2"></textarea>
     </div>
 
     <button type="submit" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:16px; border-radius:10px; border:none; cursor:pointer; margin-top:4px;">Verstuur en doe mee aan de winactie →</button>
