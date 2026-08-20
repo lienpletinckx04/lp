@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zo prompt je de nieuwe Claude (je oude manier werkt niet meer) — AskLien.ai</title>
-<meta name="description" content="De nieuwste Claude-modellen vragen een andere aanpak. 7 regels, telkens met een fout en een goed voorbeeld naast elkaar, kant-en-klaar om te kopiëren.">
+<title>Ik kortte mijn prompts met de helft in, en de resultaten werden beter — AskLien.ai</title>
+<meta name="description" content="Drie dingen die ik veranderde aan hoe ik prompt, plus de volledige checklist. Met echte voorbeelden van voor en na.">
 <link rel="canonical" href="https://asklien.ai/prompten-claude-5/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Zo prompt je de nieuwe Claude (je oude manier werkt niet meer)">
-<meta property="og:description" content="7 regels voor de nieuwste Claude-modellen, telkens met een fout en een goed voorbeeld naast elkaar.">
+<meta property="og:title" content="Ik kortte mijn prompts met de helft in, en de resultaten werden beter">
+<meta property="og:description" content="Drie dingen die ik veranderde, plus de volledige checklist.">
 <meta property="og:url" content="https://asklien.ai/prompten-claude-5/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,15 +17,15 @@
 <link rel="stylesheet" href="/css/style.css">
 <style>
   .regel { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:20px; }
-  .regel-kop { display:flex; align-items:baseline; gap:16px; margin-bottom:8px; }
+  .regel-kop { display:flex; align-items:baseline; gap:16px; margin-bottom:10px; }
   .regel-nr { font-family:'Archivo'; font-weight:900; font-size:38px; color:#ff4d24; line-height:1; }
-  .regel h2 { margin:0; font-family:'Archivo'; font-weight:800; font-size:24px; letter-spacing:-1px; line-height:1.15; }
+  .regel h2 { margin:0; font-family:'Archivo'; font-weight:800; font-size:25px; letter-spacing:-1px; line-height:1.15; }
   .vergelijk { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
-  .vak { border-radius:14px; padding:20px 22px; font-size:14px; line-height:1.65; }
+  .vak { border-radius:14px; padding:20px 22px; font-size:14px; line-height:1.65; position:relative; }
   .vak .vak-label { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px; display:block; }
   .fout { background:#fdf2ee; border:1px solid #f6d5c9; color:#8a5c4c; }
   .fout .vak-label { color:#c9543a; }
-  .goed { background:#1c1a1f; color:#e8e2d4; position:relative; }
+  .goed { background:#1c1a1f; color:#e8e2d4; }
   .goed .vak-label { color:#ff4d24; }
   .copy-btn { position:absolute; top:14px; right:14px; background:#ff4d24; color:#fff; border:none; font-family:'Schibsted Grotesk'; font-weight:600; font-size:11.5px; padding:6px 12px; border-radius:7px; cursor:pointer; }
   .copy-btn:hover { background:#fff; color:#1c1a1f; }
@@ -34,6 +34,11 @@
   .mening { background:#fff8ef; border-left:4px solid #ff4d24; border-radius:12px; padding:20px 24px; margin-top:20px; }
   .mening .m-label { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; display:block; margin-bottom:8px; }
   .mening p { margin:0; font-size:15px; line-height:1.7; color:#57534a; font-style:italic; }
+  .check-item { display:flex; align-items:flex-start; gap:14px; padding:14px 0; border-bottom:1px solid rgba(255,255,255,.10); }
+  .check-item:last-child { border-bottom:none; }
+  .check-vak { width:20px; height:20px; border:2px solid #ff4d24; border-radius:5px; flex-shrink:0; margin-top:2px; }
+  .check-item p { margin:0; font-size:15px; line-height:1.6; color:#e8e2d4; }
+  .check-item p strong { color:#fff; }
   #ctaPopup { position:fixed; bottom:24px; right:24px; max-width:340px; background:#1c1a1f; color:#f6f1e7; border-radius:18px; padding:24px 26px; box-shadow:0 20px 50px rgba(0,0,0,.35); z-index:200; transform:translateY(140%); transition:transform .5s cubic-bezier(.2,.8,.2,1); }
   #ctaPopup.show { transform:translateY(0); }
   #ctaPopup .close { position:absolute; top:10px; right:14px; color:#8a8378; cursor:pointer; font-size:18px; background:none; border:none; }
@@ -58,37 +63,45 @@
 </nav>
 
 <header style="max-width:900px; margin:0 auto; padding:72px 32px 8px;">
-  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">GRATIS GIDS</div>
-  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Zo prompt je de nieuwe Claude. Je oude manier werkt niet meer<span style="color:#ff4d24;">.</span></h1>
-  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">De trucjes die iedereen jaren aanleerde, doen bij de nieuwste modellen vaak méér kwaad dan goed. Hieronder zeven regels die wél kloppen, elk met een fout en een goed voorbeeld naast elkaar. Kopieer ze en pas ze aan.</p>
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">JE CHECKLIST STAAT HIERONDER</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Ik kortte mijn prompts met meer dan de helft in. En de resultaten werden béter<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Dat klinkt tegenstrijdig, maar er zit logica achter. Hieronder leg ik uit waarom, geef ik je de drie dingen die ik veranderd heb met echte voorbeelden, en helemaal onderaan staat de volledige checklist klaar om te kopiëren.</p>
 </header>
 
+<!-- DE LOGICA -->
 <section style="max-width:900px; margin:0 auto; padding:36px 32px 0;">
-  <div data-reveal style="background:#fff; border-radius:18px; padding:28px 32px;">
-    <p style="margin:0; font-size:16px; line-height:1.75; color:#57534a;">Kort samengevat: de oude aanpak ging over <strong style="color:#1c1a1f;">het model overtuigen</strong>. Rollen opdringen, dreigen met boetes, in hoofdletters roepen dat het belangrijk is. De nieuwe aanpak gaat over <strong style="color:#1c1a1f;">het model informeren</strong>. Geef context, geef materiaal, zeg wat "goed" betekent, en laat de rest los. Dat is de hele omslag.</p>
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:36px 40px;">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">DE LOGICA ERACHTER</div>
+    <h2 style="margin:0 0 16px; font-family:'Archivo'; font-weight:900; font-size:28px; letter-spacing:-1.5px; line-height:1.15; color:#f6f1e7;">Alles wat er niet toe doet, verdunt de rest.</h2>
+    <p style="margin:0 0 14px; font-size:16px; line-height:1.75; color:#b3ab9e;">Hoe meer je in één gesprek propt, hoe meer Claude moet gaan wegen wat nu eigenlijk belangrijk is en wat niet. Je website erbij, je prijslijst erbij, drie oude mails erbij, vijftien regels over wat hij niet mag doen. Allemaal goed bedoeld, maar elk stukje ruis maakt het signaal zwakker.</p>
+    <p style="margin:0; font-size:16px; line-height:1.75; color:#b3ab9e;">Korter werkt dus niet omdat kort op zich beter is. Het werkt omdat wat er <strong style="color:#f6f1e7;">wel</strong> staat, dan zwaarder doorweegt.</p>
   </div>
 </section>
 
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;">
+  <h2 data-reveal style="margin:0 0 4px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px;">De drie dingen die ik veranderd heb<span style="color:#ff4d24;">.</span></h2>
+  <p data-reveal style="margin:0 0 24px; font-size:16px; color:#8a8378;">Telkens met hoe ik het vroeger deed, en hoe ik het nu doe.</p>
+</section>
+
 <!-- 01 -->
-<section style="max-width:900px; margin:0 auto; padding:44px 32px 0;">
+<section style="max-width:900px; margin:0 auto; padding:0 32px;">
   <div data-reveal class="regel">
-    <div class="regel-kop"><span class="regel-nr">01</span><h2>Stop met rollen opdringen</h2></div>
-    <p style="margin:0; font-size:14px; color:#8a8378;">"Je bent een expert met 20 jaar ervaring" doet niets meer</p>
+    <div class="regel-kop"><span class="regel-nr">01</span><h2>Schrijf wat je wil bereiken. Niet twintig regels over wat hij niet mag doen.</h2></div>
     <div class="vergelijk">
       <div class="vak fout">
-        <span class="vak-label">Oude manier</span>
-        Je bent een wereldberoemde marketingexpert met 20 jaar ervaring bij de grootste bureaus ter wereld. Je bent briljant. Schrijf een tekst voor mijn webshop.
+        <span class="vak-label">Vroeger schreef ik</span>
+        Geen emoji's. Het moet in bullets. Of net niet in bullet points. Niet te lang. Niet te formeel. Geen moeilijke woorden. Niet te commercieel. Geen clichés. Niet te droog. Wees menselijk maar niet te los.
       </div>
       <div class="vak goed">
         <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-        <span class="vak-label">Nieuwe manier</span>
-        Schrijf de productpagina voor mijn webshop. Ik verkoop handgemaakte keramiek in Gent aan mensen die bewust kopen en afknappen op hard verkopen. Ze twijfelen vooral of €65 voor een kom niet te veel is, dus leg uit waar die prijs vandaan komt (drie keer de oven in, alles met de hand) zonder verontschuldigend te klinken.
+        <span class="vak-label">Nu schrijf ik</span>
+        Dit moet klinken alsof ik het tussen twee klanten door geschreven heb.
       </div>
     </div>
-    <p class="waarom">Waarom dit werkt: het model werd niet beter van het compliment, het wordt beter van <strong>informatie</strong>. Wie je klant is, waar die over twijfelt, wat je toon moet zijn. Die woorden die je vroeger aan een rol besteedde, gebruik je nu voor context.</p>
+    <p class="waarom">Waarom dit werkt: die verbodslijst laat Claude raden wat je dan wél wil. Eén zin die het <strong>doel</strong> beschrijft, dekt al die regels vanzelf. Iets dat tussen twee klanten door geschreven is, is automatisch kort, niet formeel en zonder opgeklopte woorden. Je hoeft dat niet meer apart te verbieden.</p>
     <div class="mening">
       <span class="m-label">Wat ik erover denk</span>
-      <p>Dit is verreweg het hardnekkigste. Bijna elke prompt die deelnemers me tonen begint nog met zo'n rol. Ik snap waar het vandaan komt, want twee jaar geleden werkte dat ook echt. Maar het is blijven plakken als een gewoonte, terwijl die zinnen nu gewoon plaats innemen die je veel beter aan je eigen context geeft.</p>
+      <p>Dit was voor mij de grootste omslag. Ik zat prompts te schrijven die langer waren dan de tekst die eruit moest komen. En hoe meer regels ik toevoegde, hoe braver en levenlozer het resultaat werd. Nu denk ik eerst: wat wil ik dat dit doet? Die ene zin doet meer dan mijn hele oude lijstje.</p>
     </div>
   </div>
 </section>
@@ -96,20 +109,46 @@
 <!-- 02 -->
 <section style="max-width:900px; margin:0 auto; padding:0 32px;">
   <div data-reveal class="regel">
-    <div class="regel-kop"><span class="regel-nr">02</span><h2>Toon, in plaats van beschrijf</h2></div>
-    <p style="margin:0; font-size:14px; color:#8a8378;">Eén echt voorbeeld verslaat tien regels uitleg</p>
+    <div class="regel-kop"><span class="regel-nr">02</span><h2>Plak niet alles in één gesprek.</h2></div>
     <div class="vergelijk">
       <div class="vak fout">
-        <span class="vak-label">Oude manier</span>
-        Schrijf in een warme, professionele maar toegankelijke toon. Niet te formeel, maar ook niet te los. Gebruik korte zinnen. Wees menselijk.
+        <span class="vak-label">Vroeger deed ik</span>
+        Even alles meegeven voor de zekerheid: mijn hele website, mijn prijslijst, drie oude mails die ik ooit schreef, de notulen van vorige week. En dan pas mijn vraag.
       </div>
       <div class="vak goed">
         <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-        <span class="vak-label">Nieuwe manier</span>
-        Hier zijn drie offertes die ik zelf schreef en waar klanten op ingingen: [plak ze]. Schrijf de offerte voor deze nieuwe klant in exact die stem. Ik schrijf kort, ik tutoyeer, en ik zet de prijs nooit helemaal onderaan verstopt. Twijfel je over een woord, kies wat het dichtst bij mijn voorbeelden ligt.
+        <span class="vak-label">Nu doe ik</span>
+        Enkel wat hij voor déze ene taak nodig heeft. Meer niet.<br><br>Moet hij die achtergrond structureel kennen? Dan zet ik die niet in het gesprek, maar in een Project bij de instructies of in een Skill. Eén keer, en dan is het er altijd.
       </div>
     </div>
-    <p class="waarom">Waarom dit werkt: "warm maar professioneel" betekent voor iedereen iets anders. Je eigen teksten zijn <strong>ondubbelzinnig</strong>. Dit is meteen de snelste manier om af te raken van dat typische AI-toontje waar iedereen op afknapt.</p>
+    <p class="waarom">Waarom dit werkt: context die er niet toe doet, concurreert met context die er wel toe doet. En het scheelt jou tijd: informatie die je élke keer nodig hebt, hoort <strong>niet in een gesprek maar in je setup</strong>. Dan hoef je het nooit meer te plakken.</p>
+    <div class="mening">
+      <span class="m-label">Wat ik erover denk</span>
+      <p>Ik zie dit bij bijna iedereen: alles erin gooien uit schrik iets te vergeten. Maar je bent hem eigenlijk aan het overladen. Stel jezelf één vraag voor je iets plakt: heeft hij dit nodig voor precies deze taak? Zo niet, laat het weg. En als je merkt dat je hetzelfde blijft plakken, dan hoort dat in een Project.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="regel">
+    <div class="regel-kop"><span class="regel-nr">03</span><h2>Tonen werkt beter dan beschrijven.</h2></div>
+    <div class="vergelijk">
+      <div class="vak fout">
+        <span class="vak-label">Vroeger schreef ik</span>
+        Schrijf in een warme maar professionele toon. Korte zinnen. Niet te formeel, maar ook niet te los. Persoonlijk, alsof ik het zelf schreef. Vlot leesbaar.
+      </div>
+      <div class="vak goed">
+        <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+        <span class="vak-label">Nu doe ik</span>
+        Hier is één mail die ik zelf schreef en waar ik heel tevreden over was: [plak de mail]<br><br>Schrijf de volgende in exact die stem.
+      </div>
+    </div>
+    <p class="waarom">Waarom dit werkt: "warm maar professioneel" betekent voor iedereen iets anders. Jouw eigen mail is <strong>ondubbelzinnig</strong>. Eén goed voorbeeld doorsturen werkt beter dan een volledige beschrijving van hoe het eruit moet zien, want in dat voorbeeld zit alles al: je ritme, je woordkeuze, hoe je afsluit.</p>
+    <div class="mening">
+      <span class="m-label">Wat ik erover denk</span>
+      <p>Dit is meteen ook de snelste manier om af te raken van dat typische AI-toontje waar iedereen op afknapt. Niet door te vragen "schrijf niet als AI", wel door te tonen hoe jij schrijft. Zoek dus die ene mail waar je trots op was en hou 'm bij, die ga je nog vaak gebruiken.</p>
+    </div>
   </div>
 </section>
 
@@ -118,141 +157,37 @@
   <div data-reveal style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); border-radius:20px; padding:34px 38px; display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center;">
     <div>
       <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#fff; margin-bottom:8px;">GRATIS IN DE HUB</div>
-      <h2 style="margin:0 0 8px; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1px; line-height:1.15; color:#fff;">Wil je dit niet elke keer opnieuw typen?</h2>
-      <p style="margin:0; font-size:15px; line-height:1.65; color:#fff;">In de Hub staan kant-en-klare skills en templates waar deze regels al in verwerkt zitten. Gratis, geen abonnement nodig.</p>
+      <h2 style="margin:0 0 8px; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1px; line-height:1.15; color:#fff;">Weet je niet hoe je een Project of Skill opzet?</h2>
+      <p style="margin:0; font-size:15px; line-height:1.65; color:#fff;">Dat leg ik gratis uit in de Hub, samen met kant-en-klare skills die je meteen kan gebruiken. Geen abonnement nodig.</p>
     </div>
     <a href="https://hub.asklien.ai" class="btn-white" style="background:#fff; color:#1c1a1f; font-weight:600; font-size:15px; padding:15px 28px; border-radius:10px; white-space:nowrap;">Naar de Hub →</a>
   </div>
 </section>
 
-<!-- 03 -->
-<section style="max-width:900px; margin:0 auto; padding:20px 32px 0;">
-  <div data-reveal class="regel">
-    <div class="regel-kop"><span class="regel-nr">03</span><h2>Zeg wat je wil bereiken, niet elke stap</h2></div>
-    <p style="margin:0; font-size:14px; color:#8a8378;">Het doel geven werkt beter dan een dichtgetimmerd stappenplan</p>
-    <div class="vergelijk">
-      <div class="vak fout">
-        <span class="vak-label">Oude manier</span>
-        Stap 1: lees de tekst. Stap 2: maak een lijst van de belangrijkste punten. Stap 3: herschrijf elk punt in één zin. Stap 4: zet ze in volgorde van belangrijkheid. Stap 5: schrijf een samenvatting.
-      </div>
-      <div class="vak goed">
-        <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-        <span class="vak-label">Nieuwe manier</span>
-        Vat dit werfverslag samen voor mijn aannemer, die het in de camionette leest tussen twee werven door. Hij moet weten wat er deze week fout dreigt te lopen en wie hij daarvoor moet bellen. Alles wat niet tot een telefoontje leidt, mag weg.
-      </div>
-    </div>
-    <p class="waarom">Waarom dit werkt: de nieuwe modellen plannen zelf beter dan jouw stappenplan. Door stappen op te leggen, dwing je een aanpak af die misschien niet de beste is. Geef het <strong>doel en de grenzen</strong>, en laat de route los.</p>
-  </div>
-</section>
-
-<!-- 04 -->
-<section style="max-width:900px; margin:0 auto; padding:0 32px;">
-  <div data-reveal class="regel">
-    <div class="regel-kop"><span class="regel-nr">04</span><h2>Zeg expliciet wat "goed" betekent</h2></div>
-    <p style="margin:0; font-size:14px; color:#8a8378;">Zonder maatstaf raad het model naar wat jij mooi vindt</p>
-    <div class="vergelijk">
-      <div class="vak fout">
-        <span class="vak-label">Oude manier</span>
-        Maak een goede LinkedIn-post over onze nieuwe dienst. Zorg dat hij goed is.
-      </div>
-      <div class="vak goed">
-        <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-        <span class="vak-label">Nieuwe manier</span>
-        Schrijf een LinkedIn-post over onze nieuwe boekhoudsoftware voor zelfstandigen. Geslaagd betekent voor mij: de eerste zin werkt zonder de rest te lezen, er staat één concreet cijfer in (bv. hoeveel uur per maand het scheelt), hij is korter dan 120 woorden, en hij eindigt op een vraag die een zelfstandige echt zou beantwoorden. Geen emoji, geen "in een wereld waarin", geen "game changer".
-      </div>
-    </div>
-    <p class="waarom">Waarom dit werkt: je maakt "goed" <strong>controleerbaar</strong>. Het model kan zijn eigen werk aftoetsen aan jouw criteria, en jij hoeft niet drie rondes te herformuleren omdat je pas achteraf merkt wat je eigenlijk wou.</p>
-  </div>
-</section>
-
-<!-- 05 -->
-<section style="max-width:900px; margin:0 auto; padding:0 32px;">
-  <div data-reveal class="regel">
-    <div class="regel-kop"><span class="regel-nr">05</span><h2>Geef het een uitweg bij twijfel</h2></div>
-    <p style="margin:0; font-size:14px; color:#8a8378;">Anders vult het de gaten zelf in, en dat merk je te laat</p>
-    <div class="vergelijk">
-      <div class="vak fout">
-        <span class="vak-label">Oude manier</span>
-        Schrijf een offerte voor deze klant. [korte, halve beschrijving]
-      </div>
-      <div class="vak goed">
-        <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-        <span class="vak-label">Nieuwe manier</span>
-        Schrijf een offerte voor deze klant: [beschrijving]. Als er info ontbreekt die het bedrag of de scope verandert (aantal dagen, verplaatsing, btw-regime, wie het materiaal levert), vul die niet zelf in maar stel me eerst je vragen. Verzin geen prijzen, geen leveringstermijnen en geen referenties van klanten die ik niet vermeld heb.
-      </div>
-    </div>
-    <p class="waarom">Waarom dit werkt: zonder die zin kiest het model de meest waarschijnlijke invulling, en dat leest zo vlot dat je het bijna niet ziet. Met die zin krijg je <strong>vragen in plaats van verzinsels</strong>. Zet dit standaard in alles wat naar een klant gaat.</p>
-    <div class="mening">
-      <span class="m-label">Wat ik erover denk</span>
-      <p>Als ik er één regel uit deze hele gids mocht kiezen, was het deze. Een verzonnen levertermijn of een prijs die net iets anders staat dan afgesproken, dat leest zo vlot mee dat je er pas over valt als de klant belt. Die ene zin over twijfel kost je vier seconden en heeft me al veel ambetante telefoontjes bespaard.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 06 -->
-<section style="max-width:900px; margin:0 auto; padding:0 32px;">
-  <div data-reveal class="regel">
-    <div class="regel-kop"><span class="regel-nr">06</span><h2>Zet je materiaal boven, je vraag onder</h2></div>
-    <p style="margin:0; font-size:14px; color:#8a8378;">En gooi geen ongesorteerde berg tekst naar binnen</p>
-    <div class="vergelijk">
-      <div class="vak fout">
-        <span class="vak-label">Oude manier</span>
-        Wat vind je hiervan? [10 pagina's geplakte tekst, mails en notities door elkaar, zonder kopjes]
-      </div>
-      <div class="vak goed">
-        <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-        <span class="vak-label">Nieuwe manier</span>
-        Hieronder drie stukken.<br><br>=== OFFERTE ===<br>[tekst]<br><br>=== MAILWISSELING ===<br>[tekst]<br><br>=== MIJN NOTITIES ===<br>[tekst]<br><br>Mijn vraag: waar zit het verschil tussen wat de klant vroeg en wat wij offreerden? Verwijs telkens naar het stuk waar je het vandaan haalt.
-      </div>
-    </div>
-    <p class="waarom">Waarom dit werkt: met duidelijke labels weet het model <strong>wat wat is</strong> en kan het ernaar verwijzen. En door je vraag onderaan te zetten, staat die het dichtst bij het antwoord dat het gaat schrijven.</p>
-  </div>
-</section>
-
-<!-- 07 -->
-<section style="max-width:900px; margin:0 auto; padding:0 32px;">
-  <div data-reveal class="regel">
-    <div class="regel-kop"><span class="regel-nr">07</span><h2>Minder regels, maar duidelijkere</h2></div>
-    <p style="margin:0; font-size:14px; color:#8a8378;">Twintig instructies die elkaar tegenspreken maken het resultaat slechter</p>
-    <div class="vergelijk">
-      <div class="vak fout">
-        <span class="vak-label">Oude manier</span>
-        Wees kort. Wees volledig. Gebruik geen jargon. Wees professioneel. Schrijf zoals een mens. Wees origineel. Blijf bij de feiten. Maak het pakkend. Overdrijf niet. Wees enthousiast.
-      </div>
-      <div class="vak goed">
-        <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-        <span class="vak-label">Nieuwe manier</span>
-        Maximum 200 woorden. Geen vakjargon: als mijn ma het niet snapt, herschrijf je het. Botsen kort en volledig? Kies kort, ik vul de rest wel mondeling aan.
-      </div>
-    </div>
-    <p class="waarom">Waarom dit werkt: bij tegenstrijdige instructies moet het model gokken welke wint, en dan krijg je middelmaat. Geef er minder, maar zeg erbij <strong>wat voorrang heeft als ze botsen</strong>. Dat ene zinnetje scheelt enorm.</p>
-  </div>
-</section>
-
-<!-- SAMENVATTING -->
-<section style="max-width:900px; margin:0 auto; padding:24px 32px 0;">
+<!-- DE CHECKLIST -->
+<section style="max-width:900px; margin:0 auto; padding:28px 32px 0;">
   <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:24px; padding:48px 44px;">
-    <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px;">DE SAMENVATTING</div>
-    <h2 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.5px; line-height:1.1; color:#f6f1e7;">Eén sjabloon dat alle zeven regels toepast<span style="color:#ff4d24;">.</span></h2>
-    <p style="margin:0 0 20px; font-size:16px; line-height:1.7; color:#b3ab9e;">Bewaar dit als Project-instructie en je hoeft het nooit meer te typen.</p>
-    <div class="vak goed" style="background:#2a272c; margin-bottom:20px;">
-      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-      <span class="vak-label">Sjabloon</span>
-      <strong>Wat ik wil:</strong> [het doel, niet de stappen]<br><br>
-      <strong>Voor wie:</strong> [wie leest dit, wat weet die al, waar twijfelt die over]<br><br>
-      <strong>Mijn materiaal:</strong><br>
-      === VOORBEELDEN VAN MIJN STIJL ===<br>
-      [plak twee of drie eigen teksten]<br>
-      === ACHTERGROND ===<br>
-      [wat je al hebt: nota's, mails, cijfers]<br><br>
-      <strong>Geslaagd betekent:</strong> [drie of vier controleerbare criteria]<br><br>
-      <strong>Bij twijfel:</strong> stel me je vragen in plaats van iets in te vullen. Verzin geen cijfers, namen of citaten.<br><br>
-      <strong>Als criteria botsen:</strong> [wat wint]
-    </div>
-    <p style="margin:0 0 20px; font-size:15px; line-height:1.7; color:#b3ab9e;">Merk je het patroon? Je bent gestopt met het model commanderen en begonnen met het inwerken, zoals je een nieuwe collega zou inwerken. Dat is de hele kunst.</p>
-    <div style="background:#2a272c; border-left:4px solid #ff4d24; border-radius:12px; padding:20px 24px;">
-      <span style="font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; display:block; margin-bottom:8px;">Wat ik erover denk</span>
-      <p style="margin:0; font-size:15px; line-height:1.7; color:#b3ab9e; font-style:italic;">Wat me bij audits het meest opvalt: mensen denken dat ze slechte resultaten krijgen omdat ze de juiste trucjes niet kennen. Negen op de tien keer klopt dat niet. Ze geven gewoon te weinig context, en ze zeggen nooit wat ze eigenlijk willen. Zodra dat verandert, verandert alles mee. Ook zonder één enkel trucje.</p>
+    <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px;">DE CHECKLIST</div>
+    <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px; line-height:1.1; color:#f6f1e7;">Loop dit door voor je op enter duwt<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0 0 24px; font-size:16px; line-height:1.7; color:#b3ab9e;">Zeven vragen. Na een week of twee doe je het vanzelf.</p>
+
+    <div class="check-item"><div class="check-vak"></div><p><strong>Staat er in wat ik wil bereiken?</strong> Niet enkel wat hij niet mag doen.</p></div>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Kan ik iets schrappen zonder dat het resultaat verandert?</strong> Doe dat dan.</p></div>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Heeft hij alles wat ik plakte écht nodig voor déze taak?</strong> Zo niet, laat het weg.</p></div>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Blijf ik dit steeds opnieuw plakken?</strong> Dan hoort het in een Project of een Skill, niet in het gesprek.</p></div>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Heb ik een voorbeeld getoond in plaats van mijn stijl beschreven?</strong> Eén echte tekst zegt meer dan tien adjectieven.</p></div>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Weet hij wanneer het gelukt is?</strong> Zeg wat "goed" betekent, in twee of drie controleerbare punten.</p></div>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Weet hij wat te doen bij twijfel?</strong> Laat hem vragen stellen in plaats van gaten zelf invullen. Zeker bij alles wat naar een klant vertrekt.</p></div>
+
+    <div style="margin-top:28px; padding-top:24px; border-top:1px solid rgba(255,255,255,.14);">
+      <p style="margin:0 0 14px; font-size:15px; line-height:1.7; color:#b3ab9e;">Wil je 'm meteen gebruiken? Hier staat alles in één blok dat je kan kopiëren en onderaan je prompt plakken:</p>
+      <div class="vak goed" style="background:#2a272c;">
+        <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+        <span class="vak-label">Plak dit onderaan je prompt</span>
+        Voor je begint: als er info ontbreekt die het resultaat wezenlijk verandert, stel me dan eerst je vragen in plaats van het zelf in te vullen. Verzin geen cijfers, namen of citaten.<br><br>
+        Geslaagd betekent voor mij: [twee of drie controleerbare punten]<br><br>
+        Als die criteria botsen: [wat wint]
+      </div>
     </div>
   </div>
 </section>
@@ -261,8 +196,12 @@
 <section style="max-width:900px; margin:0 auto; padding:24px 32px 96px;">
   <div data-reveal style="background:#fff; border-radius:24px; padding:44px 42px;">
     <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">EN NU?</div>
-    <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.5px; line-height:1.1;">Lezen is één ding. Het staan hebben is iets anders<span style="color:#ff4d24;">.</span></h2>
-    <p style="margin:0 0 26px; font-size:16px; line-height:1.7; color:#57534a; max-width:620px;">Deze regels helpen je per gesprek. Maar het echte verschil zit in een setup die je maar één keer bouwt: Projects die je context onthouden, skills voor je terugkerend werk, en connectors zodat je niks meer moet kopiëren. Dat is precies wat we in tien dagen samen opzetten.</p>
+    <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.5px; line-height:1.1;">Korter prompten helpt. Een goede setup scheelt véél meer<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0 0 20px; font-size:16px; line-height:1.7; color:#57534a; max-width:640px;">Merk je bij punt twee dat je eigenlijk niet weet hoe je een Project of Skill opzet? Dan zit daar je grootste winst. Want zodra je context in je setup zit in plaats van in elk gesprek, hoef je bijna niets meer te plakken. Dat is precies wat we in tien dagen samen bouwen: je Projects, je skills, je connectors, allemaal rond wat jij echt doet.</p>
+    <div class="mening" style="margin-top:0; margin-bottom:26px;">
+      <span class="m-label">Wat ik erover denk</span>
+      <p>Wat me het meest opvalt: mensen denken dat ze slechte resultaten krijgen omdat ze de juiste trucjes niet kennen. Meestal klopt dat niet. Ze geven te veel ruis en te weinig richting. Zodra dat verandert, verandert alles mee. Ook zonder één enkel trucje.</p>
+    </div>
     <div class="cta-row" style="display:flex; gap:14px; flex-wrap:wrap;">
       <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">Bekijk de challenge →</a>
       <a href="https://hub.asklien.ai" class="btn-outline" style="border:2px solid #1c1a1f; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px;">Eerst gratis rondkijken in de Hub</a>
@@ -294,8 +233,7 @@ function copyVak(btn) {
   var vak = btn.parentElement.cloneNode(true);
   var b = vak.querySelector('.copy-btn'); if (b) b.remove();
   var l = vak.querySelector('.vak-label'); if (l) l.remove();
-  var text = vak.innerText.trim();
-  navigator.clipboard.writeText(text).then(function () {
+  navigator.clipboard.writeText(vak.innerText.trim()).then(function () {
     var old = btn.textContent;
     btn.textContent = 'Gekopieerd!';
     setTimeout(function () { btn.textContent = old; }, 1800);
