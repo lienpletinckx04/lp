@@ -6,5 +6,6 @@ Disallow: /bedankt-challenge.html
 Disallow: /bedankt-voorsprong.html
 Disallow: /bevraging/
 Disallow: /bedankt-bevraging.html
+Disallow: /voorstel-az6k9m/
 
 Sitemap: https://asklien.ai/sitemap.xml
