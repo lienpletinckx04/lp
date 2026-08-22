@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vraag het niet aan een expert, vraag het aan de data — AskLien.ai</title>
+<meta name="description" content="Er bestaat een gratis dataset die toont welke beroepen AI het meest gebruiken. Zo open je hem in Claude, welke drie vragen je als eerste stelt over je eigen sector, en de beperking die je moet kennen.">
+<link rel="canonical" href="https://asklien.ai/ai-in-jouw-sector/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vraag het niet aan een expert, vraag het aan de data">
+<meta property="og:description" content="Wat AI vandaag écht doet in jouw sector, volgens de cijfers. Gratis dataset, in een minuut open in Claude.">
+<meta property="og:url" content="https://asklien.ai/ai-in-jouw-sector/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .kaart { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:20px; }
+  .kaart h2 { margin:0 0 14px; font-family:'Archivo'; font-weight:800; font-size:26px; letter-spacing:-1.2px; line-height:1.12; }
+  .kaart p { font-size:16px; line-height:1.8; color:#57534a; }
+  .stap { display:flex; align-items:flex-start; gap:18px; padding:18px 0; border-bottom:1px solid #e6ddcb; }
+  .stap:last-child { border-bottom:none; }
+  .stap .nr { font-family:'Archivo'; font-weight:900; font-size:26px; color:#ff4d24; min-width:38px; line-height:1.2; }
+  .stap p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+  .stap strong { color:#1c1a1f; }
+  .prompt { position:relative; background:#f6f1e7; border-left:3px solid #ff4d24; border-radius:10px; padding:22px 24px; margin:14px 0 0; }
+  .prompt pre { margin:0; white-space:pre-wrap; font-family:'Schibsted Grotesk',sans-serif; font-size:15px; line-height:1.7; color:#1c1a1f; }
+  .kopieer { position:absolute; top:14px; right:14px; background:#1c1a1f; color:#f6f1e7; border:none; border-radius:7px; padding:7px 13px; font-family:inherit; font-weight:600; font-size:12px; cursor:pointer; }
+  .kopieer.ok { background:#ff4d24; }
+  .mening { background:#1c1a1f; color:#f6f1e7; border-radius:16px; padding:26px 28px; margin:18px 0 0; }
+  .mening .kop { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:10px; }
+  .mening p { margin:0; font-size:15px; line-height:1.75; color:#b3ab9e; }
+  .mening strong { color:#f6f1e7; }
+  @media (max-width:640px){ .kaart{ padding:26px 24px; } }
+</style>
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+      <a href="/gidsen/">Alle gidsen</a>
+      <a href="/">Terug naar de site</a>
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">De challenge</a>
+    </div>
+  </div>
+</nav>
+
+<header style="max-width:860px; margin:0 auto; padding:72px 32px 8px;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">GRATIS GIDS</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Vraag het niet aan een expert. Vraag het aan de data<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Iedereen heeft een mening over AI en werk. Bijna niemand weet dat er een gratis dataset bestaat die gewoon toont welke beroepen AI het meest gebruiken, en waarvoor. Hier lees je hoe je hem opent, welke drie vragen je als eerste stelt over jouw sector, en waar je moet oppassen met de conclusies.</p>
+</header>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;">
+
+  <div data-reveal class="kaart">
+    <h2>Waarom iedereen gokt terwijl de cijfers er gewoon liggen</h2>
+    <p style="margin:0 0 14px;">Ga even mee in je hoofd door de laatste tien gesprekken die je gehad hebt over AI en werk. Op café, op een netwerkmoment, in de comments onder een post. Ik durf te wedden dat het bijna allemaal meningen waren. "Copywriters zijn eraan voor de moeite." "Boekhouders gaan het eerst voelen." "In de bouw verandert er niks."</p>
+    <p style="margin:0 0 14px;">Sterke uitspraken. Alleen: niemand aan die tafel had er ooit een cijfer bij gezien. En dat is raar, want de cijfers bestaan wél. Anthropic, het bedrijf achter Claude, publiceert de <strong style="color:#1c1a1f;">Economic Index</strong>: een open dataset waarin ze miljoenen anonieme gesprekken met Claude gekoppeld hebben aan de officiële beroependatabank die arbeidseconomen gebruiken. Welke taken, welke beroepen, en of mensen de AI het werk laten overnemen of ermee samenwerken.</p>
+    <p style="margin:0;">Gratis. Publiek. Voor iedereen te downloaden. En je hebt er geen datawetenschapper voor nodig, want je kan Claude er gewoon zelf doorheen laten lezen.</p>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Wat de Economic Index precies meet, in mensentaal</h2>
+    <p style="margin:0 0 14px;">Stel je voor dat je van elk gesprek met Claude één ding mag noteren: welke <em>taak uit een echt beroep</em> zat hierachter? "Een contract nakijken" hoort bij juridisch werk. "Een lespakket maken" bij onderwijs. "Een bug oplossen" bij software. Dat doen ze, op grote schaal, zonder dat er ook maar één gesprek zelf gelezen of gedeeld wordt.</p>
+    <p style="margin:0 0 14px;">Daar rollen drie soorten inzichten uit:</p>
+    <p style="margin:0 0 10px;"><strong style="color:#1c1a1f;">1. Welke beroepsgroepen het meest opduiken.</strong> Technische en schrijvende beroepen zitten er zwaar in. Werk met veel handen en fysieke aanwezigheid, veel minder.</p>
+    <p style="margin:0 0 10px;"><strong style="color:#1c1a1f;">2. Automatiseren of versterken.</strong> Vraagt iemand "doe dit voor mij" (overnemen), of "denk mee, geef feedback, leer het mij" (versterken)? Die verhouding verschilt sterk per soort werk, en dát is meestal het interessantste cijfer voor een ondernemer.</p>
+    <p style="margin:0;"><strong style="color:#1c1a1f;">3. Waar ter wereld, en hoe snel het beweegt.</strong> Ze publiceren nieuwe rondes, dus je kan zien wat verschuift in plaats van één momentopname.</p>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Zet het aan, dit duurt een minuut</h2>
+    <p style="margin:0 0 10px; color:#8a8378; font-size:15px;">Je hebt hier geen betaald abonnement voor nodig en je hoeft niks te installeren.</p>
+    <div class="stap"><span class="nr">01</span><p>Ga naar de dataset. Die staat publiek op Hugging Face onder <strong>Anthropic / EconomicIndex</strong>. Zoek daar op "Anthropic Economic Index" en je komt er meteen op uit.</p></div>
+    <div class="stap"><span class="nr">02</span><p>Kies het meest recente rapportbestand of de CSV die je interesseert en klik <strong>download</strong>. Het zijn gewoon tabellen.</p></div>
+    <div class="stap"><span class="nr">03</span><p>Open Claude, maak een nieuw <strong>Project</strong> aan (noem het bijvoorbeeld "AI in mijn sector") en sleep het bestand in de projectkennis. Zo blijft het staan en moet je het nooit meer opnieuw opladen.</p></div>
+    <div class="stap"><span class="nr">04</span><p>Zet in datzelfde project <strong>Analysetool</strong> aan bij de instellingen. Dan rekent Claude echt in de tabel in plaats van te gokken. Dit is het stapje dat de meeste mensen overslaan, en meteen het verschil tussen een antwoord met cijfers en een antwoord met sfeer.</p></div>
+    <div class="stap"><span class="nr">05</span><p>Stel je eerste vraag. Hieronder staan de drie waarmee ik altijd start.</p></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>De drie vragen die je als eerste stelt</h2>
+    <p style="margin:0 0 18px;">Vervang overal "[jouw beroep]" door wat jij doet. Hoe concreter, hoe beter: niet "marketing" maar "e-mailmarketing voor webshops".</p>
+
+    <h3 style="margin:22px 0 0; font-family:'Archivo'; font-weight:800; font-size:19px; letter-spacing:-.5px;">Vraag 1 — Waar zit ik in de tabel?</h3>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Ik werk als [jouw beroep]. Zoek in deze dataset de beroepen en taken die het dichtst bij mijn werk liggen. Geef me:
+1. hoe hoog die scoren in het gebruik, vergeleken met de rest
+2. welke concrete taken binnen dat beroep er het vaakst in voorkomen
+3. welke taken uit mijn werk er opvallend WEINIG in voorkomen
+
+Gebruik de analysetool en toon telkens de cijfers waarop je je baseert.</pre></div>
+
+    <h3 style="margin:26px 0 0; font-family:'Archivo'; font-weight:800; font-size:19px; letter-spacing:-.5px;">Vraag 2 — Nemen ze het over, of werken ze ermee samen?</h3>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Kijk voor de taken die bij [jouw beroep] horen naar de verhouding tussen automatiseren en versterken.
+Zeg me in gewone taal: gebruiken mensen in dit soort werk de AI vooral om iets volledig uit handen te geven, of om beter te worden in wat ze zelf doen?
+Vergelijk het met twee andere beroepsgroepen zodat ik weet of mijn sector afwijkt.</pre></div>
+
+    <h3 style="margin:26px 0 0; font-family:'Archivo'; font-weight:800; font-size:19px; letter-spacing:-.5px;">Vraag 3 — Waar zit mijn gat?</h3>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Dit is mijn week, eerlijk opgesomd: [som op wat je effectief doet, uur per uur of taak per taak].
+Leg dat naast de taken die in deze dataset het meest met AI gedaan worden.
+Geef me drie dingen die ik nog volledig manueel doe terwijl de data toont dat veel mensen daar al hulp bij inschakelen. Zet ze op volgorde van hoeveel tijd ik ermee zou winnen, en zeg er telkens bij waarom je dat denkt.</pre></div>
+
+    <div class="mening">
+      <div class="kop">WAT IK ERVAN VIND</div>
+      <p>Vraag 3 is voor mij de enige die echt iets verandert. De eerste twee zijn interessant, daar knik je bij. Maar vraag 3 wrijft jouw week tegen de cijfers aan, en dan komt er telkens iets uit waarvan je denkt: <strong>ja, dat doe ik inderdaad nog altijd met de hand, en eigenlijk weet ik niet waarom.</strong> Bij mij was dat het samenvatten van gesprekken en het herwerken van dezelfde uitleg voor vijf verschillende kanalen. Begin dus gerust bij één en twee, maar stop niet voor je drie gedaan hebt.</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart" style="background:#1c1a1f; color:#f6f1e7;">
+    <h2 style="color:#f6f1e7;">De beperking die je moet kennen voor je conclusies trekt</h2>
+    <p style="margin:0 0 14px; color:#b3ab9e;">En nu het stuk dat je bijna nergens leest, terwijl het het belangrijkste is.</p>
+    <p style="margin:0 0 14px; color:#b3ab9e;">Deze cijfers tonen <strong style="color:#f6f1e7;">hoe mensen Claude gebruiken</strong>. Ze tonen niet hoe de arbeidsmarkt evolueert. Dat lijkt een detail. Het is het hele verschil.</p>
+    <p style="margin:0 0 14px; color:#b3ab9e;">Drie dingen om in je achterhoofd te houden. <strong style="color:#f6f1e7;">Eén:</strong> het gaat over één tool. Wie in jouw sector met een ander model of met branchesoftware werkt, zit hier gewoon niet in. <strong style="color:#f6f1e7;">Twee:</strong> veel gebruik betekent niet "dit beroep verdwijnt", en weinig gebruik betekent niet "hier ben je veilig". Vaak betekent weinig gebruik enkel dat er nog niemand een goede manier gevonden heeft. Dat is een kans, geen schild. <strong style="color:#f6f1e7;">Drie:</strong> dat iets technisch kan, wil niet zeggen dat een klant het zo wil. Vertrouwen, aansprakelijkheid en gewoontes bewegen veel trager dan technologie.</p>
+    <p style="margin:0; color:#b3ab9e;">Dus: gebruik de data om betere vragen te stellen over je eigen werk. Niet om een voorspelling te doen over andermans job. Wie het als voorspelling verkoopt, heeft het niet begrepen.</p>
+    <div class="mening" style="background:#2a272c; margin-top:20px;">
+      <div class="kop">WAT IK ERVAN VIND</div>
+      <p>Ik zie mensen nu al screenshots van dit soort grafieken posten met "bewezen: beroep X is dood". Dat is exact de fout. Wat er staat is: <strong>in deze groep gebruikers, met deze ene tool, kwamen deze taken het vaakst voor.</strong> Meer niet. Ik vind het net daarom zo'n fijne dataset om mee te werken: hij is eerlijk over wat hij is. De onzin ontstaat pas als iemand hem groter maakt dan hij is.</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Wat ik zou doen met wat eruit komt</h2>
+    <p style="margin:0 0 14px;">Niet: je businessmodel omgooien. Wel dit, en het duurt een halve dag.</p>
+    <p style="margin:0 0 10px;"><strong style="color:#1c1a1f;">Neem de drie taken uit vraag 3</strong> en bouw er één setup voor. Eén Project in Claude, met jouw context erin, dat die taak elke week doet zoals jij ze zou doen.</p>
+    <p style="margin:0 0 10px;"><strong style="color:#1c1a1f;">Kijk waar jouw sector laag scoort</strong> en vraag je af of dat een muur is of gewoon een gat in de markt. Meestal is het het tweede.</p>
+    <p style="margin:0;"><strong style="color:#1c1a1f;">Zet het in je agenda om over drie maanden opnieuw te kijken.</strong> Er komen nieuwe rondes bij. Wat vandaag niet in de cijfers zit, zit er in het najaar misschien wel.</p>
+  </div>
+
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:20px 32px 96px;">
+  <div data-reveal style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); color:#fff; border-radius:24px; padding:48px 44px; text-align:center;">
+    <h2 style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px; line-height:1.1; color:#fff;">Van "interessant" naar "het staat er"<span style="color:#1c1a1f;">.</span></h2>
+    <p style="margin:0 auto 26px; font-size:16px; line-height:1.7; color:#ffe4da; max-width:540px;">Een dataset openen is leuk. Er daarna effectief iets mee bouwen is waar het kantelt. In de Claude challenge doen we dat in 10 dagen samen: jouw setup, jouw taken, live begeleid.</p>
+    <div class="cta-row" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="/challenge/" style="background:#1c1a1f; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px; display:inline-block;">Bekijk de challenge →</a>
+      <a href="https://hub.asklien.ai" style="border:2px solid #fff; color:#fff; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px; display:inline-block;">Gratis naar de Hub</a>
+    </div>
+  </div>
+</section>
+
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="/gidsen/">Alle gidsen</a><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx</div>
+  </div>
+</footer>
+
+<script src="/js/site.js"></script>
+<script>
+document.querySelectorAll('.kopieer').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = b.parentElement.querySelector('pre').innerText;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent = 'Gekopieerd ✓'; b.classList.add('ok');
+      setTimeout(function(){ b.textContent='Kopieer'; b.classList.remove('ok'); }, 1800);
+    });
+  });
+});
+</script>
+</body>
+</html>

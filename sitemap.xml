@@ -36,6 +36,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://asklien.ai/ai-in-jouw-sector/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://asklien.ai/9-dingen-claude-doet-gratis/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
