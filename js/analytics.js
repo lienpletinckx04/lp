@@ -2,7 +2,7 @@
    Vul hieronder je meet-ID in, die begint met G-. Zolang er GXXXXXXXXXX staat,
    wordt er niets geladen en verschijnt de banner niet. */
 (function () {
-  var MEET_ID = 'GXXXXXXXXXX';
+  var MEET_ID = 'G-X26E0J3ZQT';
   if (MEET_ID.indexOf('G-') !== 0) return;
 
   var SLEUTEL = 'asklien-toestemming';
