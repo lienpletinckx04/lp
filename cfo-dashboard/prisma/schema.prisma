@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Financial transactions, from Stripe or entered manually.
+model Transaction {
+  id         String   @id @default(cuid())
+  date       DateTime
+  amount     Float // EUR, positive = income
+  pijler     String // voorsprong | audit | traject | retainer | workshop | challenge | other
+  source     String // stripe | manual
+  customer   String?
+  note       String?
+  externalId String? // stripe charge/invoice id, for idempotent sync
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([date])
+  @@index([pijler])
+  @@index([externalId])
+}
+
+// Sent invoices, used for outstanding/aging tracking.
+model Invoice {
+  id         String    @id @default(cuid())
+  customer   String
+  amount     Float
+  sentAt     DateTime
+  paidAt     DateTime?
+  status     String // open | paid | overdue | canceled
+  source     String    @default("manual") // stripe | manual
+  externalId String?
+  note       String?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@index([sentAt])
+  @@index([status])
+}
+
+// Sales pipeline deals (audits, trajecten, workshops).
+model Deal {
+  id          String    @id @default(cuid())
+  customer    String
+  type        String // audit | traject | workshop
+  amount      Float
+  stage       String // gesprek | voorstel | akkoord | verloren | gewonnen
+  lastContact DateTime  @default(now())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  closedAt    DateTime?
+  deliveredDays Float?  // estimated days of delivery work sold, for backlog calc
+  note        String?
+
+  @@index([stage])
+  @@index([type])
+}
+
+// Recurring "Voorsprong" membership subscribers.
+model Member {
+  id                   String    @id @default(cuid())
+  customer             String
+  stripeSubscriptionId String?   @unique
+  plan                 String // founder | regular | annual
+  amount               Float // monthly-equivalent EUR
+  startedAt            DateTime
+  status               String // active | canceled | past_due
+  canceledAt           DateTime?
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  @@index([status])
+  @@index([plan])
+}
+
+// Weekly logged delivery days by type.
+model DayEntry {
+  id        String   @id @default(cuid())
+  date      DateTime
+  type      String // billable | content | product | admin
+  count     Float // number of days (can be fractional, e.g. 0.5)
+  note      String?
+  createdAt DateTime @default(now())
+
+  @@index([date])
+  @@index([type])
+}
+
+// Cash position snapshots, entered weekly.
+model CashSnapshot {
+  id        String   @id @default(cuid())
+  date      DateTime @unique
+  amount    Float
+  note      String?
+  createdAt DateTime @default(now())
+}
+
+// Generic key/value settings store: targets, thresholds, Phase 2/3 stubs.
+model Setting {
+  key       String   @id
+  value     String // JSON-encoded
+  updatedAt DateTime @updatedAt
+}

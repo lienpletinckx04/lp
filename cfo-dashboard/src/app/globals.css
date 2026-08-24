@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 247 247 245;
+  --card: 255 255 255;
+  --border: 226 224 217;
+  --ink: 30 30 28;
+  --muted: 110 108 100;
+  --accent: 47 92 79;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: 20 21 20;
+    --card: 30 31 30;
+    --border: 51 52 49;
+    --ink: 237 237 233;
+    --muted: 156 156 148;
+    --accent: 122 200 176;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--ink));
+}
+
+body {
+  min-height: 100dvh;
+}
+
+.card {
+  background: rgb(var(--card));
+  border: 1px solid rgb(var(--border));
+  border-radius: 0.75rem;
+}
+
+.chip-red {
+  background: rgb(220 38 38 / 0.12);
+  color: rgb(220 38 38);
+}
+.chip-amber {
+  background: rgb(217 119 6 / 0.14);
+  color: rgb(180 83 9);
+}
+.chip-ok {
+  background: rgb(22 163 74 / 0.12);
+  color: rgb(21 128 61);
+}
+
+input,
+select,
+textarea {
+  background: rgb(var(--bg));
+  border: 1px solid rgb(var(--border));
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: rgb(var(--ink));
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
