@@ -80,7 +80,7 @@
       'Mag ik Google Analytics gebruiken om te zien welke pagina\'s gelezen worden? ' +
       'Zo weet ik waar ik meer over moet schrijven. Ik gebruik dit nooit voor advertenties ' +
       'en deel het met niemand anders. Je keuze geldt zes maanden en je kan ze altijd wijzigen. ' +
-      '<a href="/privacy/" style="color:#ff7a3d;text-decoration:underline;">Meer uitleg</a></p>' +
+      '<a href="/privacy/" style="color:#ff7a3d;text-decoration:underline;display:inline-block;padding:6px 0;">Meer uitleg</a></p>' +
       '<div style="display:flex;gap:10px;flex-wrap:wrap;">' +
       '<button data-nee style="' + knop + '">Nee, bedankt</button>' +
       '<button data-ja style="' + knop + '">Ja, dat mag</button>' +
