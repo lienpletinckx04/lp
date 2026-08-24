@@ -79,3 +79,45 @@ a:hover { color: #ff4d24; }
 
 /* Vangnet: niets mag de pagina zijwaarts kunnen laten scrollen. */
 html, body { overflow-x: hidden; max-width: 100%; }
+
+
+/* ---------- Hamburgermenu (alleen op mobiel zichtbaar) ---------- */
+.menu-knop { display: none; }
+
+@media (max-width: 960px) {
+  .menu-knop {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 44px; height: 44px; padding: 0 10px; margin-left: 4px;
+    background: transparent; border: none; cursor: pointer; flex: none;
+    /* Boven het paneel, anders kan je het menu niet meer dichtdoen. */
+    position: relative; z-index: 61;
+  }
+  .menu-knop span {
+    display: block; height: 2px; width: 100%; background: #1c1a1f; border-radius: 2px;
+    transition: transform .25s cubic-bezier(.2,.8,.2,1), opacity .2s ease;
+  }
+  .menu-knop.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-knop.is-open span:nth-child(2) { opacity: 0; }
+  .menu-knop.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .menu-paneel {
+    /* Onder de navigatiebalk (z-index 50) zodat de sluitknop bereikbaar blijft,
+       maar boven de rest van de pagina. */
+    position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 45;
+    background: #f6f1e7; padding: 92px 28px 32px;
+    overflow-y: auto; animation: menuIn .22s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .menu-lijst { display: flex; flex-direction: column; gap: 4px; max-width: 460px; margin: 0 auto; }
+  .menu-lijst .menu-link {
+    font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 28px;
+    letter-spacing: -1px; color: #1c1a1f; padding: 16px 0;
+    border-bottom: 1px solid #e6ddcb; text-decoration: none;
+  }
+  .menu-lijst .menu-cta {
+    margin-top: 26px; background: #ff4d24; color: #fff; text-align: center;
+    font-weight: 600; font-size: 17px; padding: 17px 24px; border-radius: 10px;
+    text-decoration: none;
+  }
+}
+
+@keyframes menuIn { from { opacity: 0; } to { opacity: 1; } }
