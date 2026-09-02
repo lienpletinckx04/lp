@@ -20,6 +20,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css?v=3">
+<style>
+  /* Hero: het draaiende rondje mag de titel nooit raken.
+     De h1 heeft een inline max-width, vandaar !important. */
+  @media (max-width:1180px){
+    .vs-hero h1 { max-width:calc(100% - 220px) !important; }
+  }
+  @media (max-width:900px){
+    .vs-badge { width:100px !important; height:100px !important; right:28px !important; top:28px !important; }
+    .vs-badge svg { width:100px !important; height:100px !important; }
+    .vs-hero h1 { max-width:calc(100% - 150px) !important; }
+  }
+  @media (max-width:640px){
+    .vs-badge { display:none !important; }
+    .vs-hero h1 { max-width:100% !important; }
+  }
+</style>
 </head>
 <body id="top">
 
@@ -37,8 +53,8 @@
 
 <!-- HERO -->
 <header style="max-width:1240px; margin:0 auto; padding:32px 32px 0;">
-  <div style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); border-radius:24px; padding:80px 64px; color:#fff; position:relative; overflow:hidden;">
-    <div style="position:absolute; right:64px; top:64px; width:140px; height:140px; animation:spin 20s linear infinite;">
+  <div class="vs-hero" style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); border-radius:24px; padding:80px 64px; color:#fff; position:relative; overflow:hidden;">
+    <div class="vs-badge" style="position:absolute; right:64px; top:64px; width:140px; height:140px; animation:spin 20s linear infinite;">
       <svg viewBox="0 0 150 150" width="150" height="150">
         <defs><path id="vsCirkel" d="M 75,75 m -58,0 a 58,58 0 1,1 116,0 a 58,58 0 1,1 -116,0"></path></defs>
         <circle cx="75" cy="75" r="72" fill="#1c1a1f"></circle>
@@ -185,7 +201,7 @@
     <div>
       <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ffd9cd; margin-bottom:14px;">HET AANBOD</div>
       <h2 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:56px; letter-spacing:-3px; line-height:.98;">€27 per maand.<br>En dat blijft zo<span style="color:#1c1a1f;">.</span></h2>
-      <p style="margin:0 0 28px; font-size:17px; line-height:1.7; color:#ffe4da;">Deze prijs geldt voor wie in september instapt. Daarna gaat hij omhoog — maar niet voor jou.</p>
+      <p style="margin:0 0 28px; font-size:17px; line-height:1.7; color:#ffe4da;">Deze prijs geldt voor wie in september instapt. Vanaf oktober betalen nieuwe leden €37 — jouw tarief schuift niet mee omhoog.</p>
       <a href="/voorsprong-inschrijven.html" class="btn-white" style="display:inline-block; background:#fff; color:#1c1a1f; font-weight:600; font-size:17px; padding:18px 40px; border-radius:10px;">Word lid voor €27</a>
       <p style="margin:16px 0 0; font-size:14px; line-height:1.6; color:#ffe4da; max-width:440px;">Log in op de hub of maak gratis je account aan, en reken af. Maandelijks opzegbaar, geen opzegtermijn.</p>
     </div>
@@ -195,12 +211,8 @@
         <div style="font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1px;">€27</div>
       </div>
       <div style="display:flex; align-items:baseline; justify-content:space-between; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.28); opacity:.72;">
-        <div><div style="font-family:'Archivo'; font-weight:800; font-size:17px;">Vanaf oktober</div><div style="font-size:13px; color:#ffe4da;">Nieuwe leden betalen meer</div></div>
-        <div style="font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1px;">hoger</div>
-      </div>
-      <div style="display:flex; align-items:baseline; justify-content:space-between; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.28); opacity:.6;">
-        <div><div style="font-family:'Archivo'; font-weight:800; font-size:17px;">Later dit jaar</div><div style="font-size:13px; color:#ffe4da;">Nieuwe leden betalen meer</div></div>
-        <div style="font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1px;">hoger</div>
+        <div><div style="font-family:'Archivo'; font-weight:800; font-size:17px;">Vanaf oktober</div><div style="font-size:13px; color:#ffe4da;">Nieuwe leden</div></div>
+        <div style="font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1px;">€37</div>
       </div>
       <div style="padding-top:20px; display:flex; flex-direction:column; gap:8px; font-size:15px; line-height:1.5;">
         <div><span style="font-weight:800;">✦</span>&nbsp; Jouw €27 schuift nooit mee omhoog</div>
