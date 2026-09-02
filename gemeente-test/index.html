@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vraag AI wat het over jouw gemeente weet — AskLien.ai</title>
+<meta name="description" content="De snelste manier om te zien hoe AI dingen verzint: vraag ChatGPT naar de plek waar je woont. Vier stappen, kant-en-klare prompts, en wat je eruit leert.">
+<link rel="canonical" href="https://asklien.ai/gemeente-test/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vraag AI wat het over jouw gemeente weet">
+<meta property="og:description" content="Je gaat eerst lachen, en dan schrik je. De simpelste test om hallucinaties te leren herkennen.">
+<meta property="og:url" content="https://asklien.ai/gemeente-test/">
+<meta property="og:image" content="https://asklien.ai/media/foto/hero.jpg">
+<meta property="og:site_name" content="AskLien.ai">
+<meta property="og:locale" content="nl_BE">
+<meta property="article:published_time" content="2026-09-02">
+<meta property="article:modified_time" content="2026-09-02">
+<meta name="author" content="Lien Pletinckx">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Vraag AI wat het over jouw gemeente weet",
+  "description": "De snelste manier om te zien hoe AI dingen verzint: vraag ChatGPT naar de plek waar je woont. Vier stappen, kant-en-klare prompts, en wat je eruit leert.",
+  "inLanguage": "nl-BE",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://asklien.ai/gemeente-test/" },
+  "url": "https://asklien.ai/gemeente-test/",
+  "image": "https://asklien.ai/media/foto/hero.jpg",
+  "author": { "@type": "Person", "name": "Lien Pletinckx", "url": "https://asklien.ai/", "jobTitle": "AI-coach en consultant", "sameAs": ["https://www.instagram.com/asklien.ai/"] },
+  "publisher": { "@type": "Organization", "name": "AskLien.ai", "url": "https://asklien.ai/", "logo": { "@type": "ImageObject", "url": "https://asklien.ai/media/foto/hero.jpg" } },
+  "datePublished": "2026-09-02",
+  "dateModified": "2026-09-02",
+  "keywords": "AI hallucinaties, ChatGPT verzint, klopt ChatGPT, AI fact-checken, prompts Nederlands",
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asklien.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Gratis gidsen", "item": "https://asklien.ai/gidsen/" },
+    { "@type": "ListItem", "position": 3, "name": "De gemeentetest", "item": "https://asklien.ai/gemeente-test/" }
+  ]
+}
+</script>
+<style>
+  .kaart { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:22px; }
+  .kaart h2 { margin:0 0 14px; font-family:'Archivo'; font-weight:800; font-size:26px; letter-spacing:-1.2px; line-height:1.12; }
+  .kaart h3 { margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:21px; letter-spacing:-.6px; }
+  .kaart p { font-size:16px; line-height:1.8; color:#57534a; }
+  .nr { font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; color:#ff4d24; line-height:1; margin-bottom:12px; }
+  .prompt { position:relative; background:#f6f1e7; border-left:3px solid #ff4d24; border-radius:10px; padding:24px; margin:18px 0 0; }
+  .prompt pre { margin:0; white-space:pre-wrap; word-break:break-word; font-family:'Schibsted Grotesk',sans-serif; font-size:15px; line-height:1.7; color:#1c1a1f; }
+  .kopieer { position:absolute; top:14px; right:14px; background:#1c1a1f; color:#f6f1e7; border:none; border-radius:7px; padding:7px 13px; font-family:inherit; font-weight:600; font-size:12px; cursor:pointer; }
+  .kopieer.ok { background:#ff4d24; }
+  .mening { background:#1c1a1f; color:#f6f1e7; border-radius:16px; padding:26px 28px; margin:18px 0 0; }
+  .mening .kop { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:10px; }
+  .mening p { margin:0 0 12px; font-size:15px; line-height:1.75; color:#b3ab9e; }
+  .mening p:last-child { margin-bottom:0; }
+  .mening strong { color:#f6f1e7; }
+  .let { background:#fff8ef; border:2px dashed #e6ddcb; border-radius:12px; padding:18px 22px; margin:16px 0 0; }
+  .let p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+  .let strong { color:#1c1a1f; }
+  .lessen { margin:16px 0 0; padding:0; list-style:none; }
+  .lessen li { position:relative; padding-left:26px; margin-bottom:12px; font-size:16px; line-height:1.75; color:#57534a; }
+  .lessen li::before { content:"✦"; position:absolute; left:0; top:0; color:#ff4d24; }
+  .lessen strong { color:#1c1a1f; }
+  .nieuwsblok { background:#1c1a1f; border-radius:20px; padding:36px 40px; margin-bottom:22px; }
+  .nieuwsblok .kop { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff7a3d; margin-bottom:10px; }
+  .nieuwsblok h2 { margin:0 0 24px; font-family:'Archivo'; font-weight:900; font-size:28px; letter-spacing:-1.4px; color:#f6f1e7; }
+  .nieuwsblok h3 { margin:0 0 8px; font-family:'Archivo'; font-weight:800; font-size:19px; letter-spacing:-.5px; color:#f6f1e7; }
+  .nieuwsblok .item { border-bottom:1px solid #3a3640; padding-bottom:22px; margin-bottom:22px; }
+  .nieuwsblok .item:last-child { border-bottom:0; padding-bottom:0; margin-bottom:0; }
+  .nieuwsblok p { margin:0 0 8px; font-size:15px; line-height:1.75; color:#b3ab9e; }
+  .nieuwsblok strong { color:#f6f1e7; }
+  .nieuwsblok .bron { font-size:13px; color:#8a8378; margin:0; }
+  .nieuwsblok .bron a { color:#8a8378; text-decoration:underline; }
+  @media (max-width:640px){ .kaart,.nieuwsblok{ padding:26px 24px; } .prompt{ padding:20px 18px; } .kopieer{ position:static; display:inline-block; margin-bottom:12px; } }
+</style>
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+      <a href="/gidsen/">Alle gidsen</a>
+      <a href="/">Terug naar de site</a>
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">De challenge</a>
+    </div>
+  </div>
+</nav>
+
+<header style="max-width:860px; margin:0 auto; padding:72px 32px 8px;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">GRATIS GIDS · 10 MINUTEN</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Vraag AI wat het over jouw gemeente weet<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Je gaat eerst lachen. En dan schrik je een beetje. Want dit is de snelste manier om te zien hoe AI dingen verzint, met iets waar jij toevallig de expert van bent.</p>
+  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 2 september 2026 · bijgewerkt op 2 september 2026</div>
+</header>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;">
+
+  <div data-reveal class="kaart">
+    <h2>Waarom net je eigen dorp?</h2>
+    <p style="margin:0 0 14px;">Iedereen zegt tegen je dat AI dingen uitvindt. Alleen: hoe zie je dat, als je de stof zelf niet kent? Vraag je iets over boekhouding, over een subsidie of over wetgeving, dan klinkt <strong style="color:#1c1a1f;">elk</strong> antwoord even zelfzeker. Je hebt geen enkele manier om te weten wat klopt.</p>
+    <p style="margin:0 0 14px;">Behalve als je het vraagt over de plek waar je woont. Daar ken jij elke straat, elke frituur, en welke winkel vorig jaar dichtging. Jij bent de fact-checker.</p>
+    <p style="margin:0;">En dan zie je ineens precies hoe het beest werkt. Niet in theorie, wel met je eigen ogen.</p>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>De test, in vier stappen</h2>
+    <p style="margin:0 0 8px;">Doe dit in een <strong style="color:#1c1a1f;">nieuwe chat</strong>, zonder bestanden en met websearch uit. Je wil weten wat het model uit zichzelf denkt te weten, niet wat het net heeft opgezocht. Werkt in ChatGPT, Claude en Gemini.</p>
+
+    <div style="border-top:1px solid #e6ddcb; margin-top:26px; padding-top:26px;">
+      <div class="nr">1</div>
+      <h3>Vraag het open</h3>
+      <p style="margin:0;">Nog geen sturing, nog geen hulp. Je wil zien waar het uit zichzelf naartoe gaat.</p>
+      <div class="prompt"><button class="kopieer" type="button">Kopieer</button><pre>Vertel me alles wat je weet over [jouw gemeente] in België. De geschiedenis, wat er te doen is, bekende inwoners, lokale gebruiken en waar de gemeente om bekendstaat.</pre></div>
+    </div>
+
+    <div style="border-top:1px solid #e6ddcb; margin-top:26px; padding-top:26px;">
+      <div class="nr">2</div>
+      <h3>Lees met een stift in je hand</h3>
+      <p style="margin:0;">Zet drie kleuren naast wat er staat: <strong style="color:#1c1a1f;">klopt</strong>, <strong style="color:#1c1a1f;">klopt half</strong>, <strong style="color:#1c1a1f;">totaal verzonnen</strong>. Die middelste categorie is de interessantste, en meteen ook de gevaarlijkste: een echt gebouw met een verkeerd jaartal, een echte traditie in de verkeerde maand.</p>
+    </div>
+
+    <div style="border-top:1px solid #e6ddcb; margin-top:26px; padding-top:26px;">
+      <div class="nr">3</div>
+      <h3>Vraag naar iets wat niet bestaat</h3>
+      <p style="margin:0;">Dit is het moment waarop het kwartje valt. Verzin een festival, een monument of een traditie die er nooit geweest is, en vraag ernaar alsof het echt is.</p>
+      <div class="prompt"><button class="kopieer" type="button">Kopieer</button><pre>Vertel me meer over de jaarlijkse peperkoekstoet in [jouw gemeente]. Sinds wanneer bestaat dat en hoe verloopt die dag?</pre></div>
+      <p style="margin:16px 0 0;">Grote kans dat je een sfeervol verhaal terugkrijgt over een traditie die nooit bestaan heeft. Mét jaartal, mét route. <strong style="color:#1c1a1f;">Dát is een hallucinatie, en zo ziet ze eruit: niet als een fout, wel als een vlot antwoord.</strong></p>
+    </div>
+
+    <div style="border-top:1px solid #e6ddcb; margin-top:26px; padding-top:26px;">
+      <div class="nr">4</div>
+      <h3>Zet het terug op zijn plaats</h3>
+      <p style="margin:0;">En nu de belangrijkste vraag van de hele gids. Deze mag je vanaf vandaag overal gebruiken, ook als het niet over je gemeente gaat.</p>
+      <div class="prompt"><button class="kopieer" type="button">Kopieer</button><pre>Ga terug over je vorige antwoorden. Welke delen weet je zeker, welke heb je afgeleid, en welke heb je ingevuld omdat het aannemelijk klonk? Zeg het per punt.</pre></div>
+      <p style="margin:16px 0 0;">Meestal krijg je nu wél de eerlijke versie. Niet omdat het model iets nieuws opzoekt, maar omdat je het dwingt zijn eigen zekerheid te wegen in plaats van door te vertellen.</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Wat je hier eigenlijk leert</h2>
+    <p style="margin:0;">Dit is geen spelletje. Wat je net zag met je eigen dorp, gebeurt op precies dezelfde manier als je vraagt naar een cijfer, een premie of een wet — alleen kan je het daar niet zien.</p>
+    <ul class="lessen">
+      <li><strong>Zelfzekerheid zegt niets.</strong> Het verzonnen festival klonk even overtuigend als de kerk die er echt staat. De toon is altijd dezelfde.</li>
+      <li><strong>Hoe kleiner het onderwerp, hoe meer er ingevuld wordt.</strong> Over Brussel klopt bijna alles. Over een dorp van vierduizend inwoners begint het te dichten.</li>
+      <li><strong>Een suggestieve vraag krijgt een suggestief antwoord.</strong> Vraag je naar de peperkoekstoet, dan is de kans groot dat je er een krijgt. Vraag liever: <em>bestaat er zoiets als…?</em></li>
+      <li><strong>Doorvragen werkt beter dan corrigeren.</strong> "Wat weet je zeker en wat heb je ingevuld" levert meer op dan "dat klopt niet".</li>
+    </ul>
+    <div class="mening">
+      <div class="kop">EERLIJK GEZEGD</div>
+      <p>Ik gebruik AI de hele dag door en ik betrap er mezelf nog altijd op dat ik een vlot antwoord gewoon geloof. Niet omdat ik naïef ben, wel omdat het er goed uitziet.</p>
+      <p><strong>Deze test doen met je eigen gemeente is het enige dat dat reflexje bij mij echt heeft bijgesteld.</strong> Daarom staat hij hier, en daarom mag hij grappig zijn: iets waar je om gelachen hebt, onthoud je.</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Nog drie om mee door te gaan</h2>
+    <p style="margin:0;">Dezelfde truc, ander onderwerp. Telkens iets waar jij de expert van bent, zodat je zelf kan nakijken.</p>
+    <ul class="lessen">
+      <li><strong>Je eigen job.</strong> "Beschrijf een gewone werkdag van een [jouw beroep] in België." Je ziet meteen wat er uit Amerikaanse bronnen komt.</li>
+      <li><strong>Je eigen zaak.</strong> "Wat weet je over [jouw bedrijfsnaam]?" Confronterend, want dit is wat een klant te zien krijgt die naar jou vraagt.</li>
+      <li><strong>Je eigen streek.</strong> Vraag naar typische uitdrukkingen uit je dialect. Het zelfvertrouwen waarmee er iets verzonnen wordt, is onbetaalbaar.</li>
+    </ul>
+    <div class="let"><p><strong>Doe de test en laat me weten wat het over jouw gemeente verzon.</strong> Stuur het door via Instagram, ik verzamel de beste.</p></div>
+  </div>
+
+  <div data-reveal class="nieuwsblok">
+    <div class="kop">AI-NIEUWS</div>
+    <h2>Wat er verder gebeurde</h2>
+
+    <div class="item">
+      <h3>Er zit reclame in ChatGPT, en jij kan er ook in</h3>
+      <p>Sinds 24 augustus zie je in België advertenties in ChatGPT, enkel op het gratis abonnement en op Go. Klein: een logootje met één regel tekst, onder het antwoord. <strong>Interessanter is de andere kant: dit is een advertentiekanaal dat pas open staat en waar in Vlaanderen bijna niemand op zit.</strong> Registreren kan op ads.openai.com, zonder minimumbudget.</p>
+      <p class="bron">Lees de volledige gids: <a href="/adverteren-in-chatgpt/">Adverteren in ChatGPT</a></p>
+    </div>
+
+    <div class="item">
+      <h3>Claude Fable 5.1: het interessantste cijfer staat onderaan</h3>
+      <p>De benchmarks springen omhoog, maar wat voor jou telt staat in de kleine lettertjes: cache reads worden 75 procent goedkoper. In mensentaal: een automatisatie die vorig jaar te duur was om te laten draaien, is dat nu misschien niet meer. <strong>Geldt enkel via de API, bijvoorbeeld in Make. Je maandabonnement verandert niet.</strong></p>
+      <p class="bron">Lees de volledige gids: <a href="/fable-5-1/">Waarvoor gebruik je Fable 5.1?</a></p>
+    </div>
+
+    <div class="item">
+      <h3>Apple Intelligence in het Nederlands, met een maar</h3>
+      <p>Nederlands zit bij de ondersteunde talen van de nieuwe Apple Intelligence, die dit najaar met iOS 27 komt. Foto's uitbreiden zonder croppen, Safari die je verwittigt als een prijs zakt, shortcuts bouwen door gewoon te beschrijven wat je wil. <strong>De maar: de nieuwe Siri komt voorlopig niet naar iPhone en iPad in de EU</strong>, en de suggesties in Mail en Berichten werken enkel in het Engels.</p>
+      <p class="bron">Bron: <a href="https://www.apple.com/newsroom/" target="_blank" rel="noopener">Apple Newsroom</a></p>
+    </div>
+  </div>
+
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:20px 32px 40px;">
+  <div data-reveal style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); color:#fff; border-radius:24px; padding:48px 44px; text-align:center;">
+    <h2 style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px; line-height:1.1; color:#fff;">Dit was één test. Er zijn er tien<span style="color:#1c1a1f;">.</span></h2>
+    <p style="margin:0 auto 26px; font-size:16px; line-height:1.7; color:#ffe4da; max-width:540px;">In de challenge Claude in 10 dagen doe je elke dag één ding dat je meteen kan gebruiken. Geen theorie, wel je eigen werk dat korter wordt, in mensentaal en op jouw tempo.</p>
+    <div class="cta-row" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="/challenge/" style="background:#1c1a1f; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px; display:inline-block;">Bekijk de challenge →</a>
+      <a href="https://hub.asklien.ai" style="border:2px solid #fff; color:#fff; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px; display:inline-block;">Gratis naar de Hub</a>
+    </div>
+  </div>
+</section>
+
+<section data-kruislinks style="max-width:1000px; margin:0 auto; padding:0 32px 72px;"><h2 style="font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-1px; margin:0 0 18px;">Andere gratis gidsen</h2><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;"><a href="/9-dingen-claude-doet-gratis/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">9 dingen die Claude gratis doet</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Negen taken waar je nu voor betaalt, met kant-en-klare prompts.</div></a><a href="/prompten-claude-5/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Beter prompten in Claude</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Drie dingen die veranderd zijn aan goed prompten, plus de checklist.</div></a><a href="/watermerk-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Het watermerk in Claude</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wat dat onzichtbare watermerk is, en hoe je het weghaalt.</div></a><a href="/fable-5-1/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Waarvoor gebruik je Fable 5.1?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wanneer je het zwaarste model inzet, en wanneer niet.</div></a><a href="/ai-in-jouw-sector/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">AI in jouw sector volgens de data</div><div style="font-size:14px; line-height:1.6; color:#57534a;">De gratis dataset die toont welke beroepen AI het meest gebruiken.</div></a><a href="/adverteren-in-chatgpt/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Adverteren in ChatGPT</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Zelf campagnes opzetten: hoe het werkt, wat het kost, stappenplan.</div></a></div><p style="margin:18px 0 0; font-size:15px;"><a href="/gidsen/" style="font-weight:600; color:#ff4d24;">Bekijk alle gidsen →</a></p></section>
+
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="/gidsen/">Alle gidsen</a><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/privacy/">Privacy en cookies</a> · <a href="#cookievoorkeuren">Cookievoorkeuren</a></div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=3"></script>
+<script>
+document.querySelectorAll('.kopieer').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = b.parentElement.querySelector('pre').innerText;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent = 'Gekopieerd ✓'; b.classList.add('ok');
+      setTimeout(function(){ b.textContent='Kopieer'; b.classList.remove('ok'); }, 1800);
+    });
+  });
+});
+</script>
+<script src="/js/analytics.js?v=3" defer></script>
+<script src="/js/menu.js?v=3" defer></script>
+</body>
+</html>
