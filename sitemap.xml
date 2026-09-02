@@ -49,6 +49,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://asklien.ai/fable-5-1/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://asklien.ai/adverteren-in-chatgpt/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://asklien.ai/chatgpt-advertenties/</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
