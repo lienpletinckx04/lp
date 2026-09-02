@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fable 5.1: waarvoor je het wél gebruikt (en waarvoor niet) — AskLien.ai</title>
+<meta name="description" content="Fable 5.1 is net uit en het is het zwaarste model dat Claude heeft. Wat het is, wanneer je het inzet en wanneer niet, plus vijf taken met kant-en-klare prompts.">
+<link rel="canonical" href="https://asklien.ai/fable-5-1/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fable 5.1: waarvoor je het wél gebruikt (en waarvoor niet)">
+<meta property="og:description" content="Vijf taken waar het zwaarste model van Claude echt het verschil maakt, met de prompts erbij.">
+<meta property="og:url" content="https://asklien.ai/fable-5-1/">
+<meta property="og:image" content="https://asklien.ai/media/foto/hero.jpg">
+<meta property="og:site_name" content="AskLien.ai">
+<meta property="og:locale" content="nl_BE">
+<meta property="article:published_time" content="2026-09-02">
+<meta property="article:modified_time" content="2026-09-02">
+<meta name="author" content="Lien Pletinckx">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Fable 5.1: waarvoor je het wél gebruikt (en waarvoor niet)",
+  "description": "Fable 5.1 is net uit en het is het zwaarste model dat Claude heeft. Wat het is, wanneer je het inzet en wanneer niet, plus vijf taken met kant-en-klare prompts.",
+  "inLanguage": "nl-BE",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://asklien.ai/fable-5-1/" },
+  "url": "https://asklien.ai/fable-5-1/",
+  "image": "https://asklien.ai/media/foto/hero.jpg",
+  "author": { "@type": "Person", "name": "Lien Pletinckx", "url": "https://asklien.ai/", "jobTitle": "AI-coach en consultant", "sameAs": ["https://www.instagram.com/asklien.ai/"] },
+  "publisher": { "@type": "Organization", "name": "AskLien.ai", "url": "https://asklien.ai/", "logo": { "@type": "ImageObject", "url": "https://asklien.ai/media/foto/hero.jpg" } },
+  "datePublished": "2026-09-02",
+  "dateModified": "2026-09-02",
+  "keywords": "Fable 5.1, Claude modellen, welk Claude model kiezen, prompts voor ondernemers, Claude Max",
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asklien.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Gratis gidsen", "item": "https://asklien.ai/gidsen/" },
+    { "@type": "ListItem", "position": 3, "name": "Fable 5.1", "item": "https://asklien.ai/fable-5-1/" }
+  ]
+}
+</script>
+<style>
+  .kaart { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:22px; }
+  .kaart h2 { margin:0 0 14px; font-family:'Archivo'; font-weight:800; font-size:26px; letter-spacing:-1.2px; line-height:1.12; }
+  .kaart h3 { margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:21px; letter-spacing:-.6px; }
+  .kaart p { font-size:16px; line-height:1.8; color:#57534a; }
+  .nr { font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; color:#ff4d24; line-height:1; margin-bottom:12px; }
+  .prompt { position:relative; background:#f6f1e7; border-left:3px solid #ff4d24; border-radius:10px; padding:24px; margin:18px 0 0; }
+  .prompt pre { margin:0; white-space:pre-wrap; word-break:break-word; font-family:'Schibsted Grotesk',sans-serif; font-size:15px; line-height:1.7; color:#1c1a1f; }
+  .kopieer { position:absolute; top:14px; right:14px; background:#1c1a1f; color:#f6f1e7; border:none; border-radius:7px; padding:7px 13px; font-family:inherit; font-weight:600; font-size:12px; cursor:pointer; }
+  .kopieer.ok { background:#ff4d24; }
+  .mening { background:#1c1a1f; color:#f6f1e7; border-radius:16px; padding:26px 28px; margin:18px 0 0; }
+  .mening .kop { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:10px; }
+  .mening p { margin:0 0 12px; font-size:15px; line-height:1.75; color:#b3ab9e; }
+  .mening p:last-child { margin-bottom:0; }
+  .mening strong { color:#f6f1e7; }
+  .let { background:#fff8ef; border:2px dashed #e6ddcb; border-radius:12px; padding:18px 22px; margin:16px 0 0; }
+  .let p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+  .let strong { color:#1c1a1f; }
+  .duo { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:20px; }
+  @media (max-width:760px){ .duo { grid-template-columns:1fr; } }
+  .duo .vak { border-radius:16px; padding:26px 24px; }
+  .duo .ja { background:#fff; border:2px solid #ff4d24; }
+  .duo .nee { background:#fff; }
+  .duo h3 { font-size:18px; }
+  .duo ul { margin:0; padding-left:20px; }
+  .duo li { font-size:15px; line-height:1.7; color:#57534a; margin-bottom:8px; }
+  @media (max-width:640px){ .kaart{ padding:26px 24px; } .prompt{ padding:20px 18px; } .kopieer{ position:static; display:inline-block; margin-bottom:12px; } }
+</style>
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+      <a href="/gidsen/">Alle gidsen</a>
+      <a href="/">Terug naar de site</a>
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">De challenge</a>
+    </div>
+  </div>
+</nav>
+
+<header style="max-width:860px; margin:0 auto; padding:72px 32px 8px;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">GRATIS GIDS · NET UIT</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Fable 5.1 is er. Waarvoor gebruik je het<span style="color:#ff4d24;">?</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Het zwaarste model dat Claude vandaag heeft. Wat dat concreet betekent, wanneer je het inzet en wanneer je beter iets lichters neemt, en vijf taken waar het echt het verschil maakt. Met de prompts erbij om te kopiëren.</p>
+  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 2 september 2026 · bijgewerkt op 2 september 2026</div>
+</header>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;">
+
+  <div data-reveal class="kaart">
+    <h2>Even kaderen: wat is Fable eigenlijk?</h2>
+    <p style="margin:0 0 14px;">Claude is niet één ding. Het is een familie modellen, en jij kiest er zelf één bovenaan je gesprek. Denk aan de versnellingen op een fiets: dezelfde fiets, ander soort werk.</p>
+    <p style="margin:0 0 14px;">Grofweg zijn er drie soorten. <strong style="color:#1c1a1f;">Haiku</strong> is de snelle: kort, licht, ideaal voor eenvoudige dingen. <strong style="color:#1c1a1f;">Sonnet</strong> is de werkpaard-versie waar de meesten het grootste deel van de dag mee werken. En daarboven staan de zware modellen, <strong style="color:#1c1a1f;">Opus</strong> en nu <strong style="color:#1c1a1f;">Fable 5.1</strong>: die nemen meer tijd, denken verder door en houden veel meer informatie tegelijk overzichtelijk.</p>
+    <p style="margin:0;">Fable 5.1 is het nieuwste in die zwaarste categorie. Je merkt het verschil niet als je vraagt om een mailtje te herschrijven. Je merkt het wél als je iets voorlegt waar je zelf een halve dag over zou doen.</p>
+
+    <div class="let"><p><strong>Eén ding wil ik eerlijk zeggen:</strong> deze gids gaat over <em>waarvoor</em> je het gebruikt, niet over technische details of exacte limieten. Hoeveel je ervan mag gebruiken hangt af van je abonnement en die regels veranderen regelmatig. Kijk dat na in je eigen Claude-instellingen in plaats van af te gaan op wat iemand op internet schrijft, ik incluis.</p></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Wanneer wel, wanneer niet</h2>
+    <p style="margin:0 0 4px;">Dit is de hele gids in één beslissing. Het zware model inzetten voor licht werk is niet fout, het is gewoon zonde.</p>
+    <div class="duo">
+      <div class="vak ja">
+        <h3 style="color:#ff4d24;">Wél Fable</h3>
+        <ul>
+          <li>Veel informatie tegelijk: je hele website, een jaar cijfers, tientallen documenten</li>
+          <li>Iets waar je zelf al weken op vastzit</li>
+          <li>Werk waar het resultaat maanden meegaat</li>
+          <li>Als je tegenspraak wil in plaats van bevestiging</li>
+        </ul>
+      </div>
+      <div class="vak nee">
+        <h3>Liever iets lichters</h3>
+        <ul>
+          <li>Een mail herschrijven of inkorten</li>
+          <li>Snel iets opzoeken of samenvatten</li>
+          <li>Een tekst vertalen of nalezen op spelling</li>
+          <li>Alles waar je binnen de minuut antwoord op wil</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mening">
+      <div class="kop">WAT IK ERVAN DENK</div>
+      <p>De reflex die ik het vaakst zie: mensen zetten het zwaarste model aan en laten het staan, voor alles. Dan verbruik je je ruimte aan mails en samenvattingen, en zit je zonder op het moment dat je het echt nodig hebt.</p>
+      <p><strong>Mijn vuistregel: gebruik het zware model voor denkwerk, het lichte voor typwerk.</strong> Iets meer dan de helft van mijn dag zit ik in het lichte. Fable open ik bewust, voor één ding, met alles wat ik heb erbij.</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Wat maakt het verschil in de praktijk</h2>
+    <p style="margin:0 0 14px;"><strong style="color:#1c1a1f;">Het overziet meer tegelijk.</strong> Plak je je volledige website, je prijzen en je klantenmails in één gesprek, dan legt het daar verbanden tussen. Een lichter model verliest ergens onderweg de draad en gaat generiek antwoorden.</p>
+    <p style="margin:0 0 14px;"><strong style="color:#1c1a1f;">Het gokt minder.</strong> Bij ingewikkelde vragen zie je een lichter model soms een antwoord geven dat plausibel klinkt maar niet klopt. Fable stelt eerder een wedervraag of zegt wat het niet weet.</p>
+    <p style="margin:0;"><strong style="color:#1c1a1f;">Het houdt vol.</strong> Vraag je om iets écht uit te werken, dan krijg je ook iets uitgewerkts, niet drie bullets en een aanbod om verder te gaan.</p>
+  </div>
+
+  <div data-reveal class="kaart" style="background:#1c1a1f; color:#f6f1e7;">
+    <h2 style="color:#f6f1e7;">Eén gouden regel voor je begint</h2>
+    <p style="margin:0 0 14px; color:#b3ab9e;"><strong style="color:#f6f1e7;">Geef het een uitkomst, geen stappenlijst.</strong> Zeg wat je wil bereiken en waarom, en laat het zelf de weg kiezen. Bij lichtere modellen loont het om stap voor stap voor te kauwen. Hier werkt dat averechts: je legt het model een aanpak op die vaak minder goed is dan wat het zelf zou bedenken.</p>
+    <p style="margin:0; color:#b3ab9e;">En geef het zo veel mogelijk echte informatie. Plak volledige teksten, cijfers en voorbeelden. Vaag erin blijft vaag eruit, ook bij het beste model ter wereld.</p>
+  </div>
+
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:14px 32px 0;" id="taken">
+  <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:clamp(28px,4.5vw,42px); letter-spacing:-2px; line-height:1.05;">Vijf taken die het waard zijn<span style="color:#ff4d24;">.</span></h2>
+  <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#57534a; max-width:700px;">Niet willekeurig gekozen. Het zijn taken die het soort denkwerk vragen waar lichtere modellen op afhaken, waarvan je het resultaat maanden gebruikt, en die je in één goed gesprek rond krijgt.</p>
+
+  <div data-reveal class="kaart">
+    <div class="nr">01</div>
+    <h3>Laat je eigen werkwijze op papier zetten</h3>
+    <p style="margin:0;">Dit is de slimste zet van allemaal, en tegelijk de minst voor de hand liggende. Je laat Fable draaiboeken schrijven van hoe jij werkt: je offertes, je klantcommunicatie, je content. Die draaiboeken geef je daarna aan een lichter model, dat er plots bijna even goed mee wordt. Je bewaart als het ware het denkwerk van het zware model in tekstvorm, en gebruikt het daarna elke dag opnieuw zonder er nog ruimte aan te verliezen.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Je bent een ervaren rechterhand die mijn zaak door en door kent en volgende week vertrekt. Voor je weggaat schrijf je draaiboeken, zodat je opvolger meteen op jouw niveau werkt.
+
+Mijn zaak: [beschrijf je zaak, je klanten en je aanbod]
+Terugkerende taken: [bv. offertes schrijven, Instagram content, klantmails, prijszetting]
+
+Stel me eerst maximaal vijf vragen om mijn manier van werken scherp te krijgen. Schrijf daarna per taak een draaiboek: wanneer gebruik je het, welke stappen, welke toon, wat zijn de valkuilen, en een voorbeeld van een goed en een slecht resultaat. Schrijf het zo dat een ander AI-model het letterlijk kan volgen.</pre></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">02</div>
+    <h3>Licht je zaak strategisch door</h3>
+    <p style="margin:0;">Het soort oefening waar je normaal een dure adviseur voor betaalt. Geef het je cijfers, je aanbod en je twijfels, en laat het je businessmodel uitdagen. Belangrijk: vraag er expliciet om waar je geld laat liggen. Doe je dat niet, dan krijg je een beleefde samenvatting van wat je al wist.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Gedraag je als een kritische businesspartner die niets te verliezen heeft. Geen complimenten, geen voorzichtigheid.
+
+Mijn zaak: [omschrijving]
+Mijn aanbod en prijzen: [lijst]
+Omzet en marges, grofweg: [cijfers of schatting]
+Waar ik van wakker lig: [je grootste twijfel]
+
+Analyseer: waar zit mijn echte winst, welk deel van mijn aanbod ondermijnt de rest, welke aanname van mij klopt waarschijnlijk niet, en wat zou jij als eerste schrappen of duurder maken? Eindig met de drie beslissingen die de komende twaalf maanden het meest opbrengen, in volgorde van impact.</pre></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">03</div>
+    <h3>Pak dat ene probleem aan dat al maanden blijft liggen</h3>
+    <p style="margin:0;">Iedereen heeft er zo één. De prijszetting die niet klopt, de dienst die je wil lanceren maar niet rond krijgt, het proces dat elke week uren opeet. Te groot voor een snelle vraag tussendoor, en precies daarom blijft het liggen. Geef het alles wat je hebt, ook waarom je eerdere pogingen mislukten. Daar zit meestal de echte blokkade.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Ik zit al maanden vast op dit probleem: [beschrijf het zo volledig mogelijk]
+
+Wat ik al probeerde: [lijst]
+Waarom het telkens strandde: [je eerlijke inschatting]
+Wat een oplossing mij waard zou zijn: [tijd, geld of rust]
+
+Neem je tijd. Ontleed eerst waarom mijn eerdere pogingen faalden, want daar zit meestal de echte blokkade. Kom dan met een aanpak die daar rekening mee houdt, uitgewerkt tot op het niveau dat ik er morgen aan kan beginnen. Mis je informatie, vraag er dan naar voor je begint.</pre></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">04</div>
+    <h3>Laat je website of aanbod genadeloos nalezen</h3>
+    <p style="margin:0;">Hier komt de sterkte van veel context samenkomen echt tot zijn recht: je hele website, je prijzen, je socials, je doelgroep. Het ziet verbanden die jij niet meer ziet omdat je er te dicht op zit. Plak gerust volledige pagina's in het gesprek, hoe meer hoe beter.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Je bent tegelijk een potentiële klant die twijfelt, én een conversie-expert. Twee brillen tegelijk.
+
+Mijn doelgroep: [wie moet er kopen]
+Wat ik wil dat ze doen: [boeken, kopen, inschrijven]
+Hieronder plak ik mijn volledige websitetekst en mijn prijzen.
+
+[plak alles]
+
+Doorloop het eerst als twijfelende klant: waar haak je af, wat begrijp je niet, wat mis je om te beslissen? Geef daarna als expert de tien concreetste verbeteringen, gerangschikt op impact, met telkens de herschreven versie erbij zodat ik ze meteen kan doorvoeren.</pre></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">05</div>
+    <h3>Bouw het systeem achter je content</h3>
+    <p style="margin:0;">Laat geen dertig posts genereren, want die klinken na week één al sleets. Laat wél het systeem eronder ontwerpen: je pijlers, je vaste formats, je eigen stem op papier. Daarna maakt élk model content die klinkt als jij, ook het lichtste.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Ik wil geen losse posts maar een contentsysteem dat maanden meegaat.
+
+Mijn zaak en doelgroep: [omschrijving]
+Waar klanten me nu al voor bedanken of over aanspreken: [lijst]
+Content die eerder goed werkte: [voorbeelden of links]
+Hoe ik klink als ik enthousiast vertel: [plak een stuk eigen tekst, bv. een mail of een uitgeschreven spraakbericht]
+
+Ontwerp: drie tot vijf contentpijlers met de reden erachter, per pijler twee vaste formats die ik kan herhalen, en een stijlgids van mijn stem gebaseerd op mijn eigen tekst. Sluit af met een checklist waarmee ik elke toekomstige post kan toetsen: klinkt dit als mij, en dient het mijn zaak?</pre></div>
+
+    <div class="mening">
+      <div class="kop">WAT IK ERVAN DENK</div>
+      <p>Merk je het patroon? Vier van de vijf leveren <strong>een document op, geen antwoord.</strong> Een draaiboek, een analyse, een stijlgids. Dat is bewust.</p>
+      <p>Een gesprek met het zwaarste model is voorbij zodra je het tabblad sluit. Een draaiboek dat eruit komt, gebruik je nog in januari. <strong>Zorg dus dat elke Fable-sessie iets oplevert dat blijft bestaan</strong>, en sla dat op als document in een Project. Dat is het verschil tussen een dure vraag en een investering.</p>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:20px 32px 40px;">
+  <div data-reveal style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); color:#fff; border-radius:24px; padding:48px 44px; text-align:center;">
+    <h2 style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px; line-height:1.1; color:#fff;">Wil je écht leren werken met Claude<span style="color:#1c1a1f;">?</span></h2>
+    <p style="margin:0 auto 26px; font-size:16px; line-height:1.7; color:#ffe4da; max-width:540px;">Deze vijf taken zijn een begin. In de challenge Claude in 10 dagen leer je stap voor stap hoe je Claude elke dag voor je laat werken, in mensentaal en op het tempo van je zaak.</p>
+    <div class="cta-row" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="/challenge/" style="background:#1c1a1f; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px; display:inline-block;">Bekijk de challenge →</a>
+      <a href="https://hub.asklien.ai" style="border:2px solid #fff; color:#fff; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px; display:inline-block;">Gratis naar de Hub</a>
+    </div>
+  </div>
+</section>
+
+
+<section data-kruislinks style="max-width:1000px; margin:0 auto; padding:0 32px 72px;"><h2 style="font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-1px; margin:0 0 18px;">Andere gratis gidsen</h2><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;"><a href="/9-dingen-claude-doet-gratis/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">9 dingen die Claude gratis doet</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Negen taken waar je nu voor betaalt, met kant-en-klare prompts.</div></a><a href="/prompten-claude-5/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Beter prompten in Claude</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Drie dingen die veranderd zijn aan goed prompten, plus de checklist.</div></a><a href="/watermerk-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Het watermerk in Claude</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wat dat onzichtbare watermerk is, en hoe je het weghaalt.</div></a><a href="/ai-in-jouw-sector/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">AI in jouw sector volgens de data</div><div style="font-size:14px; line-height:1.6; color:#57534a;">De gratis dataset die toont welke beroepen AI het meest gebruiken.</div></a><a href="/chatgpt-apple-berichten/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">ChatGPT in je Apple Berichten</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Je berichten doorzoeken en beantwoorden, plus het privacystuk.</div></a><a href="/chatgpt-advertenties/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Advertenties in ChatGPT</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wat er verandert voor jou als gebruiker en als je een zaak hebt.</div></a><a href="/adverteren-in-chatgpt/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Adverteren in ChatGPT</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Zelf campagnes opzetten: hoe het werkt, wat het kost, stappenplan.</div></a></div><p style="margin:18px 0 0; font-size:15px;"><a href="/gidsen/" style="font-weight:600; color:#ff4d24;">Bekijk alle gidsen →</a></p></section>
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="/gidsen/">Alle gidsen</a><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/privacy/">Privacy en cookies</a> · <a href="#cookievoorkeuren">Cookievoorkeuren</a></div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=3"></script>
+<script>
+document.querySelectorAll('.kopieer').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = b.parentElement.querySelector('pre').innerText;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent = 'Gekopieerd ✓'; b.classList.add('ok');
+      setTimeout(function(){ b.textContent='Kopieer'; b.classList.remove('ok'); }, 1800);
+    });
+  });
+});
+</script>
+<script src="/js/analytics.js?v=3" defer></script>
+<script src="/js/menu.js?v=3" defer></script>
+</body>
+</html>
