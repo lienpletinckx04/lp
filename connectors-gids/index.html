@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Connectors: laat AI in je mailbox, agenda en documenten kijken, zonder spijt achteraf — AskLien.ai</title>
-<meta name="description" content="Wat een connector is, hoe het werkt in Claude, ChatGPT, Gemini, Copilot, Le Chat en Perplexity, hoe je het toestemmingsscherm leest, de zes regels om er veilig mee om te gaan, en drie prompts om vandaag te proberen.">
+<meta name="description" content="Wat een connector is, hoe het werkt in Claude, ChatGPT, Gemini, Copilot, Le Chat en Perplexity, wat er met je data gebeurt, hoe je het toestemmingsscherm leest, de zes regels om er veilig mee om te gaan, en drie prompts om vandaag te proberen.">
 <link rel="canonical" href="https://asklien.ai/connectors-gids/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Connectors: laat AI in je mailbox, agenda en documenten kijken, zonder spijt achteraf">
@@ -59,7 +59,8 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Is het veilig om AI aan mijn mailbox te koppelen?", "acceptedAnswer": { "@type": "Answer", "text": "Veilig genoeg als je drie dingen doet: begin met leesrechten, zet connectors alleen aan in het gesprek waar je ze nodig hebt, en laat de AI nooit iets versturen of wissen zonder dat jij het eerst ziet. Check ook of je plan je data buiten training houdt." } },
+    { "@type": "Question", "name": "Is het veilig om AI aan mijn mailbox te koppelen?", "acceptedAnswer": { "@type": "Answer", "text": "Even veilig als de rest van wat je online doet, als je drie dingen doet voor je begint: training uitzetten in je privacy-instellingen, alleen leesrechten geven, en alleen officiële koppelingen gebruiken. De AI kopieert je mailbox niet, het leest pas iets als jij een vraag stelt." } },
+    { "@type": "Question", "name": "Wordt mijn data gelekt of gebruikt om te trainen?", "acceptedAnswer": { "@type": "Answer", "text": "Trainen hangt af van één schakelaar in je privacy-instellingen, die bij ChatGPT, Gemini en vaak ook Claude standaard aanstaat. Zet ze uit voor je koppelt. Lekken gebeurt zelden via de grote makers zelf, wel via koppelingen van derden, via een AI met schrijfrechten die een slechte mail leest, en via gesprekken die je zelf deelt." } },
     { "@type": "Question", "name": "Heb ik een betalend plan nodig voor connectors?", "acceptedAnswer": { "@type": "Answer", "text": "Meestal wel. Bij ChatGPT zijn connectors voorbehouden aan betalende plannen. Bij Claude zit het gros op Pro en hoger. Gemini heeft zijn Google-apps ook op gratis accounts. Le Chat en Perplexity hebben een deel gratis, het volle aanbod betalend." } },
     { "@type": "Question", "name": "Wat is het verschil tussen een connector en MCP?", "acceptedAnswer": { "@type": "Answer", "text": "MCP is de technische standaard waarmee AI-modellen met tools praten. Een connector is de kant-en-klare knop die die standaard voor jou gebruikt. Je hoeft MCP niet te begrijpen om connectors te gebruiken, zoals je geen HTTP moet kennen om een website te openen." } },
     { "@type": "Question", "name": "Kan de AI zomaar mails versturen of bestanden wissen?", "acceptedAnswer": { "@type": "Answer", "text": "Alleen als je die rechten gegeven hebt. De meeste modellen vragen expliciet om bevestiging voor ze iets versturen. Toch is de veiligste gewoonte: laat alles wat naar buiten gaat eerst als concept tonen." } },
@@ -134,7 +135,7 @@
   <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Connectors: laat AI in je mailbox, agenda en documenten kijken. Zonder spijt achteraf<span style="color:#ff4d24;">.</span></h1>
   <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Tot nu toe moest je alles zelf in de chat plakken. Met een connector haalt de AI het zelf op. Dat is het moment waarop een chatbot een assistent wordt, en ook het moment waarop je beter weet wat je aan het doen bent. Hier staat hoe het werkt in Claude, ChatGPT, Gemini, Copilot, Le Chat en Perplexity, de zes regels die ik zelf volg, en drie setups die je vanavond kan proberen.</p>
 
-  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 16 september 2026 · leestijd ± 14 min</div>
+  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 16 september 2026 · leestijd ± 18 min</div>
 </header>
 
 <section style="max-width:860px; margin:0 auto; padding:40px 32px 0;">
@@ -245,6 +246,50 @@
   </div>
 </section>
 
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;" id="data">
+  <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:clamp(28px,4.5vw,42px); letter-spacing:-2px; line-height:1.05;">Wat gebeurt er met je data als je toegang geeft<span style="color:#ff4d24;">?</span></h2>
+  <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#57534a; max-width:700px;">In mijn challenge koppelen we in tien dagen je mailbox en agenda aan Claude. Een deelneemster zei: "Ik wacht nog even, ik wil eerst zien of het veilig is." Goede reflex. Dit is het eerlijke antwoord, in vijf stukken.</p>
+
+  <div data-reveal class="kaart">
+    <h3>1. De AI kopieert je mailbox niet</h3>
+    <p>Dat is het grootste misverstand. Als je een connector koppelt, wordt je mailbox niet gedownload naar de servers van de AI. Er gebeurt niets tot jij een vraag stelt. Op dat moment gaat de AI via de koppeling zoeken, haalt het de mails op die het voor die vraag nodig heeft, en die komen in dat ene gesprek terecht. Vraag je niets, dan leest het niets.</p>
+    <p>Eén uitzondering, en die moet je kennen: sommige koppelingen indexeren wél vooraf. Microsoft 365 Copilot op het werk, de "synced" koppelingen bij ChatGPT en de bedrijfskoppelingen bij Le Chat maken een doorzoekbare kopie. Dat staat er dan ook bij. De gewone connectors in Claude, Gemini en Perplexity werken op het moment zelf.</p>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h3>2. Wat opgehaald is, zit in je gesprek</h3>
+    <p>Alles wat de AI las om je vraag te beantwoorden, maakt vanaf dan deel uit van dat gesprek. Het wordt bewaard zoals elke chat: op de servers van de AI-maker, meestal in de Verenigde Staten, bij Le Chat in Europa. Wis je het gesprek, dan is het na de bewaartermijn weg (bij de meeste makers dertig dagen). Heeft je AI een geheugenfunctie aanstaan, dan kan een samenvatting ervan blijven hangen in latere gesprekken. Ook dat kan je uitzetten.</p>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h3>3. Wordt er op getraind? Hangt af van één schakelaar</h3>
+    <p>Dit is de vraag die mensen eigenlijk stellen als ze "is het veilig" vragen. Het antwoord staat in je privacy-instellingen, en het verschilt per model. Stand van zaken op 16 september 2026, check het zelf want het schuift:</p>
+    <div class="regel"><span class="rn" style="font-size:18px; min-width:90px;">Claude</span><p>Instellingen › Privacy › "Help improve Claude". Sinds de beleidswijziging van 2025 moest iedereen kiezen, en bij veel mensen staat het aan. Uit: dertig dagen bewaard, geen training. Aan: tot vijf jaar bewaard. Team, Enterprise en de API trainen nooit.</p></div>
+    <div class="regel"><span class="rn" style="font-size:18px; min-width:90px;">ChatGPT</span><p>Instellingen › Data controls › "Improve the model for everyone". Staat standaard aan op Free, Plus en Pro. Uitzetten kan, en Business en Enterprise trainen nooit.</p></div>
+    <div class="regel"><span class="rn" style="font-size:18px; min-width:90px;">Gemini</span><p>"Gemini Apps Activity" staat standaard aan, en dan kunnen gesprekken door mensen nagelezen worden om het model te verbeteren. Google zegt wel dat wat via de Gmail- en Drive-koppeling binnenkomt niet gebruikt wordt om te trainen. Op een Workspace-account is dat waterdicht, op een persoonlijk account vertrouw je op die zin. Zet Apps Activity uit als je twijfelt.</p></div>
+    <div class="regel"><span class="rn" style="font-size:18px; min-width:90px;">Copilot</span><p>Microsoft 365 Copilot op het werk traint niet op je bedrijfsdata, en volgt de rechten die je al hebt in Microsoft 365. Copilot persoonlijk: kijk in Instellingen › Privacy naar "Model training".</p></div>
+    <div class="regel"><span class="rn" style="font-size:18px; min-width:90px;">Le Chat</span><p>Data in Europa. Op het gratis plan kan Mistral je gesprekken gebruiken om te verbeteren, uit te zetten in Instellingen. Betalende en zakelijke plannen niet.</p></div>
+    <div class="regel"><span class="rn" style="font-size:18px; min-width:90px;">Perplexity</span><p>Instellingen › Account › "AI data retention". Staat aan, en dan mag Perplexity je zoekopdrachten gebruiken. Uitzetten kan.</p></div>
+    <div class="let"><p><strong>De regel:</strong> zet die schakelaar uit vóór je een connector koppelt, niet erna. Wat al in een trainingsronde zat, krijg je er niet meer uit. Voor je eigen mailbox is dat je eigen keuze. Voor mails van klanten is het geen keuze, en dan kies je een plan waar het niet eens kán.</p></div>
+  </div>
+
+  <div data-reveal class="kaart" style="background:#1c1a1f; color:#f6f1e7;">
+    <h3 style="color:#f6f1e7;">4. Wordt het gelekt?</h3>
+    <p style="color:#b3ab9e;">Niet op de manier waarop mensen het zich voorstellen. De kans dat Google of Anthropic je mailbox op straat gooit is klein, kleiner dan bij de gemiddelde app op je telefoon. De echte risico's zien er anders uit, en ik zet ze in volgorde van hoe vaak ik ze zie:</p>
+    <p style="color:#b3ab9e;"><strong style="color:#f6f1e7;">Connectors van derden.</strong> Het grootste. In de directory van Claude of ChatGPT staan honderden koppelingen die niet door Google of Anthropic gemaakt zijn, maar door een bedrijfje dat je niet kent. Je data loopt dan via hún server. Blijf bij de officiële koppelingen (Gmail, Drive, Microsoft 365, Notion, Slack) tot je weet wie er achter een andere zit.</p>
+    <p style="color:#b3ab9e;"><strong style="color:#f6f1e7;">Een AI met schrijfrechten die een slechte mail leest.</strong> Iemand stuurt je een mail met een verborgen instructie, de AI leest ze en voert ze uit. Werkt alleen als de AI mag versturen. Vandaar: eerst lezen, niet doen.</p>
+    <p style="color:#b3ab9e;"><strong style="color:#f6f1e7;">Jijzelf.</strong> Een gesprek delen via een link, of werken in een Team-workspace waar collega's je chats zien. Het gesprek bevat de mails die de AI las.</p>
+    <p style="color:#b3ab9e;"><strong style="color:#f6f1e7;">Menselijke nalezing.</strong> Als training aanstaat, kan een medewerker van de AI-maker een steekproef van je gesprekken lezen. Vandaar punt 3.</p>
+    <p style="color:#b3ab9e;"><strong style="color:#f6f1e7;">Een echt datalek bij de maker.</strong> Het is gebeurd (ChatGPT in 2023 toonde kort titels van andermans chats) en het kan opnieuw gebeuren. Dat is het risico dat je ook loopt met je mailprovider, je boekhoudpakket en je bank. Je beheerst het door niet meer te koppelen dan je gebruikt.</p>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h3>5. Dus, is het veilig?</h3>
+    <p>Mijn antwoord aan die deelneemster was: het is even veilig als de rest van wat je online doet, op voorwaarde dat je drie dingen doet voor je begint. Training uit. Alleen leesrechten. Alleen officiële koppelingen. Doe je die drie, dan is de AI die je mailbox leest niet gevaarlijker dan de mailapp op je telefoon, die ook alles kan zien en ook op een server van iemand anders draait.</p>
+    <p>Wachten "tot het veilig is" heeft trouwens één nadeel: er komt geen moment waarop iemand je dat komt zeggen. Het wordt niet veiliger door te wachten, het wordt veiliger door te weten wat je aanzet. En dat weet je nu.</p>
+  </div>
+</section>
+
 <section style="max-width:860px; margin:0 auto; padding:40px 32px 0;" id="regels">
   <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:clamp(28px,4.5vw,42px); letter-spacing:-2px; line-height:1.05;">De zes regels die ik zelf volg<span style="color:#ff4d24;">.</span></h2>
   <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#57534a; max-width:700px;">Niet omdat connectors gevaarlijk zijn. Wel omdat de meeste fouten die ik bij klanten zie, niet aan de AI liggen maar aan wat er zonder nadenken aangezet werd.</p>
@@ -323,7 +368,8 @@ Maak niets aan, verplaats niets. Alleen lezen en rapporteren.</pre></div>
 <section style="max-width:860px; margin:0 auto; padding:14px 32px 0;" id="faq">
   <div data-reveal class="kaart faq">
     <h2>Vragen die ik hierover krijg</h2>
-    <details><summary>Is het veilig om AI aan mijn mailbox te koppelen?</summary><p>Veilig genoeg als je drie dingen doet: begin met leesrechten, zet connectors alleen aan in het gesprek waar je ze nodig hebt, en laat de AI nooit iets versturen of wissen zonder dat jij het eerst ziet. Check ook of je plan je data buiten training houdt. Dat staat bij elk model in de privacy-instellingen.</p></details>
+    <details><summary>Is het veilig om AI aan mijn mailbox te koppelen?</summary><p>Even veilig als de rest van wat je online doet, als je drie dingen doet voor je begint: training uitzetten in je privacy-instellingen, alleen leesrechten geven, en alleen officiële koppelingen gebruiken. De AI kopieert je mailbox niet, het leest pas iets als jij een vraag stelt.</p></details>
+    <details><summary>Wordt mijn data gelekt of gebruikt om te trainen?</summary><p>Trainen hangt af van één schakelaar in je privacy-instellingen, die bij ChatGPT, Gemini en vaak ook Claude standaard aanstaat. Zet ze uit vóór je koppelt. Lekken gebeurt zelden via de grote makers zelf. Het gebeurt via koppelingen van derden, via een AI met schrijfrechten die een slechte mail leest, en via gesprekken die je zelf deelt. Alle drie vermijd je met de regels in deze gids.</p></details>
     <details><summary>Heb ik een betalend plan nodig?</summary><p>Meestal wel. Bij ChatGPT zijn connectors voorbehouden aan betalende plannen. Bij Claude zit het gros op Pro en hoger. Gemini heeft zijn Google-apps ook op gratis accounts. Le Chat en Perplexity hebben een deel gratis, het volle aanbod betalend. Copilot persoonlijk is gratis in Windows.</p></details>
     <details><summary>Wat is het verschil tussen een connector en MCP?</summary><p>MCP is de technische standaard, de connector is de knop. Je hoeft MCP niet te begrijpen. Wel handig: als een tool een MCP-server aanbiedt, kan je hem meestal aan elk model koppelen, ook als er geen kant-en-klare connector voor is.</p></details>
     <details><summary>Kan de AI zomaar mails versturen of bestanden wissen?</summary><p>Alleen als je die rechten gegeven hebt. De meeste modellen vragen expliciet om bevestiging voor ze iets versturen, ChatGPT bijvoorbeeld één mail per prompt met een klik van jou. Toch blijft de veiligste gewoonte: alles wat naar buiten gaat eerst als concept laten tonen.</p></details>
