@@ -13,5 +13,5 @@ Screenshots voor /claude-update/ :
 
 claude-output-menu.png          Staat er al (nagebouwd naar het scherm van Anthropic, met "Lien"). Vervang gerust door je eigen screenshot van het Output-menu.
 claude-slides-prompt.png        Staat er al (nagebouwd). Vervang gerust door een echte.
-claude-slides-resultaat.png     Jouw eigen screenshot: het deck "De wereld van Claude" open in Claude Slides (die je op 17/09 maakte)
+claude-slides-resultaat.png     Staat er al (nagebouwd naar jouw screenshot van 17/09). Vervang gerust door je echte screenshot, zelfde naam.
 claude-design-canvas.png        Een Claude Design canvas naast een gesprek, met de sliders of een opmerking
