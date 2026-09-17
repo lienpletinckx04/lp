@@ -129,7 +129,7 @@
 <header style="max-width:900px; margin:0 auto; padding:72px 32px 8px;">
   <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">VAN LEGE MAP TOT LIVE LINK</div>
   <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">15 prompts om zelf een app te bouwen. En te publiceren<span style="color:#ff4d24;">.</span></h1>
-  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Dit is het volledige promptplan dat ik gebruik om samen met een AI-codeeragent zoals Claude Code een echte, werkende app te bouwen. Niet één toverprompt, wel vijftien stappen na elkaar, elk met een duidelijk controlepunt voor je verdergaat. Het voorbeeld hieronder is een Content Studio: een tool waarmee iemand een brief intikt en er LinkedIn- of X-posts uit krijgt. Vervang het onderwerp gerust door je eigen idee, de opbouw blijft dezelfde.</p>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Dit is het volledige promptplan dat ik gebruik om samen met een AI-codeeragent zoals Claude Code een echte, werkende app te bouwen. Niet één toverprompt, wel vijftien stappen na elkaar, elk met een duidelijk controlepunt voor je verdergaat. Het voorbeeld hieronder is de Contentmachine: een tool waarmee iemand een brief intikt en er LinkedIn- of X-posts uit krijgt. Vervang het onderwerp gerust door je eigen idee, de opbouw blijft dezelfde.</p>
 
   <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 17 september 2026</div>
 </header>
@@ -150,7 +150,7 @@
     <div class="stap-kop"><h2>Voor je begint</h2></div>
     <p class="stap-intro">Zorg dat dit klaarstaat voor je de eerste prompt intikt:</p>
     <ul style="margin:0 0 14px; padding-left:20px; font-size:15px; line-height:1.8; color:#57534a;">
-      <li>Een lege projectmap, bijvoorbeeld <code>content-studio</code>.</li>
+      <li>Een lege projectmap, bijvoorbeeld <code>contentmachine</code>.</li>
       <li>Een AI-codeeragent (Claude Code, of een andere) en, als je wil publiceren, een hostingaccount daarbij.</li>
       <li>Als je echte AI-teksten wil genereren in je app: een API-account bij het model dat je gebruikt, met budget erop.</li>
       <li>Geef inloggegevens altijd in via je lokale omgevingsvariabelen of de beveiligde instellingen van je hosting. Nooit in de chat, nooit in Git.</li>
@@ -166,7 +166,7 @@
     <p class="stap-intro">Voor je aan prompt 1 begint: laat de agent eerst een plan voorstellen en keur dat plan goed. Gebruik daarna dit doel als anker voor de hele sessie. Kom er gerust op terug als je twijfelt of een stap nog binnen scope valt.</p>
     <div class="promptvak">
       <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-      <span class="vak-label">Doel voor de hele sessie</span>Bouw en test de Content Studio volledig lokaal, zodat een gebruiker twee drafts kan aanmaken, er één kan bewerken, opslaan, de pagina herladen en opnieuw openen. Houd API-sleutels op de server en gebruik de afgesproken architectuur. Rond af met geslaagde controles en een demonstratie in de browser. Publiceer niet voor de publicatiestap.</div>
+      <span class="vak-label">Doel voor de hele sessie</span>Bouw en test de Contentmachine volledig lokaal, zodat een gebruiker twee drafts kan aanmaken, er één kan bewerken, opslaan, de pagina herladen en opnieuw openen. Houd API-sleutels op de server en gebruik de afgesproken architectuur. Rond af met geslaagde controles en een demonstratie in de browser. Publiceer niet voor de publicatiestap.</div>
   </div>
 </section>
 
@@ -214,7 +214,7 @@
     <p class="stap-intro">Hier leg je vast wat je bouwt en waarom, en vraag je eerst een plan in plaats van meteen te bouwen.</p>
     <div class="promptvak">
       <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-      <span class="vak-label">Prompt 01</span>Je bent mijn product engineer voor een hands-on bouwsessie. We starten met een lege map genaamd content-studio. Bouw een Content Studio voor een ondernemer die een duidelijke brief wil omzetten in LinkedIn- of X-drafts, ze bewerken, opslaan en later opnieuw openen.
+      <span class="vak-label">Prompt 01</span>Je bent mijn product engineer voor een hands-on bouwsessie. We starten met een lege map genaamd contentmachine. Bouw de Contentmachine voor een ondernemer die een duidelijke brief wil omzetten in LinkedIn- of X-drafts, ze bewerken, opslaan en later opnieuw openen.
 
 Gebruik React en TypeScript met een standaard, actueel gesteund startpunt. Houd de deployment vanaf het begin compatibel met mijn hostingoptie. Gebruik een serverendpoint voor modeloproepen en een echte database voor duurzame opslag. Kies geen infrastructuur die een aparte hostingdienst vereist. Gebruik voorlopig enkel voorbeeldcontent. Post niet naar sociale netwerken. Publiceer de app nog niet.
 
@@ -230,7 +230,7 @@ Stel eerst een beknopt plan voor met de schermstructuur, datavelden, bouwstadia,
     <p class="stap-intro">Nu pas begint de agent effectief te bouwen: het skelet van de app, lokaal draaiend, nog niet online.</p>
     <div class="promptvak">
       <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-      <span class="vak-label">Prompt 02</span>Zet het goedgekeurde Content Studio-project op in deze map met het gekozen startpunt en de bijhorende documentatie. Maak de minimale React- en TypeScript-toepassing, installeer de nodige dependencies en zet lokale ontwikkeling op. Houd het project privé en ongepubliceerd. Als er een hostingproject geregistreerd moet worden, leg de accountvereiste uit en behoud de standaard beperkte toegang.
+      <span class="vak-label">Prompt 02</span>Zet het goedgekeurde Contentmachine-project op in deze map met het gekozen startpunt en de bijhorende documentatie. Maak de minimale React- en TypeScript-toepassing, installeer de nodige dependencies en zet lokale ontwikkeling op. Houd het project privé en ongepubliceerd. Als er een hostingproject geregistreerd moet worden, leg de accountvereiste uit en behoud de standaard beperkte toegang.
 
 Voeg een duidelijke titel toe en een eenvoudige placeholderpagina. Bekijk package.json en noteer de echte ontwikkel-, build-, typecheck- en testcommando's in README.md. Voeg enkel ontbrekende validatiescripts toe als ze nodig zijn. Run de productiebuild en open de lokale preview. Initialiseer Git indien nodig, sluit dependencies, buildbestanden en geheimen uit, en maak een eerste lokale commit nadat je de inhoud gecontroleerd hebt. Push niet naar GitHub en publiceer niet.</div>
     <div class="check"><strong>Controlepunt:</strong> de pagina opent lokaal, de build slaagt, en er is een schone lokale basisversie.</div>
@@ -244,7 +244,7 @@ Voeg een duidelijke titel toe en een eenvoudige placeholderpagina. Bekijk packag
     <p class="stap-intro">Dit is de instructiefile die de agent bij elke volgende stap blijft raadplegen. Eén keer goed opzetten scheelt je bij elke stap daarna.</p>
     <div class="promptvak">
       <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-      <span class="vak-label">Prompt 03</span>Maak een beknopte CLAUDE.md voor Content Studio. Bekijk eerst het echte startpunt en de packagescripts. Neem op: rol en productdoel, echte stack en mapstructuur, exacte ontwikkel-/build-/typecheck-/testcommando's, code- en contentstijl, testverwachtingen, Git-workflow en grenzen.
+      <span class="vak-label">Prompt 03</span>Maak een beknopte CLAUDE.md voor de Contentmachine. Bekijk eerst het echte startpunt en de packagescripts. Neem op: rol en productdoel, echte stack en mapstructuur, exacte ontwikkel-/build-/typecheck-/testcommando's, code- en contentstijl, testverwachtingen, Git-workflow en grenzen.
 
 Altijd: bewaar bewerkbare drafts, valideer gebruikersinvoer, houd modelsleutels op de server, controleer eigenaarschap bij elke opslagbewerking, en verifieer gewijzigd gedrag. Vraag eerst: betaalde diensten toevoegen, de afgesproken architectuur wijzigen, bestaande records verwijderen, of publiceren. Nooit: geheimen tonen, content naar sociale netwerken sturen, geslaagde controles verzinnen, of demofixtures voorstellen als echte AI-output. Markeer ontbrekende commando's als openstaand in plaats van te doen alsof ze bestaan.
 
@@ -260,7 +260,7 @@ Gebruik gewone Markdown, specifiek voor deze repository. Vat de instructies same
     <p class="stap-intro">Het eerste bruikbare scherm, nog zonder echte AI erachter. Zo test je de flow voor je de dure koppeling maakt.</p>
     <div class="promptvak">
       <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-      <span class="vak-label">Prompt 04</span>Bouw het eerste bruikbare Content Studio-scherm. Gebruik een redactioneel design met gebroken wit als achtergrond, diep bordeaux als tekstkleur, violet als primaire actiekleur en spaarzame koraalaccenten. Toon een duidelijke paginatitel en één hoofdactie: Genereer drafts.
+      <span class="vak-label">Prompt 04</span>Bouw het eerste bruikbare Contentmachine-scherm. Gebruik een redactioneel design met gebroken wit als achtergrond, diep bordeaux als tekstkleur, violet als primaire actiekleur en spaarzame koraalaccenten. Toon een duidelijke paginatitel en één hoofdactie: Genereer drafts.
 
 De brief bevat: onderwerp (verplicht, max 300 tekens), doelgroep (verplicht), kanaal (LinkedIn of X), toon (Praktisch, Warm of Gedurfd), kernpunten (verplicht, max 2000 tekens), en een optionele call-to-action. Gebruik zichtbare labels en directe validatie. Behoud het formulier bij een validatiefout.
 
@@ -336,7 +336,7 @@ Als generatie faalt: bied een nieuwe poging aan zonder vervangende AI-output te 
     <p class="stap-intro">Het volledige traject nog eens grondig doorlopen, met bewijs, voor je aan het uiterlijk begint te sleutelen.</p>
     <div class="promptvak">
       <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-      <span class="vak-label">Prompt 09</span>Verifieer de volledige Content Studio-workflow. Lees eerst de echte packagescripts en CLAUDE.md. Run de productiebuild en beschikbare statische controles. Voeg gerichte tests toe voor verplichte-veldvalidatie, het verwerken van de respons, het afdwingen van eigenaarschap, opslag-/bijwerkgedrag en foutherstel. Gebruik deterministische providermocks voor geautomatiseerde controles en benoem ze als gemockt.
+      <span class="vak-label">Prompt 09</span>Verifieer de volledige Contentmachine-workflow. Lees eerst de echte packagescripts en CLAUDE.md. Run de productiebuild en beschikbare statische controles. Voeg gerichte tests toe voor verplichte-veldvalidatie, het verwerken van de respons, het afdwingen van eigenaarschap, opslag-/bijwerkgedrag en foutherstel. Gebruik deterministische providermocks voor geautomatiseerde controles en benoem ze als gemockt.
 
 Vul in de browser de voorbeeldbrief in, genereer twee drafts met de echte, geconfigureerde API, bewerk er één, kopieer, sla op, herlaad, heropen, en verwijder een apart testdraft. Controleer mobiel op 390px, toetsenbordnavigatie, laadfeedback en één mislukte aanvraag. Bevestig dat twee identiteiten elkaars records niet kunnen bereiken. Als accounttoegang een live test verhindert, markeer dat als geblokkeerd in plaats van geslaagd.
 
@@ -352,7 +352,7 @@ Los fouten binnen scope op. Geef een beknopte tabel terug: controle, bewijs, ges
     <p class="stap-intro">Pas nu, met een werkende app, ga je aan het uiterlijk sleutelen. Eerder zou je alleen tijd steken in een schoonheidsprijs voor iets dat nog kon veranderen.</p>
     <div class="promptvak">
       <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-      <span class="vak-label">Prompt 10</span>Bekijk de echte, lokale Content Studio op desktop- en mobiele breedte. Verbeter de visuele hiërarchie en interactieduidelijkheid met behoud van werkend gedrag. Maak de brief en de hoofdactie makkelijk vindbaar, maak drafttekst comfortabel om te bewerken, verminder overbodige randen en herhaalde containers, en geef de bibliotheek een duidelijke secundaire rol.
+      <span class="vak-label">Prompt 10</span>Bekijk de echte, lokale Contentmachine op desktop- en mobiele breedte. Verbeter de visuele hiërarchie en interactieduidelijkheid met behoud van werkend gedrag. Maak de brief en de hoofdactie makkelijk vindbaar, maak drafttekst comfortabel om te bewerken, verminder overbodige randen en herhaalde containers, en geef de bibliotheek een duidelijke secundaire rol.
 
 Gebruik consistente spatiëring, toegankelijk contrast, leesbare labels, zichtbare focus en behulpzame lege statussen. Behoud het afgesproken kleurenpalet. Voeg geen nieuwe features of placeholderstatistieken toe. Vergelijk voor en na, en run daarna de controles opnieuw die door de wijzigingen geraakt worden.</div>
     <div class="check"><strong>Controlepunt:</strong> de hoofdactie is meteen duidelijk. Mobiel gebruik en toetsenbordbediening werken nog steeds.</div>
@@ -366,7 +366,7 @@ Gebruik consistente spatiëring, toegankelijk contrast, leesbare labels, zichtba
     <p class="stap-intro">Een tussenstap die veel mensen overslaan: een versie klaarzetten die je zelf nog kan nalezen, zonder dat ze al live staat.</p>
     <div class="promptvak">
       <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-      <span class="vak-label">Prompt 11</span>Maak een reviewbare releasekandidaat van Content Studio klaar. Bekijk de huidige wijzigingen, run de productiebuild en relevante tests, en verifieer compatibiliteit met de hostingomgeving. Controleer op inloggegevens, demo-only kortere wegen en onafgewerkte placeholders. Som de vereiste gehoste omgevingsvariabelen en databasemigraties op zonder geheime waarden te tonen.
+      <span class="vak-label">Prompt 11</span>Maak een reviewbare releasekandidaat van de Contentmachine klaar. Bekijk de huidige wijzigingen, run de productiebuild en relevante tests, en verifieer compatibiliteit met de hostingomgeving. Controleer op inloggegevens, demo-only kortere wegen en onafgewerkte placeholders. Som de vereiste gehoste omgevingsvariabelen en databasemigraties op zonder geheime waarden te tonen.
 
 Werk README.md bij met de opzet, echte commando's, datagedrag, beperkingen en de exacte demovolgorde. Werk CLAUDE.md bij als commando's of mappen gewijzigd zijn. Commit de nagelezen broncode lokaal en bewaar een versie die aan die broncode gekoppeld is. Rapporteer de versie-identificatie en de commit. Publiceer nog niet en verbreed de toegang niet.</div>
     <div class="check"><strong>Controlepunt:</strong> een bewaarde versie, een commit en een testsamenvatting tonen precies wat er straks gepubliceerd wordt.</div>
@@ -380,7 +380,7 @@ Werk README.md bij met de opzet, echte commando's, datagedrag, beperkingen en de
     <p class="stap-intro">De eerste keer live, maar nog beperkt tot jezelf. Ook hier: pas de exact goedgekeurde versie, niets extra.</p>
     <div class="promptvak">
       <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-      <span class="vak-label">Prompt 12</span>Publiceer de nagelezen Content Studio-versie uit de vorige stap. Bevestig voor de publicatie dat de vereiste gehoste geheimen en identiteitsconfiguratie aanwezig zijn, zonder hun waarden te tonen. Voer de nagelezen databasemigratie uit via de ondersteunde workflow. Houd de toegang voor deze eerste deployment beperkt tot mij.
+      <span class="vak-label">Prompt 12</span>Publiceer de nagelezen Contentmachine-versie uit de vorige stap. Bevestig voor de publicatie dat de vereiste gehoste geheimen en identiteitsconfiguratie aanwezig zijn, zonder hun waarden te tonen. Voer de nagelezen databasemigratie uit via de ondersteunde workflow. Houd de toegang voor deze eerste deployment beperkt tot mij.
 
 Deploy exact de goedgekeurde versie, wacht tot het afgerond is en rapporteer de productie-URL, de versie en het huidige publiek. Open de URL en controleer de pagina en de serverwerkende workflow. Faalt de deployment, rapporteer dan de echte oorzaak en los ze op voor je succes claimt. Schakel publieke toegang niet automatisch in en nodig niemand uit.</div>
     <div class="check"><strong>Controlepunt:</strong> de deployment slaagt en de echte gehoste URL werkt voor de eigenaar.</div>
@@ -394,7 +394,7 @@ Deploy exact de goedgekeurde versie, wacht tot het afgerond is en rapporteer de 
     <p class="stap-intro">Nu test je de app zoals een echte bezoeker ze zou gebruiken, en kies je pas dan wie ze mag zien.</p>
     <div class="promptvak">
       <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-      <span class="vak-label">Prompt 13</span>Verifieer de gedeployde Content Studio via de productie-URL. Test generatie, bewerken, opslaan, herladen en heropenen tegen de gehoste diensten. Bevestig dat de gehoste database en inloggegevens werken en test een niet-geautoriseerde bezoeker. Noteer bij elke controle of ze een live dienst of een fixture gebruikte.
+      <span class="vak-label">Prompt 13</span>Verifieer de gedeployde Contentmachine via de productie-URL. Test generatie, bewerken, opslaan, herladen en heropenen tegen de gehoste diensten. Bevestig dat de gehoste database en inloggegevens werken en test een niet-geautoriseerde bezoeker. Noteer bij elke controle of ze een live dienst of een fixture gebruikte.
 
 Toon me daarna de URL en het huidige publiek, en vraag welk beschikbaar publiek ik wil: genoemde uitgenodigde kijkers, in aanmerking komende teamleden, of publieke toegang. Leg elke accountbeperking kort uit. Pas enkel mijn gekozen publiek toe en verifieer vanuit dat bezoekersperspectief. Kan een privébezoeker niet getest worden vanuit deze sessie, geef de ontvanger dan een precieze controle en markeer ze als openstaand. Beweer niet dat de link publiek is enkel omdat de deployment slaagde.</div>
     <div class="check"><strong>Controlepunt:</strong> de gekozen bezoeker kan de app gebruiken. Toegang en datascheiding gedragen zich zoals bedoeld.</div>
@@ -408,7 +408,7 @@ Toon me daarna de URL en het huidige publiek, en vraag welk beschikbaar publiek 
     <p class="stap-intro">De app leeft. Dit is hoe je er iets aan toevoegt zonder wat al werkt te breken, en zonder meteen live te gaan.</p>
     <div class="promptvak">
       <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
-      <span class="vak-label">Prompt 14</span>Voeg één kleine verbetering toe aan Content Studio: een toonfilter voor de opgeslagen bibliotheek. Bewaar bestaande draftrecords en de generatieworkflow. Werk tests bij die door de wijziging geraakt worden, run ze, bekijk de diff, en bewaar een nieuwe versie zonder te publiceren. Vergelijk ze met de huidige live versie. Rapporteer wat er zal veranderen, wat geslaagd is, en de kandidaatversie. Wacht op mijn publicatiebeslissing.</div>
+      <span class="vak-label">Prompt 14</span>Voeg één kleine verbetering toe aan de Contentmachine: een toonfilter voor de opgeslagen bibliotheek. Bewaar bestaande draftrecords en de generatieworkflow. Werk tests bij die door de wijziging geraakt worden, run ze, bekijk de diff, en bewaar een nieuwe versie zonder te publiceren. Vergelijk ze met de huidige live versie. Rapporteer wat er zal veranderen, wat geslaagd is, en de kandidaatversie. Wacht op mijn publicatiebeslissing.</div>
     <div class="check"><strong>Controlepunt:</strong> er bestaat een nieuwe kandidaat terwijl de huidige live site ongewijzigd blijft.</div>
   </div>
 </section>
