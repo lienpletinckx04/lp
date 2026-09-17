@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>15 prompts om zelf een app te bouwen en te publiceren met AI — AskLien.ai</title>
+<meta name="description" content="Het volledige promptplan om samen met een AI-codeeragent een echte app te bouwen: van scaffolding tot een live link. Elke prompt om te kopiëren, met een controlepunt erbij.">
+<link rel="canonical" href="https://asklien.ai/app-bouwen-prompts/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="15 prompts om zelf een app te bouwen en te publiceren met AI">
+<meta property="og:description" content="Het volledige promptplan, stap voor stap, van lege map tot live link.">
+<meta property="og:url" content="https://asklien.ai/app-bouwen-prompts/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=3">
+<style>
+  .stap { background:#fff; border-radius:20px; padding:32px 36px; margin-bottom:18px; }
+  .stap-kop { display:flex; align-items:baseline; gap:14px; margin-bottom:12px; flex-wrap:wrap; }
+  .stap-nr { font-family:'Archivo'; font-weight:900; font-size:30px; color:#ff4d24; line-height:1; }
+  .stap h2 { margin:0; font-family:'Archivo'; font-weight:800; font-size:21px; letter-spacing:-.5px; line-height:1.2; }
+  .stap-intro { margin:0 0 16px; font-size:15px; line-height:1.7; color:#57534a; }
+  .promptvak { background:#1c1a1f; color:#e8e2d4; border-radius:14px; padding:22px 24px; font-size:14.5px; line-height:1.7; position:relative; white-space:pre-wrap; font-family:'Schibsted Grotesk'; }
+  .promptvak .vak-label { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px; display:block; color:#ff4d24; }
+  .copy-btn { position:absolute; top:14px; right:14px; background:#ff4d24; color:#fff; border:none; font-family:'Schibsted Grotesk'; font-weight:600; font-size:11.5px; padding:6px 12px; border-radius:7px; cursor:pointer; }
+  .copy-btn:hover { background:#fff; color:#1c1a1f; }
+  .check { margin-top:16px; padding:14px 18px; background:#fdf6ee; border-left:4px solid #ff4d24; border-radius:10px; font-size:14px; line-height:1.6; color:#57534a; }
+  .check strong { color:#1c1a1f; }
+  .quicknav { columns:2; column-gap:28px; font-size:14.5px; line-height:2; }
+  .quicknav a { color:#1c1a1f; }
+  .quicknav a:hover { color:#ff4d24; }
+  #ctaPopup { position:fixed; bottom:24px; right:24px; max-width:340px; background:#1c1a1f; color:#f6f1e7; border-radius:18px; padding:24px 26px; box-shadow:0 20px 50px rgba(0,0,0,.35); z-index:200; transform:translateY(140%); transition:transform .5s cubic-bezier(.2,.8,.2,1); }
+  #ctaPopup.show { transform:translateY(0); }
+  #ctaPopup .close { position:absolute; top:10px; right:14px; color:#8a8378; cursor:pointer; font-size:18px; background:none; border:none; }
+  @media (max-width:760px){
+    .stap { padding:26px 22px; }
+    .quicknav { columns:1; }
+    #ctaPopup{ left:16px; right:16px; bottom:16px; max-width:none; }
+  }
+</style>
+<meta property="og:image" content="https://asklien.ai/media/foto/hero.jpg">
+<meta property="og:site_name" content="AskLien.ai">
+<meta property="og:locale" content="nl_BE">
+<meta property="article:published_time" content="2026-09-17">
+<meta property="article:modified_time" content="2026-09-17">
+<meta name="author" content="Lien Pletinckx">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "15 prompts om zelf een app te bouwen en te publiceren met AI",
+  "description": "Het volledige promptplan om samen met een AI-codeeragent een echte app te bouwen: van scaffolding tot een live link, met een controlepunt bij elke stap.",
+  "inLanguage": "nl-BE",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://asklien.ai/app-bouwen-prompts/"
+  },
+  "url": "https://asklien.ai/app-bouwen-prompts/",
+  "image": "https://asklien.ai/media/foto/hero.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Lien Pletinckx",
+    "url": "https://asklien.ai/",
+    "jobTitle": "AI-coach en consultant",
+    "sameAs": [
+      "https://www.instagram.com/asklien.ai/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AskLien.ai",
+    "url": "https://asklien.ai/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://asklien.ai/media/foto/hero.jpg"
+    }
+  },
+  "datePublished": "2026-09-17",
+  "dateModified": "2026-09-17",
+  "keywords": "app bouwen met AI, prompts coderen, Claude Code, vibe coding, AI-codeeragent",
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://asklien.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Gratis gidsen",
+      "item": "https://asklien.ai/gidsen/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "15 prompts om zelf een app te bouwen en te publiceren met AI",
+      "item": "https://asklien.ai/app-bouwen-prompts/"
+    }
+  ]
+}
+</script>
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+      <a href="/gidsen/">Alle gidsen</a>
+      <a href="https://hub.asklien.ai">Gratis Hub</a>
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">De challenge</a>
+    </div>
+  </div>
+</nav>
+
+<header style="max-width:900px; margin:0 auto; padding:72px 32px 8px;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">VAN LEGE MAP TOT LIVE LINK</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">15 prompts om zelf een app te bouwen. En te publiceren<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Dit is het volledige promptplan dat ik gebruik om samen met een AI-codeeragent zoals Claude Code een echte, werkende app te bouwen. Niet één toverprompt, wel vijftien stappen na elkaar, elk met een duidelijk controlepunt voor je verdergaat. Het voorbeeld hieronder is een Content Studio: een tool waarmee iemand een brief intikt en er LinkedIn- of X-posts uit krijgt. Vervang het onderwerp gerust door je eigen idee, de opbouw blijft dezelfde.</p>
+
+  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 17 september 2026</div>
+</header>
+
+<!-- LOGICA -->
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:36px 40px;">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">WAAROM STAP VOOR STAP</div>
+    <h2 style="margin:0 0 16px; font-family:'Archivo'; font-weight:900; font-size:28px; letter-spacing:-1.5px; line-height:1.15; color:#f6f1e7;">"Bouw mijn app" in één prompt gaat je niet ver brengen.</h2>
+    <p style="margin:0 0 14px; font-size:16px; line-height:1.75; color:#b3ab9e;">Een codeeragent die in één keer alles moet verzinnen, kiest zélf je datamodel, je hosting en je opslagoplossing. Dat werkt tot het niet meer werkt: op het moment dat je iets wil aanpassen en niemand nog weet waarom het zo gebouwd is.</p>
+    <p style="margin:0; font-size:16px; line-height:1.75; color:#b3ab9e;">Daarom werkt dit plan in kleine, controleerbare stappen. Eerst een plan goedkeuren, dan pas bouwen. Eerst lokaal testen met neptekst, dan pas met je echte AI-verbinding. Eerst een reviewversie klaarzetten, dan pas publiceren. Bij elke stap lees je het resultaat na en vink je het controlepunt af voor je verdergaat.</p>
+  </div>
+</section>
+
+<!-- VOOR JE BEGINT -->
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><h2>Voor je begint</h2></div>
+    <p class="stap-intro">Zorg dat dit klaarstaat voor je de eerste prompt intikt:</p>
+    <ul style="margin:0 0 14px; padding-left:20px; font-size:15px; line-height:1.8; color:#57534a;">
+      <li>Een lege projectmap, bijvoorbeeld <code>content-studio</code>.</li>
+      <li>Een AI-codeeragent (Claude Code, of een andere) en, als je wil publiceren, een hostingaccount daarbij.</li>
+      <li>Als je echte AI-teksten wil genereren in je app: een API-account bij het model dat je gebruikt, met budget erop.</li>
+      <li>Geef inloggegevens altijd in via je lokale omgevingsvariabelen of de beveiligde instellingen van je hosting. Nooit in de chat, nooit in Git.</li>
+    </ul>
+    <p class="stap-intro" style="margin:0;">Heb je nog geen API-toegang? Werk dan verder met de gelabelde demo-modus verderop op deze pagina. Alles behalve echte AI-generatie kan je daarmee al volledig testen.</p>
+  </div>
+</section>
+
+<!-- DOELPROMPT -->
+<section style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><h2>Het doel vastleggen</h2></div>
+    <p class="stap-intro">Voor je aan prompt 1 begint: laat de agent eerst een plan voorstellen en keur dat plan goed. Gebruik daarna dit doel als anker voor de hele sessie. Kom er gerust op terug als je twijfelt of een stap nog binnen scope valt.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Doel voor de hele sessie</span>Bouw en test de Content Studio volledig lokaal, zodat een gebruiker twee drafts kan aanmaken, er één kan bewerken, opslaan, de pagina herladen en opnieuw openen. Houd API-sleutels op de server en gebruik de afgesproken architectuur. Rond af met geslaagde controles en een demonstratie in de browser. Publiceer niet voor de publicatiestap.</div>
+  </div>
+</section>
+
+<!-- QUICK NAV -->
+<section style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><h2>De 15 stappen</h2></div>
+    <p class="stap-intro">Doorloop ze in volgorde. Lees telkens het resultaat na en vink het controlepunt af voor je naar de volgende gaat.</p>
+    <nav class="quicknav">
+      <a href="#stap-00">00 · Omgeving controleren</a>
+      <a href="#stap-01">01 · Startprompt</a>
+      <a href="#stap-02">02 · Scaffold en lokale preview</a>
+      <a href="#stap-03">03 · Projectinstructies</a>
+      <a href="#stap-04">04 · Interface en briefformulier</a>
+      <a href="#stap-05">05 · Duurzame opslag</a>
+      <a href="#stap-06">06 · Echte draftgeneratie</a>
+      <a href="#stap-07">07 · Bewerken en bibliotheek</a>
+      <a href="#stap-08">08 · Foutafhandeling</a>
+      <a href="#stap-09">09 · Verificatie en fixes</a>
+      <a href="#stap-10">10 · Designverfijning</a>
+      <a href="#stap-11">11 · Reviewversie</a>
+      <a href="#stap-12">12 · Publiceren</a>
+      <a href="#stap-13">13 · Live check en publiek</a>
+      <a href="#stap-14">14 · Een gecontroleerde update</a>
+    </nav>
+  </div>
+</section>
+
+<!-- STAP 00 -->
+<section id="stap-00" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">00</span><h2>Omgeving controleren</h2></div>
+    <p class="stap-intro">Laat de agent eerst je opstelling checken voor er iets gebouwd wordt.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 00</span>We starten de eerste bouwsessie. Deze map hoort leeg te zijn, controleer dat eerst voor je iets aanpast. Rapporteer de huidige map, het besturingssysteem, de Node.js- en npm-versies, of Git beschikbaar is, en of er lokaal een browserpreview kan draaien. Controleer of mijn hostingoptie beschikbaar is in dit account. Toon geen inloggegevens en doorzoek geen andere mappen. Som ontbrekende vereisten op met de officiële installatielink en één controlecommando per vereiste. Bouw de app nog niet.</div>
+    <div class="check"><strong>Controlepunt:</strong> de map klopt, Node, npm en Git reageren, en je weet of je hostingoptie beschikbaar is.</div>
+  </div>
+</section>
+
+<!-- STAP 01 -->
+<section id="stap-01" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">01</span><h2>Startprompt</h2></div>
+    <p class="stap-intro">Hier leg je vast wat je bouwt en waarom, en vraag je eerst een plan in plaats van meteen te bouwen.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 01</span>Je bent mijn product engineer voor een hands-on bouwsessie. We starten met een lege map genaamd content-studio. Bouw een Content Studio voor een ondernemer die een duidelijke brief wil omzetten in LinkedIn- of X-drafts, ze bewerken, opslaan en later opnieuw openen.
+
+Gebruik React en TypeScript met een standaard, actueel gesteund startpunt. Houd de deployment vanaf het begin compatibel met mijn hostingoptie. Gebruik een serverendpoint voor modeloproepen en een echte database voor duurzame opslag. Kies geen infrastructuur die een aparte hostingdienst vereist. Gebruik voorlopig enkel voorbeeldcontent. Post niet naar sociale netwerken. Publiceer de app nog niet.
+
+Stel eerst een beknopt plan voor met de schermstructuur, datavelden, bouwstadia, exacte controles per stadium, en elke account- of inloggegevensvereiste. Achterhaal de echte commando's van het geïnstalleerde startpunt in plaats van ze te verzinnen. Bewaar de afgesproken productbrief in docs/project-brief.md. Wacht op mijn goedkeuring voor je begint te bouwen.</div>
+    <div class="check"><strong>Controlepunt:</strong> het plan dekt het volledige gebruikstraject, de opslag, de generatie en de hosting. Geen verborgen accountvereiste blijft over.</div>
+  </div>
+</section>
+
+<!-- STAP 02 -->
+<section id="stap-02" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">02</span><h2>Scaffold en lokale preview</h2></div>
+    <p class="stap-intro">Nu pas begint de agent effectief te bouwen: het skelet van de app, lokaal draaiend, nog niet online.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 02</span>Zet het goedgekeurde Content Studio-project op in deze map met het gekozen startpunt en de bijhorende documentatie. Maak de minimale React- en TypeScript-toepassing, installeer de nodige dependencies en zet lokale ontwikkeling op. Houd het project privé en ongepubliceerd. Als er een hostingproject geregistreerd moet worden, leg de accountvereiste uit en behoud de standaard beperkte toegang.
+
+Voeg een duidelijke titel toe en een eenvoudige placeholderpagina. Bekijk package.json en noteer de echte ontwikkel-, build-, typecheck- en testcommando's in README.md. Voeg enkel ontbrekende validatiescripts toe als ze nodig zijn. Run de productiebuild en open de lokale preview. Initialiseer Git indien nodig, sluit dependencies, buildbestanden en geheimen uit, en maak een eerste lokale commit nadat je de inhoud gecontroleerd hebt. Push niet naar GitHub en publiceer niet.</div>
+    <div class="check"><strong>Controlepunt:</strong> de pagina opent lokaal, de build slaagt, en er is een schone lokale basisversie.</div>
+  </div>
+</section>
+
+<!-- STAP 03 -->
+<section id="stap-03" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">03</span><h2>Projectinstructies</h2></div>
+    <p class="stap-intro">Dit is de instructiefile die de agent bij elke volgende stap blijft raadplegen. Eén keer goed opzetten scheelt je bij elke stap daarna.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 03</span>Maak een beknopte CLAUDE.md voor Content Studio. Bekijk eerst het echte startpunt en de packagescripts. Neem op: rol en productdoel, echte stack en mapstructuur, exacte ontwikkel-/build-/typecheck-/testcommando's, code- en contentstijl, testverwachtingen, Git-workflow en grenzen.
+
+Altijd: bewaar bewerkbare drafts, valideer gebruikersinvoer, houd modelsleutels op de server, controleer eigenaarschap bij elke opslagbewerking, en verifieer gewijzigd gedrag. Vraag eerst: betaalde diensten toevoegen, de afgesproken architectuur wijzigen, bestaande records verwijderen, of publiceren. Nooit: geheimen tonen, content naar sociale netwerken sturen, geslaagde controles verzinnen, of demofixtures voorstellen als echte AI-output. Markeer ontbrekende commando's als openstaand in plaats van te doen alsof ze bestaan.
+
+Gebruik gewone Markdown, specifiek voor deze repository. Vat de instructies samen en controleer dat de agent ze effectief kan lezen.</div>
+    <div class="check"><strong>Controlepunt:</strong> de instructies kloppen met de echte bestanden en commando's.</div>
+  </div>
+</section>
+
+<!-- STAP 04 -->
+<section id="stap-04" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">04</span><h2>Interface en briefformulier</h2></div>
+    <p class="stap-intro">Het eerste bruikbare scherm, nog zonder echte AI erachter. Zo test je de flow voor je de dure koppeling maakt.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 04</span>Bouw het eerste bruikbare Content Studio-scherm. Gebruik een redactioneel design met gebroken wit als achtergrond, diep bordeaux als tekstkleur, violet als primaire actiekleur en spaarzame koraalaccenten. Toon een duidelijke paginatitel en één hoofdactie: Genereer drafts.
+
+De brief bevat: onderwerp (verplicht, max 300 tekens), doelgroep (verplicht), kanaal (LinkedIn of X), toon (Praktisch, Warm of Gedurfd), kernpunten (verplicht, max 2000 tekens), en een optionele call-to-action. Gebruik zichtbare labels en directe validatie. Behoud het formulier bij een validatiefout.
+
+Voorzie een draftwerkruimte en een opgeslagen bibliotheek. Op smalle schermen stapel je die in leesvolgorde. Bouw lege, laad- en foutstatussen voor je het echte model koppelt. Tijdelijke fixtures moeten "Demo-output" tonen. Beweer nog niet dat het echte AI-generatie is. Open de preview, controleer desktop en 390px mobiel, en rapporteer wat werkt.</div>
+    <div class="check"><strong>Controlepunt:</strong> het formulier werkt met toetsenbord en op mobiel. Een lege inzending toont duidelijke fouten zonder je invoer te verliezen.</div>
+  </div>
+</section>
+
+<!-- STAP 05 -->
+<section id="stap-05" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">05</span><h2>Duurzame opslag</h2></div>
+    <p class="stap-intro">Hier komt de echte database, met eigenaarschap dat écht afgedwongen wordt op de server, niet enkel in de browser.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 05</span>Voeg duurzame draftopslag toe met de database die mijn hostingoptie ondersteunt. Bekijk eerst hoe het startpunt met databases omgaat. Maak een migratie voor drafts met id, owner_id, onderwerp, doelgroep, kanaal, toon, kernpunten, call_to_action, body, status, created_at en updated_at. Status is draft of reviewed.
+
+Gebruik het huidige ondersteunde identiteitsmechanisme en verifieer het in de gedeployde omgeving. Vertrouw nooit een owner_id die door de browser wordt meegegeven. Dwing eigenaarschap af bij aanmaken, oplijsten, lezen, bijwerken en verwijderen. Voeg enkel een lokaal ontwikkelidentiteitsmechanisme toe als het gedocumenteerd is, en zorg dat het in productie niet werkt.
+
+Implementeer opslaan, oplijsten, heropenen, bewerken en bevestigd verwijderen. Toon succes pas nadat de server de schrijfbewerking bevestigt. Bewaar niet-opgeslagen tekst als een aanvraag faalt. Voer de lokale migratie uit, en toon daarna dat een opgeslagen draft een herlaadbeurt en heropening overleeft. Houd de gehoste migratie en publicatie apart tot de releasestap.</div>
+    <div class="check"><strong>Controlepunt:</strong> een opgeslagen draft overleeft een herlaadbeurt. Een andere gebruiker kan hem niet lezen of wijzigen. Een mislukte aanvraag bewaart niet-opgeslagen tekst.</div>
+  </div>
+</section>
+
+<!-- STAP 06 -->
+<section id="stap-06" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">06</span><h2>Echte draftgeneratie</h2></div>
+    <p class="stap-intro">Pas hier komt de echte AI-koppeling erbij, en enkel op de server. Dit is de stap waar de meeste mensen fout gaan door de sleutel toch ergens in de browser te laten belanden.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 06</span>Koppel Genereer drafts aan een serverendpoint dat de API van mijn gekozen model gebruikt. Lees de API-sleutel enkel uit de beveiligde omgevingsvariabelen van de server. Gebruik een configureerbaar model waar mijn account toegang toe heeft. Toon de sleutel nooit in browsercode, logs of Git. Zeg me de namen van de omgevingsvariabelen en waar ik waarden moet invullen, vraag me nooit om een sleutel in de chat te plakken.
+
+Valideer de brief op de server. Vereis de geauthenticeerde gebruiker, dwing een configureerbare limiet per gebruiker af en limieten op de grootte van invoer/uitvoer, en voorkom dubbele indieningen. Vraag het model om exact twee verschillende drafts met body en invalshoek. Baseer de tekst enkel op de brief, markeer ontbrekende feiten, en verzin geen data, prijzen of getuigenissen. Valideer de teruggekregen structuur voor je ze toont.
+
+Toon voortgang tijdens het genereren, laat een nieuwe poging toe na een fout, en behoud bestaande drafts. Behandel timeout, ontbrekende sleutel, ratelimiet en misvormde output apart. Voer pas één live test uit nadat ik inloggegevens ingesteld heb en API-gebruik goedgekeurd heb. Ontbreken de inloggegevens, toon dan "Instellen vereist" en houd een duidelijk gelabelde demomodus apart.</div>
+    <div class="check"><strong>Controlepunt:</strong> een geconfigureerd account genereert twee echte drafts. De sleutel blijft op de server. Fouten bewaren de brief.</div>
+  </div>
+</section>
+
+<!-- STAP 07 -->
+<section id="stap-07" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">07</span><h2>Bewerken en bibliotheek</h2></div>
+    <p class="stap-intro">Nu maak je de flow af: bewerken, opslaan, terugvinden.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 07</span>Maak de draftworkflow af. Laat de gebruiker elke gegenereerde draft bewerken, een tekenteller zien, de exacte bewerkte tekst kopiëren, en opslaan. Gebruik een richtdoel van maximaal 280 tekens voor X en 1200 tekens voor LinkedIn. Noem dit onze eigen schrijfdoelen, niet platformmaxima. Toon een waarschuwing als het doel overschreden wordt, maar kort de tekst nooit stilzwijgend in.
+
+De bibliotheek toont titel/onderwerp, kanaal, status en laatst bijgewerkt. Ondersteun zoeken op onderwerp of body en filteren op kanaal. Een record heropenen moet de opgeslagen body laden. Een bestaand record bewerken werkt het bij zonder per ongeluk een duplicaat te maken. Verwijderen vraagt bevestiging. Een draft als reviewed markeren wijzigt de status maar post ze nooit. Verifieer bewerken, kopiëren, opslaan, heropenen, zoeken en verwijderen met voorbeeldcontent.</div>
+    <div class="check"><strong>Controlepunt:</strong> de exact bewerkte tekst overleeft opslaan en heropenen. Kopiëren komt overeen. "Reviewed" heeft geen extern publicatie-effect.</div>
+  </div>
+</section>
+
+<!-- STAP 08 -->
+<section id="stap-08" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">08</span><h2>Foutafhandeling</h2></div>
+    <p class="stap-intro">Geen nieuwe features hier, wel elk mogelijk faalscenario doorlopen zodat er nergens stil data verloren gaat.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 08</span>Bekijk en verbeter het foutgedrag zonder de productscope te wijzigen. Test een lege brief, heel lange invoer, herhaalde klikken, trage generatie, een mislukt model, een onderbroken opslagbeurt en een herlaadbeurt met niet-opgeslagen wijzigingen. Voeg zichtbare statussen en herstelacties toe. Bewaar bruikbare invoer na elke herstelbare fout en verplaats de focus naar relevante feedback.
+
+Als generatie faalt: bied een nieuwe poging aan zonder vervangende AI-output te verzinnen. Als opslaan faalt: behoud de huidige tekst en zeg dat ze niet opgeslagen is. Schakel herhaalde aanvragen uit terwijl er één bezig is. Voeg een waarschuwing toe voor het verlaten van de pagina met niet-opgeslagen wijzigingen, waar de browser dat ondersteunt. Toon elk geval met een deterministische test of een gecontroleerde fixture die uitgesloten is van productiegedrag.</div>
+    <div class="check"><strong>Controlepunt:</strong> fouten zijn zichtbaar en herstelbaar. Geen stil dataverlies of nepsucces blijft over.</div>
+  </div>
+</section>
+
+<!-- STAP 09 -->
+<section id="stap-09" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">09</span><h2>Verificatie en fixes</h2></div>
+    <p class="stap-intro">Het volledige traject nog eens grondig doorlopen, met bewijs, voor je aan het uiterlijk begint te sleutelen.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 09</span>Verifieer de volledige Content Studio-workflow. Lees eerst de echte packagescripts en CLAUDE.md. Run de productiebuild en beschikbare statische controles. Voeg gerichte tests toe voor verplichte-veldvalidatie, het verwerken van de respons, het afdwingen van eigenaarschap, opslag-/bijwerkgedrag en foutherstel. Gebruik deterministische providermocks voor geautomatiseerde controles en benoem ze als gemockt.
+
+Vul in de browser de voorbeeldbrief in, genereer twee drafts met de echte, geconfigureerde API, bewerk er één, kopieer, sla op, herlaad, heropen, en verwijder een apart testdraft. Controleer mobiel op 390px, toetsenbordnavigatie, laadfeedback en één mislukte aanvraag. Bevestig dat twee identiteiten elkaars records niet kunnen bereiken. Als accounttoegang een live test verhindert, markeer dat als geblokkeerd in plaats van geslaagd.
+
+Los fouten binnen scope op. Geef een beknopte tabel terug: controle, bewijs, geslaagd/mislukt/geblokkeerd. Onderscheid lokale van gehoste verificatie. Publiceer niet.</div>
+    <div class="check"><strong>Controlepunt:</strong> het bewijs dekt het volledige traject. Geblokkeerde controles blijven zichtbaar, niet verborgen.</div>
+  </div>
+</section>
+
+<!-- STAP 10 -->
+<section id="stap-10" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">10</span><h2>Designverfijning</h2></div>
+    <p class="stap-intro">Pas nu, met een werkende app, ga je aan het uiterlijk sleutelen. Eerder zou je alleen tijd steken in een schoonheidsprijs voor iets dat nog kon veranderen.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 10</span>Bekijk de echte, lokale Content Studio op desktop- en mobiele breedte. Verbeter de visuele hiërarchie en interactieduidelijkheid met behoud van werkend gedrag. Maak de brief en de hoofdactie makkelijk vindbaar, maak drafttekst comfortabel om te bewerken, verminder overbodige randen en herhaalde containers, en geef de bibliotheek een duidelijke secundaire rol.
+
+Gebruik consistente spatiëring, toegankelijk contrast, leesbare labels, zichtbare focus en behulpzame lege statussen. Behoud het afgesproken kleurenpalet. Voeg geen nieuwe features of placeholderstatistieken toe. Vergelijk voor en na, en run daarna de controles opnieuw die door de wijzigingen geraakt worden.</div>
+    <div class="check"><strong>Controlepunt:</strong> de hoofdactie is meteen duidelijk. Mobiel gebruik en toetsenbordbediening werken nog steeds.</div>
+  </div>
+</section>
+
+<!-- STAP 11 -->
+<section id="stap-11" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">11</span><h2>Reviewversie</h2></div>
+    <p class="stap-intro">Een tussenstap die veel mensen overslaan: een versie klaarzetten die je zelf nog kan nalezen, zonder dat ze al live staat.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 11</span>Maak een reviewbare releasekandidaat van Content Studio klaar. Bekijk de huidige wijzigingen, run de productiebuild en relevante tests, en verifieer compatibiliteit met de hostingomgeving. Controleer op inloggegevens, demo-only kortere wegen en onafgewerkte placeholders. Som de vereiste gehoste omgevingsvariabelen en databasemigraties op zonder geheime waarden te tonen.
+
+Werk README.md bij met de opzet, echte commando's, datagedrag, beperkingen en de exacte demovolgorde. Werk CLAUDE.md bij als commando's of mappen gewijzigd zijn. Commit de nagelezen broncode lokaal en bewaar een versie die aan die broncode gekoppeld is. Rapporteer de versie-identificatie en de commit. Publiceer nog niet en verbreed de toegang niet.</div>
+    <div class="check"><strong>Controlepunt:</strong> een bewaarde versie, een commit en een testsamenvatting tonen precies wat er straks gepubliceerd wordt.</div>
+  </div>
+</section>
+
+<!-- STAP 12 -->
+<section id="stap-12" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">12</span><h2>Publiceren</h2></div>
+    <p class="stap-intro">De eerste keer live, maar nog beperkt tot jezelf. Ook hier: pas de exact goedgekeurde versie, niets extra.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 12</span>Publiceer de nagelezen Content Studio-versie uit de vorige stap. Bevestig voor de publicatie dat de vereiste gehoste geheimen en identiteitsconfiguratie aanwezig zijn, zonder hun waarden te tonen. Voer de nagelezen databasemigratie uit via de ondersteunde workflow. Houd de toegang voor deze eerste deployment beperkt tot mij.
+
+Deploy exact de goedgekeurde versie, wacht tot het afgerond is en rapporteer de productie-URL, de versie en het huidige publiek. Open de URL en controleer de pagina en de serverwerkende workflow. Faalt de deployment, rapporteer dan de echte oorzaak en los ze op voor je succes claimt. Schakel publieke toegang niet automatisch in en nodig niemand uit.</div>
+    <div class="check"><strong>Controlepunt:</strong> de deployment slaagt en de echte gehoste URL werkt voor de eigenaar.</div>
+  </div>
+</section>
+
+<!-- STAP 13 -->
+<section id="stap-13" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">13</span><h2>Live check en publiek</h2></div>
+    <p class="stap-intro">Nu test je de app zoals een echte bezoeker ze zou gebruiken, en kies je pas dan wie ze mag zien.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 13</span>Verifieer de gedeployde Content Studio via de productie-URL. Test generatie, bewerken, opslaan, herladen en heropenen tegen de gehoste diensten. Bevestig dat de gehoste database en inloggegevens werken en test een niet-geautoriseerde bezoeker. Noteer bij elke controle of ze een live dienst of een fixture gebruikte.
+
+Toon me daarna de URL en het huidige publiek, en vraag welk beschikbaar publiek ik wil: genoemde uitgenodigde kijkers, in aanmerking komende teamleden, of publieke toegang. Leg elke accountbeperking kort uit. Pas enkel mijn gekozen publiek toe en verifieer vanuit dat bezoekersperspectief. Kan een privébezoeker niet getest worden vanuit deze sessie, geef de ontvanger dan een precieze controle en markeer ze als openstaand. Beweer niet dat de link publiek is enkel omdat de deployment slaagde.</div>
+    <div class="check"><strong>Controlepunt:</strong> de gekozen bezoeker kan de app gebruiken. Toegang en datascheiding gedragen zich zoals bedoeld.</div>
+  </div>
+</section>
+
+<!-- STAP 14 -->
+<section id="stap-14" style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><span class="stap-nr">14</span><h2>Een gecontroleerde update</h2></div>
+    <p class="stap-intro">De app leeft. Dit is hoe je er iets aan toevoegt zonder wat al werkt te breken, en zonder meteen live te gaan.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Prompt 14</span>Voeg één kleine verbetering toe aan Content Studio: een toonfilter voor de opgeslagen bibliotheek. Bewaar bestaande draftrecords en de generatieworkflow. Werk tests bij die door de wijziging geraakt worden, run ze, bekijk de diff, en bewaar een nieuwe versie zonder te publiceren. Vergelijk ze met de huidige live versie. Rapporteer wat er zal veranderen, wat geslaagd is, en de kandidaatversie. Wacht op mijn publicatiebeslissing.</div>
+    <div class="check"><strong>Controlepunt:</strong> er bestaat een nieuwe kandidaat terwijl de huidige live site ongewijzigd blijft.</div>
+  </div>
+</section>
+
+<!-- HERSTELPROMPT -->
+<section style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><h2>Herstelprompt: een reproduceerbare bug</h2></div>
+    <p class="stap-intro">Bewaar deze apart. Zodra er ooit iets stuk is, vul je gewoon de haakjes in.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Herstelprompt</span>Waargenomen probleem: [wat er gebeurde]
+Stappen: [exacte acties]
+Verwacht resultaat: [wat er zou moeten gebeuren]
+Werkelijk resultaat: [zichtbaar gedrag of foutmelding]
+
+Reproduceer het probleem en achterhaal de oorzaak. Maak de kleinst mogelijke fix die werkend gedrag behoudt. Herhaal het oorspronkelijke geval en het volledige bewerk-/opslaan-/heropenen-traject. Rapporteer het bewijs en wat niet getest is. Publiceer niet als onderdeel van deze fix.</div>
+  </div>
+</section>
+
+<!-- DEMO MODE -->
+<section style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="stap">
+    <div class="stap-kop"><h2>Demomodus zonder API-toegang</h2></div>
+    <p class="stap-intro">Nog geen API-account? Gebruik dit om toch alles behalve de echte generatie te testen.</p>
+    <div class="promptvak">
+      <button class="copy-btn" onclick="copyVak(this)">Kopieer</button>
+      <span class="vak-label">Demomodus</span>Houd live generatie uitgeschakeld tot ik de API instel. Voorzie een duidelijk gelabelde demomodus met deterministische, fictieve voorbeelden om de interface en de opslag te testen. Toon die fixtures nooit als echte AI-resultaten. Houd de echte providerinterface apart zodat inloggegevens ze later kunnen activeren. Markeer verificatie van live generatie als geblokkeerd.</div>
+  </div>
+</section>
+
+<!-- CTA HUB -->
+<section style="max-width:900px; margin:0 auto; padding:8px 32px 0;">
+  <div data-reveal style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); border-radius:20px; padding:34px 38px; display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center;">
+    <div>
+      <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#fff; margin-bottom:8px;">GRATIS IN DE HUB</div>
+      <h2 style="margin:0 0 8px; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1px; line-height:1.15; color:#fff;">Weet je niet welke agent of hosting je moet kiezen?</h2>
+      <p style="margin:0; font-size:15px; line-height:1.65; color:#fff;">Dat leg ik gratis uit in de Hub, samen met kant-en-klare skills die je meteen kan gebruiken. Geen abonnement nodig.</p>
+    </div>
+    <a href="https://hub.asklien.ai" class="btn-white" style="background:#fff; color:#1c1a1f; font-weight:600; font-size:15px; padding:15px 28px; border-radius:10px; white-space:nowrap;">Naar de Hub →</a>
+  </div>
+</section>
+
+<!-- FINALE OVERDRACHT -->
+<section style="max-width:900px; margin:0 auto; padding:28px 32px 0;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:24px; padding:48px 44px;">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px;">TER AFSLUITING</div>
+    <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px; line-height:1.1; color:#f6f1e7;">Wat je bijhoudt na de laatste stap<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0 0 24px; font-size:16px; line-height:1.7; color:#b3ab9e;">Noteer: de projectlocatie, de echte draaicommando's, de broncommit, de controles met bewijs, wat geblokkeerd bleef, de bewaarde versie, de productie-URL als je publiceerde, en het huidige publiek. Houd het onderscheid tussen lokaal, bewaard, gedeployed en geverifieerd overeind. Dat onderscheid is precies wat je later terugvindt als iets stuk gaat.</p>
+  </div>
+</section>
+
+<!-- SLOT CTA -->
+<section style="max-width:900px; margin:0 auto; padding:24px 32px 96px;">
+  <div data-reveal style="background:#fff; border-radius:24px; padding:44px 42px;">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">EN NU?</div>
+    <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.5px; line-height:1.1;">Vijftien stappen lijkt veel. Het is vooral rust in plaats van chaos<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0 0 20px; font-size:16px; line-height:1.7; color:#57534a; max-width:640px;">De meeste mensen die "vibe coden" botsen op hetzelfde: het werkt tot het niet meer werkt, en dan weet niemand nog waarom. Dit plan bestaat net om dat te vermijden, met een controlepunt bij elke stap in plaats van achteraf puzzelen. Wil je dit met je eigen idee doen, met iemand die meekijkt op elk controlepunt? Dat is precies wat we in de challenge samen doen.</p>
+    <div class="cta-row" style="display:flex; gap:14px; flex-wrap:wrap;">
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">Bekijk de challenge →</a>
+      <a href="https://hub.asklien.ai" class="btn-outline" style="border:2px solid #1c1a1f; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px;">Eerst gratis rondkijken in de Hub</a>
+    </div>
+  </div>
+</section>
+
+
+<section data-kruislinks style="max-width:1000px; margin:0 auto; padding:0 32px 72px;"><h2 style="font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-1px; margin:0 0 18px;">Andere gratis gidsen</h2><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;"><a href="/prompten-claude-5/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Ik kortte mijn prompts met de helft in</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Drie dingen die ik veranderde aan hoe ik prompt, plus de checklist.</div></a><a href="/gemeente-test/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Wat weet AI over jouw gemeente?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">De simpelste test om te leren zien wanneer AI iets verzint.</div></a><a href="/10-manieren-claude-bespaart/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">10 manieren waarop Claude je geld bespaart</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Van je abonnementen tot je huurindexatie, met tien prompts om te kopiëren.</div></a><a href="/9-dingen-claude-doet-gratis/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">9 dingen die Claude gratis doet</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Negen taken waar je nu voor betaalt, met kant-en-klare prompts.</div></a><a href="/watermerk-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Het watermerk in Claude</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wat dat onzichtbare watermerk is, en hoe je het weghaalt.</div></a><a href="/ai-in-jouw-sector/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">AI in jouw sector volgens de data</div><div style="font-size:14px; line-height:1.6; color:#57534a;">De gratis dataset die toont welke beroepen AI het meest gebruiken.</div></a></div><p style="margin:18px 0 0; font-size:15px;"><a href="/gidsen/" style="font-weight:600; color:#ff4d24;">Bekijk alle gidsen →</a></p></section>
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="/gidsen/">Alle gidsen</a><a href="https://hub.asklien.ai">Hub</a><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/privacy/">Privacy en cookies</a> · <a href="#cookievoorkeuren">Cookievoorkeuren</a></div>
+  </div>
+</footer>
+
+<!-- POPUP -->
+<div id="ctaPopup">
+  <button class="close" onclick="document.getElementById('ctaPopup').classList.remove('show')">×</button>
+  <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.5px; color:#ff4d24; margin-bottom:10px;">GRATIS VERDER LEREN</div>
+  <div style="font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px; line-height:1.2; margin-bottom:10px;">Alles staat klaar in de Hub.</div>
+  <p style="margin:0 0 16px; font-size:13.5px; line-height:1.5; color:#b3ab9e;">Skills, templates en gidsen om meteen mee te starten. Gratis account, geen kaartgegevens.</p>
+  <a href="https://hub.asklien.ai" class="btn-primary" style="display:block; background:#ff4d24; color:#fff; font-weight:600; font-size:14px; padding:13px; border-radius:9px; text-align:center;">Naar de gratis Hub →</a>
+  <a href="/challenge/" style="display:block; margin-top:10px; font-size:13px; color:#b3ab9e; text-align:center; text-decoration:underline;">Of bekijk de challenge van 15 september</a>
+</div>
+
+<script src="/js/site.js?v=3"></script>
+<script>
+function copyVak(btn) {
+  var vak = btn.parentElement.cloneNode(true);
+  var b = vak.querySelector('.copy-btn'); if (b) b.remove();
+  var l = vak.querySelector('.vak-label'); if (l) l.remove();
+  navigator.clipboard.writeText(vak.innerText.trim()).then(function () {
+    var old = btn.textContent;
+    btn.textContent = 'Gekopieerd!';
+    setTimeout(function () { btn.textContent = old; }, 1800);
+  });
+}
+setTimeout(function () { document.getElementById('ctaPopup').classList.add('show'); }, 15000);
+window.addEventListener('scroll', function onScroll() {
+  if (window.scrollY > document.body.scrollHeight * 0.45) {
+    document.getElementById('ctaPopup').classList.add('show');
+    window.removeEventListener('scroll', onScroll);
+  }
+});
+</script>
+<script src="/js/analytics.js?v=3" defer></script>
+<script src="/js/menu.js?v=3" defer></script>
+</body>
+</html>
