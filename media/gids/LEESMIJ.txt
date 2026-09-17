@@ -8,3 +8,10 @@ claude-per-chat.png               In een Claude-gesprek: het menu waar je per co
 
 Ontbreekt een bestand, dan verbergt de pagina die figuur vanzelf.
 Breedte: minstens 1200 px. Vervaag mailadressen en namen van klanten.
+
+Screenshots voor /claude-update/ :
+
+claude-output-menu.png          Staat er al (nagebouwd naar het scherm van Anthropic, met "Lien"). Vervang gerust door je eigen screenshot van het Output-menu.
+claude-slides-prompt.png        Staat er al (nagebouwd). Vervang gerust door een echte.
+claude-slides-resultaat.png     Jouw eigen screenshot: het deck "De wereld van Claude" open in Claude Slides (die je op 17/09 maakte)
+claude-design-canvas.png        Een Claude Design canvas naast een gesprek, met de sliders of een opmerking
