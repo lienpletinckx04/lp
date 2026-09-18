@@ -1,0 +1,17 @@
+Screenshots voor /connectors-gids/ (drop ze hier met exact deze namen, png of jpg met dezelfde naam werkt ook als je de extensie in de HTML aanpast):
+
+connectors-claude-directory.png   Claude > Instellingen > Connectors > Discover (heb je al)
+toestemming-google.png            Google toestemmingsscherm bij koppelen van Gmail/Drive (de vinkjes per onderdeel)
+google-verbindingen.png           myaccount.google.com > Beveiliging > Verbindingen met apps en services van derden
+claude-privacy-training.png       Claude > Instellingen > Privacy > "Help improve Claude"
+claude-per-chat.png               In een Claude-gesprek: het menu waar je per connector aanvinkt wat meedoet
+
+Ontbreekt een bestand, dan verbergt de pagina die figuur vanzelf.
+Breedte: minstens 1200 px. Vervaag mailadressen en namen van klanten.
+
+Screenshots voor /claude-update/ :
+
+claude-output-menu.png          Staat er al (nagebouwd naar het scherm van Anthropic, met "Lien"). Vervang gerust door je eigen screenshot van het Output-menu.
+claude-slides-prompt.png        Staat er al (nagebouwd). Vervang gerust door een echte.
+claude-slides-resultaat.png     Staat er al (nagebouwd naar jouw screenshot van 17/09). Vervang gerust door je echte screenshot, zelfde naam.
+claude-design-canvas.png        Een Claude Design canvas naast een gesprek, met de sliders of een opmerking
