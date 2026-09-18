@@ -68,6 +68,7 @@
     <div style="margin-top:36px; display:flex; align-items:center; gap:20px; flex-wrap:wrap; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .35s both;">
       <a href="/voorsprong-inschrijven.html" class="btn-white" style="background:#fff; color:#1c1a1f; font-weight:600; font-size:17px; padding:18px 40px; border-radius:10px;">Word lid</a>
       <div style="display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.45); padding:12px 22px; border-radius:999px; font-size:15px; font-weight:600;"><span style="width:8px; height:8px; border-radius:50%; background:#fff; animation:pulse 1.6s infinite;"></span>€37 per maand, maandelijks opzegbaar</div>
+      <div id="ledenBadgeHero" style="display:none; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.45); padding:12px 22px; border-radius:999px; font-size:15px; font-weight:600;">👥&nbsp; Al <span id="ledenAantalHero"></span> leden gingen je voor</div>
     </div>
   </div>
 </header>
@@ -287,6 +288,7 @@
       <div>Ledenzone meteen open.</div>
     </div>
     <a href="/voorsprong-inschrijven.html" class="btn-dark-to-white" style="display:inline-block; background:#1c1a1f; color:#fff; font-weight:600; font-size:17px; padding:18px 44px; border-radius:10px;">Word lid</a>
+    <div id="ledenBadgeSlot" style="display:none; margin-top:20px; font-size:15px; color:#ffe4da;">Je bent niet de eerste. Al <strong id="ledenAantalSlot" style="color:#fff;"></strong> leden gingen je voor.</div>
   </div>
 </section>
 
@@ -301,5 +303,28 @@
 <script src="/js/site.js?v=3"></script>
 <script src="/js/analytics.js?v=3" defer></script>
 <script src="/js/menu.js?v=3" defer></script>
+<script>
+(function () {
+  fetch('https://vgrlwcocnveysurkahuz.supabase.co/rest/v1/rpc/get_voorsprong_member_count', {
+    method: 'POST',
+    headers: {
+      'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZncmx3Y29jbnZleXN1cmthaHV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc5MDc0MTIsImV4cCI6MjEwMzQ4MzQxMn0.G6vS7D2KzqFpNrS7kwMLpAKb_DYqyuNkTxYUEeogyP0',
+      'Content-Type': 'application/json'
+    },
+    body: '{}'
+  })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (count) {
+      if (typeof count !== 'number' || count < 1) return;
+      var hero = document.getElementById('ledenBadgeHero');
+      var heroNum = document.getElementById('ledenAantalHero');
+      var slot = document.getElementById('ledenBadgeSlot');
+      var slotNum = document.getElementById('ledenAantalSlot');
+      if (hero && heroNum) { heroNum.textContent = count; hero.style.display = 'inline-flex'; }
+      if (slot && slotNum) { slotNum.textContent = count; slot.style.display = 'block'; }
+    })
+    .catch(function () { /* stil falen: badge blijft verborgen */ });
+})();
+</script>
 </body>
 </html>
