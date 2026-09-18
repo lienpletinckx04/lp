@@ -5,7 +5,7 @@ Statische website in de nieuwe huisstijl: vermiljoen (#ff4d24), crème (#f6f1e7)
 ## Pagina's
 - `index.html` — homepage (aanbod, aanpak, spreker, over Lien)
 - `challenge.html` — Challenge "Gebruik Claude zoals het hoort" (€397)
-- `voorsprong.html` — Membership Voorsprong (founding €19/maand)
+- `voorsprong/` — Membership Voorsprong (€37/maand, voor iedereen)
 
 ## Nog invullen
 - Foto's: vervang de `.img-slot` placeholders door `<img>`-tags (hero, podium, over-Lien, sfeerbeeld, ledenzone-screenshot)
