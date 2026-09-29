@@ -1,0 +1,43 @@
+# AskLien.ai
+
+> AskLien.ai is het bedrijf van Lien Pletinckx, AI-coach in België. Ze helpt iedereen die met AI wil werken, van zelfstandigen en teams tot kmo's, om Claude en ChatGPT echt te gebruiken. Alles in het Nederlands (Vlaams), hands-on en zonder jargon. Aanbod: gratis gidsen, een online opleiding "Claude in 10 dagen", het membership Voorsprong, AI audits en AI-implementatie voor bedrijven, en lezingen en workshops als gastspreker.
+
+Taal: Nederlands. Werkgebied: Vlaanderen en heel België, online ook daarbuiten. Contact: hello@asklien.ai.
+
+## Aanbod
+
+- [Claude in 10 dagen (challenge)](https://asklien.ai/challenge/): online opleiding om Claude te leren gebruiken, 10 modules en 4 live online sessies, maximaal 25 deelnemers, in het Nederlands. Prijs €297.
+- [Voorsprong (membership)](https://asklien.ai/voorsprong/): maandelijks bijblijven met AI. Nieuwe features binnen de week uitgelegd, skills en templates, maandelijkse live Q&A en een community. €37 per maand, maandelijks opzegbaar.
+- [AI audit en AI-implementatie](https://asklien.ai/ai-audit/): AI Audit voor kmo's (één live auditdag op de vloer plus rapport met concrete voorstellen, €1.750, verrekend bij een traject), AI Setup Traject (drie skills op maat en een volledige AI-setup, remote, €1.250) en trajecten en retainers op maat (vanaf €6.500).
+- [Spreker en workshops](https://asklien.ai/spreker/): keynotes, panels, live demo's en workshops over AI in mensentaal. Sprak voor onder meer Creamoda, VBVD (diëtisten), Besko (beautyspecialisten) en op AI Day in Gent.
+- [Gratis Hub](https://hub.asklien.ai/): gratis ledenplatform met weggevers, de Claude-kaart en een Skill Generator.
+
+## Over Lien Pletinckx
+
+- [Over Lien](https://asklien.ai/over-lien/): AI-coach en consultant, oprichter van AskLien.ai. Werkt met Claude, ChatGPT en de beste tool voor de job. Meer dan 900 ondernemers lezen haar wekelijkse nieuwsbrief.
+- [Instagram](https://www.instagram.com/asklien.ai/) · [LinkedIn](https://www.linkedin.com/in/lien-pletinckx/)
+
+## Gratis gidsen (Nederlandstalig)
+
+- [Alle gidsen](https://asklien.ai/gidsen/)
+- [Claude of ChatGPT? Wat gebruik je waarvoor](https://asklien.ai/claude-of-chatgpt/)
+- [Claude in september 2026: alle veranderingen](https://asklien.ai/claude-september-2026/)
+- [ChatGPT in september 2026: alle veranderingen](https://asklien.ai/chatgpt-september-2026/)
+- [Wat er nieuw is in Claude sinds 16 september 2026](https://asklien.ai/claude-update/)
+- [Fable 5.1: waarvoor gebruik je het](https://asklien.ai/fable-5-1/)
+- [Connectors in Claude, ChatGPT en andere AI-tools, veilig gebruiken](https://asklien.ai/connectors-gids/)
+- [Adverteren in ChatGPT: de complete gids voor België](https://asklien.ai/adverteren-in-chatgpt/)
+- [Context hints voor ChatGPT Ads](https://asklien.ai/context-hints-chatgpt-ads/)
+- [Er komen advertenties in ChatGPT: wat verandert er](https://asklien.ai/chatgpt-advertenties/)
+- [ChatGPT in je Apple Berichten](https://asklien.ai/chatgpt-apple-berichten/)
+- [Beter prompten in Claude](https://asklien.ai/prompten-claude-5/)
+- [10 manieren waarop Claude je geld bespaart](https://asklien.ai/10-manieren-claude-bespaart/)
+- [9 dingen die Claude gratis doet](https://asklien.ai/9-dingen-claude-doet-gratis/)
+- [AI in jouw sector](https://asklien.ai/ai-in-jouw-sector/)
+- [Wat weet AI over jouw gemeente?](https://asklien.ai/gemeente-test/)
+- [Watermerk in Claude-afbeeldingen](https://asklien.ai/watermerk-gids/)
+
+## Optional
+
+- [Contact](https://asklien.ai/contact/)
+- [Privacy](https://asklien.ai/privacy/)
