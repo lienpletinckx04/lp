@@ -11,6 +11,6 @@ Statische website in de nieuwe huisstijl: vermiljoen (#ff4d24), crème (#f6f1e7)
 - Foto's: vervang de `.img-slot` placeholders door `<img>`-tags (hero, podium, over-Lien, sfeerbeeld, ledenzone-screenshot)
 - Testimonials op `challenge.html` ([Quote van een deelnemer])
 - Twee "[Update door Lien]"-kaarten op `voorsprong.html`
-- CTA-links: knoppen wijzen nu naar hub.asklien.ai / shop.asklien.ai of ankers — vervang door echte checkout-URL's
+- CTA-links: knoppen wijzen nu naar hub.asklien.ai, Stripe-betaallinks of ankers (de oude shop.asklien.ai is niet meer in gebruik)
 
 Openen: gewoon `index.html` in een browser, of hosten als statische site (geen build nodig).
