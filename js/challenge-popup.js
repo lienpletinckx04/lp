@@ -47,9 +47,19 @@
     '<a class="ck-knop" href="' + CHALLENGE.link + '">' + CHALLENGE.knop + '</a>' +
     '<button class="ck-nietnu" type="button">Niet nu</button>';
 
-  var getoond = false;
+  var getoond = false, wachtOpBanner = null;
+  function cookiebannerOpen() {
+    return !!document.querySelector('[role="dialog"][aria-label="Cookievoorkeuren"]');
+  }
   function toon() {
     if (getoond) return;
+    // Nooit tegelijk met de cookiebanner: eerst die keuze, dan pas de kaart.
+    if (cookiebannerOpen()) {
+      if (!wachtOpBanner) wachtOpBanner = setInterval(function () {
+        if (!cookiebannerOpen()) { clearInterval(wachtOpBanner); setTimeout(toon, 1500); }
+      }, 1000);
+      return;
+    }
     getoond = true;
     document.body.appendChild(kaart);
     requestAnimationFrame(function () { requestAnimationFrame(function () { kaart.classList.add('toon'); }); });
