@@ -60,7 +60,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Welk model gebruik ik nu best in Claude?", "acceptedAnswer": { "@type": "Answer", "text": "Sonnet 5.5 voor je dagelijkse werk, Opus 5.5 voor lastige analyses en lange teksten, en Fable 5.1 enkel voor één zware klus waar het echt het verschil maakt. Fable kost op Pro extra tegoed en vreet op Max snel aan je limiet." } },
-    { "@type": "Question", "name": "Ik zie Docs en Slides niet. Wat nu?", "acceptedAnswer": { "@type": "Answer", "text": "Twee mogelijke redenen. De update rolt gespreid uit, eerst voor Pro en Max. En je moet in je instellingen onder Mogelijkheden de optie voor code uitvoeren en bestanden maken aan hebben staan. Zonder die optie verschijnen Docs, Slides en Design niet." } },
+    { "@type": "Question", "name": "Ik zie Docs en Slides niet. Wat nu?", "acceptedAnswer": { "@type": "Answer", "text": "Twee mogelijke redenen. De update rolt gespreid uit, eerst voor Pro en Max. En je moet in je instellingen onder Mogelijkheden Cloud code execution and file creation aan hebben staan. Zonder die optie verschijnen Docs, Slides en Design niet. En ze zijn enkel voor betaalde abonnementen, niet voor het gratis plan." } },
     { "@type": "Question", "name": "Kost Claude nu meer?", "acceptedAnswer": { "@type": "Answer", "text": "Nee. De abonnementsprijzen zijn in september niet veranderd. Wat wel veranderde: met Opus 5.5 zijn je limieten per vijf uur verhoogd, en elke betalende gebruiker kreeg eenmalig een reset van zijn limiet om zelf in te zetten." } },
     { "@type": "Question", "name": "Is alles ook beschikbaar in België?", "acceptedAnswer": { "@type": "Answer", "text": "Bijna alles. Mythos 5.1 is enkel voor geselecteerde Amerikaanse organisaties, de gratis workshops voor kleine bedrijven vinden enkel in de VS plaats, en voor Salesforce in Claude moet Salesforce je eerst toelaten tot de bèta. Voor de rest vond ik geen Europese beperkingen." } },
     { "@type": "Question", "name": "Wat is het verschil met de gids over de update van 16 september?", "acceptedAnswer": { "@type": "Answer", "text": "Die gids gaat dieper in op één update: één venster, Docs, Slides en Design. Deze gids zet de hele maand op een rij, van de nieuwe modellen tot de workflows voor kleine bedrijven, met tips en prompts per onderdeel." } }
@@ -151,7 +151,7 @@
       <li><span class="dag">26 augustus</span><strong>Claude in Chrome voor alle betalende gebruikers</strong>, en <strong>Cowork krijgt een eigen ingebouwde browser.</strong></li>
       <li><span class="dag">1 september</span><strong>Fable 5.1.</strong> Het zwaarste model dat Claude heeft, wereldwijd beschikbaar.</li>
       <li><span class="dag">15 september</span><strong>Claude for Small Business</strong> met 43 werkstromen en 27 nieuwe koppelingen. En Salesforce in Claude, in bèta.</li>
-      <li><span class="dag">16 september</span><strong>Chat en Cowork worden één Claude.</strong> Claude Docs en Claude Slides zijn nieuw, Claude Design werkt in elk gesprek.</li>
+      <li><span class="dag">16 september</span><strong>Chat en Cowork worden één Claude.</strong> Claude Docs en Claude Slides zijn nieuw, Claude Design werkt in elk gesprek (<a href="#claude-design" style="color:#ff4d24; font-weight:600;">alles over Design</a>).</li>
       <li><span class="dag">17 september</span><strong>Projecten krijgen een nieuwe vorm</strong>, voorlopig in een beperkte bèta.</li>
       <li><span class="dag">22 september</span><strong>Opus 5.5.</strong> Plus hogere limieten en één reset van je limiet om zelf in te zetten.</li>
       <li><span class="dag">23 september</span><strong>Claude Marketplace.</strong> Meer dan 2.000 koppelingen en plugins op één plek.</li>
@@ -185,7 +185,7 @@
         <p>Sinds 1 september. Het zwaarste model. Op Max mag je er maximaal de helft van je weeklimiet aan besteden, op Pro betaal je het met extra tegoed. Niet op het gratis plan.</p>
       </div>
     </div>
-    <div class="let"><p><strong>Hogere limieten, en een reset achter de hand.</strong> Met Opus 5.5 gingen de limieten per vijf uur omhoog voor Pro, Max en Team. Anthropic noemde geen percentage, de pers spreekt van ongeveer 20%. Elke betalende gebruiker kreeg ook één reset van zijn limiet die je zelf kiest wanneer je inzet. Mijn tip: hou die voor een deadlinedag.</p></div>
+    <div class="let"><p><strong>Hogere limieten, en een reset achter de hand.</strong> Met Opus 5.5 gingen de limieten per vijf uur omhoog voor Pro, Max, Team en Enterprise. Anthropic noemde geen percentage, de pers spreekt van ongeveer 20%. Je kreeg ook één gratis reset van je limiet die je zelf inzet: Instellingen, Gebruik, Resets, "Reset for free" (op web en desktop). Daar zie je ook tot wanneer hij geldig is. Mijn tip: hou hem voor een deadlinedag.</p></div>
     <p style="margin-top:16px;">Over Fable schreef ik <a href="/fable-5-1/" style="color:#ff4d24; font-weight:600;">een aparte gids</a> met acht taken die het waard zijn. Haiku 5.5, het snelste en lichtste model, is aangekondigd maar nog niet uit.</p>
     <div class="prompt"><button class="kopieer">Kopieer</button><pre>Ik ga je een taak geven. Zeg me eerst welk model je hiervoor zou aanraden (Sonnet 5.5, Opus 5.5 of Fable 5.1) en waarom, in twee zinnen. Houd rekening met hoe moeilijk de taak echt is en met mijn limiet. De taak: [beschrijf je taak].</pre></div>
   </div>
@@ -196,13 +196,60 @@
     <h2>Eén Claude, met Docs, Slides en Design erin</h2>
     <p>Sinds 16 september moet je niet meer kiezen tussen Chat en Cowork. Je typt wat je wil, en Claude beslist zelf of het even antwoordt, een document begint of een langere taak opneemt terwijl jij iets anders doet. Onder het invoerveld kies je hoogstens wat voor uitvoer je wil: een document (Docs), een presentatie (Slides), een ontwerp (Design) of een artifact.</p>
     <ul class="lijst">
-      <li><strong>Claude Docs</strong> schrijft naast het gesprek, stelt eerst vragen en legt in opmerkingen uit waarom het iets zo koos. Klanten kunnen commentaar geven, en met @Claude in een opmerking past Claude het aan. Exporteren kan naar Word, PDF, Markdown en Google Docs. Op je gsm kan je een document voorlopig enkel bekijken.</li>
-      <li><strong>Claude Slides</strong> maakt een presentatie die je op het canvas bewerkt, rechtstreeks vanuit Claude presenteert, of downloadt als PowerPoint of PDF.</li>
-      <li><strong>Claude Design</strong> werkt nu in elk gesprek. Je geeft één keer je huisstijl mee, daarna maakt het alles in die stijl.</li>
+      <li><strong>Claude Docs</strong> is een echt document met titels, tabellen en meerdere tabbladen, dat bewaard blijft in je Claude-account. Wijzigingen worden meteen opgeslagen. Selecteer tekst om een opmerking te zetten, en met @Claude in een opmerking past Claude het aan en legt uit wat het deed. Claude kan ook grafieken maken uit je gekoppelde apps, maar die werken zichzelf niet bij. Exporteren kan naar Word, PDF, Markdown en Google Docs.</li>
+      <li><strong>Claude Slides</strong> maakt een presentatie uit je notities, een rapport of het gesprek. Je past aan op de slide zelf, met een opmerking bij een element of in het gesprek, en je kan eigen afbeeldingen toevoegen. Presenteren doe je rechtstreeks vanuit Claude, of je downloadt als PowerPoint of PDF.</li>
+      <li><strong>Claude Design</strong> werkt nu in elk gesprek. Daar staat hieronder een apart hoofdstuk over.</li>
     </ul>
-    <div class="let"><p><strong>Zie je Docs en Slides niet?</strong> Kijk dan in je instellingen onder Mogelijkheden (Capabilities) of de optie om code uit te voeren en bestanden te maken aan staat. Zonder die optie verschijnen ze niet. Staat ze aan en zie je nog altijd niets, dan ben je gewoon nog niet aan de beurt: de update rolt gespreid uit, eerst voor Pro en Max.</p></div>
+    <div class="let"><p><strong>Voor wie?</strong> Docs, Slides en Design zijn in bèta en enkel voor betaalde abonnementen: Pro, Max en Team. Bij Enterprise moet een beheerder ze aanzetten. Op het gratis plan zitten ze niet. Op je gsm kan je ze voorlopig enkel bekijken, bewerken doe je op je computer.</p></div>
+    <div class="let"><p><strong>Zie je ze niet?</strong> Kijk in je instellingen onder Mogelijkheden (Capabilities) of "Cloud code execution and file creation" aan staat. Zonder die optie verschijnen ze niet. Staat ze aan en zie je nog altijd niets, dan ben je gewoon nog niet aan de beurt: het nieuwe venster rolt gespreid uit, eerst voor Pro en Max.</p></div>
+    <div class="let"><p><strong>Delen:</strong> op Pro en Max deel je een document of ontwerp via een link, maar wie het opent, heeft een Claude-account nodig. Op Team en Enterprise deel je voorlopig enkel binnen je organisatie.</p></div>
     <p style="margin-top:16px;">Wil je hier alles over weten, met voorbeelden en schermafbeeldingen? Lees <a href="/claude-update/" style="color:#ff4d24; font-weight:600;">mijn gids over de update van 16 september</a>.</p>
     <div class="prompt"><button class="kopieer">Kopieer</button><pre>Schrijf als Claude Doc een voorstel van twee pagina's voor [klant] over [project]. Stel me eerst je vragen. Als het document klaar is en ik het goedkeur: maak er een presentatie van zes slides van in mijn huisstijl ([kleuren en lettertype]), die ik kan downloaden als PowerPoint.</pre></div>
+  </div>
+</section>
+
+
+<section style="max-width:860px; margin:0 auto; padding:14px 32px 0;" id="claude-design">
+  <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:clamp(28px,4.5vw,42px); letter-spacing:-2px; line-height:1.05;">Claude Design, van dichtbij<span style="color:#ff4d24;">.</span></h2>
+  <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#57534a; max-width:700px;">Dit is voor mij de update die het meest onderschat wordt. Sinds 16 september zit Design in elk gesprek. Je hoeft dus niet meer naar een aparte plek om iets visueels te maken.</p>
+
+  <div data-reveal class="kaart">
+    <h2>Wat het maakt</h2>
+    <p>Landingspagina's, one-pagers, klikbare prototypes, dashboards, formulieren, onboarding-schermen en kleine interne tools. Voor een presentatie gebruik je Slides. Design maakt geen foto's: voor een productfoto in een nieuwe setting heb je een beeldgenerator nodig.</p>
+    <h3 style="margin-top:22px;">Zo begin je</h3>
+    <ul class="lijst">
+      <li><strong>Vraag het gewoon in je gesprek:</strong> "maak een one-pager voor mijn workshop".</li>
+      <li><strong>Of kies Design</strong> onder het invoerveld, bij Output.</li>
+      <li><strong>Of start van een sjabloon</strong> in het tabblad Artifacts.</li>
+    </ul>
+    <p style="margin-top:14px;">De aparte plek <a href="https://claude.ai/design" target="_blank" rel="noopener" style="color:#ff4d24; font-weight:600;">claude.ai/design</a> bestaat nog altijd, met je bestaande projecten erin.</p>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Je huisstijl, één keer</h2>
+    <p>Het echte voordeel van Design is een design system: je kleuren, lettertypes, logo en componenten, zodat alles wat Claude maakt meteen in jouw stijl staat. Je bouwt het op uit wat je al hebt:</p>
+    <ul class="lijst">
+      <li><strong>Een PDF of PowerPoint</strong> met je huisstijl, of een paar voorbeelden van je eigen werk.</li>
+      <li><strong>Je logo, kleurenpalet en lettertypes.</strong></li>
+      <li><strong>Een Figma-bestand</strong>, als je ontwerper daarin werkt.</li>
+      <li><strong>Een GitHub-repo of code</strong>, als je website of app al bestaat.</li>
+    </ul>
+    <p style="margin-top:14px;">Je beheert je design systems in je instellingen, onder Design systems. Had je er al een in claude.ai/design, dan is die overgezet.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Maak een design system uit deze bijlage: mijn kleuren, lettertypes, logo, hoe ik foto's gebruik en hoe mijn knoppen en titels eruitzien. Toon me een overzichtspagina van het resultaat, en vraag me wat er nog niet klopt voor je het bewaart.</pre></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Aanpassen, exporteren en delen</h2>
+    <ul class="lijst">
+      <li><strong>Aanpassen:</strong> sleep en schaal rechtstreeks op het canvas, zet een opmerking bij een element, of zeg in het gesprek wat anders moet. Je kan ook tekst selecteren en "Edit with Claude" kiezen.</li>
+      <li><strong>Exporteren:</strong> als PDF, PowerPoint, losse HTML-pagina of ZIP. Naar Google Slides kan enkel vanuit claude.ai/design.</li>
+      <li><strong>Doorsturen naar je andere tools:</strong> onder meer Canva, Gamma, Miro, HubSpot, Wix, Lovable, Netlify en Vercel. Handig als je daar verder werkt of er je website mee bouwt.</li>
+      <li><strong>Delen:</strong> een ontwerp is standaard privé. Je nodigt mensen uit om te bekijken, commentaar te geven of mee te bewerken.</li>
+    </ul>
+    <div class="let"><p><strong>Wat nog niet goed werkt</strong> (Anthropic zegt het zelf): er is geen versiegeschiedenis, opmerkingen verschijnen soms niet, en met meerdere mensen tegelijk bewerken loopt nog niet vlot. Download dus een tussenversie voor je grote aanpassingen vraagt. En het resultaat is zo goed als het materiaal dat je meegeeft.</p></div>
+    <p style="margin-top:16px;"><strong style="color:#1c1a1f;">Voor wie:</strong> in bèta voor Pro, Max en Team. Bij Enterprise moet een beheerder het aanzetten. Niet op het gratis plan. Op je gsm kan je ontwerpen enkel bekijken. Design gebruikt dezelfde limiet als de rest van Claude.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Ontwerp een landingspagina voor [aanbod of event], in mijn design system. Voor: [doelgroep]. Bovenaan in één zin wat het is en voor wie, daarna drie voordelen, een korte FAQ en één duidelijke knop: [inschrijven / contact]. Maak eerst een versie voor gsm, daarna voor computer. Stel me eerst je vragen.</pre></div>
+    <p class="bron">Bronnen: <a href="https://support.claude.com/en/articles/14604416-get-started-with-claude-design" target="_blank" rel="noopener">aan de slag met Claude Design</a> en <a href="https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design" target="_blank" rel="noopener">je design system opzetten</a> (Anthropic).</p>
   </div>
 </section>
 
@@ -218,7 +265,7 @@
       <li><strong>Marketingcampagnes</strong>, <strong>maandafsluiting</strong> voor je boekhouder en <strong>onboarding</strong> van nieuwe klanten of medewerkers.</li>
     </ul>
     <div class="let"><p><strong>Wat ik er goed aan vind:</strong> Claude zet alles klaar, maar voert niets uit voor jij het goedkeurt. Dat staat standaard zo. Laat het zo staan tot je de werkstroom echt vertrouwt.</p></div>
-    <p style="margin-top:16px;">Twee kanttekeningen voor België. Een paar koppelingen, zoals Gusto en Square, zijn vooral Amerikaanse tools. En de gratis workshops die Anthropic erbij organiseert, vinden enkel in Amerikaanse steden plaats.</p>
+    <p style="margin-top:16px;">Twee kanttekeningen voor België. Een paar koppelingen, zoals Gusto en Square, zijn vooral Amerikaanse tools. De workshops op locatie die Anthropic erbij organiseert, zijn in Amerikaanse steden. Er zijn wel online webinars met partners.</p>
     <div class="prompt"><button class="kopieer">Kopieer</button><pre>Hier is mijn spraakmemo na het gesprek met [klant]. Maak er een voorstel van met prijs. Gebruik mijn standaardtarieven uit je geheugen (of: [uurtarief, btw-regime]). Stijl: mijn huisstijl. Structuur: wat ik begrepen heb, aanpak, planning, prijs, volgende stap. Toon me eerst de structuur voor je het uitschrijft, en verstuur niets.</pre></div>
   </div>
 </section>
@@ -238,7 +285,7 @@
   <div data-reveal class="kaart">
     <h2>Eén geheugen, dat je nu echt kan beheren</h2>
     <p>Sinds 25 augustus onthoudt Claude over chat en Cowork heen wie je bent en waar je aan werkt. Standaard aan op Free, Pro en Max. Op Team en Enterprise moet een beheerder het aanzetten.</p>
-    <p>Nieuw is dat je in je instellingen onder Geheugen per onderwerp ziet wat Claude weet, en dat je het kan aanpassen of wissen. Er is ook een aparte schakelaar voor gevoelige onderwerpen, zoals gezondheid of overtuigingen. Die staat standaard uit.</p>
+    <p>Nieuw is dat je in je instellingen onder Geheugen per onderwerp ziet wat Claude weet, en dat je het kan aanpassen of wissen. Er is ook een aparte schakelaar voor gevoelige onderwerpen, zoals gezondheid, geloof of politieke voorkeur. Die staat standaard uit. Sommige dingen bewaart Claude nooit, wat je ook instelt, zoals identiteitsnummers en rekeningnummers. Wil je dat een gesprek helemaal niet onthouden wordt? Gebruik een incognito-gesprek.</p>
     <div class="prompt"><button class="kopieer">Kopieer</button><pre>Wat onthoud je allemaal over mij en mijn bedrijf? Zet het in een lijstje per onderwerp. Duid aan wat volgens jou verouderd kan zijn, en vraag me per punt of het nog klopt.</pre></div>
   </div>
 </section>
@@ -263,13 +310,13 @@
   <div data-reveal class="kaart">
     <div class="nr">01</div>
     <h3>Zet eerst die ene schakelaar aan</h3>
-    <p>Instellingen, Mogelijkheden, en daar de optie om code uit te voeren en bestanden te maken. Zonder die optie geen Docs, Slides of Design. Het duurt tien seconden, en de helft van de vragen die ik krijg, gaat hierover.</p>
+    <p>Instellingen, Mogelijkheden, en daar "Cloud code execution and file creation". Zonder die optie geen Docs, Slides of Design. Het duurt tien seconden, en de helft van de vragen die ik krijg, gaat hierover.</p>
   </div>
 
   <div data-reveal class="kaart">
     <div class="nr">02</div>
     <h3>Laat je klant commentaar geven in een Claude Doc</h3>
-    <p>Deel de link van je document met je klant (Pro en Max kunnen delen met iedereen via een link). Je klant zet opmerkingen, en daarna laat je Claude alles in één keer verwerken.</p>
+    <p>Deel de link van je document met je klant. Op Pro en Max kan dat via een link, maar je klant heeft wel een Claude-account nodig om te openen. Je klant zet opmerkingen, en daarna laat je Claude alles in één keer verwerken.</p>
     <div class="prompt"><button class="kopieer">Kopieer</button><pre>Verwerk alle opmerkingen in dit document tot een nieuwe versie. Geef me daarna een lijstje: wat je aangepast hebt, en welke opmerkingen je niet verwerkt hebt en waarom.</pre></div>
   </div>
 
@@ -338,7 +385,7 @@
   <div data-reveal class="kaart faq">
     <h2>Vragen die ik hierover krijg</h2>
     <details><summary>Welk model gebruik ik nu best?</summary><p>Sonnet 5.5 voor je dagelijkse werk, Opus 5.5 voor lastige analyses en lange teksten, en Fable 5.1 enkel voor één zware klus waar het echt het verschil maakt. Fable kost op Pro extra tegoed en vreet op Max snel aan je limiet.</p></details>
-    <details><summary>Ik zie Docs en Slides niet. Wat nu?</summary><p>Twee mogelijke redenen. De update rolt gespreid uit, eerst voor Pro en Max. En je moet in je instellingen onder Mogelijkheden de optie om code uit te voeren en bestanden te maken aan hebben staan. Zonder die optie verschijnen Docs, Slides en Design niet.</p></details>
+    <details><summary>Ik zie Docs en Slides niet. Wat nu?</summary><p>Twee mogelijke redenen. De update rolt gespreid uit, eerst voor Pro en Max. En je moet in je instellingen onder Mogelijkheden "Cloud code execution and file creation" aan hebben staan. Zonder die optie verschijnen Docs, Slides en Design niet. En ze zijn enkel voor betaalde abonnementen, niet voor het gratis plan.</p></details>
     <details><summary>Kost Claude nu meer?</summary><p>Nee. De abonnementsprijzen zijn in september niet veranderd. Wat wel veranderde: met Opus 5.5 zijn je limieten per vijf uur verhoogd, en elke betalende gebruiker kreeg eenmalig een reset van zijn limiet om zelf in te zetten.</p></details>
     <details><summary>Is alles ook beschikbaar in België?</summary><p>Bijna alles. Mythos 5.1 is enkel voor geselecteerde Amerikaanse organisaties, de gratis workshops voor kleine bedrijven vinden enkel in de VS plaats, en voor Salesforce in Claude moet Salesforce je eerst toelaten tot de bèta. Voor de rest vond ik geen Europese beperkingen.</p></details>
     <details><summary>Wat is het verschil met je gids over 16 september?</summary><p>Die gids gaat dieper in op één update: één venster, Docs, Slides en Design, met schermafbeeldingen. Deze gids zet de hele maand op een rij, van de nieuwe modellen tot de werkstromen voor kleine bedrijven. Lees ze gerust allebei: <a href="/claude-update/" style="color:#ff4d24; font-weight:600;">naar de gids over 16 september</a>.</p></details>
