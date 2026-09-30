@@ -129,7 +129,7 @@ Tel onderaan op wat die tweede lijst mij per maand en per jaar kost.
 
 Vraag me niets over gebruik. Zeg gewoon per lijn welke vraag ik
 mezelf moet stellen om te beslissen of het weg mag.</div>
-    <div class="uitkomst"><strong>Wat je eruit haalt:</strong> een lijst zoals ik ze bij mezelf kreeg. Spotify Duo aan € 14,99 die ik vandaag nog gebruikte, iCloud+ aan € 2,99 die dagelijks draait, en daarnaast € 113,43 per maand aan dingen die gewoon bleven lopen. Een ontwerptool die over zes dagen stilzwijgend verlengde voor een jaar aan € 130, was daar het duurste stuk van.</div>
+    <div class="uitkomst"><strong>Wat je eruit haalt:</strong> een lijst zoals ik ze bij mezelf kreeg. Spotify Duo aan € 19,99 die ik vandaag nog gebruikte, iCloud+ aan € 2,99 die dagelijks draait, en daarnaast € 113,43 per maand aan dingen die gewoon bleven lopen. Een ontwerptool die over zes dagen stilzwijgend verlengde voor een jaar aan € 130, was daar het duurste stuk van.</div>
   </div>
 </section>
 
@@ -307,15 +307,19 @@ vermeldt in plaats van aan te nemen dat het gedekt is.</div>
       <h3 style="margin:0; font-family:'Archivo'; font-weight:800; font-size:24px; letter-spacing:-1px;">Huurverhoging natrekken</h3>
     </div>
     <p style="margin:0 0 18px; font-size:14px; color:#8a8378;">Een ronde vraagprijs is meestal geen berekening</p>
-    <div class="how-box"><strong>Wat je meegeeft:</strong> je huidige huurprijs, de startmaand van je contract, en wat er nu gevraagd wordt. <br><strong>Let op:</strong> huurindexatie is in België gewestelijke materie en er zijn periodes geweest met bijkomende regels. Laat Claude de berekening tonen, en leg ze daarna naast je eigen contract.</div>
+    <div class="how-box"><strong>Wat je meegeeft:</strong> je basishuurprijs uit je contract, de maand waarin het ondertekend werd en inging, en wat er nu gevraagd wordt. <br><strong>Let op:</strong> huurindexatie is in België gewestelijke materie en in Brussel geldt voor woningen met een EPB E, F of G nog altijd een correctiefactor. Laat Claude de berekening tonen, en leg ze daarna naast je eigen contract.</div>
     <div class="prompt-box"><button class="copy-btn" onclick="copyPrompt(this)">Kopieer</button>Mijn huursituatie:
-- huidige huurprijs: € [BEDRAG]
-- startmaand en jaar van het contract: [BV. MEI 2021]
+- basishuurprijs uit je contract: € [BEDRAG]
+- maand en jaar waarin je contract ondertekend werd én waarin het inging: [BV. SEPTEMBER 2025]
 - gewest: [Vlaanderen / Brussel / Wallonië]
 - de eigenaar vraagt nu: € [BEDRAG]
 
-Reken de wettelijke indexatie na volgens de gezondheidsindex
-van mijn startmaand tegenover die van vandaag.
+Reken de wettelijke indexatie na: basishuurprijs × gezondheidsindex
+van de maand vóór de verjaardag van mijn contract ÷ aanvangsindex
+(in Vlaanderen voor contracten vanaf 2019: de maand vóór de
+ingangsdatum; in Brussel en Wallonië: de maand vóór de
+ondertekening). Zoek de indexcijfers op bij Statbel. Woon ik in
+Brussel, check dan ook of de EPB-correctiefactor geldt.
 
 Toon de berekening stap voor stap, met de indexcijfers die je
 gebruikt en waar ze vandaan komen. Ik wil ze zelf kunnen
@@ -466,7 +470,7 @@ mijn woorden, niet in verkooptaal.</div>
   <button class="close" onclick="document.getElementById('ctaPopup').classList.remove('show')">×</button>
   <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.5px; color:#ff4d24; margin-bottom:10px;">GRATIS GIDS GELEZEN?</div>
   <div style="font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px; line-height:1.2; margin-bottom:10px;">Ga verder dan losse prompts.</div>
-  <p style="margin:0 0 16px; font-size:13.5px; line-height:1.5; color:#b3ab9e;">In 10 dagen bouw je je volledige Claude-setup, met live begeleiding. Start 15 september, max 25 plekken.</p>
+  <p style="margin:0 0 16px; font-size:13.5px; line-height:1.5; color:#b3ab9e;">In 10 dagen bouw je je volledige Claude-setup, met live begeleiding. Start dinsdag 3 november, max 25 plekken.</p>
   <a href="/challenge/" class="btn-primary" style="display:block; background:#ff4d24; color:#fff; font-weight:600; font-size:14px; padding:13px; border-radius:9px; text-align:center;">Bekijk de challenge →</a>
   <a href="https://hub.asklien.ai" style="display:block; margin-top:10px; font-size:13px; color:#b3ab9e; text-align:center; text-decoration:underline;">Of ontdek eerst gratis de Hub</a>
 </div>
