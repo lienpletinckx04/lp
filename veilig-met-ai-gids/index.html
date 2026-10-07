@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wat je nooit in ChatGPT of Claude plakt (en wat wél mag): de GDPR-checklist voor zelfstandigen — AskLien.ai</title>
+<meta name="description" content="Welke gegevens je nooit in een AI-tool plakt, wat wél mag als je het anonimiseert, waar je training uitzet in ChatGPT, Claude, Gemini en Copilot, twee prompts die je vóór het plakken gebruikt en een checklist van zes punten.">
+<link rel="canonical" href="https://asklien.ai/veilig-met-ai-gids/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wat je nooit in ChatGPT of Claude plakt (en wat wél mag)">
+<meta property="og:description" content="De GDPR-checklist voor zelfstandigen: wat nooit, wat wél mits anoniem, waar je training uitzet, en de prompts die je vóór het plakken gebruikt.">
+<meta property="og:url" content="https://asklien.ai/veilig-met-ai-gids/">
+<meta property="og:image" content="https://asklien.ai/media/foto/hero.jpg">
+<meta property="og:site_name" content="AskLien.ai">
+<meta property="og:locale" content="nl_BE">
+<meta property="article:published_time" content="2026-10-06">
+<meta property="article:modified_time" content="2026-10-06">
+<meta name="author" content="Lien Pletinckx">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Wat je nooit in ChatGPT of Claude plakt (en wat wél mag): de GDPR-checklist voor zelfstandigen",
+  "description": "Welke gegevens je nooit in een AI-tool plakt, wat wél mag als je het anonimiseert, waar je training uitzet in ChatGPT, Claude, Gemini en Copilot, twee prompts die je vóór het plakken gebruikt en een checklist van zes punten.",
+  "inLanguage": "nl-BE",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://asklien.ai/veilig-met-ai-gids/" },
+  "url": "https://asklien.ai/veilig-met-ai-gids/",
+  "image": "https://asklien.ai/media/foto/hero.jpg",
+  "author": { "@type": "Person", "name": "Lien Pletinckx", "url": "https://asklien.ai/", "jobTitle": "AI-coach en consultant", "sameAs": ["https://www.instagram.com/asklien.ai/"] },
+  "publisher": { "@type": "Organization", "name": "AskLien.ai", "url": "https://asklien.ai/", "logo": { "@type": "ImageObject", "url": "https://asklien.ai/media/foto/hero.jpg" } },
+  "datePublished": "2026-10-06",
+  "dateModified": "2026-10-06",
+  "keywords": "GDPR ChatGPT, GDPR Claude, persoonsgegevens AI, AI veilig gebruiken zelfstandige, training uitzetten ChatGPT, anonimiseren voor AI, AVG AI-tools",
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asklien.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Gratis gidsen", "item": "https://asklien.ai/gidsen/" },
+    { "@type": "ListItem", "position": 3, "name": "Veilig met AI: de GDPR-checklist", "item": "https://asklien.ai/veilig-met-ai-gids/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "nl-BE",
+  "mainEntity": [
+    { "@type": "Question", "name": "Als ik training uitzet, mag ik dan alles plakken?", "acceptedAnswer": { "@type": "Answer", "text": "Nee. Training uit betekent dat je gesprekken niet gebruikt worden om het model te verbeteren. Je gegevens gaan nog altijd naar een server van een Amerikaans bedrijf en worden daar een tijd bewaard. Voor persoonsgegevens van klanten of personeel blijft de regel: anonimiseren, of een zakelijk account met een verwerkersovereenkomst." } },
+    { "@type": "Question", "name": "Ik heb al dingen geplakt die ik beter niet had geplakt. Wat nu?", "acceptedAnswer": { "@type": "Answer", "text": "Verwijder het gesprek en zet training uit als dat nog aanstond. Wat al in een trainingsronde zat, krijg je er niet meer uit, maar het risico dat zo'n fragment ooit letterlijk terugkomt is klein. Ging het om gevoelige gegevens van klanten, bekijk dan of je ze moet verwittigen. Bij twijfel: vraag het aan de Gegevensbeschermingsautoriteit of je boekhouder, niet aan ChatGPT." } },
+    { "@type": "Question", "name": "Geldt dit ook voor mijn eigen gegevens?", "acceptedAnswer": { "@type": "Answer", "text": "Juridisch mag je met je eigen gegevens doen wat je wil. Verstandig is iets anders: je wachtwoorden, je bankgegevens en je rijksregisternummer plak je nergens in. Je eigen omzetcijfers of een eigen contract zonder namen van derden: dat mag, liefst met training uit." } },
+    { "@type": "Question", "name": "Is een betaald abonnement genoeg om GDPR in orde te zijn?", "acceptedAnswer": { "@type": "Answer", "text": "Nee. Een betaald persoonlijk abonnement geeft je meestal de keuze om training uit te zetten, maar geen verwerkersovereenkomst. Die krijg je bij de zakelijke plannen (Team, Business, Enterprise) of via de API. Zonder zo'n overeenkomst mag je volgens GDPR geen persoonsgegevens van anderen laten verwerken. Wie enkel geanonimiseerde teksten plakt, heeft die overeenkomst niet nodig." } },
+    { "@type": "Question", "name": "Moet ik mijn klanten vertellen dat ik AI gebruik?", "acceptedAnswer": { "@type": "Answer", "text": "Als je hun persoonsgegevens door een AI-tool laat verwerken, hoort dat in je privacyverklaring, net als elke andere verwerker die je gebruikt. Gebruik je AI enkel om je eigen teksten te schrijven of geanonimiseerde dingen te analyseren, dan hoeft dat niet. Ik vind het wel netjes om het te zeggen als iemand ernaar vraagt." } }
+  ]
+}
+</script>
+<style>
+  .kaart { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:22px; }
+  .kaart h2 { margin:0 0 14px; font-family:'Archivo'; font-weight:800; font-size:26px; letter-spacing:-1.2px; line-height:1.12; }
+  .kaart h3 { margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:21px; letter-spacing:-.6px; }
+  .kaart p { font-size:16px; line-height:1.8; color:#57534a; }
+  .kaart p:last-child { margin-bottom:0; }
+  .nr { font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; color:#ff4d24; line-height:1; margin-bottom:12px; }
+  .prompt { position:relative; background:#f6f1e7; border-left:3px solid #ff4d24; border-radius:10px; padding:24px; margin:18px 0 0; }
+  .prompt pre { margin:0; white-space:pre-wrap; word-break:break-word; font-family:'Schibsted Grotesk',sans-serif; font-size:15px; line-height:1.7; color:#1c1a1f; }
+  .kopieer { position:absolute; top:14px; right:14px; background:#1c1a1f; color:#f6f1e7; border:none; border-radius:7px; padding:7px 13px; font-family:inherit; font-weight:600; font-size:12px; cursor:pointer; }
+  .kopieer.ok { background:#ff4d24; }
+  @media (min-width:641px){ .prompt { padding-top:54px; } }
+  .let { background:#fff8ef; border:2px dashed #e6ddcb; border-radius:12px; padding:18px 22px; margin:16px 0 0; }
+  .let p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+  .let strong { color:#1c1a1f; }
+  .ookvoor { background:#f6f1e7; border-radius:12px; padding:20px 22px; margin:18px 0 0; }
+  .ookvoor .kop { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:10px; }
+  .ookvoor p { margin:0 0 8px; font-size:15px; line-height:1.7; color:#57534a; }
+  .ookvoor p:last-child { margin-bottom:0; }
+  .ookvoor strong { color:#1c1a1f; }
+
+  .llm-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:760px){ .llm-grid { grid-template-columns:1fr; } }
+  .llm { background:#fff; border-radius:18px; padding:28px 28px; display:flex; flex-direction:column; gap:10px; }
+  .llm .naam { font-family:'Archivo'; font-weight:900; font-size:22px; letter-spacing:-1px; color:#1c1a1f; line-height:1.1; }
+  .llm .waar { font-size:13px; color:#8a8378; }
+  .llm .waar strong { color:#1c1a1f; font-weight:600; }
+  .llm p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+  .llm .tag { display:inline-block; font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; padding:5px 11px; border-radius:20px; background:#f6f1e7; color:#8a8378; border:1px solid #e6ddcb; align-self:flex-start; }
+  .llm .tag.top { background:#ff4d24; color:#fff; border-color:#ff4d24; }
+  .llm .oordeel { border-top:1px solid #e6ddcb; padding-top:12px; margin-top:4px; }
+  .llm .oordeel strong { color:#1c1a1f; }
+
+  .regel { display:flex; align-items:flex-start; gap:18px; padding:18px 0; border-bottom:1px solid #e6ddcb; }
+  .regel:last-child { border-bottom:none; padding-bottom:0; }
+  .regel .rn { font-family:'Archivo'; font-weight:900; font-size:26px; color:#ff4d24; min-width:38px; line-height:1.2; }
+  .regel h3 { margin:0 0 6px; font-size:19px; }
+  .regel p { margin:0; font-size:15px; line-height:1.7; }
+
+  .faq details { border-bottom:1px solid #e6ddcb; padding:16px 0; }
+  .faq details:last-child { border-bottom:none; }
+  .faq summary { cursor:pointer; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#1c1a1f; list-style:none; display:flex; justify-content:space-between; gap:16px; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:'+'; color:#ff4d24; font-weight:900; font-size:22px; line-height:1; }
+  .faq details[open] summary::after { content:'–'; }
+  .faq details p { margin:12px 0 0; font-size:15px; line-height:1.75; color:#57534a; }
+
+  @media (max-width:640px){ .kaart{ padding:26px 24px; } .prompt{ padding:20px 18px; } .kopieer{ position:static; display:inline-block; margin-bottom:12px; } .llm{ padding:22px 20px; } }
+</style>
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+      <a href="/gidsen/">Alle gidsen</a>
+      <a href="/">Terug naar de site</a>
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">De challenge</a>
+    </div>
+  </div>
+</nav>
+
+<header style="max-width:860px; margin:0 auto; padding:72px 32px 8px;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">GRATIS GIDS · CHECKLIST · CHATGPT, CLAUDE, GEMINI EN COPILOT</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Wat je nooit in ChatGPT of Claude plakt (en wat wél mag)<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Je wil een offerte herschrijven of een lastige mail beantwoorden. Dus plak je het hele ding in ChatGPT, met de naam van je klant, zijn adres en wat hij vorig jaar betaald heeft. Bijna iedereen doet dat. Bijna niemand weet wat daar precies mee gebeurt. Deze gids zet het op een rij: wat nooit, wat wél, waar de schakelaar zit, en de prompts die je gebruikt vóór je plakt.</p>
+
+  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 6 oktober 2026 · leestijd ± 12 min</div>
+</header>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;">
+
+  <div data-reveal class="kaart">
+    <h2>Waarom dit telt</h2>
+    <p>Als je iets in een AI-tool plakt, gebeuren er drie dingen. Je tekst gaat naar een server, meestal in de Verenigde Staten. Hij wordt daar een tijd bewaard, vaak zolang je het gesprek niet verwijdert. En bij gratis en persoonlijke accounts kan hij gebruikt worden om het volgende model te trainen, tenzij je dat uitzet.</p>
+    <p>Dat laatste schrikt mensen het meest af, en het is het minst erge. Een getraind model onthoudt geen klantenbestanden letterlijk. Maar wie training aan laat staan, geeft een medewerker van die AI-maker in principe het recht om een steekproef van je gesprekken te lezen. Dat staat gewoon in de voorwaarden.</p>
+    <p>Daar bovenop komt de wet. GDPR, bij ons ook AVG genoemd, zegt dat je persoonsgegevens van anderen enkel mag doorgeven aan een partij waar je een verwerkersovereenkomst mee hebt. Bij een gratis account heb je die niet, bij een zakelijk plan meestal wel. Voor bijzondere gegevens, zoals gezondheid of het rijksregisternummer, gelden nog strengere regels, los van je abonnement.</p>
+    <p>Kort: betaalde en zakelijke versies met training uit zijn een stuk veiliger dan de gratis versie. Maar geen enkele instelling maakt het goed dat je het medische dossier van een klant in een chatvenster plakt. Daarom twee lijsten.</p>
+    <div class="let"><p><strong>Ik ben geen jurist.</strong> Dit is wat ik zelf doe en mijn klanten aanraad. Werk je in de zorg, bij HR of in de financiële sector, vraag het dan na bij iemand die er wel voor gestudeerd heeft.</p></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>De lijst "nooit"</h2>
+    <p style="margin-top:0;">Dit plak je in geen enkele AI-tool. Niet in de gratis versie, niet in de betaalde, niet met training uit. Het is nergens voor nodig, en je krijgt het nooit meer terug.</p>
+    <div class="regel"><span class="rn">01</span><div><h3>Rijksregisternummers</h3><p>Het rijksregisternummer is in België een apart beschermd gegeven. Je mag het enkel gebruiken waarvoor je toelating hebt, en die toelating zegt niets over AI-tools. Geen enkele prompt heeft het nodig. Haal het weg voor je plakt, altijd.</p></div></div>
+    <div class="regel"><span class="rn">02</span><div><h3>Loonfiches en HR-dossiers</h3><p>Loon, ziektedagen, evaluaties, ontslagbrieven. Dat zijn gegevens van je medewerkers, en zij hebben er niet voor getekend dat jij die in een chatvenster plakt. Een moeilijk gesprek voorbereiden kan, zonder naam en zonder cijfers.</p></div></div>
+    <div class="regel"><span class="rn">03</span><div><h3>Medische gegevens van klanten of patiënten</h3><p>Gezondheidsgegevens zijn een bijzondere categorie in GDPR. Diagnoses, medicatie, maar ook "zij kan niet komen want ze zit in chemo". Zorgverleners, kinesisten, diëtisten, coaches: dit is jullie grootste valkuil, want "even een mail laten schrijven" lijkt zo onschuldig.</p></div></div>
+    <div class="regel"><span class="rn">04</span><div><h3>Wachtwoorden en API-sleutels</h3><p>Niet van jezelf, niet van een klant, niet "even om te testen", ook niet in een screenshot. Een wachtwoord in een gesprek staat op een server die jij niet beheert. Toch gedaan? Verander het vandaag nog.</p></div></div>
+    <div class="regel"><span class="rn">05</span><div><h3>Volledige klantenbestanden</h3><p>Een Excel met namen, adressen, e-mails en wat ze bij je kochten. Een analyse laten doen kan, maar niet met de namen erin. Verderop staat hoe je dat anonimiseert zonder dat de analyse er slechter van wordt.</p></div></div>
+    <div class="regel"><span class="rn">06</span><div><h3>Contracten met namen van derden</h3><p>Een contract bevat de gegevens van je klant, en vaak nog van anderen: een onderaannemer, een verhuurder, een getuige. Zij hebben hier niet mee ingestemd. Vervang namen en adressen door plaatshouders, dan mag de inhoud wél.</p></div></div>
+    <div class="regel"><span class="rn">07</span><div><h3>Bankgegevens</h3><p>Rekeningnummers, kaartnummers, en vooral: een bankuittreksel met alle transacties erop. Dat bevat ook de gegevens van iedereen die jou betaald heeft. Rond de bedragen af en haal de namen weg voor je er iets mee doet.</p></div></div>
+    <div class="ookvoor"><div class="kop">DE SIMPELSTE TEST</div>
+      <p>Zou je dit document naar een onbekende freelancer in het buitenland mailen, zonder contract? <strong>Nee? Dan plak je het ook niet in een gratis AI-tool.</strong> Ja, mits hij een overeenkomst tekent? Dan heb je een zakelijk plan nodig.</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>De lijst "wél, mits"</h2>
+    <p style="margin-top:0;">Bijna alles wat je met AI wil doen, kan: je offerte verbeteren, je klantenbestand analyseren, een contract samenvatten, een klachtenmail beantwoorden. Je moet alleen één van deze vier dingen in orde hebben, en liefst meer dan één.</p>
+    <div class="regel"><span class="rn">01</span><div><h3>Geanonimiseerd</h3><p>De meest onderschatte oplossing, en meestal de enige die je nodig hebt. Namen worden [KLANT A], [KLANT B]. Bedrijfsnamen worden [BEDRIJF]. Adressen worden [ADRES]. Bedragen rond je af naar honderdtallen. Een model heeft de structuur nodig, niet de identiteit.</p></div></div>
+    <div class="regel"><span class="rn">02</span><div><h3>Training uit</h3><p>Eén schakelaar in je privacy-instellingen. Staat ze uit, dan worden je gesprekken niet gebruikt om het model te verbeteren en leest er in principe niemand mee. Ze gaan nog altijd naar de server, dus dit vervangt het anonimiseren niet. Waar je ze per tool vindt: zie verderop.</p></div></div>
+    <div class="regel"><span class="rn">03</span><div><h3>Een betaald account</h3><p>Betaalde persoonlijke abonnementen geven je meer controle: training uitzetten, soms een tijdelijke modus zonder geheugen. Ze geven je geen verwerkersovereenkomst. Een stap vooruit, geen eindpunt.</p></div></div>
+    <div class="regel"><span class="rn">04</span><div><h3>Een zakelijk account</h3><p>Team, Business, Enterprise, of de API. Daar wordt standaard niet getraind, en je kan een verwerkersovereenkomst afsluiten. Pas dan mag je, volgens de letter van GDPR, persoonsgegevens van anderen laten verwerken. Voor een eenmanszaak die anonimiseert is het vaak niet nodig. Werk je met een team dat dagelijks klantgegevens door AI haalt, dan is dit de enige correcte keuze.</p></div></div>
+    <div class="let"><p><strong>Mijn eigen regel:</strong> anonimiseren doe ik altijd, ook met training uit en een zakelijk plan. Het is een gewoonte die me nooit in de problemen brengt, en het kost tien seconden met de prompt hieronder.</p></div>
+  </div>
+
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;" id="tools">
+  <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:clamp(28px,4.5vw,42px); letter-spacing:-2px; line-height:1.05;">Per tool: waar de schakelaar zit<span style="color:#ff4d24;">.</span></h2>
+  <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#57534a; max-width:700px;">De makers verplaatsen deze instellingen geregeld en noemen ze telkens anders. Ik geef dus geen exacte menupaden, die kloppen over een maand misschien niet meer. Wel wat je moet zoeken. Doe het vandaag voor elke tool die je gebruikt, het duurt twee minuten.</p>
+
+  <div class="llm-grid">
+    <div data-reveal class="llm">
+      <div class="naam">ChatGPT</div>
+      <div class="waar">Instellingen · zoek naar <strong>gegevensbeheer</strong> of <strong>data controls</strong></div>
+      <p>Bij gratis en persoonlijke accounts (Plus, Pro) staat training standaard aan. Zoek in de instellingen naar "het model verbeteren voor iedereen" of iets gelijkaardigs, en zet het uit. Een tijdelijke chat wordt niet bewaard en niet voor training gebruikt.</p>
+      <p>Team, Enterprise en de API trainen niet op je gegevens. Daar krijg je ook een verwerkersovereenkomst.</p>
+      <div class="oordeel"><p><strong>Let op:</strong> training uitzetten wist je oude gesprekken niet, en het geheugen van ChatGPT blijft aanstaan. Dat is een aparte instelling.</p></div>
+    </div>
+    <div data-reveal class="llm">
+      <div class="naam">Claude</div>
+      <div class="waar">Instellingen · zoek naar <strong>privacy</strong></div>
+      <p>Bij de persoonlijke plannen (gratis, Pro, Max) vraagt Claude je of je gesprekken gebruikt mogen worden om de modellen te verbeteren. Je kiest dat bij het aanmaken van je account of bij een pop-up, en je kan het achteraf aanpassen in de privacy-instellingen. Kijk dus na wat je ooit aangeklikt hebt. Staat het aan, dan worden je gesprekken ook langer bewaard.</p>
+      <p>Team, Enterprise en de API trainen nooit op je gegevens.</p>
+      <div class="oordeel"><p><strong>Mijn ervaring:</strong> voor een eenmanszaak die anonimiseert is Pro met training uit meer dan genoeg.</p></div>
+    </div>
+    <div data-reveal class="llm">
+      <div class="naam">Gemini</div>
+      <div class="waar">Instellingen · zoek naar <strong>activiteit</strong> of <strong>Gemini-apps-activiteit</strong></div>
+      <p>Bij een persoonlijk Google-account hangt het samen met je activiteitsinstellingen. Zoek naar de Gemini-activiteit en zet die uit of beperk ze. Staat ze aan, dan kunnen gesprekken door mensen nagelezen worden.</p>
+      <p>Bij een Google Workspace-account voor je bedrijf zegt Google dat je gegevens niet gebruikt worden om modellen te trainen.</p>
+      <div class="oordeel"><p><strong>Let op:</strong> Gemini zit overal in Google: in Gmail, in Docs, in je Android-toetsenbord. Ik weet niet zeker of één schakelaar alles afdekt, dus kijk ze apart na.</p></div>
+    </div>
+    <div data-reveal class="llm">
+      <div class="naam">Copilot</div>
+      <div class="waar">Twee versies · zoek naar <strong>privacy</strong> en <strong>modeltraining</strong></div>
+      <p>Er zijn twee Copilots en dat verwart iedereen. De persoonlijke Copilot (in Windows, in de app, op copilot.com) heeft een instelling voor modeltraining, zoek die op in de privacy-instellingen en zet ze uit.</p>
+      <p>Microsoft 365 Copilot, die via je werkaccount in Word, Outlook en Teams zit, traint niet op je bedrijfsgegevens en volgt de rechten die je al hebt in Microsoft 365.</p>
+      <div class="oordeel"><p><strong>Hoe je het ziet:</strong> staat het logo van je organisatie bij je profiel, dan zit je in de zakelijke versie. Zo niet, dan ben je persoonlijk ingelogd.</p></div>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart" style="margin-top:22px;">
+    <h3>En de Europese modellen?</h3>
+    <p>Mistral is een Frans bedrijf, en Le Chat is hun versie van ChatGPT. Hun servers staan in Europa, dus je gegevens verlaten de EU niet. Werk je in een sector waar dat een harde eis is, zoals de zorg, advocatuur of overheid, dan is dat een echt argument. Ook bij Le Chat kijk je in de privacy-instellingen na of je gesprekken voor training gebruikt worden.</p>
+    <p>Is het daarom de betere keuze? Voor de meeste zelfstandigen niet. De modellen van Mistral zijn goed, maar Claude en ChatGPT zijn vandaag nog beter in lang schrijfwerk en in redeneren over ingewikkelde dossiers. Mijn advies: Europees waar het moet, Amerikaans met training uit en anonimisering waar het mag. Verdwijnt het verschil in kwaliteit, dan verandert mijn advies.</p>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;" id="prompts">
+  <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:clamp(28px,4.5vw,42px); letter-spacing:-2px; line-height:1.05;">Drie prompts die je vóór het plakken gebruikt<span style="color:#ff4d24;">.</span></h2>
+  <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#57534a; max-width:700px;">Het klinkt gek om een AI-model te vragen je tekst te anonimiseren vóór je ze in een AI-model plakt. Toch doe ik het zo, met één voorwaarde: die eerste stap doe je in een tool met training uit, of je haalt de grofste namen eerst zelf weg. Daarna mag de schone versie overal naartoe.</p>
+
+  <div data-reveal class="kaart">
+    <div class="nr">01</div>
+    <h3>De anonimiseer-prompt</h3>
+    <p style="margin:0;">Plak hier de tekst in die je straks wil gebruiken: een mail, een contract, een offerte, een rij uit je Excel. Het model vervangt alles wat naar een persoon of bedrijf wijst door een plaatshouder, en geeft je een lijstje van wat het vervangen heeft.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Hieronder staat een tekst die ik straks in een AI-tool wil gebruiken. Anonimiseer hem volledig, zonder de betekenis of de structuur te veranderen.
+
+Regels:
+1. Namen van personen worden [PERSOON A], [PERSOON B], enzovoort. Dezelfde persoon krijgt in de hele tekst dezelfde code.
+2. Bedrijfsnamen worden [BEDRIJF A], [BEDRIJF B]. Mijn eigen bedrijf, [MIJN BEDRIJFSNAAM], wordt [MIJN BEDRIJF].
+3. Adressen worden [ADRES]. Een gemeente mag blijven staan als ze belangrijk is voor de context.
+4. E-mailadressen, telefoonnummers, rekeningnummers, btw-nummers, rijksregisternummers en klantnummers worden [E-MAIL], [TELEFOON], [REKENING], [BTW], [RRN], [KLANTNUMMER].
+5. Bedragen rond je af naar het dichtste honderdtal. Staat een bedrag er enkel om een ordegrootte te geven, zet er dan "ongeveer" voor.
+6. Data mogen blijven staan, behalve geboortedata: die worden [GEBOORTEDATUM].
+7. Gegevens over gezondheid, religie, afkomst, vakbond, geaardheid of strafrechtelijk verleden vat je samen in één neutrale zin tussen haakjes, bijvoorbeeld (reden van afwezigheid: medisch).
+
+Geef me eerst de geanonimiseerde tekst. Geef me daarna, apart, een tabel met twee kolommen: de code en wat erachter zat. Verzin niets bij en laat niets weg.
+
+TEKST:
+[PLAK HIER]</pre></div>
+    <div class="let"><p><strong>Waarom die tabel?</strong> Straks krijg je een antwoord met [PERSOON A] erin, en dat wil je snel weer juist kunnen zetten. Bewaar ze in een lokaal bestand, niet in het gesprek.</p></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">02</div>
+    <h3>De controle-prompt: zit hier nog iets in?</h3>
+    <p style="margin:0;">Voor wie zelf anonimiseert, of voor een tekst die je al eens door prompt 01 haalde en toch niet vertrouwt. Het model kijkt enkel, het verandert niets. Zo hou je zelf de controle.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Controleer de tekst hieronder op persoonsgegevens en gevoelige informatie. Verander niets aan de tekst zelf.
+
+Zoek naar: namen van personen, bedrijfsnamen, adressen, e-mailadressen, telefoonnummers, rekeningnummers, btw- of ondernemingsnummers, rijksregisternummers, geboortedata, nummerplaten, wachtwoorden of toegangscodes, exacte bedragen die aan één persoon te koppelen zijn, en alles wat over gezondheid, religie, afkomst, vakbond, seksuele geaardheid of strafrechtelijk verleden gaat.
+
+Zoek ook naar combinaties die iemand herkenbaar maken zonder naam, bijvoorbeeld "de bakker naast de kerk in [gemeente]" of "onze enige medewerker die in 2019 begonnen is".
+
+Geef me een lijst met per vondst: het fragment letterlijk, waarom het een risico is, en wat ik ervan maak. Staat er niets in, zeg dan "Ik vind geen persoonsgegevens" en leg in één zin uit waarom je dat denkt.
+
+TEKST:
+[PLAK HIER]</pre></div>
+    <div class="let"><p><strong>Waarom dit werkt:</strong> je ziet je eigen tekst niet meer. Het model leest ze als een vreemde en ziet wel dat "de klant uit Deinze met de tweeling" een echte persoon is. Niet perfect, maar beter dan je eigen ogen op een vrijdagnamiddag.</p></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">03</div>
+    <h3>De huisregel voor je team, op één pagina</h3>
+    <p style="margin:0;">Werk je niet alleen, dan is de vraag niet of je medewerkers AI gebruiken, maar wat ze erin plakken. Eén pagina met afspraken is meer waard dan een verbod dat niemand volgt. Deze prompt schrijft hem.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Schrijf een huisregel van maximaal één pagina over het gebruik van AI-tools in mijn bedrijf. Wij zijn [WAT JE DOET] met [AANTAL] mensen en werken met [WELKE AI-TOOLS, EN OF HET GRATIS, BETAALDE OF ZAKELIJKE ACCOUNTS ZIJN].
+
+De regel bevat:
+1. Wat nooit in een AI-tool mag: rijksregisternummers, loon- en HR-gegevens, medische gegevens, wachtwoorden en sleutels, volledige klantenbestanden, contracten met namen van derden, bankgegevens.
+2. Wat wél mag als het geanonimiseerd is, met een kort voorbeeld van hoe je dat doet.
+3. De afspraak dat iedereen training uitzet in zijn persoonlijke account, en welke tools we zakelijk gebruiken.
+4. Wat iemand doet als het toch misgelopen is: gesprek verwijderen, melden bij [NAAM OF ROL], samen bekijken of een klant verwittigd moet worden.
+5. Eén zin over waarom we dit doen: om onze klanten te beschermen, niet om AI te verbieden.
+
+Klare taal, geen juridisch jargon, geen dreigende toon. Noem het geen beleid maar een afspraak. Markeer wat ik nog moet aanvullen met [AAN TE VULLEN].</pre></div>
+  </div>
+
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:14px 32px 0;" id="checklist">
+  <div data-reveal class="kaart" style="background:#1c1a1f; color:#f6f1e7;">
+    <h2 style="color:#f6f1e7;">De checklist: zes punten voor je plakt</h2>
+    <p style="color:#b3ab9e; margin-top:0;">Print ze of hang ze naast je scherm. Na een week doe je het vanzelf.</p>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">01</span><div><h3 style="color:#f6f1e7;">Staat er iets uit de lijst "nooit" in?</h3><p style="color:#b3ab9e;">Rijksregisternummer, loon, medisch, wachtwoord, klantenbestand, contract met derden, bankgegevens. Ja? Weg ermee.</p></div></div>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">02</span><div><h3 style="color:#f6f1e7;">Zijn de namen vervangen?</h3><p style="color:#b3ab9e;">Personen, bedrijven, adressen. [KLANT A] werkt even goed als "Jan Peeters uit Lochristi". Het model wordt er niet dommer van.</p></div></div>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">03</span><div><h3 style="color:#f6f1e7;">Zijn de bedragen afgerond?</h3><p style="color:#b3ab9e;">Een exact bedrag plus een datum is vaak genoeg om iemand terug te vinden. Honderdtallen volstaan voor elke analyse die je wil.</p></div></div>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">04</span><div><h3 style="color:#f6f1e7;">Staat training uit in deze tool?</h3><p style="color:#b3ab9e;">Eén keer nakijken per tool, per account. Nieuw toestel of nieuwe app? Opnieuw nakijken.</p></div></div>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">05</span><div><h3 style="color:#f6f1e7;">Gebruik ik het juiste account?</h3><p style="color:#b3ab9e;">Gegevens van klanten of personeel die je niet kan anonimiseren? Die horen in een zakelijk account met verwerkersovereenkomst, of ze horen er helemaal niet in.</p></div></div>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">06</span><div><h3 style="color:#f6f1e7;">Zou ik dit mailen naar een onbekende?</h3><p style="color:#b3ab9e;">Twijfel je, dan is het antwoord nee. Dan anonimiseer je verder, of je doet het zonder AI.</p></div></div>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:14px 32px 0;" id="faq">
+  <div data-reveal class="kaart faq">
+    <h2>Vragen die ik hierover krijg</h2>
+    <details><summary>Als ik training uitzet, mag ik dan alles plakken?</summary><p>Nee. Training uit betekent dat je gesprekken niet gebruikt worden om het model te verbeteren. Je gegevens gaan nog altijd naar een server van een Amerikaans bedrijf en worden daar een tijd bewaard. Voor persoonsgegevens van klanten of personeel blijft de regel: anonimiseren, of een zakelijk account met een verwerkersovereenkomst.</p></details>
+    <details><summary>Ik heb al dingen geplakt die ik beter niet had geplakt. Wat nu?</summary><p>Verwijder het gesprek en zet training uit als dat nog aanstond. Wat al in een trainingsronde zat, krijg je er niet meer uit, maar het risico dat zo'n fragment ooit letterlijk terugkomt is klein. Ging het om gevoelige gegevens van klanten, bekijk dan of je ze moet verwittigen. Bij twijfel: vraag het aan de Gegevensbeschermingsautoriteit of je boekhouder, niet aan ChatGPT.</p></details>
+    <details><summary>Geldt dit ook voor mijn eigen gegevens?</summary><p>Juridisch mag je met je eigen gegevens doen wat je wil. Verstandig is iets anders: je wachtwoorden, je bankgegevens en je rijksregisternummer plak je nergens in. Je eigen omzetcijfers of een eigen contract zonder namen van derden: dat mag, liefst met training uit.</p></details>
+    <details><summary>Is een betaald abonnement genoeg om GDPR in orde te zijn?</summary><p>Nee. Een betaald persoonlijk abonnement geeft je meestal de keuze om training uit te zetten, maar geen verwerkersovereenkomst. Die krijg je bij de zakelijke plannen (Team, Business, Enterprise) of via de API. Zonder zo'n overeenkomst mag je volgens GDPR geen persoonsgegevens van anderen laten verwerken. Wie enkel geanonimiseerde teksten plakt, heeft die overeenkomst niet nodig.</p></details>
+    <details><summary>Moet ik mijn klanten vertellen dat ik AI gebruik?</summary><p>Als je hun persoonsgegevens door een AI-tool laat verwerken, hoort dat in je privacyverklaring, net als elke andere verwerker die je gebruikt. Gebruik je AI enkel om je eigen teksten te schrijven of geanonimiseerde dingen te analyseren, dan hoeft dat niet. Ik vind het wel netjes om het te zeggen als iemand ernaar vraagt.</p></details>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:36px 32px 0;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:24px; padding:52px 48px; display:grid; grid-template-columns:1.1fr .9fr; gap:44px; align-items:center;">
+    <div>
+      <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px;">ELKE WEEK IN JE MAILBOX</div>
+      <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:34px; letter-spacing:-1.5px; line-height:1.1;">Elke week zo&rsquo;n prompt in je mailbox<span style="color:#ff4d24;">.</span></h2>
+      <p style="margin:0; font-size:16px; line-height:1.7; color:#b3ab9e;">Elke week wat er echt verandert in AI, in klare taal, met een prompt die je meteen kan proberen. Gratis, en je kan altijd weg.</p>
+    </div>
+    <div>
+      <form action="https://bae29b1d.sibforms.com/serve/MUIFAMlmZRYFZYcxJGaoUhXbAJTxCEVZm_78YOICuP4QoQsuKXhS0YXkkyU1eKA8KrYjdEFOzQmFwFO1mBUZGTH6TNezpUEHdSTI0bF7xFe8b45hQcb2s4upUTvpO7ZLNMOlGDdT_dzMF9W1m2wJ-jV4-ldVsEBAqc47rtwz6YW9Jbu8YD59S9KtHIQuqbr92uFAB-hVYIuxZWAW" method="POST" style="display:flex; flex-direction:column; gap:10px;">
+        <input type="text" name="FIRSTNAME" placeholder="Je voornaam" required style="padding:14px 16px; border:none; border-radius:9px; font-size:15px; font-family:inherit; background:#2a272c; color:#f6f1e7;">
+        <input type="email" name="EMAIL" placeholder="Je e-mailadres" required style="padding:14px 16px; border:none; border-radius:9px; font-size:15px; font-family:inherit; background:#2a272c; color:#f6f1e7;">
+        <input type="text" name="email_address_check" value="" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="locale" value="nl">
+        <button type="submit" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:15px; border-radius:9px; border:none; cursor:pointer;">Schrijf je in →</button>
+      </form>
+      <p style="margin:12px 0 0; font-size:13px; color:#8a8378; text-align:center;">900+ ondernemers lezen mee · uitschrijven kan altijd</p>
+    </div>
+  </div>
+</section>
+
+
+<section style="max-width:860px; margin:0 auto; padding:22px 32px 96px;">
+  <div data-reveal style="background:#fff; border-radius:24px; padding:44px 40px; text-align:center;">
+    <h2 style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.5px; line-height:1.1;">Veilig plakken is stap één. Een Claude die je zaak kent zonder dat je plakt, is stap twee<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0 0 26px; font-size:16px; line-height:1.7; color:#57534a; max-width:520px; margin-left:auto; margin-right:auto;">In de challenge "Claude in 10 dagen" bouw je een Claude die je aanbod, je klanten en je manier van schrijven kent, veilig vanaf dag één. De volgende groep start op dinsdag 3 november, met maximum 25 deelnemers.</p>
+    <div class="cta-row" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">Bekijk de challenge →</a>
+      <a href="/gidsen/" class="btn-outline" style="border:2px solid #1c1a1f; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px;">Alle gratis gidsen</a>
+    </div>
+  </div>
+</section>
+
+<section data-kruislinks style="max-width:1000px; margin:0 auto; padding:0 32px 72px;"><h2 style="font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-1px; margin:0 0 18px;">Andere gratis gidsen</h2><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;"><a href="/connectors-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Connectors: AI in je mailbox en agenda</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Hoe je AI aan je mail en agenda koppelt zonder spijt achteraf.</div></a><a href="/claude-of-chatgpt/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Claude of ChatGPT?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Een eerlijke vergelijking per taak, na de updates van september.</div></a><a href="/chatgpt-apple-berichten/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">ChatGPT in je Apple Berichten</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Je berichten doorzoeken en beantwoorden, plus het privacystuk.</div></a><a href="/concurrentie-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Wat doet je concurrent beter dan jij?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Acht prompts om jezelf naast een concurrent te leggen, door de ogen van een klant.</div></a><a href="/prompten-claude-5/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Beter prompten in Claude</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Drie dingen die veranderd zijn aan goed prompten, plus de checklist.</div></a><a href="/gemeente-test/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Wat weet AI over jouw gemeente?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">De simpelste test om te leren zien wanneer AI iets verzint.</div></a></div><p style="margin:18px 0 0; font-size:15px;"><a href="/gidsen/" style="font-weight:600; color:#ff4d24;">Bekijk alle gidsen →</a></p></section>
+
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/privacy/">Privacy en cookies</a> · <a href="#cookievoorkeuren">Cookievoorkeuren</a></div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=3"></script>
+<script>
+document.querySelectorAll('.kopieer').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = b.parentElement.querySelector('pre').innerText;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent = 'Gekopieerd ✓'; b.classList.add('ok');
+      setTimeout(function(){ b.textContent='Kopieer'; b.classList.remove('ok'); }, 1800);
+    });
+  });
+});
+</script>
+<script src="/js/analytics.js?v=3" defer></script>
+<script src="/js/menu.js?v=3" defer></script>
+<script src="/js/challenge-popup.js?v=2" defer></script>
+</body>
+</html>

@@ -20,6 +20,10 @@ Taal: Nederlands. Werkgebied: Vlaanderen en heel België, online ook daarbuiten.
 ## Gratis gidsen (Nederlandstalig)
 
 - [Alle gidsen](https://asklien.ai/gidsen/)
+- [Moeilijke klantmails met AI: 8 prompts](https://asklien.ai/moeilijke-mails-gids/)
+- [Laat AI jou interviewen: 10 prompts](https://asklien.ai/interview-prompts-gids/)
+- [Van spraakbericht naar offerte: 6 prompts](https://asklien.ai/offerte-gids/)
+- [Veilig met AI: de GDPR-checklist](https://asklien.ai/veilig-met-ai-gids/)
 - [Claude of ChatGPT? Wat gebruik je waarvoor](https://asklien.ai/claude-of-chatgpt/)
 - [Claude in september 2026: alle veranderingen](https://asklien.ai/claude-september-2026/)
 - [ChatGPT in september 2026: alle veranderingen](https://asklien.ai/chatgpt-september-2026/)

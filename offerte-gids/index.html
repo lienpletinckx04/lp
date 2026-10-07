@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Van spraakbericht naar offerte in 4 minuten: de werkwijze en de prompts — AskLien.ai</title>
+<meta name="description" content="Spreek na het klantgesprek een bericht in, laat Claude of ChatGPT er een offerte van maken in jouw stijl, en lees na. Vijf stappen, een eenmalige stijlkaart, zes prompts en een voorbeeld.">
+<link rel="canonical" href="https://asklien.ai/offerte-gids/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Van spraakbericht naar offerte in 4 minuten: de werkwijze en de prompts">
+<meta property="og:description" content="Spreek na het klantgesprek een spraakbericht in, laat AI er een offerte van maken in jouw stijl, en lees na. Vijf stappen, zes prompts, één stijlkaart.">
+<meta property="og:url" content="https://asklien.ai/offerte-gids/">
+<meta property="og:image" content="https://asklien.ai/media/foto/hero.jpg">
+<meta property="og:site_name" content="AskLien.ai">
+<meta property="og:locale" content="nl_BE">
+<meta property="article:published_time" content="2026-10-06">
+<meta property="article:modified_time" content="2026-10-06">
+<meta name="author" content="Lien Pletinckx">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Van spraakbericht naar offerte in 4 minuten: de werkwijze en de prompts",
+  "description": "Spreek na het klantgesprek een bericht in, laat Claude of ChatGPT er een offerte van maken in jouw stijl, en lees na. Vijf stappen, een eenmalige stijlkaart, zes prompts en een voorbeeld.",
+  "inLanguage": "nl-BE",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://asklien.ai/offerte-gids/" },
+  "url": "https://asklien.ai/offerte-gids/",
+  "image": "https://asklien.ai/media/foto/hero.jpg",
+  "author": { "@type": "Person", "name": "Lien Pletinckx", "url": "https://asklien.ai/", "jobTitle": "AI-coach en consultant", "sameAs": ["https://www.instagram.com/asklien.ai/"] },
+  "publisher": { "@type": "Organization", "name": "AskLien.ai", "url": "https://asklien.ai/", "logo": { "@type": "ImageObject", "url": "https://asklien.ai/media/foto/hero.jpg" } },
+  "datePublished": "2026-10-06",
+  "dateModified": "2026-10-06",
+  "keywords": "offerte maken met AI, offerte schrijven Claude, offerte ChatGPT, spraakbericht naar offerte, prompts offerte",
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asklien.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Gratis gidsen", "item": "https://asklien.ai/gidsen/" },
+    { "@type": "ListItem", "position": 3, "name": "Van spraakbericht naar offerte", "item": "https://asklien.ai/offerte-gids/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "nl-BE",
+  "mainEntity": [
+    { "@type": "Question", "name": "Werkt dit ook met ChatGPT, of enkel met Claude?", "acceptedAnswer": { "@type": "Answer", "text": "Allebei. De prompts zijn gewone tekst en werken in elk model dat je stijlkaart kan onthouden. In Claude zet je die in de instructies van een project, in ChatGPT in een project of in je aangepaste instructies." } },
+    { "@type": "Question", "name": "Mag ik klantgegevens in Claude of ChatGPT zetten?", "acceptedAnswer": { "@type": "Answer", "text": "Enkel wat nodig is voor de offerte: bedrijfsnaam, voornaam van de contactpersoon, het adres van de werf. Geen rijksregisternummers, geen bankgegevens, niets over andere klanten. Zet in de instellingen uit dat je gesprekken gebruikt worden om te trainen." } },
+    { "@type": "Question", "name": "Mijn offertes komen uit mijn boekhoudprogramma. Werkt dit dan nog?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, maar dan voor de tekst, niet voor het document. Je laat het model de omschrijving per post en de voorwaarden schrijven, en plakt die in je programma. Bedragen, nummering en btw-berekening blijven in je boekhoudpakket." } },
+    { "@type": "Question", "name": "Wat als het model toch een prijs of een voorwaarde verzint?", "acceptedAnswer": { "@type": "Answer", "text": "Dat gebeurt, ook met de verbodszin in de prompt. Daarom lees je altijd na, te beginnen bij het lijstje 'Door jou te controleren'. Zie je een bedrag dat je niet genoemd hebt, vraag dan: 'Waar komt dit vandaan?' Vertrouw het nooit blindelings." } },
+    { "@type": "Question", "name": "Hoeveel tijd kost de eenmalige setup?", "acceptedAnswer": { "@type": "Answer", "text": "Reken op een uur: drie oude offertes zoeken en anonimiseren, de stijlkaart laten afleiden, de tien regels nalezen en verbeteren, en ze in je project zetten. Daarna nooit meer, tenzij je voorwaarden veranderen." } }
+  ]
+}
+</script>
+<style>
+  .kaart { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:22px; }
+  .kaart h2 { margin:0 0 14px; font-family:'Archivo'; font-weight:800; font-size:26px; letter-spacing:-1.2px; line-height:1.12; }
+  .kaart h3 { margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:21px; letter-spacing:-.6px; }
+  .kaart p { font-size:16px; line-height:1.8; color:#57534a; }
+  .kaart p:last-child { margin-bottom:0; }
+  .kaart ul, .kaart ol { margin:0 0 16px; padding-left:22px; font-size:16px; line-height:1.8; color:#57534a; }
+  .kaart li { margin-bottom:6px; }
+  .kaart li strong { color:#1c1a1f; }
+  .nr { font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; color:#ff4d24; line-height:1; margin-bottom:12px; }
+  .prompt { position:relative; background:#f6f1e7; border-left:3px solid #ff4d24; border-radius:10px; padding:24px; margin:18px 0 0; }
+  .prompt pre { margin:0; white-space:pre-wrap; word-break:break-word; font-family:'Schibsted Grotesk',sans-serif; font-size:15px; line-height:1.7; color:#1c1a1f; }
+  .kopieer { position:absolute; top:14px; right:14px; background:#1c1a1f; color:#f6f1e7; border:none; border-radius:7px; padding:7px 13px; font-family:inherit; font-weight:600; font-size:12px; cursor:pointer; }
+  .kopieer.ok { background:#ff4d24; }
+  @media (min-width:641px){ .prompt { padding-top:54px; } }
+  .let { background:#fff8ef; border:2px dashed #e6ddcb; border-radius:12px; padding:18px 22px; margin:16px 0 0; }
+  .let p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+  .let strong { color:#1c1a1f; }
+  .ookvoor { background:#f6f1e7; border-radius:12px; padding:20px 22px; margin:18px 0 0; }
+  .ookvoor .kop { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:10px; }
+  .ookvoor p { margin:0 0 8px; font-size:15px; line-height:1.7; color:#57534a; }
+  .ookvoor p:last-child { margin-bottom:0; }
+  .ookvoor strong { color:#1c1a1f; }
+  .ookvoor ul { margin:0; padding-left:20px; font-size:15px; line-height:1.7; color:#57534a; }
+  .ookvoor li strong { color:#1c1a1f; }
+
+  .ookvoor.citaat p { color:#1c1a1f; font-style:italic; }
+
+  .regel { display:flex; align-items:flex-start; gap:18px; padding:18px 0; border-bottom:1px solid #e6ddcb; }
+  .regel:last-child { border-bottom:none; padding-bottom:0; }
+  .regel .rn { font-family:'Archivo'; font-weight:900; font-size:26px; color:#ff4d24; min-width:38px; line-height:1.2; }
+  .regel h3 { margin:0 0 6px; font-size:19px; }
+  .regel p { margin:0; font-size:15px; line-height:1.7; }
+
+  .faq details { border-bottom:1px solid #e6ddcb; padding:16px 0; }
+  .faq details:last-child { border-bottom:none; }
+  .faq summary { cursor:pointer; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#1c1a1f; list-style:none; display:flex; justify-content:space-between; gap:16px; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:'+'; color:#ff4d24; font-weight:900; font-size:22px; line-height:1; }
+  .faq details[open] summary::after { content:'–'; }
+  .faq details p { margin:12px 0 0; font-size:15px; line-height:1.75; color:#57534a; }
+
+  @media (max-width:640px){ .kaart{ padding:26px 24px; } .prompt{ padding:20px 18px; } .kopieer{ position:static; display:inline-block; margin-bottom:12px; } }
+</style>
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+      <a href="/gidsen/">Alle gidsen</a>
+      <a href="/">Terug naar de site</a>
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">De challenge</a>
+    </div>
+  </div>
+</nav>
+
+<header style="max-width:860px; margin:0 auto; padding:72px 32px 8px;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">GRATIS GIDS · 6 PROMPTS · CLAUDE EN CHATGPT</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Van spraakbericht naar offerte in 4 minuten: de werkwijze en de prompts<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Je stapt buiten bij de klant, je weet precies wat die wil, en toch ligt de offerte drie dagen later nog niet in zijn mailbox. Niet omdat je ze niet kan schrijven, maar omdat je er niet aan begint. Deze gids geeft je een vaste werkwijze: je spreekt in de auto een bericht in, Claude maakt er een offerte van in jouw stijl, jij leest na. Met een stijlkaart, zes prompts en een voorbeeld.</p>
+
+  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 6 oktober 2026 · leestijd ± 12 min</div>
+</header>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;">
+
+  <div data-reveal class="kaart">
+    <h2>Waarom offertes blijven liggen</h2>
+    <p>Een offerte schrijven kost je 20 tot 45 minuten, als je er eenmaal aan zit. Het probleem is dat "eraan zitten". Je komt van de klant, je hebt nog twee afspraken, 's avonds is het laat. Morgen dan.</p>
+    <p>Ondertussen verdampt de helft van wat je nodig hebt. Die natte hoek achteraan, de prijs die je liet vallen, de optie waar hij naar vroeg: dat zit na het gesprek in je hoofd, en na drie dagen half. Dan schrijf je een offerte die vager is dan het gesprek.</p>
+    <p>De oplossing is niet sneller typen, maar het moment verplaatsen: je legt alles vast binnen de minuut na het gesprek, in je eigen woorden, en het schrijfwerk gebeurt zonder jou. Jij komt terug op het einde, om na te lezen.</p>
+    <div class="let"><p><strong>Die vier minuten:</strong> één minuut inspreken, een halve minuut transcriberen, een minuut om drie vragen te beantwoorden, de rest om na te lezen. De eerste keer duurt het langer, omdat je stijlkaart er nog niet is.</p></div>
+  </div>
+
+  <div data-reveal class="kaart" style="background:#1c1a1f; color:#f6f1e7;">
+    <h2 style="color:#f6f1e7;">Vijf afspraken voor je begint</h2>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">01</span><div><h3 style="color:#f6f1e7;">Nooit verzonnen prijzen</h3><p style="color:#b3ab9e;">Het model kent je kostprijs, je marge en je planning niet. Elke prijs komt uit jouw mond of jouw prijslijst. Noemde je geen prijs, dan staat er een lege plek die jij invult. Elke prompt hieronder zegt dat letterlijk, laat die zin erin.</p></div></div>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">02</span><div><h3 style="color:#f6f1e7;">Altijd nalezen, altijd zelf versturen</h3><p style="color:#b3ab9e;">Een offerte is een belofte waar je aan vastzit. Je leest ze volledig voor ze de deur uitgaat. Nooit rechtstreeks vanuit het model naar de klant, hoe mooi ze er ook uitziet.</p></div></div>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">03</span><div><h3 style="color:#f6f1e7;">Btw en voorwaarden check je apart</h3><p style="color:#b3ab9e;">Of je 6 of 21 procent aanrekent, of een bedrag inclusief of exclusief is, hoe lang de offerte geldig is: dat zijn geen schrijfkeuzes maar regels. Ze staan in je stijlkaart, en je controleert ze apart. Een model dat mooi schrijft, telt niet per se juist.</p></div></div>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">04</span><div><h3 style="color:#f6f1e7;">Geen klantdata van derden</h3><p style="color:#b3ab9e;">Je spraakbericht gaat over deze klant en dit werk. Niet over wat de buurman betaald heeft of wat je onderaannemer vraagt. Spreek geen rijksregisternummers of rekeningnummers in.</p></div></div>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">05</span><div><h3 style="color:#f6f1e7;">De offerte blijft van jou</h3><p style="color:#b3ab9e;">Het model schrijft, jij beslist. Over de prijs, over wat erin zit, over de toon. Staat er een zin in die je zelf nooit zou zeggen, dan haal je ze eruit. De klant koopt bij jou, en dat moet hij aan de offerte voelen.</p></div></div>
+  </div>
+
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;" id="setup">
+  <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:clamp(28px,4.5vw,42px); letter-spacing:-2px; line-height:1.05;">Eenmalig: je stijlkaart<span style="color:#ff4d24;">.</span></h2>
+  <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#57534a; max-width:700px;">Dit doe je één keer. Een stijlkaart is een lijst van tien regels die beschrijft hoe jouw offertes eruitzien. Zonder stijlkaart krijg je een algemene offerte. Met stijlkaart krijg je er een die lijkt op de vorige die je verstuurd hebt.</p>
+
+  <div data-reveal class="kaart">
+    <h3>Wat er in een stijlkaart staat</h3>
+    <p>Tien regels. Elke regel is een instructie die het model kan volgen zonder na te denken.</p>
+    <ol>
+      <li><strong>Structuur:</strong> de volgorde van de onderdelen. Bijvoorbeeld: aanhef, samenvatting van de vraag, de posten, het totaal, de voorwaarden, de volgende stap.</li>
+      <li><strong>Toon en aanspreking:</strong> je of u, hoe formeel, hoe lang de zinnen.</li>
+      <li><strong>Lengte:</strong> hoeveel pagina's, hoeveel tekst per post.</li>
+      <li><strong>Hoe prijzen getoond worden:</strong> per post of enkel een totaal, per eenheid of forfaitair.</li>
+      <li><strong>Btw-vermelding:</strong> welk tarief standaard, exclusief of inclusief, en de vaste zin daarover.</li>
+      <li><strong>Geldigheidsduur:</strong> hoe lang de offerte geldig blijft en hoe je dat formuleert.</li>
+      <li><strong>Betaaltermijnen:</strong> voorschot of niet, hoeveel, wanneer de rest.</li>
+      <li><strong>Vaste voorwaarden:</strong> meerwerk, annulatie, wat niet inbegrepen is, planning onder voorbehoud.</li>
+      <li><strong>Afsluiting en volgende stap:</strong> hoe je eindigt, en wat de klant doet om akkoord te gaan.</li>
+      <li><strong>Wat er nooit in staat:</strong> woorden die je niet gebruikt, beloftes die je niet doet.</li>
+    </ol>
+    <p>Die lijst schrijf je niet zelf. Je laat ze afleiden uit drie offertes die je al verstuurd hebt. Haal de namen en adressen van de klanten eruit, en plak ze in deze prompt.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Hieronder plak ik drie offertes die ik eerder verstuurd heb en waar ik tevreden over was. Lees ze en leid eruit af hoe ik offertes schrijf.
+
+Maak daaruit een stijlkaart van tien regels, in deze volgorde: structuur en volgorde van de onderdelen, toon en aanspreking, lengte, hoe prijzen getoond worden, btw-vermelding, geldigheidsduur, betaaltermijnen, vaste voorwaarden, afsluiting en volgende stap, en wat er nooit in staat.
+
+Formuleer elke regel als een instructie die je zelf kan volgen wanneer je later een offerte voor mij schrijft. Citeer vaste zinnen letterlijk, bijvoorbeeld de zin over btw of geldigheid.
+
+Gebruik enkel wat je in de drie offertes ziet. Verzin geen voorwaarden die er niet in staan. Verschilt iets tussen de drie, zeg dat dan en vraag me welke versie ik voortaan wil.
+
+OFFERTE 1:
+[PLAK HIER]
+
+OFFERTE 2:
+[PLAK HIER]
+
+OFFERTE 3:
+[PLAK HIER]</pre></div>
+    <div class="let"><p><strong>Lees de tien regels na voor je ze bewaart.</strong> Het model leidt af wat het ziet, en dat is soms toeval. Jij weet of een regel klopt.</p></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h3>Waar je de stijlkaart bewaart</h3>
+    <p><strong style="color:#1c1a1f;">In Claude</strong> maak je een project aan, bijvoorbeeld "Offertes", en plak je de stijlkaart in de instructies van dat project. Je kan er ook je prijslijst als bestand bijzetten. <strong style="color:#1c1a1f;">In ChatGPT</strong> doe je hetzelfde met een project, of je zet ze in je aangepaste instructies.</p>
+    <p>Vanaf hier open je voor elke offerte een nieuw gesprek in dat project. De stijlkaart hoef je nooit meer te plakken.</p>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;" id="werkwijze">
+  <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:clamp(28px,4.5vw,42px); letter-spacing:-2px; line-height:1.05;">De werkwijze in vijf stappen<span style="color:#ff4d24;">.</span></h2>
+  <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#57534a; max-width:700px;">Dit doe je na elk klantgesprek. De eerste twee stappen gebeuren op je telefoon, meteen. De rest wanneer je even zit, liefst dezelfde dag.</p>
+
+  <div data-reveal class="kaart">
+    <div class="nr">01</div>
+    <h3>Spreek een bericht in, meteen na het gesprek</h3>
+    <p>In de auto, voor je de motor start. Open de dictafoon en praat zoals tegen een collega die de offerte voor jou maakt. Niet netjes, niet gestructureerd, alles wat in je hoofd zit voor het weg is.</p>
+    <p>Zorg wel dat deze acht dingen erin zitten. Hang ze desnoods op een briefje aan je dashboard.</p>
+    <div class="ookvoor"><div class="kop">DE ACHT DINGEN DIE JE INSPREEKT</div>
+      <ul>
+        <li><strong>Wie:</strong> de klant of het bedrijf en de contactpersoon.</li>
+        <li><strong>Wat:</strong> wat ze precies vragen, in hun woorden.</li>
+        <li><strong>Waar en wanneer:</strong> het adres als dat ertoe doet, en de periode.</li>
+        <li><strong>Wat je gezien of gemeten hebt:</strong> afmetingen, de staat van wat er is.</li>
+        <li><strong>Wat je mondeling beloofd hebt:</strong> termijnen, aanpak, wie wat doet.</li>
+        <li><strong>Welke prijzen je genoemd hebt:</strong> richtprijzen, uurtarief, forfait. Ook als je "ongeveer" zei.</li>
+        <li><strong>Wat er niet in zit:</strong> wat de klant zelf doet, wat een optie is.</li>
+        <li><strong>Wat je nog moet uitzoeken:</strong> een prijs die je moet opvragen, een twijfel.</li>
+      </ul>
+    </div>
+      </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">02</div>
+    <h3>Zet het bericht om in tekst</h3>
+        <p><strong style="color:#1c1a1f;">Via het model zelf.</strong> In Claude en in ChatGPT kan je een audiobestand aan je gesprek toevoegen, net als een foto of een pdf. Je deelt de spraakmemo vanuit je telefoon naar de app en vraagt: "Schrijf dit letterlijk uit, verbeter niets." Daarna plak je de hoofdprompt eronder.</p>
+    <p><strong style="color:#1c1a1f;">Via je telefoon.</strong> De meeste telefoons kunnen een spraakmemo zelf omzetten in tekst, in de dictafoon- of notitie-app. Je kopieert de tekst en plakt ze in je gesprek. Hoe dat precies gaat, verschilt per toestel.</p>
+    <p>De tekst zal vol "euh" en halve zinnen staan. Geen probleem: het model leest erdoorheen.</p>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">03</div>
+    <h3>De hoofdprompt</h3>
+    <p style="margin:0;">Open een nieuw gesprek in je project "Offertes", zodat de stijlkaart erbij zit. Plak deze prompt, met de uitgeschreven tekst onderaan.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Hieronder staat de uitgeschreven tekst van een spraakbericht dat ik meteen na een klantgesprek insprak. Maak er een offerte van volgens mijn stijlkaart.
+
+Werk in drie stappen.
+
+Stap 1. Lees het bericht en haal eruit: wie de klant is, wat hij vraagt, waar en wanneer, wat ik gezien of gemeten heb, wat ik beloofd heb, welke prijzen ik genoemd heb, wat niet inbegrepen of een optie is, en wat ik nog moest uitzoeken.
+
+Stap 2. Stel me maximaal drie vragen over wat je mist om de offerte compleet te maken. Stel ze tegelijk, kort, en wacht op mijn antwoord. Mis je niets, zeg dat en ga door.
+
+Stap 3. Schrijf de offerte.
+
+Regels:
+- Gebruik enkel prijzen die ik in het bericht of in mijn antwoorden genoemd heb. Ontbreekt een prijs, zet dan [PRIJS] op die plaats.
+- Verzin geen hoeveelheden, termijnen, materialen of voorwaarden. Wat niet in het bericht of in mijn stijlkaart staat, staat niet in de offerte.
+- Zei ik "ongeveer" of "ik denk", zet dat dan als richtprijs of onder voorbehoud.
+- Maak van spreektaal offertetaal, maar voeg inhoudelijk niets toe.
+- Zet onderaan, los van de offerte, een lijstje "Door jou te controleren" met alles waar je getwijfeld hebt of iets hebt afgeleid.
+
+SPRAAKBERICHT:
+[PLAK HIER DE UITGESCHREVEN TEKST]</pre></div>
+    <div class="let"><p><strong>Waarom die drie vragen:</strong> zonder die stap vult het model de gaten zelf in, overtuigend. Door eerst te laten vragen, komen de gaten bij jou terecht in plaats van in de offerte.</p></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">04</div>
+    <h3>Beantwoord de drie vragen</h3>
+    <p>De enige plek waar jij nog typt, en het mag kort. "1. [PRIJS] per vierkante meter. 2. Ja, inbegrepen. 3. Weet ik nog niet, zet onder voorbehoud."</p>
+    <p>Weet je iets niet, zeg dat dan. Het model zet een lege plek die jij later invult. Beter dan gokken, want een gok in een offerte wordt een discussie op de werf.</p>
+    <p>Daarna schrijft het model de offerte.</p>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">05</div>
+    <h3>Nalezen en versturen</h3>
+    <p>Lees de offerte volledig. Begin bij het lijstje "Door jou te controleren", daar staan de plekken waar het model twijfelde. Check daarna apart: bedragen, btw, geldigheidsduur, betaaltermijnen, en of alles wat je mondeling beloofd hebt erin staat.</p>
+    <p>Twijfel je of ze compleet is, laat dan eerst deze controle lopen, in hetzelfde gesprek.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Lees de offerte die je net schreef nog eens, twee keer: een keer als de klant die ze ontvangt, een keer als mijn boekhouder.
+
+Zeg me:
+1. Welke vraag stelt de klant na het lezen nog? Welke zin kan hij anders begrijpen dan ik bedoel?
+2. Welk onderdeel kan later tot discussie leiden omdat het niet afgebakend is: een hoeveelheid, een termijn, wat er wel en niet in zit?
+3. Staan btw-tarief, geldigheidsduur, betaaltermijnen en de vaste voorwaarden uit mijn stijlkaart erin? Wat ontbreekt?
+4. Klopt de optelsom van de posten met het totaal?
+
+Geef enkel wat ontbreekt of onduidelijk is. Herschrijf de offerte nog niet, en voeg geen voorwaarden toe die niet in mijn stijlkaart staan.</pre></div>
+    <p style="margin-top:18px;">Dan zet je de tekst in je sjabloon of je boekhoudprogramma, en verstuur je ze zelf. Niet vanuit het model.</p>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;" id="meer-prompts">
+  <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:clamp(28px,4.5vw,42px); letter-spacing:-2px; line-height:1.05;">Drie prompts voor wat erna komt<span style="color:#ff4d24;">.</span></h2>
+  <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#57534a; max-width:700px;">De offerte is de deur uit. Dan komt de klant die twee versies wil, de klant die niets laat horen, en de klant die het te duur vindt. Voor elk één prompt, in hetzelfde gesprek als de offerte.</p>
+
+  <div data-reveal class="kaart">
+    <h3>Twee versies: basis en uitgebreid</h3>
+    <p style="margin:0;">Vroeg de klant naar opties, geef hem dan twee versies. Niet drie: dan kiest hij de middelste.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Maak van deze offerte twee versies: een basisversie en een uitgebreide versie.
+
+De basisversie bevat enkel wat de klant letterlijk gevraagd heeft, niets meer.
+
+De uitgebreide versie is de basisversie plus de opties die ik in het gesprek noemde: [OPTIES]. Gebruik enkel de prijzen die ik hier geef: [PRIJS PER OPTIE]. Geef ik geen prijs, zet dan [PRIJS].
+
+Zet de twee versies naast elkaar in één overzicht, met per versie het totaal. Schrijf per versie één zin voor wie ze bedoeld is, zonder de basisversie minderwaardig te laten klinken.
+
+Zelfde stijlkaart, zelfde voorwaarden. Maak geen derde versie.</pre></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h3>Opvolgmail na vijf dagen</h3>
+    <p style="margin:0;">De meeste offertes gaan niet verloren omdat de klant nee zegt, maar omdat niemand nog iets zegt. Na vijf dagen stuur je een kort bericht.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Het is vijf dagen geleden dat ik deze offerte verstuurde en ik heb nog niets gehoord. Schrijf een opvolgbericht.
+
+Regels:
+- Maximaal zes zinnen.
+- Geen druk, geen korting, geen "ik wou even polsen".
+- Vraag of er nog vragen zijn, en bied aan om die telefonisch te beantwoorden.
+- Geef één concrete reden om nu te beslissen die al in de offerte staat, zoals de planning of de geldigheidsduur. Verzin er geen nieuwe.
+- Zelfde toon als in mijn stijlkaart.
+
+Geef twee varianten: een e-mail met onderwerpregel, en een bericht van maximaal drie zinnen voor WhatsApp.</pre></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h3>De klant vindt het te duur</h3>
+    <p style="margin:0;">De reflex is de prijs laten zakken. Doe dat niet meteen. "Te duur" betekent meestal "ik snap niet waarom het zoveel kost" of "ik had minder budget dan ik zei". Allebei los je anders op dan met een korting. Geef je korting zonder iets aan het werk te veranderen, dan zeg je dat de eerste prijs niet klopte, en dat onthoudt de klant.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>De klant antwoordt dat de offerte te duur is. Dit schreef of zei hij letterlijk:
+[PLAK OF TYP HIER]
+
+Herwerk de offerte niet door gewoon de prijs te verlagen. Geef me eerst drie opties, elk met wat ik erbij win en wat ik riskeer:
+
+1. Iets uit de scope halen: welke post, en hoeveel dat scheelt. Gebruik enkel bedragen die al in de offerte staan, reken niets bij.
+2. Het werk spreiden of faseren: wat nu, wat later, en wat verandert er aan de planning.
+3. De offerte laten zoals ze is en beter uitleggen waarom ze kost wat ze kost, met de drie sterkste argumenten.
+
+Zeg me welke optie je zou kiezen, op basis van wat de klant letterlijk zei.
+
+Schrijf dan een antwoordmail voor de optie die ik kies: [KEUZE]. Kort, vriendelijk, zonder me te verontschuldigen voor de prijs.</pre></div>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;" id="voorbeeld">
+  <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:clamp(28px,4.5vw,42px); letter-spacing:-2px; line-height:1.05;">Een voorbeeld van begin tot eind<span style="color:#ff4d24;">.</span></h2>
+  <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#57534a; max-width:700px;">Een fictieve tuinaannemer en klant. De bedragen heb ik weggelaten, want die zijn van jou.</p>
+
+  <div data-reveal class="kaart">
+    <h3>Het spraakbericht, uitgeschreven</h3>
+    <div class="ookvoor citaat"><div class="kop">WAT DE TUINAANNEMER INSPRAK</div>
+      <p>"Oké, euh, net bij de familie Verlinden geweest in Lokeren, achtertuin, ik schat een tachtigtal vierkante meter. Ze willen het oude terras eruit en een nieuw in keramische tegels, zo'n vijfentwintig vierkante meter, de rest gazon met een border rechts. Achteraan is het vrij nat, dus drainage zit er zeker bij. Ik heb gezegd dat we richting maart zitten. Terras en gazon aan mijn gewone prijs per vierkante meter. Ze vroegen naar verlichting, dat zet ik als optie. Container en afvoer van het oude terras zit erin. Planten voor de border kiezen ze zelf nog, dus daar hou ik een stelpost voor. Ah ja, ze willen klaar zijn voor de communie in mei. En ik moet nog checken of de poort breed genoeg is voor de minigraver, anders wordt het handwerk."</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h3>Wat het model vraagt, en wat eruit komt</h3>
+    <p>Eerst drie vragen, ongeveer zo: welke prijs per vierkante meter voor terras en gazon, want "mijn gewone prijs" staat niet in de stijlkaart. Hoeveel als stelpost voor de planten, en de drainage forfaitair of per meter. En of de planning "klaar voor half mei, onder voorbehoud van het weer" mag zijn. Daar antwoord je in drie korte regels op.</p>
+    <p>Dan de offerte, in de structuur van zijn stijlkaart. Aanhef, samenvatting van de vraag, de posten: uitbraak en afvoer oud terras, keramisch terras van 25 vierkante meter, drainage, gazon, border met stelpost. Apart daaronder de optie tuinverlichting met [PRIJS], omdat hij daar geen bedrag voor noemde. Het totaal, de btw-zin, de geldigheidsduur, zijn betaaltermijnen en zijn voorwaarde over meerwerk. En onderaan, los van de offerte:</p>
+    <div class="ookvoor citaat"><div class="kop">DOOR JOU TE CONTROLEREN</div>
+      <p>"De 80 m² is een schatting uit je bericht, niet gemeten. De breedte van de poort bepaalt of de uitbraak machinaal kan; ik ben uitgegaan van de minigraver en heb een voorbehoud toegevoegd. De einddatum half mei staat onder voorbehoud. Voor de verlichting heb ik geen prijs: die staat als [PRIJS]."</p>
+    </div>
+    <p style="margin-top:18px;">Hij vult de prijs voor de verlichting in, meet de poort, en verstuurt. Het schrijven zelf is eruit.</p>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:14px 32px 0;" id="faq">
+  <div data-reveal class="kaart faq">
+    <h2>Vragen die ik hierover krijg</h2>
+    <details><summary>Werkt dit ook met ChatGPT, of enkel met Claude?</summary><p>Allebei. De prompts zijn gewone tekst en werken in elk model dat je stijlkaart kan onthouden. In Claude zet je die in de instructies van een project, in ChatGPT in een project of in je aangepaste instructies.</p></details>
+    <details><summary>Mag ik klantgegevens in Claude of ChatGPT zetten?</summary><p>Enkel wat nodig is voor de offerte: bedrijfsnaam, voornaam van de contactpersoon, het adres van de werf. Geen rijksregisternummers, geen bankgegevens, niets over andere klanten. Zet in de instellingen uit dat je gesprekken gebruikt worden om te trainen.</p></details>
+    <details><summary>Mijn offertes komen uit mijn boekhoudprogramma. Werkt dit dan nog?</summary><p>Ja, maar dan voor de tekst, niet voor het document. Je laat het model de omschrijving per post en de voorwaarden schrijven, en plakt die in je programma. Bedragen, nummering en btw-berekening blijven in je boekhoudpakket.</p></details>
+    <details><summary>Wat als het model toch een prijs of een voorwaarde verzint?</summary><p>Dat gebeurt, ook met de verbodszin in de prompt. Daarom lees je altijd na, te beginnen bij het lijstje 'Door jou te controleren'. Zie je een bedrag dat je niet genoemd hebt, vraag dan: 'Waar komt dit vandaan?' Vertrouw het nooit blindelings.</p></details>
+    <details><summary>Hoeveel tijd kost de eenmalige setup?</summary><p>Reken op een uur: drie oude offertes zoeken en anonimiseren, de stijlkaart laten afleiden, de tien regels nalezen en verbeteren, en ze in je project zetten. Daarna nooit meer, tenzij je voorwaarden veranderen.</p></details>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:36px 32px 0;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:24px; padding:52px 48px; display:grid; grid-template-columns:1.1fr .9fr; gap:44px; align-items:center;">
+    <div>
+      <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px;">ELKE WEEK IN JE MAILBOX</div>
+      <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:34px; letter-spacing:-1.5px; line-height:1.1;">Elke week zo&rsquo;n prompt in je mailbox<span style="color:#ff4d24;">.</span></h2>
+      <p style="margin:0; font-size:16px; line-height:1.7; color:#b3ab9e;">Elke week wat er echt verandert in AI, in klare taal, met een prompt die je meteen kan proberen. Gratis, en je kan altijd weg.</p>
+    </div>
+    <div>
+      <form action="https://bae29b1d.sibforms.com/serve/MUIFAMlmZRYFZYcxJGaoUhXbAJTxCEVZm_78YOICuP4QoQsuKXhS0YXkkyU1eKA8KrYjdEFOzQmFwFO1mBUZGTH6TNezpUEHdSTI0bF7xFe8b45hQcb2s4upUTvpO7ZLNMOlGDdT_dzMF9W1m2wJ-jV4-ldVsEBAqc47rtwz6YW9Jbu8YD59S9KtHIQuqbr92uFAB-hVYIuxZWAW" method="POST" style="display:flex; flex-direction:column; gap:10px;">
+        <input type="text" name="FIRSTNAME" placeholder="Je voornaam" required style="padding:14px 16px; border:none; border-radius:9px; font-size:15px; font-family:inherit; background:#2a272c; color:#f6f1e7;">
+        <input type="email" name="EMAIL" placeholder="Je e-mailadres" required style="padding:14px 16px; border:none; border-radius:9px; font-size:15px; font-family:inherit; background:#2a272c; color:#f6f1e7;">
+        <input type="text" name="email_address_check" value="" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="locale" value="nl">
+        <button type="submit" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:15px; border-radius:9px; border:none; cursor:pointer;">Schrijf je in →</button>
+      </form>
+      <p style="margin:12px 0 0; font-size:13px; color:#8a8378; text-align:center;">900+ ondernemers lezen mee · uitschrijven kan altijd</p>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:22px 32px 96px;">
+  <div data-reveal style="background:#fff; border-radius:24px; padding:44px 40px; text-align:center;">
+    <h2 style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.5px; line-height:1.1;">Offertes zijn één werkwijze. In tien dagen bouw je er meer<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0 0 26px; font-size:16px; line-height:1.7; color:#57534a; max-width:520px; margin-left:auto; margin-right:auto;">In "Claude in 10 dagen" zet je een Claude op die je aanbod, je klanten en je manier van schrijven kent. Elke dag één werkwijze die je houdt. De volgende groep start op dinsdag 3 november, met maximaal 25 deelnemers.</p>
+    <div class="cta-row" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">Bekijk de challenge →</a>
+      <a href="/gidsen/" class="btn-outline" style="border:2px solid #1c1a1f; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px;">Alle gratis gidsen</a>
+    </div>
+  </div>
+</section>
+
+<section data-kruislinks style="max-width:1000px; margin:0 auto; padding:0 32px 72px;"><h2 style="font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-1px; margin:0 0 18px;">Andere gratis gidsen</h2><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;"><a href="/concurrentie-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Wat doet je concurrent beter dan jij?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Acht prompts om jezelf naast een concurrent te leggen, door de ogen van een klant.</div></a><a href="/prompten-claude-5/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Beter prompten in Claude</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Drie dingen die veranderd zijn aan prompten, plus de checklist.</div></a><a href="/connectors-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Connectors: AI in je mailbox en agenda</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Hoe het werkt, wat er met je data gebeurt, en mijn zeven regels.</div></a><a href="/10-manieren-claude-bespaart/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">10 manieren waarop Claude je geld bespaart</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Van je abonnementen tot je huurindexatie, met tien prompts.</div></a><a href="/claude-of-chatgpt/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Claude of ChatGPT? Wat gebruik je waarvoor</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Een eerlijke vergelijking per taak, met advies per profiel.</div></a><a href="/9-dingen-claude-doet-gratis/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">9 dingen die Claude gratis doet</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Negen taken waar je nu voor betaalt, met de prompts.</div></a></div><p style="margin:18px 0 0; font-size:15px;"><a href="/gidsen/" style="font-weight:600; color:#ff4d24;">Bekijk alle gidsen →</a></p></section>
+
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/privacy/">Privacy en cookies</a> · <a href="#cookievoorkeuren">Cookievoorkeuren</a></div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=3"></script>
+<script>
+document.querySelectorAll('.kopieer').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = b.parentElement.querySelector('pre').innerText;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent = 'Gekopieerd ✓'; b.classList.add('ok');
+      setTimeout(function(){ b.textContent='Kopieer'; b.classList.remove('ok'); }, 1800);
+    });
+  });
+});
+</script>
+<script src="/js/analytics.js?v=3" defer></script>
+<script src="/js/menu.js?v=3" defer></script>
+<script src="/js/challenge-popup.js?v=2" defer></script>
+</body>
+</html>
