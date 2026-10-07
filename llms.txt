@@ -27,6 +27,7 @@ Taal: Nederlands. Werkgebied: Vlaanderen en heel België, online ook daarbuiten.
 - [Fable 5.1: waarvoor gebruik je het](https://asklien.ai/fable-5-1/)
 - [Connectors in Claude, ChatGPT en andere AI-tools, veilig gebruiken](https://asklien.ai/connectors-gids/)
 - [Concurrentieanalyse met Claude of ChatGPT: acht prompts](https://asklien.ai/concurrentie-gids/)
+- [10 GitHub-repo's die je AI beter maken, zonder code](https://asklien.ai/github-repos-gids/)
 - [Adverteren in ChatGPT: de complete gids voor België](https://asklien.ai/adverteren-in-chatgpt/)
 - [Context hints voor ChatGPT Ads](https://asklien.ai/context-hints-chatgpt-ads/)
 - [Er komen advertenties in ChatGPT: wat verandert er](https://asklien.ai/chatgpt-advertenties/)

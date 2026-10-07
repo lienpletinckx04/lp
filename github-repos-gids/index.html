@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10 GitHub-repo's die je AI beter maken, zonder dat je code schrijft — AskLien.ai</title>
+<meta name="description" content="GitHub is niet alleen voor programmeurs. Tien gratis verzamelingen van instructies, prompts en skills die Claude en ChatGPT beter maken, met per repo wat het doet en het eerste wat je probeert. Plus de prompt om elke repo te begrijpen.">
+<link rel="canonical" href="https://asklien.ai/github-repos-gids/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="10 GitHub-repo's die je AI beter maken, zonder dat je code schrijft">
+<meta property="og:description" content="Tien gratis verzamelingen van instructies, prompts en skills voor Claude en ChatGPT. Zeven werken zonder terminal. Plus de prompt om elke repo te begrijpen.">
+<meta property="og:url" content="https://asklien.ai/github-repos-gids/">
+<meta property="og:image" content="https://asklien.ai/media/foto/hero.jpg">
+<meta property="og:site_name" content="AskLien.ai">
+<meta property="og:locale" content="nl_BE">
+<meta property="article:published_time" content="2026-10-06">
+<meta property="article:modified_time" content="2026-10-06">
+<meta name="author" content="Lien Pletinckx">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "10 GitHub-repo's die je AI beter maken, zonder dat je code schrijft",
+  "description": "GitHub is niet alleen voor programmeurs. Tien gratis verzamelingen van instructies, prompts en skills die Claude en ChatGPT beter maken, met per repo wat het doet en het eerste wat je probeert. Plus de prompt om elke repo te begrijpen.",
+  "inLanguage": "nl-BE",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://asklien.ai/github-repos-gids/" },
+  "url": "https://asklien.ai/github-repos-gids/",
+  "image": "https://asklien.ai/media/foto/hero.jpg",
+  "author": { "@type": "Person", "name": "Lien Pletinckx", "url": "https://asklien.ai/", "jobTitle": "AI-coach en consultant", "sameAs": ["https://www.instagram.com/asklien.ai/"] },
+  "publisher": { "@type": "Organization", "name": "AskLien.ai", "url": "https://asklien.ai/", "logo": { "@type": "ImageObject", "url": "https://asklien.ai/media/foto/hero.jpg" } },
+  "datePublished": "2026-10-06",
+  "dateModified": "2026-10-06",
+  "keywords": "GitHub voor niet-programmeurs, GitHub repo's AI, Claude skills GitHub, prompts GitHub, MCP servers, Anthropic skills, prompts.chat, Dify, GPT Researcher",
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asklien.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Gratis gidsen", "item": "https://asklien.ai/gidsen/" },
+    { "@type": "ListItem", "position": 3, "name": "10 GitHub-repo's die je AI beter maken", "item": "https://asklien.ai/github-repos-gids/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Moet ik een GitHub-account hebben?", "acceptedAnswer": { "@type": "Answer", "text": "Nee. Lezen, bladeren en bestanden kopiëren kan zonder account. Een account heb je pas nodig als je zelf iets wil bewaren of op een project wil reageren." } },
+    { "@type": "Question", "name": "Is het veilig om iets van GitHub te gebruiken?", "acceptedAnswer": { "@type": "Answer", "text": "Tekst lezen en kopiëren is altijd veilig. Een installer draaien of een plugin installeren is software van een vreemde vertrouwen. Doe dat alleen bij projecten met veel sterren en recente activiteit, en lees eerst wat het installeert." } },
+    { "@type": "Question", "name": "Wat is een terminal, en heb ik die nodig?", "acceptedAnswer": { "@type": "Answer", "text": "De terminal is het zwarte venster waar programmeurs commando's in typen. Zeven van de tien repo's in deze gids heb je zonder terminal: je kopieert tekst of gebruikt een website. De drie andere draaien via Claude Code, dat zelf ook een terminal is, maar dan een die Nederlands verstaat." } },
+    { "@type": "Question", "name": "Werkt dit ook met ChatGPT?", "acceptedAnswer": { "@type": "Answer", "text": "De promptverzamelingen en instructiebestanden wel, die plak je in een Custom GPT of gewoon in een gesprek. Skills, plugins en MCP-koppelingen zijn vooral op Claude gericht." } }
+  ]
+}
+</script>
+<style>
+  .kaart { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:22px; }
+  .kaart h2 { margin:0 0 14px; font-family:'Archivo'; font-weight:800; font-size:26px; letter-spacing:-1.2px; line-height:1.12; }
+  .kaart h3 { margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:21px; letter-spacing:-.6px; }
+  .kaart p { font-size:16px; line-height:1.8; color:#57534a; }
+  .kaart p:last-child { margin-bottom:0; }
+  .nr { font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; color:#ff4d24; line-height:1; margin-bottom:12px; }
+  .feiten { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px; }
+  .feiten span { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; padding:6px 11px; border-radius:20px; background:#f6f1e7; color:#8a8378; border:1px solid #e6ddcb; }
+  .feiten span.ok { background:#ff4d24; color:#fff; border-color:#ff4d24; }
+  .feiten span.link { text-transform:none; letter-spacing:0; font-family:'Schibsted Grotesk'; font-weight:600; font-size:13px; color:#1c1a1f; }
+  .feiten a { color:inherit; text-decoration:none; }
+  .feiten a:hover { text-decoration:underline; text-decoration-color:#ff4d24; }
+  .prompt { position:relative; background:#f6f1e7; border-left:3px solid #ff4d24; border-radius:10px; padding:24px; margin:18px 0 0; }
+  .prompt pre { margin:0; white-space:pre-wrap; word-break:break-word; font-family:'Schibsted Grotesk',sans-serif; font-size:15px; line-height:1.7; color:#1c1a1f; }
+  .kopieer { position:absolute; top:14px; right:14px; background:#1c1a1f; color:#f6f1e7; border:none; border-radius:7px; padding:7px 13px; font-family:inherit; font-weight:600; font-size:12px; cursor:pointer; }
+  .kopieer.ok { background:#ff4d24; }
+  @media (min-width:641px){ .prompt { padding-top:54px; } }
+  .let { background:#fff8ef; border:2px dashed #e6ddcb; border-radius:12px; padding:18px 22px; margin:16px 0 0; }
+  .let p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+  .let strong { color:#1c1a1f; }
+  .probeer { background:#f6f1e7; border-radius:12px; padding:20px 22px; margin:18px 0 0; }
+  .probeer .kop { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:10px; }
+  .probeer p { margin:0 0 8px; font-size:15px; line-height:1.7; color:#57534a; }
+  .probeer p:last-child { margin-bottom:0; }
+  .probeer strong { color:#1c1a1f; }
+  .probeer code { font-family:ui-monospace,Menlo,monospace; font-size:13.5px; background:#fff; padding:2px 7px; border-radius:6px; color:#1c1a1f; }
+
+  .regel { display:flex; align-items:flex-start; gap:18px; padding:18px 0; border-bottom:1px solid #e6ddcb; }
+  .regel:last-child { border-bottom:none; padding-bottom:0; }
+  .regel .rn { font-family:'Archivo'; font-weight:900; font-size:26px; color:#ff4d24; min-width:38px; line-height:1.2; }
+  .regel h3 { margin:0 0 6px; font-size:19px; }
+  .regel p { margin:0; font-size:15px; line-height:1.7; }
+
+  .faq details { border-bottom:1px solid #e6ddcb; padding:16px 0; }
+  .faq details:last-child { border-bottom:none; }
+  .faq summary { cursor:pointer; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#1c1a1f; list-style:none; display:flex; justify-content:space-between; gap:16px; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:'+'; color:#ff4d24; font-weight:900; font-size:22px; line-height:1; }
+  .faq details[open] summary::after { content:'–'; }
+  .faq details p { margin:12px 0 0; font-size:15px; line-height:1.75; color:#57534a; }
+
+  @media (max-width:640px){ .kaart{ padding:26px 24px; } .prompt{ padding:20px 18px; } .kopieer{ position:static; display:inline-block; margin-bottom:12px; } }
+</style>
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+      <a href="/gidsen/">Alle gidsen</a>
+      <a href="/">Terug naar de site</a>
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">De challenge</a>
+    </div>
+  </div>
+</nav>
+
+<header style="max-width:860px; margin:0 auto; padding:72px 32px 8px;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">GRATIS GIDS · 10 REPO'S · GEEN CODE NODIG</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">10 GitHub-repo's die je AI beter maken, zonder dat je code schrijft<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">GitHub klinkt als iets voor programmeurs. Het is eigenlijk de Google Drive van mensen die dingen bouwen, en de helft van wat erop staat is gewoon tekst: instructies, prompts en werkwijzen die je in Claude of ChatGPT plakt. Deze tien bewaar je. Per repo zeg ik wat het doet, of je een terminal nodig hebt en wat je als eerste probeert.</p>
+
+  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 6 oktober 2026 · leestijd ± 12 min</div>
+</header>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;">
+
+  <div data-reveal class="kaart">
+    <h2>Hoe je een GitHub-repo leest zonder developer te zijn</h2>
+    <p>Elke repo heeft hetzelfde adres: <strong style="color:#1c1a1f;">github.com/eigenaar/project</strong>. Bovenaan staat een lijst bestanden, daaronder een lange tekst. Die tekst is de <strong style="color:#1c1a1f;">README</strong>, de handleiding. Vaak is dat het enige wat je moet lezen.</p>
+    <p>Drie dingen vertellen je of een project de moeite is. Het aantal <strong style="color:#1c1a1f;">sterren</strong>: een ster is een like, vanaf enkele tienduizenden is het een ernstig project. De datum van de <strong style="color:#1c1a1f;">laatste wijziging</strong>, die staat naast elk bestand. En of er bovenaan een grijze <strong style="color:#1c1a1f;">Archived</strong>-banner staat. Zie je die, dan is het project stopgezet en loop je door.</p>
+    <p>Wil je iets eruit halen, dan heb je drie manieren. Eén bestand: klik erop, kies rechtsboven <strong style="color:#1c1a1f;">Raw</strong>, selecteer alles en kopieer. Het hele project: de groene knop <strong style="color:#1c1a1f;">Code</strong> en dan <strong style="color:#1c1a1f;">Download ZIP</strong>. Te ingewikkeld: plak de link van de repo in Claude en vraag wat het is. Onderaan deze gids staat daar een prompt voor.</p>
+    <div class="let"><p><strong>Veiligheid in één zin.</strong> Tekst lezen en kopiëren op GitHub is altijd veilig. Een installer draaien is software van een vreemde vertrouwen: doe dat alleen bij projecten met veel sterren en recente activiteit. Bij elke repo hieronder staat welke van de twee het is.</p></div>
+  </div>
+
+  <div data-reveal class="kaart" style="background:#1c1a1f; color:#f6f1e7;">
+    <h2 style="color:#f6f1e7;">Drie dingen om te onthouden</h2>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">01</span><div><h3 style="color:#f6f1e7;">Het meeste is gewoon tekst</h3><p style="color:#b3ab9e;">Zeven van de tien repo's hieronder zijn instructiebestanden of promptverzamelingen. Kopiëren en plakken volstaat. Je hoeft niets te installeren om er iets aan te hebben.</p></div></div>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">02</span><div><h3 style="color:#f6f1e7;">Zoek voor je bouwt</h3><p style="color:#b3ab9e;">Twee repo's zijn catalogi. Die installeer je niet, die doorzoek je. Grote kans dat iemand al gemaakt heeft wat jij van plan was.</p></div></div>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">03</span><div><h3 style="color:#f6f1e7;">Kies de cloudversie</h3><p style="color:#b3ab9e;">Echte software zoals Dify en GPT Researcher heeft een gehoste variant: inloggen op een website en klaar. De terminal is voor wie het zelf wil draaien, niet voor wie het wil gebruiken.</p></div></div>
+  </div>
+
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;" id="repos">
+  <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:clamp(28px,4.5vw,42px); letter-spacing:-2px; line-height:1.05;">De tien repo's<span style="color:#ff4d24;">.</span></h2>
+  <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#57534a; max-width:700px;">Sterrenaantallen en data zijn van 6 oktober 2026, gecontroleerd op GitHub zelf. De volgorde is geen rangschikking: begin met wat op jouw werk past.</p>
+
+  <div data-reveal class="kaart">
+    <div class="nr">01</div>
+    <h3>Superpowers: verander hoe Claude werkt, niet wat het weet</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">github.com/obra/superpowers</a></span><span>296.000 sterren</span><span>Claude Code</span></div>
+    <p style="margin:0;">Een verzameling skills die Claude een werkwijze opleggen: eerst brainstormen over wat je echt wil, dan een plan in stappen, dan pas uitvoeren, en achteraf controleren. Het verschil merk je vooral bij grotere opdrachten, waar Claude anders te snel begint te schrijven.</p>
+    <div class="probeer"><div class="kop">HET EERSTE WAT JE PROBEERT</div>
+      <p>Werk je in Claude Code, typ dan <code>/plugin install superpowers@claude-plugins-official</code>. Daarna vraag je gewoon: "help me brainstormen over mijn nieuwe dienst" en je merkt dat Claude eerst vragen stelt in plaats van meteen te antwoorden.</p>
+      <p><strong>Geen Claude Code?</strong> Open de map <em>skills</em> in de repo, kies één skill, open het bestand SKILL.md via Raw en plak de tekst als instructie in een Claude Project. Je krijgt dan die ene werkwijze, zonder installatie.</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">02</div>
+    <h3>Awesome GPT Image 2: honderden beeldprompts mét het resultaat erbij</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">github.com/freestylefly/awesome-gpt-image-2</a></span><span>34.000 sterren</span><span class="ok">Geen terminal</span></div>
+    <p style="margin:0;">Meer dan vijfhonderd prompts voor beeldgeneratie, telkens met het beeld dat eruit kwam: posters, productfoto's, infographics, stijlen. Je zoekt op wat je wil zien, niet op wat je moet typen. Dat is het grote verschil met een lege promptbalk.</p>
+    <div class="probeer"><div class="kop">HET EERSTE WAT JE PROBEERT</div>
+      <p>Blader door de README of de bijhorende website tot je een beeld ziet dat lijkt op wat jij nodig hebt. Kopieer de prompt eronder en vervang alleen het onderwerp door jouw product of dienst. Laat de rest staan: de stijlbeschrijving is het werk dat iemand anders al gedaan heeft.</p>
+    </div>
+    <div class="let"><p><strong>Werkt met elk beeldmodel.</strong> De prompts zijn geschreven voor het beeldmodel van ChatGPT, maar de meeste geven ook in Claude, Gemini of Midjourney een gelijkaardig resultaat.</p></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">03</div>
+    <h3>Task Master: van één document naar een takenlijst met volgorde</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/eyaltoledano/claude-task-master" target="_blank" rel="noopener">github.com/eyaltoledano/claude-task-master</a></span><span>28.000 sterren</span><span>Claude Code of Cursor</span></div>
+    <p style="margin:0;">Je geeft het een plan, een briefing of een idee van een paar pagina's. Het maakt er genummerde taken van, met wat eerst moet en wat daarvan afhangt, en werkt ze dan één voor één af. Bedoeld voor software, maar het principe werkt voor elk project dat te groot is voor één gesprek.</p>
+    <div class="probeer"><div class="kop">HET EERSTE WAT JE PROBEERT</div>
+      <p>Schrijf op één pagina wat je wil bouwen of organiseren, geef dat aan Task Master en kijk naar de takenlijst die eruit komt. Vaak is die lijst alleen al de moeite, ook als je de taken daarna zelf doet.</p>
+    </div>
+    <div class="let"><p><strong>Let op de datum.</strong> De laatste wijziging dateert van eind april 2026. Het werkt nog, maar het beweegt niet meer snel. Je hebt ook een API-sleutel van Anthropic of OpenAI nodig. Van de tien vraagt alleen nummer 10 dat ook.</p></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">04</div>
+    <h3>I Have ADHD: één bestand dat elke AI korter en duidelijker maakt</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/ayghri/i-have-adhd" target="_blank" rel="noopener">github.com/ayghri/i-have-adhd</a></span><span>54.000 sterren</span><span class="ok">Geen terminal</span></div>
+    <p style="margin:0;">Een tekstbestand met instructies: geef het antwoord eerst, dan de uitleg. Genummerde stappen. Eén duidelijke volgende actie. Nooit meer dan vijf punten in een lijst. Geschreven voor mensen met ADHD, maar iedereen die moe wordt van lange AI-antwoorden heeft er iets aan.</p>
+    <div class="probeer"><div class="kop">HET EERSTE WAT JE PROBEERT</div>
+      <p>Open het bestand, klik op Raw, kopieer alles. Plak het in Claude bij de instructies van een Project, of in ChatGPT bij een Custom GPT. Stel daarna dezelfde vraag als gisteren en vergelijk de lengte van het antwoord.</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">05</div>
+    <h3>Awesome Agents: de catalogus die je doorzoekt voor je zelf iets bouwt</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/kyrolabs/awesome-agents" target="_blank" rel="noopener">github.com/kyrolabs/awesome-agents</a></span><span>2.900 sterren</span><span class="ok">Geen terminal</span></div>
+    <p style="margin:0;">Een lijst van meer dan honderdtachtig open-source tools om AI-agents te bouwen, gesorteerd in een tiental categorieën: klantenservice, onderzoek, automatisering, spraak. Dit is geen software, het is een inhoudstafel. Kleiner project dan de rest, maar netjes bijgehouden.</p>
+    <div class="probeer"><div class="kop">HET EERSTE WAT JE PROBEERT</div>
+      <p>Druk Ctrl+F of Cmd+F en typ het probleem dat je wil oplossen: "email", "support", "voice". Lees wat er al bestaat. Platformen als Botpress en Dust staan ertussen, naast tientallen die je nog nooit gehoord hebt.</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">06</div>
+    <h3>Anthropic's officiële skills: de bron waar de rest van afkijkt</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">github.com/anthropics/skills</a></span><span>180.000 sterren</span><span class="ok">Geen terminal</span></div>
+    <p style="margin:0;">De skills die Anthropic zelf schrijft en gebruikt, waaronder die om Word-, PowerPoint- en Excel-bestanden te maken. Elke skill is een map met een SKILL.md en soms wat hulpbestanden. Lees er een paar en je begrijpt meteen hoe een goede skill in elkaar zit.</p>
+    <div class="probeer"><div class="kop">HET EERSTE WAT JE PROBEERT</div>
+      <p>Begin met <strong>brand-guidelines</strong>: vul er je eigen kleuren, lettertypes en toon in. Download de map als ZIP en upload ze in claude.ai onder Instellingen, Vaardigheden. Vanaf dan houdt Claude zich aan je huisstijl zonder dat je het telkens zegt.</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">07</div>
+    <h3>prompts.chat: de grootste promptbibliotheek, in één bestand</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/f/prompts.chat" target="_blank" rel="noopener">github.com/f/prompts.chat</a></span><span>172.000 sterren</span><span class="ok">Geen terminal</span></div>
+    <p style="margin:0;">Vroeger bekend als Awesome ChatGPT Prompts. Honderden rolprompts, van reisgids tot boekhouder tot sollicitatiecoach, elk een alinea die het model in een rol zet. Niet elke prompt is even sterk, maar als startpunt is er niets groters.</p>
+    <div class="probeer"><div class="kop">HET EERSTE WAT JE PROBEERT</div>
+      <p>Werk in twee berichten. Eerst plak je de rolprompt en laat je het model bevestigen dat het de rol begrijpt. Pas in het tweede bericht stel je je echte vraag. Dat geeft merkbaar betere antwoorden dan alles in één keer plakken.</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">08</div>
+    <h3>Awesome MCP Servers: alle koppelingen tussen Claude en je andere tools</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/punkpeye/awesome-mcp-servers" target="_blank" rel="noopener">github.com/punkpeye/awesome-mcp-servers</a></span><span>96.000 sterren</span><span class="ok">Geen terminal om te bladeren</span></div>
+    <p style="margin:0;">MCP is de standaard waarmee Claude aan je Gmail, Notion, Stripe of Google Drive kan. Deze catalogus somt honderden van die koppelingen op, per categorie. Alles wat je nu met de hand overtypt tussen twee programma's, staat hier waarschijnlijk als koppeling.</p>
+    <div class="probeer"><div class="kop">HET EERSTE WAT JE PROBEERT</div>
+      <p>Zoek in de lijst naar een koppeling die als <strong>hosted</strong> of <strong>remote</strong> gemarkeerd staat: die draait bij de maker, jij hoeft niets te installeren. Kopieer de URL en plak ze in claude.ai onder Instellingen, Connectors.</p>
+    </div>
+    <div class="let"><p><strong>Lees eerst mijn connectors-gids.</strong> Een koppeling geeft Claude toegang tot je gegevens. In <a href="/connectors-gids/" style="color:#ff4d24; font-weight:600;">die gids</a> staat wat je eerst controleert en welke rechten je beter niet geeft.</p></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">09</div>
+    <h3>Dify: een assistent die alleen uit jouw documenten antwoordt</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/langgenius/dify" target="_blank" rel="noopener">github.com/langgenius/dify</a></span><span>158.000 sterren</span><span class="ok">Cloudversie, geen terminal</span></div>
+    <p style="margin:0;">Je uploadt je werkwijzen, je productcatalogus en je veelgestelde vragen, en bouwt een assistent die daar alleen uit antwoordt. Geen verzinsels, wel jouw kennis. De repo is de volledige software om zelf te draaien, maar op dify.ai staat dezelfde tool als website met een gratis instap.</p>
+    <div class="probeer"><div class="kop">HET EERSTE WAT JE PROBEERT</div>
+      <p>Maak een gratis account op dify.ai. Begin met je tien meest gestelde klantvragen en de antwoorden die je daar telkens op geeft. Eén namiddag is genoeg voor een eerste versie die je zelf kan testen.</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <div class="nr">10</div>
+    <h3>GPT Researcher: een onderzoeksrapport met bronnen, in een paar minuten</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/assafelovic/gpt-researcher" target="_blank" rel="noopener">github.com/assafelovic/gpt-researcher</a></span><span>30.000 sterren</span><span class="ok">Gehoste versie, geen terminal</span></div>
+    <p style="margin:0;">Je stelt één onderzoeksvraag. Het leest twintig of meer live bronnen en schrijft een rapport van zo'n tweeduizend woorden met bronvermelding bij elke bewering. Voor marktonderzoek, een sector verkennen of een concurrent in kaart brengen.</p>
+    <div class="probeer"><div class="kop">HET EERSTE WAT JE PROBEERT</div>
+      <p>Probeer de gehoste versie op gptr.dev met een vraag waar je het antwoord al ongeveer op kent. Zo zie je meteen of de bronnen kloppen. Je hebt een API-sleutel van OpenAI en een van Tavily (een zoekdienst) nodig, beide gratis aan te maken.</p>
+    </div>
+    <div class="let"><p><strong>Vergelijk met Claude zelf.</strong> De onderzoeksfunctie in Claude en ChatGPT doet ondertussen iets gelijkaardigs. Het verschil van GPT Researcher: je kiest zelf het model, en het rapport is van jou, niet van een abonnement.</p></div>
+  </div>
+
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:14px 32px 0;" id="vertaler">
+  <div data-reveal class="kaart">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:10px;">BONUS</div>
+    <h2>Eén prompt om elke repo te begrijpen die je nog tegenkomt</h2>
+    <p>Deze tien zijn een begin. Volgende week stuurt iemand je een link naar een elfde. Plak dan deze prompt in Claude met de webzoekfunctie aan, gevolgd door de link. Je krijgt in zes vaste stukken te horen wat het is en of het iets voor jou is. Bewaar ze als Claude Project, dan hoef je ze nooit meer te zoeken.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><pre>Ik plak hieronder een GitHub-link. Ik ben geen developer. Lees de repo (de README en de bestandenlijst) en antwoord exact in deze zes stukken, zonder iets anders toe te voegen:
+
+1. Wat is het? Twee zinnen, geen jargon.
+2. Wat doet het concreet voor mij? Niet wat het kán, wel wat het deze week aan mijn werk verandert.
+3. Leeft het nog? Aantal sterren, datum van de laatste wijziging, en of het gearchiveerd is.
+4. Kan ik het gebruiken zonder terminal? Kies één van drie: (a) ja, gewoon kopiëren en plakken, (b) via Claude Code of een AI-editor, (c) alleen met een echte terminal.
+5. Het eerste wat ik moet proberen: één concrete taak uit MIJN werk, geschreven als het exacte bericht dat ik zou sturen.
+6. Sla het over als: voor wie dit niet geschikt is.
+
+Verzin geen cijfers. Kan je de pagina niet openen, zeg dat dan.
+
+Mijn werk: [BESCHRIJF IN ÉÉN ZIN WAT JE DOET EN VOOR WIE]
+
+De link: [GITHUB-LINK]</pre></div>
+    <div class="let"><p><strong>Vul die ene zin over je werk goed in.</strong> Hoe concreter, hoe bruikbaarder punt 5 wordt. "Ik run een webshop in babykleding met twee medewerkers" geeft een beter antwoord dan "ondernemer".</p></div>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:14px 32px 0;" id="faq">
+  <div data-reveal class="kaart faq">
+    <h2>Vragen die ik hierover krijg</h2>
+    <details><summary>Moet ik een GitHub-account hebben?</summary><p>Nee. Lezen, bladeren en bestanden kopiëren kan zonder account. Een account heb je pas nodig als je zelf iets wil bewaren of op een project wil reageren.</p></details>
+    <details><summary>Is het veilig om iets van GitHub te gebruiken?</summary><p>Tekst lezen en kopiëren is altijd veilig. Een installer draaien of een plugin installeren is software van een vreemde vertrouwen. Doe dat alleen bij projecten met veel sterren en recente activiteit, en lees eerst wat het installeert.</p></details>
+    <details><summary>Wat is een terminal, en heb ik die nodig?</summary><p>De terminal is het zwarte venster waar programmeurs commando's in typen. Zeven van de tien repo's in deze gids heb je zonder terminal: je kopieert tekst of gebruikt een website. De drie andere draaien via Claude Code, dat zelf ook een terminal is, maar dan een die Nederlands verstaat.</p></details>
+    <details><summary>Werkt dit ook met ChatGPT?</summary><p>De promptverzamelingen en instructiebestanden wel, die plak je in een Custom GPT of gewoon in een gesprek. Skills, plugins en MCP-koppelingen zijn vooral op Claude gericht.</p></details>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:36px 32px 0;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:24px; padding:52px 48px; display:grid; grid-template-columns:1.1fr .9fr; gap:44px; align-items:center;">
+    <div>
+      <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px;">ELKE WEEK IN JE MAILBOX</div>
+      <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:34px; letter-spacing:-1.5px; line-height:1.1;">Elke week zo&rsquo;n vondst in je mailbox<span style="color:#ff4d24;">.</span></h2>
+      <p style="margin:0; font-size:16px; line-height:1.7; color:#b3ab9e;">Elke week wat er echt verandert in AI, in klare taal, met iets dat je meteen kan proberen. Gratis, en je kan altijd weg.</p>
+    </div>
+    <div>
+      <form action="https://bae29b1d.sibforms.com/serve/MUIFAMlmZRYFZYcxJGaoUhXbAJTxCEVZm_78YOICuP4QoQsuKXhS0YXkkyU1eKA8KrYjdEFOzQmFwFO1mBUZGTH6TNezpUEHdSTI0bF7xFe8b45hQcb2s4upUTvpO7ZLNMOlGDdT_dzMF9W1m2wJ-jV4-ldVsEBAqc47rtwz6YW9Jbu8YD59S9KtHIQuqbr92uFAB-hVYIuxZWAW" method="POST" style="display:flex; flex-direction:column; gap:10px;">
+        <input type="text" name="FIRSTNAME" placeholder="Je voornaam" required style="padding:14px 16px; border:none; border-radius:9px; font-size:15px; font-family:inherit; background:#2a272c; color:#f6f1e7;">
+        <input type="email" name="EMAIL" placeholder="Je e-mailadres" required style="padding:14px 16px; border:none; border-radius:9px; font-size:15px; font-family:inherit; background:#2a272c; color:#f6f1e7;">
+        <input type="text" name="email_address_check" value="" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="locale" value="nl">
+        <button type="submit" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:15px; border-radius:9px; border:none; cursor:pointer;">Schrijf je in →</button>
+      </form>
+      <p style="margin:12px 0 0; font-size:13px; color:#8a8378; text-align:center;">900+ ondernemers lezen mee · uitschrijven kan altijd</p>
+    </div>
+  </div>
+</section>
+
+
+<section style="max-width:860px; margin:0 auto; padding:22px 32px 96px;">
+  <div data-reveal style="background:#fff; border-radius:24px; padding:44px 40px; text-align:center;">
+    <h2 style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.5px; line-height:1.1;">Tien repo's bewaren is een begin. Een Claude die je zaak kent, is iets anders<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0 0 26px; font-size:16px; line-height:1.7; color:#57534a; max-width:520px; margin-left:auto; margin-right:auto;">In de challenge bouw je in 10 dagen een Claude die je aanbod, je klanten en je manier van schrijven kent. Skills, projecten en koppelingen zetten we samen op. De volgende groep start op dinsdag 3 november.</p>
+    <div class="cta-row" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">Bekijk de challenge →</a>
+      <a href="/gidsen/" class="btn-outline" style="border:2px solid #1c1a1f; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px;">Alle gratis gidsen</a>
+    </div>
+  </div>
+</section>
+
+<section data-kruislinks style="max-width:1000px; margin:0 auto; padding:0 32px 72px;"><h2 style="font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-1px; margin:0 0 18px;">Andere gratis gidsen</h2><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;"><a href="/connectors-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Connectors veilig gebruiken</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wat je controleert voor je Claude aan je mailbox of agenda hangt.</div></a><a href="/concurrentie-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Wat doet je concurrent beter dan jij?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Acht prompts om jezelf naast een concurrent te leggen, door de ogen van een klant.</div></a><a href="/prompten-claude-5/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Beter prompten in Claude</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Drie dingen die veranderd zijn aan goed prompten, plus de checklist.</div></a><a href="/fable-5-1/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Fable 5.1: waarvoor gebruik je het</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wanneer je het zwaarste model inzet, en acht taken die het waard zijn.</div></a><a href="/10-manieren-claude-bespaart/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">10 manieren waarop Claude je geld bespaart</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Van je abonnementen tot je huurindexatie, met tien prompts om te kopiëren.</div></a><a href="/9-dingen-claude-doet-gratis/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">9 dingen die Claude gratis doet</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Negen taken waar je nu voor betaalt, met kant-en-klare prompts.</div></a></div><p style="margin:18px 0 0; font-size:15px;"><a href="/gidsen/" style="font-weight:600; color:#ff4d24;">Bekijk alle gidsen →</a></p></section>
+
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/privacy/">Privacy en cookies</a> · <a href="#cookievoorkeuren">Cookievoorkeuren</a></div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=3"></script>
+<script>
+document.querySelectorAll('.kopieer').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = b.parentElement.querySelector('pre').innerText;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent = 'Gekopieerd ✓'; b.classList.add('ok');
+      setTimeout(function(){ b.textContent='Kopieer'; b.classList.remove('ok'); }, 1800);
+    });
+  });
+});
+</script>
+<script src="/js/analytics.js?v=3" defer></script>
+<script src="/js/menu.js?v=3" defer></script>
+<script src="/js/challenge-popup.js?v=2" defer></script>
+</body>
+</html>
