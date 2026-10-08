@@ -20,6 +20,7 @@ Taal: Nederlands. Werkgebied: Vlaanderen en heel België, online ook daarbuiten.
 ## Gratis gidsen (Nederlandstalig)
 
 - [Alle gidsen](https://asklien.ai/gidsen/)
+- [ChatGPT Intelligent UI en GPT-6: 10 dingen om te proberen](https://asklien.ai/chatgpt-intelligent-ui/)
 - [Moeilijke klantmails met AI: 8 prompts](https://asklien.ai/moeilijke-mails-gids/)
 - [Laat AI jou interviewen: 10 prompts](https://asklien.ai/interview-prompts-gids/)
 - [Van spraakbericht naar offerte: 6 prompts](https://asklien.ai/offerte-gids/)
