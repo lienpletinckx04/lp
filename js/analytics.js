@@ -89,6 +89,8 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     window.fbq('consent', 'grant');
+    // Geen automatische knoptracking: enkel de events die we zelf sturen.
+    window.fbq('set', 'autoConfig', false, PIXEL_ID);
     window.fbq('init', PIXEL_ID);
     window.fbq('track', 'PageView');
     /* End Meta Pixel Code */
