@@ -55,6 +55,8 @@
   // echt iets doen en niet enkel op bezoekers.
   var CONVERSIES = {
     '/bedankt-challenge': ['Purchase', { value: 297, currency: 'EUR', content_name: 'Claude in 10 dagen' }],
+    // Kopers via de advertentiepagina /doe-mee/ krijgen een eigen bedankpagina.
+    '/bedankt-doe-mee': ['Purchase', { value: 297, currency: 'EUR', content_name: 'Claude in 10 dagen (ads)' }],
     '/bedankt-voorsprong': ['Subscribe', { value: 27, currency: 'EUR', predicted_ltv: 27 * 12, content_name: 'Voorsprong' }],
     '/bedankt-bevraging': ['Lead', { content_name: 'Bevraging' }],
     '/bedankt-contact': ['Contact', {}]

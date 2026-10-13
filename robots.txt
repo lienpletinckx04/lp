@@ -3,6 +3,7 @@ Allow: /
 Disallow: /inschrijven.html
 Disallow: /voorsprong-inschrijven.html
 Disallow: /bedankt-challenge.html
+Disallow: /bedankt-doe-mee.html
 Disallow: /bedankt-voorsprong.html
 Disallow: /bevraging/
 Disallow: /bedankt-bevraging.html
