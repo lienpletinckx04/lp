@@ -51,6 +51,28 @@
     });
   }
 
+  // Conversies op de bedankpagina's, zodat Meta kan mikken op mensen die
+  // echt iets doen en niet enkel op bezoekers.
+  var CONVERSIES = {
+    '/bedankt-challenge': ['Purchase', { value: 297, currency: 'EUR', content_name: 'Claude in 10 dagen' }],
+    '/bedankt-voorsprong': ['Subscribe', { value: 27, currency: 'EUR', predicted_ltv: 27 * 12, content_name: 'Voorsprong' }],
+    '/bedankt-bevraging': ['Lead', { content_name: 'Bevraging' }],
+    '/bedankt-contact': ['Contact', {}]
+  };
+
+  function stuurConversie() {
+    var pad = location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+    var conversie = CONVERSIES[pad];
+    if (!conversie) return;
+    // Herladen of terugkeren naar de pagina telt niet als tweede conversie.
+    var gezien = 'asklien-conversie' + pad;
+    try {
+      if (sessionStorage.getItem(gezien)) return;
+      sessionStorage.setItem(gezien, '1');
+    } catch (e) {}
+    window.fbq('track', conversie[0], conversie[1]);
+  }
+
   var pixelGeladen = false;
   function laadPixel() {
     if (pixelGeladen) return;
@@ -68,6 +90,7 @@
     window.fbq('init', PIXEL_ID);
     window.fbq('track', 'PageView');
     /* End Meta Pixel Code */
+    stuurConversie();
   }
 
   function wisCookies(isDoel) {
