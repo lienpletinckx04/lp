@@ -1,11 +1,11 @@
 User-agent: *
 Allow: /
 Disallow: /inschrijven.html
-Disallow: /voorsprong-inschrijven.html
-Disallow: /bedankt-challenge.html
-Disallow: /bedankt-doe-mee.html
-Disallow: /bedankt-voorsprong.html
+Disallow: /voorsprong-inschrijven
+Disallow: /bedankt-challenge
+Disallow: /bedankt-doe-mee
+Disallow: /bedankt-voorsprong
 Disallow: /bevraging/
-Disallow: /bedankt-bevraging.html
+Disallow: /bedankt-bevraging
 
 Sitemap: https://asklien.ai/sitemap.xml
