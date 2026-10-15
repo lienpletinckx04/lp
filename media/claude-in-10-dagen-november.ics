@@ -1,0 +1,79 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//AskLien.ai//Claude in 10 dagen//NL
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Brussels
+BEGIN:STANDARD
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:claude10-november-20261103@asklien.ai
+DTSTAMP:20261013T000000Z
+DTSTART;TZID=Europe/Brussels:20261103T140000
+DTEND;TZID=Europe/Brussels:20261103T153000
+SUMMARY:Claude in 10 dagen · Live sessie 1
+DESCRIPTION:Live sessie van Claude in 10 dagen via Google Meet. De link krijg je per mail van Lien.\nVragen? hello@asklien.ai
+LOCATION:Online via Google Meet
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Live sessie Claude in 10 dagen start over 30 minuten
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:claude10-november-20261105@asklien.ai
+DTSTAMP:20261013T000000Z
+DTSTART;TZID=Europe/Brussels:20261105T140000
+DTEND;TZID=Europe/Brussels:20261105T153000
+SUMMARY:Claude in 10 dagen · Live sessie 2
+DESCRIPTION:Live sessie van Claude in 10 dagen via Google Meet. De link krijg je per mail van Lien.\nVragen? hello@asklien.ai
+LOCATION:Online via Google Meet
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Live sessie Claude in 10 dagen start over 30 minuten
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:claude10-november-20261112@asklien.ai
+DTSTAMP:20261013T000000Z
+DTSTART;TZID=Europe/Brussels:20261112T140000
+DTEND;TZID=Europe/Brussels:20261112T153000
+SUMMARY:Claude in 10 dagen · Live sessie 3
+DESCRIPTION:Live sessie van Claude in 10 dagen via Google Meet. De link krijg je per mail van Lien.\nVragen? hello@asklien.ai
+LOCATION:Online via Google Meet
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Live sessie Claude in 10 dagen start over 30 minuten
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:claude10-november-20261119@asklien.ai
+DTSTAMP:20261013T000000Z
+DTSTART;TZID=Europe/Brussels:20261119T140000
+DTEND;TZID=Europe/Brussels:20261119T153000
+SUMMARY:Claude in 10 dagen · Live sessie 4
+DESCRIPTION:Live sessie van Claude in 10 dagen via Google Meet. De link krijg je per mail van Lien.\nVragen? hello@asklien.ai
+LOCATION:Online via Google Meet
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Live sessie Claude in 10 dagen start over 30 minuten
+END:VALARM
+END:VEVENT
+END:VCALENDAR

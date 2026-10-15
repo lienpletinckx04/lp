@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welk Claude-model wanneer? Fable beslist, Opus voert uit — AskLien.ai</title>
+<meta name="description" content="Fable, Opus, Sonnet of Haiku: welk Claude-model kies je voor welke taak? De denker-doener-regel, de vier modellen naast elkaar met voorbeelden, en de lijst van wat je als ondernemer het vaakst nodig hebt.">
+<link rel="canonical" href="https://asklien.ai/welk-claude-model-gids/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Welk Claude-model wanneer? Fable beslist, Opus voert uit">
+<meta property="og:description" content="Eén regel om te onthouden, de vier modellen naast elkaar, en wat je het vaakst nodig hebt.">
+<meta property="og:url" content="https://asklien.ai/welk-claude-model-gids/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=3">
+<style>
+.regel { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:20px; }
+  .regel-kop { display:flex; align-items:baseline; gap:16px; margin-bottom:10px; }
+  .regel-nr { font-family:'Archivo'; font-weight:900; font-size:38px; color:#ff4d24; line-height:1; }
+  .regel h2 { margin:0; font-family:'Archivo'; font-weight:800; font-size:25px; letter-spacing:-1px; line-height:1.15; }
+  .vergelijk { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
+  .vak { border-radius:14px; padding:20px 22px; font-size:14px; line-height:1.65; position:relative; }
+  .vak .vak-label { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px; display:block; }
+  .fout { background:#fdf2ee; border:1px solid #f6d5c9; color:#8a5c4c; }
+  .fout .vak-label { color:#c9543a; }
+  .goed { background:#1c1a1f; color:#e8e2d4; }
+  .goed .vak-label { color:#ff4d24; }
+  .copy-btn { position:absolute; top:14px; right:14px; background:#ff4d24; color:#fff; border:none; font-family:'Schibsted Grotesk'; font-weight:600; font-size:11.5px; padding:6px 12px; border-radius:7px; cursor:pointer; }
+  .copy-btn:hover { background:#fff; color:#1c1a1f; }
+  .waarom { margin-top:18px; font-size:15px; line-height:1.7; color:#57534a; }
+  .waarom strong { color:#1c1a1f; }
+  .mening { background:#fff8ef; border-left:4px solid #ff4d24; border-radius:12px; padding:20px 24px; margin-top:20px; }
+  .mening .m-label { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; display:block; margin-bottom:8px; }
+  .mening p { margin:0; font-size:15px; line-height:1.7; color:#57534a; font-style:italic; }
+  .check-item { display:flex; align-items:flex-start; gap:14px; padding:14px 0; border-bottom:1px solid rgba(255,255,255,.10); }
+  .check-item:last-child { border-bottom:none; }
+  .check-vak { width:20px; height:20px; border:2px solid #ff4d24; border-radius:5px; flex-shrink:0; margin-top:2px; }
+  .check-item p { margin:0; font-size:15px; line-height:1.6; color:#e8e2d4; }
+  .check-item p strong { color:#fff; }
+  #ctaPopup { position:fixed; bottom:24px; right:24px; max-width:340px; background:#1c1a1f; color:#f6f1e7; border-radius:18px; padding:24px 26px; box-shadow:0 20px 50px rgba(0,0,0,.35); z-index:200; transform:translateY(140%); transition:transform .5s cubic-bezier(.2,.8,.2,1); }
+  #ctaPopup.show { transform:translateY(0); }
+  #ctaPopup .close { position:absolute; top:10px; right:14px; color:#8a8378; cursor:pointer; font-size:18px; background:none; border:none; }
+  @media (max-width:760px){
+    .vergelijk { grid-template-columns:1fr; }
+    .regel { padding:28px 24px; }
+    #ctaPopup{ left:16px; right:16px; bottom:16px; max-width:none; }
+  }
+.tabel { width:100%; border-collapse:collapse; font-size:14.5px; line-height:1.55; }
+.tabel th { text-align:left; font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.2px; text-transform:uppercase; color:#8a8378; padding:10px 12px; border-bottom:2px solid #1c1a1f; }
+.tabel td { padding:12px 12px; border-bottom:1px solid #e6ddcb; vertical-align:top; color:#57534a; }
+.tabel td:first-child { font-weight:600; color:#1c1a1f; white-space:nowrap; }
+.stap { display:flex; gap:18px; padding:18px 0; border-top:1px solid #e6ddcb; }
+.stap .nr { font-family:'Archivo'; font-weight:900; font-size:30px; color:#ff4d24; line-height:1; width:48px; flex-shrink:0; }
+.stap h3 { margin:0 0 6px; font-family:'Archivo'; font-weight:800; font-size:19px; letter-spacing:-.6px; }
+.stap p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+.risico { display:flex; gap:16px; padding:16px 0; border-top:1px solid #e6ddcb; }
+.risico .lvl { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; width:70px; flex-shrink:0; padding-top:4px; }
+.risico h3 { margin:0 0 4px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px; }
+.risico p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+@media (max-width:760px) { .tabel { font-size:13px; } .tabel td:first-child { white-space:normal; } }
+</style>
+</head>
+<body id="top">
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+      <a href="/gidsen/">Alle gidsen</a>
+      <a href="https://hub.asklien.ai">Gratis Hub</a>
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">De challenge</a>
+    </div>
+  </div>
+</nav>
+<header style="max-width:900px; margin:0 auto; padding:72px 32px 8px;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">DE CHEAT SHEET</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Je betaalt voor Claude en gebruikt waarschijnlijk het verkeerde model<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Ik deed het maandenlang. Het simpelste beeld dat ik ervoor heb: je hebt iemand die beslist en iemand die uitvoert. Fable beslist. Opus voert uit. En die eerste heb je veel minder vaak nodig dan je denkt. Hieronder de regel, de vier modellen naast elkaar en wat jij waarschijnlijk het vaakst nodig hebt.</p>
+  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 14 oktober 2026 · feiten gecontroleerd op 14 oktober 2026</div>
+</header>
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:36px 40px;">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">DE REGEL</div>
+    <h2 style="margin:0 0 16px; font-family:'Archivo'; font-weight:900; font-size:28px; letter-spacing:-1.5px; line-height:1.15; color:#f6f1e7;">Weet je niet wat je wilt? Neem de denker. Weet je het wel? Neem de doener.</h2>
+    <p style="margin:0 0 14px; font-size:16px; line-height:1.75; color:#b3ab9e;"><strong style='color:#f6f1e7;'>Fable</strong> neem ik erbij als de beslissing geld kost of moeilijk terug te draaien is. Wil ik met deze klant beginnen? Klopt mijn prijszetting? Waar zit het gat in mijn aanbod? Dat zijn vragen waar je één keer per week mee zit, niet één keer per uur.</p><p style="margin:0 0 14px; font-size:16px; line-height:1.75; color:#b3ab9e;">Al de rest, die 90 procent, doe ik met <strong style='color:#f6f1e7;'>Opus</strong>: mails, voorstellen, content, bouwen, uitwerken. Alles wat gewoon af moet zijn. Snel genoeg en goed genoeg.</p>
+  </div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;"><h2 data-reveal style="margin:0 0 4px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px;">De vier modellen naast elkaar<span style="color:#ff4d24;">.</span></h2><div style="height:20px"></div></section>
+<section style="max-width:900px; margin:0 auto; padding:0 32px 20px;">
+  <div data-reveal style="background:#fff; border-radius:20px; padding:36px 40px;"><table class="tabel">
+<tr><th>Model</th><th>Wat het is</th><th>Wanneer</th><th>Voorbeeld</th></tr>
+<tr><td>Fable 5.1</td><td>Het slimste model van de Claude 5-familie. Denkt het verst vooruit, weegt het meeste af.</td><td>Strategie, moeilijke keuzes, complexe analyses</td><td>"Hier zijn mijn cijfers van dit jaar en mijn aanbod. Waar verlies ik marge en wat zou jij schrappen?"</td></tr>
+<tr><td>Opus 5.5</td><td>Het werkpaard: sterk, betrouwbaar, voor bijna alles goed genoeg.</td><td>Schrijven, voorstellen, content, bouwen, documenten</td><td>"Maak een voorstel voor deze klant op basis van het gesprek van gisteren."</td></tr>
+<tr><td>Sonnet 5.5</td><td>Lichter en sneller dan Opus.</td><td>Kleine, duidelijke taken in bulk</td><td>"Herschrijf deze 40 productbeschrijvingen in dezelfde toon."</td></tr>
+<tr><td>Haiku 5.5</td><td>Het snelste en goedkoopste model.</td><td>Sorteren, labelen, korte antwoorden, automatiseringen</td><td>"Zet elke binnenkomende mail in een van deze vijf categorieën."</td></tr>
+</table>
+<p style="margin:16px 0 0; font-size:13.5px; color:#8a8378;">Modelnamen zoals ze in oktober 2026 in Claude staan. Je kiest het model in de keuzelijst bovenaan een gesprek; in Projects en Claude Code kun je per project of taak een ander model instellen. Beschikbaarheid hangt af van je abonnement. Wil je dieper in Fable? Lees <a href="/fable-5-1/" style="color:#ff4d24; font-weight:600;">de Fable-gids</a>.</p></div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;"><h2 data-reveal style="margin:0 0 4px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px;">Drie vragen voor je begint te typen<span style="color:#ff4d24;">.</span></h2><div style="height:20px"></div></section>
+<section style="max-width:900px; margin:0 auto; padding:0 32px 20px;">
+  <div data-reveal style="background:#fff; border-radius:20px; padding:36px 40px;"><div class="stap"><div class="nr">01</div><div><h3>Weet ik al wat ik wil?</h3><p>Nee: dan wil je denkwerk, en neem je Fable. Ja: dan wil je uitvoering, en neem je Opus. De meeste mensen gebruiken de denker voor uitvoering. Dat is trager en duurder dan nodig.</p></div></div><div class="stap"><div class="nr">02</div><div><h3>Wat kost een fout?</h3><p>Een mail kun je herschrijven. Een prijsverhoging of een klant weigeren niet zomaar. Hoe duurder de fout, hoe meer de denker zijn geld waard is.</p></div></div><div class="stap"><div class="nr">03</div><div><h3>Hoe vaak doe ik dit?</h3><p>Iets wat je tien keer per dag doet, hoort bij de doener, of bij een skill die het overneemt. Iets wat je één keer per week doet en waar je over moet nadenken, hoort bij de denker.</p></div></div></div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:16px 32px 0;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:36px 40px;">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">WAT JE WAARSCHIJNLIJK HET VAAKST NODIG HEBT</div>
+    <h2 style="margin:0 0 16px; font-family:'Archivo'; font-weight:900; font-size:28px; letter-spacing:-1.5px; line-height:1.15; color:#f6f1e7;">De korte lijst.</h2>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Mails en opvolging:</strong> Opus</p></div><div class="check-item"><div class="check-vak"></div><p><strong>Klantvoorstellen en offertes:</strong> Opus, met een skill die je opbouw kent</p></div><div class="check-item"><div class="check-vak"></div><p><strong>Social media en nieuwsbrief:</strong> Opus</p></div><div class="check-item"><div class="check-vak"></div><p><strong>Documenten lezen en samenvatten:</strong> Opus</p></div><div class="check-item"><div class="check-vak"></div><p><strong>Website of tool laten bouwen:</strong> Opus in Claude Code</p></div><div class="check-item"><div class="check-vak"></div><p><strong>Aanbod, prijzen, strategie, grote beslissingen:</strong> Fable, één keer per week</p></div><div class="check-item"><div class="check-vak"></div><p><strong>Sorteren, labelen, automatisch categoriseren:</strong> Haiku</p></div>
+  </div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:24px 32px 96px;">
+  <div data-reveal style="background:#fff; border-radius:24px; padding:44px 42px;">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">EN NU?</div>
+    <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.5px; line-height:1.1;">Het juiste model is stap één. De setup errond is stap twee<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0 0 20px; font-size:16px; line-height:1.7; color:#57534a; max-width:640px;">Zodra je weet welk model je waarvoor neemt, wil je dat ook vastzetten: per Project het juiste model, skills voor wat je vaak doet, en connectors zodat je niets meer hoeft te plakken. Dat bouwen we in tien dagen samen.</p>
+    <div class="mening" style="margin-top:0; margin-bottom:26px;"><span class="m-label">Wat ik erover denk</span><p>Wat ik het vaakst zie: iedereen zet standaard het zwaarste model aan, uit schrik iets te missen. En dan wachten ze langer op een mail die Opus in de helft van de tijd even goed schrijft. De denker is voor de momenten dat je echt twijfelt.</p></div>
+    <div class="cta-row" style="display:flex; gap:14px; flex-wrap:wrap;">
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">Bekijk de challenge →</a>
+      <a href="https://hub.asklien.ai" class="btn-outline" style="border:2px solid #1c1a1f; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px;">Eerst gratis rondkijken in de Hub</a>
+    </div>
+  </div>
+</section>
+<section data-kruislinks style="max-width:1000px; margin:0 auto; padding:0 32px 72px;"><h2 style="font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-1px; margin:0 0 18px;">Andere gratis gidsen</h2><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;"><a href="/reels-met-claude-code/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">20 Reels op één avond</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Het stappenplan om met Claude Code Reels in batch te maken.</div></a><a href="/prompten-claude-5/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Korter prompten, beter resultaat</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Drie dingen die ik veranderde, plus de checklist.</div></a><a href="/github-repos-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">10 GitHub-repo's die je AI beter maken</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Zonder dat je code schrijft.</div></a><a href="/fable-5-1/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Fable 5.1: waarvoor gebruik je het</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wanneer je het zwaarste model inzet, en acht taken die het waard zijn.</div></a><a href="/connectors-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Connectors: AI in je mailbox en agenda</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Zonder spijt achteraf.</div></a><a href="/veilig-met-ai-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Wat je nooit in ChatGPT of Claude plakt</div><div style="font-size:14px; line-height:1.6; color:#57534a;">En wat wél mag.</div></a><a href="/claude-of-chatgpt/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Claude of ChatGPT?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wat gebruik je waarvoor.</div></a></div><p style="margin:18px 0 0; font-size:15px;"><a href="/gidsen/" style="font-weight:600; color:#ff4d24;">Bekijk alle gidsen →</a></p></section>
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="/gidsen/">Alle gidsen</a><a href="https://hub.asklien.ai">Hub</a><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/privacy/">Privacy en cookies</a> · <a href="#cookievoorkeuren">Cookievoorkeuren</a></div>
+  </div>
+</footer>
+<div id="ctaPopup">
+  <button class="close" onclick="document.getElementById('ctaPopup').classList.remove('show')">×</button>
+  <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.5px; color:#ff4d24; margin-bottom:10px;">GRATIS VERDER LEREN</div>
+  <div style="font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px; line-height:1.2; margin-bottom:10px;">Alles staat klaar in de Hub.</div>
+  <p style="margin:0 0 16px; font-size:13.5px; line-height:1.5; color:#b3ab9e;">Skills, templates en gidsen om meteen mee te starten. Gratis account, geen kaartgegevens.</p>
+  <a href="https://hub.asklien.ai" class="btn-primary" style="display:block; background:#ff4d24; color:#fff; font-weight:600; font-size:14px; padding:13px; border-radius:9px; text-align:center;">Naar de gratis Hub →</a>
+  <a href="/challenge/" style="display:block; margin-top:10px; font-size:13px; color:#b3ab9e; text-align:center; text-decoration:underline;">Of bekijk de challenge van 3 november</a>
+</div>
+<script src="/js/site.js?v=3"></script>
+<script>
+function copyVak(btn) { var vak = btn.parentElement.cloneNode(true); var b = vak.querySelector('.copy-btn'); if (b) b.remove(); var l = vak.querySelector('.vak-label'); if (l) l.remove(); navigator.clipboard.writeText(vak.innerText.trim()).then(function () { var old = btn.textContent; btn.textContent = 'Gekopieerd!'; setTimeout(function () { btn.textContent = old; }, 1800); }); }
+setTimeout(function () { document.getElementById('ctaPopup').classList.add('show'); }, 15000);
+window.addEventListener('scroll', function onScroll() { if (window.scrollY > document.body.scrollHeight * 0.45) { document.getElementById('ctaPopup').classList.add('show'); window.removeEventListener('scroll', onScroll); } });
+</script>
+<script src="/js/analytics.js?v=6" defer></script>
+<script src="/js/menu.js?v=3" defer></script>
+<script src="/js/challenge-popup.js?v=2" defer></script>
+</body>
+</html>
