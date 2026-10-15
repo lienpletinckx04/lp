@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20 Reels op één avond, met Claude Code — AskLien.ai</title>
+<meta name="description" content="Het volledige stappenplan om met Claude Code een batch van 20 Reels te maken: hooks, context, montage, ondertitels, captions en testen met proefreels. Met alle prompts om te kopiëren.">
+<link rel="canonical" href="https://asklien.ai/reels-met-claude-code/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20 Reels op één avond, met Claude Code">
+<meta property="og:description" content="Niet twintig keer filmen, wel één keer goed opzetten. Het stappenplan met alle prompts.">
+<meta property="og:url" content="https://asklien.ai/reels-met-claude-code/">
+<meta property="og:image" content="https://asklien.ai/media/foto/hero.jpg">
+<meta property="og:site_name" content="AskLien.ai">
+<meta property="og:locale" content="nl_BE">
+<meta property="article:published_time" content="2026-10-15">
+<meta property="article:modified_time" content="2026-10-15">
+<meta name="author" content="Lien Pletinckx">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "20 Reels op één avond maken met Claude Code",
+  "description": "Het volledige stappenplan om met Claude Code een batch van 20 Reels te maken: hooks, context, montage, ondertitels, captions en testen met proefreels.",
+  "inLanguage": "nl-BE",
+  "url": "https://asklien.ai/reels-met-claude-code/",
+  "image": "https://asklien.ai/media/foto/hero.jpg",
+  "totalTime": "PT4H",
+  "author": { "@type": "Person", "name": "Lien Pletinckx", "url": "https://asklien.ai/", "jobTitle": "AI-coach en consultant", "sameAs": ["https://www.instagram.com/asklien.ai/"] },
+  "publisher": { "@type": "Organization", "name": "AskLien.ai", "url": "https://asklien.ai/", "logo": { "@type": "ImageObject", "url": "https://asklien.ai/media/foto/hero.jpg" } },
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "tool": [
+    { "@type": "HowToTool", "name": "Claude Code (Pro- of Max-abonnement)" },
+    { "@type": "HowToTool", "name": "ffmpeg" },
+    { "@type": "HowToTool", "name": "Whisper" }
+  ],
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Zet je werkmap en Claude Code klaar", "url": "https://asklien.ai/reels-met-claude-code/#stap-0" },
+    { "@type": "HowToStep", "position": 2, "name": "Verzamel hooks die al werken in je niche", "url": "https://asklien.ai/reels-met-claude-code/#stap-1" },
+    { "@type": "HowToStep", "position": 3, "name": "Geef Claude alle context in één bestand", "url": "https://asklien.ai/reels-met-claude-code/#stap-2" },
+    { "@type": "HowToStep", "position": 4, "name": "Plan de batch: 1 onderwerp, 5 vragen, 4 hooks", "url": "https://asklien.ai/reels-met-claude-code/#stap-3" },
+    { "@type": "HowToStep", "position": 5, "name": "Laat Claude Code de video's monteren", "url": "https://asklien.ai/reels-met-claude-code/#stap-4" },
+    { "@type": "HowToStep", "position": 6, "name": "Schrijf de captions", "url": "https://asklien.ai/reels-met-claude-code/#stap-5" },
+    { "@type": "HowToStep", "position": 7, "name": "Post ze als proefreels", "url": "https://asklien.ai/reels-met-claude-code/#stap-6" },
+    { "@type": "HowToStep", "position": 8, "name": "Lees de cijfers en maak de volgende batch", "url": "https://asklien.ai/reels-met-claude-code/#stap-7" }
+  ],
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asklien.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Gratis gidsen", "item": "https://asklien.ai/gidsen/" },
+    { "@type": "ListItem", "position": 3, "name": "Reels met Claude Code", "item": "https://asklien.ai/reels-met-claude-code/" }
+  ]
+}
+</script>
+<style>
+  .kaart { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:22px; scroll-margin-top:90px; }
+  .kaart h2 { margin:0 0 14px; font-family:'Archivo'; font-weight:800; font-size:26px; letter-spacing:-1.2px; line-height:1.12; }
+  .kaart h3 { margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:21px; letter-spacing:-.6px; }
+  .kaart p { font-size:16px; line-height:1.8; color:#57534a; }
+  .kaart p strong { color:#1c1a1f; }
+  .nr { font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; color:#ff4d24; line-height:1; margin-bottom:12px; }
+  .stap-label { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#8a8378; margin-bottom:6px; }
+  .prompt { position:relative; background:#f6f1e7; border-left:3px solid #ff4d24; border-radius:10px; padding:24px; margin:18px 0 0; }
+  .prompt .tag { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:2px; color:#ff4d24; margin-bottom:10px; }
+  .prompt pre { margin:0; white-space:pre-wrap; word-break:break-word; font-family:'Schibsted Grotesk',sans-serif; font-size:15px; line-height:1.7; color:#1c1a1f; }
+  .prompt.code pre { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:14px; line-height:1.65; }
+  .kopieer { position:absolute; top:14px; right:14px; background:#1c1a1f; color:#f6f1e7; border:none; border-radius:7px; padding:7px 13px; font-family:inherit; font-weight:600; font-size:12px; cursor:pointer; }
+  .kopieer.ok { background:#ff4d24; }
+  .mening { background:#1c1a1f; color:#f6f1e7; border-radius:16px; padding:26px 28px; margin:18px 0 0; }
+  .mening .kop { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:10px; }
+  .mening p { margin:0 0 12px; font-size:15px; line-height:1.75; color:#b3ab9e; }
+  .mening p:last-child { margin-bottom:0; }
+  .mening strong { color:#f6f1e7; }
+  .let { background:#fff8ef; border:2px dashed #e6ddcb; border-radius:12px; padding:18px 22px; margin:16px 0 0; }
+  .let p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+  .let strong { color:#1c1a1f; }
+  .lessen { margin:16px 0 0; padding:0; list-style:none; }
+  .lessen li { position:relative; padding-left:26px; margin-bottom:12px; font-size:16px; line-height:1.75; color:#57534a; }
+  .lessen li::before { content:"✦"; position:absolute; left:0; top:0; color:#ff4d24; }
+  .lessen strong { color:#1c1a1f; }
+  .stap { border-top:1px solid #e6ddcb; margin-top:26px; padding-top:26px; scroll-margin-top:90px; }
+  .som { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:20px 0 0; }
+  .som div { background:#f6f1e7; border-radius:14px; padding:18px 16px; }
+  .som b { display:block; font-family:'Archivo'; font-weight:900; font-size:34px; letter-spacing:-1.5px; line-height:1; color:#1c1a1f; margin-bottom:6px; }
+  .som span { font-size:14px; line-height:1.5; color:#57534a; }
+  .som .totaal { background:#1c1a1f; }
+  .som .totaal b { color:#ff4d24; }
+  .som .totaal span { color:#b3ab9e; }
+  .lus { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:20px 0 0; }
+  .lus div { background:#1c1a1f; color:#f6f1e7; border-radius:14px; padding:18px 16px; font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.4px; }
+  .lus div small { display:block; font-weight:800; font-size:11px; letter-spacing:2px; color:#ff7a3d; margin-bottom:6px; }
+  .lus .terug { background:#ff4d24; }
+  .lus .terug small { color:#1c1a1f; }
+  .inhoud { margin:18px 0 0; padding:0; list-style:none; counter-reset:i; columns:2; column-gap:28px; }
+  .inhoud li { counter-increment:i; break-inside:avoid; margin-bottom:10px; font-size:15px; line-height:1.5; }
+  .inhoud li::before { content:counter(i,decimal-leading-zero); font-family:'Archivo'; font-weight:800; font-size:13px; color:#ff4d24; margin-right:10px; }
+  .inhoud a { color:#1c1a1f; border-bottom:1px solid #e6ddcb; }
+  .faq h3 { font-size:18px; margin-top:22px; }
+  @media (max-width:640px){
+    .kaart{ padding:26px 24px; } .prompt{ padding:20px 18px; }
+    .kopieer{ position:static; display:inline-block; margin-bottom:12px; }
+    .som,.lus{ grid-template-columns:1fr 1fr; } .inhoud{ columns:1; }
+  }
+</style>
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+      <a href="/gidsen/">Alle gidsen</a>
+      <a href="/">Terug naar de site</a>
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">De challenge</a>
+    </div>
+  </div>
+</nav>
+
+<header style="max-width:860px; margin:0 auto; padding:72px 32px 8px;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">GRATIS GIDS · STAPPENPLAN</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">20 Reels op één avond, met Claude Code<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Niet twintig keer filmen. Niet twintig keer monteren. Wel één keer goed opzetten, en daarna elke batch op een avond. Hier is het volledige stappenplan, met elke prompt die je nodig hebt.</p>
+  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 15 oktober 2026 · bijgewerkt op 15 oktober 2026</div>
+</header>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;">
+
+  <div data-reveal class="kaart">
+    <h2>Eerst dit: wat het wel en niet doet</h2>
+    <p style="margin:0 0 14px;">Vraag je in een gewone chat om Reels, dan krijg je meestal <strong>ideeën</strong>. Een lijstje. Daarna sta je er nog altijd alleen voor met je telefoon en een montage-app.</p>
+    <p style="margin:0 0 14px;">Claude Code is anders. Het werkt met de bestanden op je computer. Je geeft het een map met clips, en het maakt er <strong>afgewerkte videobestanden</strong> van: geknipt, met de hook in beeld, ondertiteld, in het juiste formaat. Klaar om te posten.</p>
+    <p style="margin:0;">Wat het níet doet: filmen. De clips zijn van jou. En de kwaliteit van je hooks is exact zo goed als de context die je meegeeft. Daar gaat het grootste deel van deze gids dan ook over.</p>
+    <div class="let"><p><strong>Wat je nodig hebt:</strong> een betaald Claude-abonnement (Pro of Max, Claude Code zit niet in het gratis plan), een laptop (Mac of Windows), minstens 5 eigen clips (liefst 10), en een professioneel Instagram-account. Reken op een uur à anderhalf voor de eerste setup. Daarna kost een batch je een avond.</p></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Kan je video's niet gewoon in een chat laten maken?</h2>
+    <p style="margin:0 0 14px;">Ja, dat kan intussen. Met een connector zoals HeyGen of Higgsfield maak je vanuit een chat video's met een AI-model. Handig voor een animatie, een sfeerbeeld of een avatar.</p>
+    <p style="margin:0 0 14px;">Maar dat zijn <strong>nieuwe, gegenereerde beelden</strong>. Voor Reels die naar jou moeten voelen, wint de route via Claude Code nog altijd, om vier redenen:</p>
+    <ul class="lessen">
+      <li><strong>Het werkt met jouw eigen clips.</strong> Echte beelden van jou en je werk, geen AI-beelden die mensen herkennen als AI.</li>
+      <li><strong>Twintig tegelijk.</strong> Het verwerkt een hele map in één keer, in plaats van video per video.</li>
+      <li><strong>Altijd dezelfde stijl.</strong> Je regels staan in één bestand, dus elke batch ziet er hetzelfde uit.</li>
+      <li><strong>Geen credits per video.</strong> Het monteren gebeurt op je eigen computer, binnen je abonnement.</li>
+    </ul>
+    <div class="let"><p><strong>"In code" betekent niet dat jij code schrijft.</strong> Claude schrijft en draait die code. Jij zegt in gewone taal wat je wil.</p></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Het stappenplan</h2>
+    <ol class="inhoud">
+      <li><a href="#stap-0">Zet je werkmap klaar</a></li>
+      <li><a href="#stap-1">Verzamel hooks die al werken</a></li>
+      <li><a href="#stap-2">Geef Claude alle context</a></li>
+      <li><a href="#stap-3">Plan de batch: 20 invalshoeken</a></li>
+      <li><a href="#stap-4">Laat Claude Code monteren</a></li>
+      <li><a href="#stap-5">Schrijf de captions</a></li>
+      <li><a href="#stap-6">Post ze als proefreels</a></li>
+      <li><a href="#stap-7">Lees de cijfers, volgende batch</a></li>
+    </ol>
+  </div>
+
+  <div data-reveal class="kaart" id="stap-0">
+    <div class="stap-label">STAP 0 · EENMALIG, ± 30 MINUTEN</div>
+    <h2>Zet je werkmap en Claude Code klaar</h2>
+    <p style="margin:0 0 14px;">Installeer Claude Code. De makkelijkste weg: download de Claude-desktopapp via <strong>claude.com/download</strong> en open daar het tabblad <strong>Code</strong>. Je hebt dan geen terminal nodig. Op Windows vraagt de app de eerste keer om <strong>Git for Windows</strong> te installeren, daarna herstart je de app. Liever toch de terminal? De installatie-instructies staan op <a href="https://code.claude.com/docs" target="_blank" rel="noopener" style="color:#ff4d24;">code.claude.com/docs</a>.</p>
+    <p style="margin:0;">Maak daarna één map aan, bijvoorbeeld <strong>Reels</strong> op je bureaublad, en open die map in Claude Code. Dan plak je deze prompt. Claude bouwt de structuur en installeert zelf wat het nodig heeft om video te bewerken.</p>
+    <div class="prompt"><button class="kopieer" type="button">Kopieer</button><div class="tag">PROMPT · SETUP</div><pre>Ik wil in deze map Instagram Reels in batch maken. Zet alles klaar:
+
+1. Maak deze mappen: clips/ (mijn ruwe beelden), hooks/ (voorbeelden van hooks), batches/ (één submap per batch) en analyse/ (screenshots van mijn statistieken).
+2. Controleer of ffmpeg geïnstalleerd is. Zo niet, installeer het en leg in één zin uit wat je doet.
+3. Installeer een lokale versie van Whisper zodat je Nederlandstalige ondertitels kan maken van gesproken audio.
+4. Test alles met een kort testfilmpje van 3 seconden en zeg me of het werkt.
+
+Vraag me toestemming voor je iets installeert. Leg uit in gewone taal, ik ben geen programmeur.</pre></div>
+    <div class="let"><p><strong>Claude vraagt toestemming</strong> voor het iets installeert of uitvoert. Dat is normaal. Lees wat het wil doen, en klik dan pas op toestaan.</p></div>
+  </div>
+
+  <div data-reveal class="kaart" id="stap-1">
+    <div class="stap-label">STAP 1 · ± 30 MINUTEN</div>
+    <h2>Verzamel hooks die al werken in je niche</h2>
+    <p style="margin:0 0 14px;">Zoek 10 à 15 Reels in jouw domein die <strong>veel meer views</strong> haalden dan wat dat account normaal haalt. Een account met gemiddeld 2.000 views dat ineens op 20.000 staat: dat is je signaal. Niet de grote accounts, wel de uitschieters.</p>
+    <p style="margin:0 0 14px;">Van elke Reel noteer je twee dingen: <strong>de hook zoals hij in beeld staat</strong>, en <strong>het aantal views</strong>. Plak ze in een tekstbestand <em>hooks/voorbeelden.txt</em>, of zet screenshots in de map hooks/.</p>
+    <p style="margin:0;">Dan laat je Claude de formule eruit halen. Want dat is het punt: je steelt de structuur, niet de woorden.</p>
+    <div class="prompt"><button class="kopieer" type="button">Kopieer</button><div class="tag">PROMPT · HOOKS ANALYSEREN</div><pre>Lees alles in de map hooks/. Dit zijn hooks van Reels die veel beter scoorden dan normaal voor die accounts.
+
+Voor elke hook:
+- Waarom stopte iemand met scrollen? Kies: (a) het benoemt een probleem dat ze herkennen, (b) het verrast, (c) het maakt nieuwsgierig. Of een combinatie.
+- Schrijf de onderliggende formule uit, zonder het onderwerp. Bijvoorbeeld: "Je doet [gewone handeling] verkeerd, en dit kost je [concreet verlies]."
+
+Bewaar het resultaat in hooks/formules.md. Groepeer gelijkaardige formules en zet de sterkste bovenaan.</pre></div>
+  </div>
+
+  <div data-reveal class="kaart" id="stap-2">
+    <div class="stap-label">STAP 2 · ± 20 MINUTEN, EENMALIG</div>
+    <h2>Geef Claude alle context, in één bestand</h2>
+    <p style="margin:0 0 14px;">Claude Code leest automatisch een bestand met de naam <strong>CLAUDE.md</strong> als het in je map staat. Wat je daar schrijft, weet het bij elke batch. Dit is de plek waar generieke video's het verschil worden met video's die naar jou klinken.</p>
+    <p style="margin:0;">Vier dingen moeten erin: je <strong>publiek</strong>, je <strong>aanbod</strong>, <strong>voorbeeldcaptions</strong>, en een beschrijving van je <strong>clips</strong>. Vul dit sjabloon in en zet het als CLAUDE.md in je map. Of plak het in Claude Code met de vraag om het bestand aan te maken.</p>
+    <div class="prompt code"><button class="kopieer" type="button">Kopieer</button><div class="tag">SJABLOON · CLAUDE.md</div><pre># Reels voor [jouw naam of zaak]
+
+## Publiek
+Wie ze zijn: [bv. zelfstandige kinesisten in Vlaanderen, 30-50 jaar]
+Wat ze me altijd vragen:
+- [vraag 1]
+- [vraag 2]
+- [vraag 3]
+Waar ze van wakker liggen: [het echte probleem achter die vragen]
+
+## Aanbod
+Wat ik verkoop: [product of dienst, met prijs]
+Waar kijkers naartoe moeten na het kijken: [bv. reageer met een woord, link in bio, DM]
+
+## Toon
+- Spreektaal, Vlaams, je-vorm
+- Korte zinnen. Geen uitroeptekens. Geen emoji's in de hook.
+- Woorden die ik nooit gebruik: [bv. game changer, next level]
+
+## Voorbeeldcaptions
+[Plak hier 3 tot 5 captions van virale Reels in je niche, of je eigen best scorende]
+
+## Clips
+De map clips/ bevat beelden zonder tekst: [bv. ik aan mijn bureau, wandelen in de stad, koffie zetten, behandeling van dichtbij].
+Gebruik nooit een clip waar een klant herkenbaar in beeld is.
+
+## Technisch
+- Formaat 1080x1920, 9:16, 30 fps
+- Hook in beeld in de eerste seconde, binnen de veilige zone (niet in de onderste 25% en niet tegen de rechterrand, daar zitten de knoppen van Instagram)
+- Ondertitels in het Nederlands als er gesproken wordt
+- Lengte 7 tot 15 seconden tenzij ik iets anders vraag</pre></div>
+    <div class="let"><p><strong>Hoe meer context, hoe minder generiek.</strong> Twijfel je of iets erin hoort? Zet het erin. Het kost je niets en Claude gebruikt het alleen waar het past.</p></div>
+  </div>
+
+  <div data-reveal class="kaart" id="stap-3">
+    <div class="stap-label">STAP 3 · ± 15 MINUTEN</div>
+    <h2>Plan de batch: 20 invalshoeken, niet één perfecte Reel</h2>
+    <p style="margin:0;">De fout die iedereen maakt: één video perfect willen maken. Je weet op voorhand nooit welke hook pakt. Dus test je er twintig. De rekensom is simpel.</p>
+    <div class="som">
+      <div><b>1</b><span>onderwerp</span></div>
+      <div><b>5</b><span>vragen die klanten stellen</span></div>
+      <div><b>×4</b><span>verschillende hooks per vraag</span></div>
+      <div class="totaal"><b>20</b><span>video's om te testen</span></div>
+    </div>
+    <div class="prompt"><button class="kopieer" type="button">Kopieer</button><div class="tag">PROMPT · BATCHPLAN</div><pre>Maak een nieuwe batch in batches/batch-01.
+
+Onderwerp: [jouw onderwerp]
+
+Neem de 5 vragen uit CLAUDE.md die het best bij dit onderwerp passen. Schrijf voor elke vraag 4 verschillende hooks, telkens met een andere formule uit hooks/formules.md. Dat geeft 20 video's.
+
+Per video wil ik:
+- de hook (max 12 woorden, zo kort mogelijk)
+- welke formule je gebruikte
+- welke clip uit clips/ je zou nemen en waarom
+- de korte tekst die erna in beeld komt (max 2 regels)
+
+Zet alles in batches/batch-01/plan.md als genummerde lijst. Maak nog geen video's, ik wil het plan eerst zien.</pre></div>
+    <p style="margin:16px 0 0;">Lees het plan. Schrap wat niet naar jou klinkt, pas aan wat bijna goed is. <strong>Dit is het moment om kritisch te zijn</strong>, niet als de video's al gemaakt zijn.</p>
+  </div>
+
+  <div data-reveal class="kaart" id="stap-4">
+    <div class="stap-label">STAP 4 · ± 45 MINUTEN, VOORAL WACHTEN</div>
+    <h2>Laat Claude Code monteren</h2>
+    <p style="margin:0;">Nu gebeurt het deel dat je anders uren kost. Claude Code knipt de clips, zet de hook in beeld, voegt ondertitels toe en exporteert elk filmpje apart.</p>
+    <div class="prompt"><button class="kopieer" type="button">Kopieer</button><div class="tag">PROMPT · MONTEREN</div><pre>Maak de 20 video's uit batches/batch-01/plan.md.
+
+Voor elke video:
+1. Neem de gekozen clip uit clips/ en knip het sterkste stuk van 7 tot 12 seconden.
+2. Zet de hook in beeld vanaf het eerste frame, in grote witte letters met een subtiele schaduw, binnen de veilige zone uit CLAUDE.md.
+3. Na de hook komt de korte tekst in beeld.
+4. Wordt er gesproken? Maak dan Nederlandse ondertitels met Whisper en zet ze vast in de video.
+5. Exporteer als batches/batch-01/video-01.mp4, video-02.mp4 enzovoort.
+
+Begin met video 1 en 2. Haal er daarna een paar stilstaande beelden uit, bekijk ze zelf, en controleer of de tekst leesbaar is en nergens wegvalt. Toon me wat je zag. Ga pas verder met de rest als ik akkoord geef.</pre></div>
+    <div class="let"><p><strong>Waarom eerst twee?</strong> Zit er iets fout in de opmaak, dan wil je dat na twee video's weten, niet na twintig. Eens die twee goed zijn, zeg je gewoon "ok, doe de rest" en laat je het draaien.</p></div>
+    <p style="margin:16px 0 0;">Iets niet goed? Zeg het in gewone taal: <em>"de tekst staat te laag"</em>, <em>"de hook mag langer in beeld"</em>, <em>"gebruik een rustigere clip voor video 7"</em>. Werkt een aanpassing goed? Vraag Claude om die toe te voegen aan CLAUDE.md, dan hoef je het nooit meer te zeggen.</p>
+    <div class="let"><p><strong>Wil je bewegende tekstkaartjes en animaties?</strong> Vraag Claude Code om <strong>HyperFrames</strong> te installeren, een gratis open-source tool van HeyGen waarmee het video's bouwt met animaties. Het commando is <em>npx skills add heygen-com/hyperframes</em>. Niet nodig voor je eerste batch, wel leuk voor de tweede.</p></div>
+  </div>
+
+  <div data-reveal class="kaart" id="stap-5">
+    <div class="stap-label">STAP 5 · ± 10 MINUTEN</div>
+    <h2>Schrijf de captions</h2>
+    <p style="margin:0;">De caption is geen samenvatting van de video. Hij doet één ding: de kijker naar de volgende stap duwen.</p>
+    <div class="prompt"><button class="kopieer" type="button">Kopieer</button><div class="tag">PROMPT · CAPTIONS</div><pre>Schrijf een caption voor elke video in batch-01. Volg deze regels:
+
+- De eerste regel herhaalt de hook niet, maar maakt hem af of zet er een tweede haakje op.
+- Maximum 4 korte regels.
+- Eén concreet inzicht dat niet al in de video zit.
+- Eindig met de call to action uit CLAUDE.md, letterlijk.
+- Maximum 3 hashtags, specifiek voor mijn niche, geen #reels of #viral.
+- Schrijf in de toon uit CLAUDE.md en vergelijk met de voorbeeldcaptions.
+
+Zet ze in batches/batch-01/captions.md, met het nummer van de video erboven.</pre></div>
+  </div>
+
+  <div data-reveal class="kaart" id="stap-6">
+    <div class="stap-label">STAP 6 · VERSPREID OVER 1 À 2 WEKEN</div>
+    <h2>Post ze als proefreels</h2>
+    <p style="margin:0 0 14px;">Instagram heeft een functie die hier perfect voor is: <strong>proefreels</strong> (Trial Reels). Een proefreel wordt eerst getoond aan mensen die je <strong>nog niet</strong> volgen. Hij verschijnt niet op je profiel en niet in de feed van je volgers. Je kan dus testen zonder dat je bestaande publiek twintig varianten van hetzelfde ziet.</p>
+    <ul class="lessen">
+      <li><strong>Hoe:</strong> upload je Reel zoals altijd, en zet bij het delen de optie voor een proefreel aan (in het Engels heet die <em>Trial</em>). Je hebt een professioneel account nodig (creator of zakelijk).</li>
+      <li><strong>Zie je de optie niet?</strong> Update de app. Instagram rolt proefreels niet voor elk account tegelijk uit, en sommige bronnen spreken van een minimum van 1.000 volgers.</li>
+      <li><strong>Automatisch delen:</strong> zet je dat aan, dan bekijkt Instagram de eerste 72 uur en deelt het de Reel alsnog met je volgers als hij goed scoort. Doen, dan gaan je winnaars vanzelf door. Je kan een proefreel ook altijd zelf delen.</li>
+      <li><strong>Tempo:</strong> post niet alle twintig op één dag. Eén à twee per dag is genoeg, zo krijgt elke video een eerlijke kans en kan je de cijfers vergelijken.</li>
+    </ul>
+  </div>
+
+  <div data-reveal class="kaart" id="stap-7">
+    <div class="stap-label">STAP 7 · ± 15 MINUTEN PER WEEK</div>
+    <h2>Lees de cijfers, en maak de volgende batch</h2>
+    <p style="margin:0 0 14px;">Na ongeveer 24 uur zie je de eerste statistieken. Maak screenshots van de inzichten van elke proefreel (weergaven, kijktijd, shares, bewaard) en zet ze in de map analyse/. Ga er niet zelf over zitten piekeren. Geef ze aan Claude.</p>
+    <div class="prompt"><button class="kopieer" type="button">Kopieer</button><div class="tag">PROMPT · ANALYSE</div><pre>Bekijk de screenshots in analyse/ en koppel ze aan de video's uit batches/batch-01/plan.md.
+
+1. Rangschik de 20 video's van best naar slechtst. Kijk vooral naar kijktijd en shares, niet alleen naar weergaven.
+2. Welke onderwerpen, vragen en hookformules scoorden beter dan de rest? Zoek het patroon.
+3. Wat scoorde slecht, en wat hebben die gemeen?
+4. Geef me 20 nieuwe invalshoeken rond gelijkaardige problemen als de winnaars, voor batch-02.
+
+Werk ook hooks/formules.md bij: zet de formules die bewezen werken voor MIJN publiek bovenaan, met het resultaat erbij.</pre></div>
+    <p style="margin:18px 0 0;">En dan begin je opnieuw bij stap 3. Dat is het hele systeem: een lus, geen eenmalige actie.</p>
+    <div class="lus">
+      <div><small>01 →</small>Batch maken</div>
+      <div><small>02 →</small>Proefreels</div>
+      <div><small>03 →</small>Cijfers lezen</div>
+      <div class="terug"><small>04 ↺ HERHAAL</small>Volgende batch</div>
+    </div>
+    <p style="margin:18px 0 0;">Elke ronde wordt je formulebestand slimmer. Na drie batches weet je beter wat jouw publiek doet stoppen dan na een jaar gokken.</p>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Waar het misloopt</h2>
+    <ul class="lessen">
+      <li><strong>Te weinig context.</strong> Een lege CLAUDE.md geeft video's die klinken als iedereen. Dit is de stap die je niet overslaat.</li>
+      <li><strong>Altijd dezelfde clip.</strong> Met vijf clips kan het, met tien wordt het beter. Twintig video's met hetzelfde koffiekopje voelen als spam, ook voor het algoritme.</li>
+      <li><strong>Hooks kopiëren in plaats van de formule.</strong> Een hook die werkte voor een fitnesscoach werkt niet letterlijk voor een boekhouder. De structuur wel.</li>
+      <li><strong>Te vroeg oordelen.</strong> Eén video met 300 weergaven zegt niets. Twintig video's naast elkaar zeggen veel.</li>
+      <li><strong>Alleen naar weergaven kijken.</strong> Een video die bewaard en gedeeld wordt, brengt je meer op dan een die veel bekeken en meteen weggeswiped wordt.</li>
+    </ul>
+    <div class="mening">
+      <div class="kop">EERLIJK GEZEGD</div>
+      <p>Dit is geen knop waarop je duwt en waar virale video's uitrollen. Het eerste uur ben je aan het opzetten, en je eerste batch zal niet je beste zijn.</p>
+      <p><strong>Maar het echte voordeel zit niet in de montage. Het zit in het testen.</strong> Wie één video per week maakt, leert traag wat werkt. Wie er twintig test, weet het na twee weken. Daar zit de voorsprong, niet in de tool.</p>
+    </div>
+  </div>
+
+  <div data-reveal class="kaart faq">
+    <h2>Vragen die je misschien hebt</h2>
+    <h3>Kan dit met het gratis plan van Claude?</h3>
+    <p style="margin:0;">Nee. Claude Code zit in de betaalde abonnementen (Pro en hoger). De gewone chat helpt je wel met stap 1, 3, 5 en 7, maar het monteren zelf doe je dan nog met de hand.</p>
+    <h3>Werkt dit op Windows?</h3>
+    <p style="margin:0;">Ja. De desktopapp bestaat voor Mac en Windows. Op Windows heb je de eerste keer Git for Windows nodig, de app zegt het je. Claude installeert ffmpeg en Whisper zelf, op beide systemen.</p>
+    <h3>Kan ik ook AI-video gebruiken in plaats van eigen clips?</h3>
+    <p style="margin:0;">Kan, maar ik zou het niet als basis nemen. Gegenereerde beelden vallen op als AI, en dat kost je vertrouwen. Gebruik ze hooguit als sfeerbeeld tussendoor.</p>
+    <h3>Moet ik zelf op beeld?</h3>
+    <p style="margin:0;">Niet per se. Veel van deze video's werken met sfeerbeelden en tekst in beeld. Maar beelden van jou, aan het werk, doen het bijna altijd beter dan stockbeelden. Mensen volgen mensen.</p>
+    <h3>Is dit niet gewoon spam?</h3>
+    <p style="margin:0;">Alleen als je twintig keer hetzelfde zegt. Twintig verschillende antwoorden op vragen die je klanten echt stellen, is geen spam. Dat is gewoon nuttig zijn, vaker.</p>
+  </div>
+
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:20px 32px 40px;">
+  <div data-reveal style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); color:#fff; border-radius:24px; padding:48px 44px; text-align:center;">
+    <h2 style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px; line-height:1.1; color:#fff;">Liever niet alleen opzetten<span style="color:#1c1a1f;">?</span></h2>
+    <p style="margin:0 auto 26px; font-size:16px; line-height:1.7; color:#ffe4da; max-width:540px;">In de challenge Claude in 10 dagen bouw je je setup stap voor stap, met live begeleiding en een introductie tot Claude Code. Geen theorie, wel je eigen werk dat korter wordt.</p>
+    <div class="cta-row" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="/challenge/" style="background:#1c1a1f; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px; display:inline-block;">Bekijk de challenge →</a>
+      <a href="https://hub.asklien.ai" style="border:2px solid #fff; color:#fff; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px; display:inline-block;">Gratis naar de Hub</a>
+    </div>
+  </div>
+</section>
+
+<section data-kruislinks style="max-width:1000px; margin:0 auto; padding:0 32px 72px;"><h2 style="font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-1px; margin:0 0 18px;">Andere gratis gidsen</h2><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;"><a href="/prompten-claude-5/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Beter prompten in Claude</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Drie dingen die veranderd zijn aan goed prompten, plus de checklist.</div></a><a href="/9-dingen-claude-doet-gratis/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">9 dingen die Claude gratis doet</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Negen taken waar je nu voor betaalt, met kant-en-klare prompts.</div></a><a href="/gemeente-test/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Wat weet AI over jouw gemeente?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">De simpelste test om te leren zien wanneer AI iets verzint.</div></a><a href="/adverteren-in-chatgpt/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Adverteren in ChatGPT</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Zelf campagnes opzetten: hoe het werkt, wat het kost, stappenplan.</div></a></div><p style="margin:18px 0 0; font-size:15px;"><a href="/gidsen/" style="font-weight:600; color:#ff4d24;">Bekijk alle gidsen →</a></p></section>
+
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="/gidsen/">Alle gidsen</a><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/privacy/">Privacy en cookies</a> · <a href="#cookievoorkeuren">Cookievoorkeuren</a></div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=3"></script>
+<script>
+document.querySelectorAll('.kopieer').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = b.parentElement.querySelector('pre').innerText;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent = 'Gekopieerd ✓'; b.classList.add('ok');
+      setTimeout(function(){ b.textContent='Kopieer'; b.classList.remove('ok'); }, 1800);
+    });
+  });
+});
+</script>
+<script src="/js/analytics.js?v=3" defer></script>
+<script src="/js/menu.js?v=3" defer></script>
+</body>
+</html>
