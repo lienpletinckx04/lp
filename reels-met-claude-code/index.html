@@ -134,7 +134,7 @@
 <header style="max-width:860px; margin:0 auto; padding:72px 32px 8px;">
   <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">GRATIS GIDS · STAPPENPLAN</div>
   <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">20 Reels op één avond, met Claude Code<span style="color:#ff4d24;">.</span></h1>
-  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Niet twintig keer filmen. Niet twintig keer monteren. Wel één keer goed opzetten, en daarna elke batch op een avond. Hier is het volledige stappenplan, met elke prompt die ik gebruik.</p>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Niet twintig keer filmen. Niet twintig keer monteren. Wel één keer goed opzetten, en daarna elke batch op een avond. Hier is het volledige stappenplan, met elke prompt die je nodig hebt.</p>
   <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 15 oktober 2026 · bijgewerkt op 15 oktober 2026</div>
 </header>
 
@@ -142,10 +142,23 @@
 
   <div data-reveal class="kaart">
     <h2>Eerst dit: wat het wel en niet doet</h2>
-    <p style="margin:0 0 14px;">Een gewone chat in ChatGPT of Claude geeft je <strong>ideeën</strong>. Een lijstje. Daarna sta je er nog altijd alleen voor met je telefoon en een montage-app.</p>
+    <p style="margin:0 0 14px;">Vraag je in een gewone chat om Reels, dan krijg je meestal <strong>ideeën</strong>. Een lijstje. Daarna sta je er nog altijd alleen voor met je telefoon en een montage-app.</p>
     <p style="margin:0 0 14px;">Claude Code is anders. Het werkt met de bestanden op je computer. Je geeft het een map met clips, en het maakt er <strong>afgewerkte videobestanden</strong> van: geknipt, met de hook in beeld, ondertiteld, in het juiste formaat. Klaar om te posten.</p>
     <p style="margin:0;">Wat het níet doet: filmen. De clips zijn van jou. En de kwaliteit van je hooks is exact zo goed als de context die je meegeeft. Daar gaat het grootste deel van deze gids dan ook over.</p>
-    <div class="let"><p><strong>Wat je nodig hebt:</strong> een betaald Claude-abonnement (Pro of Max, Claude Code zit niet in het gratis plan), een laptop (Mac of Windows), 5 à 10 eigen clips, en een professioneel Instagram-account. Reken op een uur voor de eerste setup. Daarna kost een batch je een avond.</p></div>
+    <div class="let"><p><strong>Wat je nodig hebt:</strong> een betaald Claude-abonnement (Pro of Max, Claude Code zit niet in het gratis plan), een laptop (Mac of Windows), minstens 5 eigen clips (liefst 10), en een professioneel Instagram-account. Reken op een uur à anderhalf voor de eerste setup. Daarna kost een batch je een avond.</p></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Kan je video's niet gewoon in een chat laten maken?</h2>
+    <p style="margin:0 0 14px;">Ja, dat kan intussen. Met een connector zoals HeyGen of Higgsfield maak je vanuit een chat video's met een AI-model. Handig voor een animatie, een sfeerbeeld of een avatar.</p>
+    <p style="margin:0 0 14px;">Maar dat zijn <strong>nieuwe, gegenereerde beelden</strong>. Voor Reels die naar jou moeten voelen, wint de route via Claude Code nog altijd, om vier redenen:</p>
+    <ul class="lessen">
+      <li><strong>Het werkt met jouw eigen clips.</strong> Echte beelden van jou en je werk, geen AI-beelden die mensen herkennen als AI.</li>
+      <li><strong>Twintig tegelijk.</strong> Het verwerkt een hele map in één keer, in plaats van video per video.</li>
+      <li><strong>Altijd dezelfde stijl.</strong> Je regels staan in één bestand, dus elke batch ziet er hetzelfde uit.</li>
+      <li><strong>Geen credits per video.</strong> Het monteren gebeurt op je eigen computer, binnen je abonnement.</li>
+    </ul>
+    <div class="let"><p><strong>"In code" betekent niet dat jij code schrijft.</strong> Claude schrijft en draait die code. Jij zegt in gewone taal wat je wil.</p></div>
   </div>
 
   <div data-reveal class="kaart">
@@ -165,7 +178,7 @@
   <div data-reveal class="kaart" id="stap-0">
     <div class="stap-label">STAP 0 · EENMALIG, ± 30 MINUTEN</div>
     <h2>Zet je werkmap en Claude Code klaar</h2>
-    <p style="margin:0 0 14px;">Installeer Claude Code. De makkelijkste weg: download de Claude-desktopapp via <strong>claude.com/download</strong> en open daar het tabblad <strong>Code</strong>. Liever de terminal? De installatie-instructies staan op <a href="https://code.claude.com/docs" target="_blank" rel="noopener" style="color:#ff4d24;">code.claude.com/docs</a>.</p>
+    <p style="margin:0 0 14px;">Installeer Claude Code. De makkelijkste weg: download de Claude-desktopapp via <strong>claude.com/download</strong> en open daar het tabblad <strong>Code</strong>. Je hebt dan geen terminal nodig. Op Windows vraagt de app de eerste keer om <strong>Git for Windows</strong> te installeren, daarna herstart je de app. Liever toch de terminal? De installatie-instructies staan op <a href="https://code.claude.com/docs" target="_blank" rel="noopener" style="color:#ff4d24;">code.claude.com/docs</a>.</p>
     <p style="margin:0;">Maak daarna één map aan, bijvoorbeeld <strong>Reels</strong> op je bureaublad, en open die map in Claude Code. Dan plak je deze prompt. Claude bouwt de structuur en installeert zelf wat het nodig heeft om video te bewerken.</p>
     <div class="prompt"><button class="kopieer" type="button">Kopieer</button><div class="tag">PROMPT · SETUP</div><pre>Ik wil in deze map Instagram Reels in batch maken. Zet alles klaar:
 
@@ -181,7 +194,7 @@ Vraag me toestemming voor je iets installeert. Leg uit in gewone taal, ik ben ge
   <div data-reveal class="kaart" id="stap-1">
     <div class="stap-label">STAP 1 · ± 30 MINUTEN</div>
     <h2>Verzamel hooks die al werken in je niche</h2>
-    <p style="margin:0 0 14px;">Zoek 10 à 15 Reels in jouw domein die <strong>veel meer views</strong> haalden dan wat dat account normaal haalt. Een account met gemiddeld 2.000 views dat ineens op 80.000 staat: dat is je signaal. Niet de grote accounts, wel de uitschieters.</p>
+    <p style="margin:0 0 14px;">Zoek 10 à 15 Reels in jouw domein die <strong>veel meer views</strong> haalden dan wat dat account normaal haalt. Een account met gemiddeld 2.000 views dat ineens op 20.000 staat: dat is je signaal. Niet de grote accounts, wel de uitschieters.</p>
     <p style="margin:0 0 14px;">Van elke Reel noteer je twee dingen: <strong>de hook zoals hij in beeld staat</strong>, en <strong>het aantal views</strong>. Plak ze in een tekstbestand <em>hooks/voorbeelden.txt</em>, of zet screenshots in de map hooks/.</p>
     <p style="margin:0;">Dan laat je Claude de formule eruit halen. Want dat is het punt: je steelt de structuur, niet de woorden.</p>
     <div class="prompt"><button class="kopieer" type="button">Kopieer</button><div class="tag">PROMPT · HOOKS ANALYSEREN</div><pre>Lees alles in de map hooks/. Dit zijn hooks van Reels die veel beter scoorden dan normaal voor die accounts.
@@ -266,14 +279,15 @@ Zet alles in batches/batch-01/plan.md als genummerde lijst. Maak nog geen video'
 
 Voor elke video:
 1. Neem de gekozen clip uit clips/ en knip het sterkste stuk van 7 tot 12 seconden.
-2. Zet de hook in beeld vanaf de eerste frame, in grote witte letters met een subtiele schaduw, binnen de veilige zone uit CLAUDE.md.
+2. Zet de hook in beeld vanaf het eerste frame, in grote witte letters met een subtiele schaduw, binnen de veilige zone uit CLAUDE.md.
 3. Na de hook komt de korte tekst in beeld.
-4. Wordt er gesproken? Maak dan Nederlandse ondertitels met Whisper en brand ze in de video.
+4. Wordt er gesproken? Maak dan Nederlandse ondertitels met Whisper en zet ze vast in de video.
 5. Exporteer als batches/batch-01/video-01.mp4, video-02.mp4 enzovoort.
 
 Begin met video 1 en 2. Haal er daarna een paar stilstaande beelden uit, bekijk ze zelf, en controleer of de tekst leesbaar is en nergens wegvalt. Toon me wat je zag. Ga pas verder met de rest als ik akkoord geef.</pre></div>
     <div class="let"><p><strong>Waarom eerst twee?</strong> Zit er iets fout in de opmaak, dan wil je dat na twee video's weten, niet na twintig. Eens die twee goed zijn, zeg je gewoon "ok, doe de rest" en laat je het draaien.</p></div>
-    <p style="margin:16px 0 0;">Iets niet goed? Zeg het in gewone taal: <em>"de tekst staat te laag"</em>, <em>"de hook mag langer in beeld"</em>, <em>"gebruik een rustigere clip voor video 7"</em>. Werkt een aanpassing goed? Vraag Claude om ze toe te voegen aan CLAUDE.md, dan hoef je het nooit meer te zeggen.</p>
+    <p style="margin:16px 0 0;">Iets niet goed? Zeg het in gewone taal: <em>"de tekst staat te laag"</em>, <em>"de hook mag langer in beeld"</em>, <em>"gebruik een rustigere clip voor video 7"</em>. Werkt een aanpassing goed? Vraag Claude om die toe te voegen aan CLAUDE.md, dan hoef je het nooit meer te zeggen.</p>
+    <div class="let"><p><strong>Wil je bewegende tekstkaartjes en animaties?</strong> Vraag Claude Code om <strong>HyperFrames</strong> te installeren, een gratis open-source tool van HeyGen waarmee het video's bouwt met animaties. Het commando is <em>npx skills add heygen-com/hyperframes</em>. Niet nodig voor je eerste batch, wel leuk voor de tweede.</p></div>
   </div>
 
   <div data-reveal class="kaart" id="stap-5">
@@ -297,8 +311,9 @@ Zet ze in batches/batch-01/captions.md, met het nummer van de video erboven.</pr
     <h2>Post ze als proefreels</h2>
     <p style="margin:0 0 14px;">Instagram heeft een functie die hier perfect voor is: <strong>proefreels</strong> (Trial Reels). Een proefreel wordt eerst getoond aan mensen die je <strong>nog niet</strong> volgen. Hij verschijnt niet op je profiel en niet in de feed van je volgers. Je kan dus testen zonder dat je bestaande publiek twintig varianten van hetzelfde ziet.</p>
     <ul class="lessen">
-      <li><strong>Hoe:</strong> upload je Reel zoals altijd, en zet bij het delen de schakelaar <em>Proef</em> (Trial) aan. Je hebt een professioneel account nodig (creator of zakelijk). Zie je de optie niet? Update de app, ze wordt nog altijd stapsgewijs uitgerold.</li>
-      <li><strong>Automatisch delen:</strong> je kan instellen dat Instagram de Reel na 72 uur alsnog met je volgers deelt als hij goed scoort. Doen, dan gaan je winnaars vanzelf door.</li>
+      <li><strong>Hoe:</strong> upload je Reel zoals altijd, en zet bij het delen de optie voor een proefreel aan (in het Engels heet die <em>Trial</em>). Je hebt een professioneel account nodig (creator of zakelijk).</li>
+      <li><strong>Zie je de optie niet?</strong> Update de app. Instagram rolt proefreels niet voor elk account tegelijk uit, en sommige bronnen spreken van een minimum van 1.000 volgers.</li>
+      <li><strong>Automatisch delen:</strong> zet je dat aan, dan bekijkt Instagram de eerste 72 uur en deelt het de Reel alsnog met je volgers als hij goed scoort. Doen, dan gaan je winnaars vanzelf door. Je kan een proefreel ook altijd zelf delen.</li>
       <li><strong>Tempo:</strong> post niet alle twintig op één dag. Eén à twee per dag is genoeg, zo krijgt elke video een eerlijke kans en kan je de cijfers vergelijken.</li>
     </ul>
   </div>
@@ -329,7 +344,7 @@ Werk ook hooks/formules.md bij: zet de formules die bewezen werken voor MIJN pub
     <h2>Waar het misloopt</h2>
     <ul class="lessen">
       <li><strong>Te weinig context.</strong> Een lege CLAUDE.md geeft video's die klinken als iedereen. Dit is de stap die je niet overslaat.</li>
-      <li><strong>Altijd dezelfde clip.</strong> Tien clips is het minimum. Twintig video's met hetzelfde koffiekopje voelen als spam, ook voor het algoritme.</li>
+      <li><strong>Altijd dezelfde clip.</strong> Met vijf clips kan het, met tien wordt het beter. Twintig video's met hetzelfde koffiekopje voelen als spam, ook voor het algoritme.</li>
       <li><strong>Hooks kopiëren in plaats van de formule.</strong> Een hook die werkte voor een fitnesscoach werkt niet letterlijk voor een boekhouder. De structuur wel.</li>
       <li><strong>Te vroeg oordelen.</strong> Eén video met 300 weergaven zegt niets. Twintig video's naast elkaar zeggen veel.</li>
       <li><strong>Alleen naar weergaven kijken.</strong> Een video die bewaard en gedeeld wordt, brengt je meer op dan een die veel bekeken en meteen weggeswiped wordt.</li>
@@ -342,11 +357,13 @@ Werk ook hooks/formules.md bij: zet de formules die bewezen werken voor MIJN pub
   </div>
 
   <div data-reveal class="kaart faq">
-    <h2>Vragen die ik al kreeg</h2>
+    <h2>Vragen die je misschien hebt</h2>
     <h3>Kan dit met het gratis plan van Claude?</h3>
     <p style="margin:0;">Nee. Claude Code zit in de betaalde abonnementen (Pro en hoger). De gewone chat helpt je wel met stap 1, 3, 5 en 7, maar het monteren zelf doe je dan nog met de hand.</p>
     <h3>Werkt dit op Windows?</h3>
-    <p style="margin:0;">Ja. De desktopapp bestaat voor Mac en Windows. Claude installeert ffmpeg en Whisper zelf, op beide systemen.</p>
+    <p style="margin:0;">Ja. De desktopapp bestaat voor Mac en Windows. Op Windows heb je de eerste keer Git for Windows nodig, de app zegt het je. Claude installeert ffmpeg en Whisper zelf, op beide systemen.</p>
+    <h3>Kan ik ook AI-video gebruiken in plaats van eigen clips?</h3>
+    <p style="margin:0;">Kan, maar ik zou het niet als basis nemen. Gegenereerde beelden vallen op als AI, en dat kost je vertrouwen. Gebruik ze hooguit als sfeerbeeld tussendoor.</p>
     <h3>Moet ik zelf op beeld?</h3>
     <p style="margin:0;">Niet per se. Veel van deze video's werken met sfeerbeelden en tekst in beeld. Maar beelden van jou, aan het werk, doen het bijna altijd beter dan stockbeelden. Mensen volgen mensen.</p>
     <h3>Is dit niet gewoon spam?</h3>
@@ -358,7 +375,7 @@ Werk ook hooks/formules.md bij: zet de formules die bewezen werken voor MIJN pub
 <section style="max-width:860px; margin:0 auto; padding:20px 32px 40px;">
   <div data-reveal style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); color:#fff; border-radius:24px; padding:48px 44px; text-align:center;">
     <h2 style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px; line-height:1.1; color:#fff;">Liever niet alleen opzetten<span style="color:#1c1a1f;">?</span></h2>
-    <p style="margin:0 auto 26px; font-size:16px; line-height:1.7; color:#ffe4da; max-width:540px;">In de challenge Claude in 10 dagen bouw je je setup stap voor stap, met live begeleiding. Claude Code inbegrepen. Geen theorie, wel je eigen werk dat korter wordt.</p>
+    <p style="margin:0 auto 26px; font-size:16px; line-height:1.7; color:#ffe4da; max-width:540px;">In de challenge Claude in 10 dagen bouw je je setup stap voor stap, met live begeleiding en een introductie tot Claude Code. Geen theorie, wel je eigen werk dat korter wordt.</p>
     <div class="cta-row" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
       <a href="/challenge/" style="background:#1c1a1f; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px; display:inline-block;">Bekijk de challenge →</a>
       <a href="https://hub.asklien.ai" style="border:2px solid #fff; color:#fff; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px; display:inline-block;">Gratis naar de Hub</a>
