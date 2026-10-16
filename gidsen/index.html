@@ -32,6 +32,21 @@
   .binnenkort h2, .binnenkort .label { color:#b3ab9e; }
   .binnenkort p { color:#8a8378; }
   @media (max-width:640px){ .gids-kaart{ padding:26px 24px; } }
+  .zoek-wrap { position:sticky; top:72px; z-index:20; background:rgba(246,241,231,.94); backdrop-filter:blur(8px); padding:14px 0 16px; margin-bottom:22px; }
+  .zoek-veld { position:relative; }
+  .zoek-veld input { width:100%; box-sizing:border-box; padding:17px 20px 17px 52px; border:2px solid #e6ddcb; border-radius:14px; background:#fff; font-family:'Schibsted Grotesk',sans-serif; font-size:17px; color:#1c1a1f; outline:none; transition:border-color .2s; }
+  .zoek-veld input:focus { border-color:#ff4d24; }
+  .zoek-veld svg { position:absolute; left:19px; top:50%; transform:translateY(-50%); width:20px; height:20px; stroke:#8a8378; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+  .chip { background:#fff; border:1.5px solid #e6ddcb; border-radius:999px; padding:8px 16px; font-family:'Schibsted Grotesk',sans-serif; font-weight:600; font-size:14px; color:#57534a; cursor:pointer; }
+  .chip:hover { border-color:#1c1a1f; color:#1c1a1f; }
+  .chip.aan { background:#1c1a1f; border-color:#1c1a1f; color:#fff; }
+  .zoek-teller { margin-top:10px; font-size:14px; color:#57534a; min-height:20px; }
+  .geen-resultaat { display:none; background:#fff; border-radius:20px; padding:36px 34px; text-align:center; }
+  .geen-resultaat h2 { margin:0 0 8px; font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-.8px; }
+  .geen-resultaat p { margin:0; font-size:15px; line-height:1.65; color:#57534a; }
+  .gids-kaart mark { background:#ffe1d6; color:inherit; border-radius:3px; padding:0 2px; }
+  @media (max-width:640px){ .zoek-wrap{ top:60px; } .zoek-veld input{ font-size:16px; } }
 </style>
 <meta property="og:image" content="https://asklien.ai/media/foto/hero.jpg">
 <meta property="og:site_name" content="AskLien.ai">
@@ -56,6 +71,12 @@
   "mainEntity": {
     "@type": "ItemList",
     "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 28,
+        "name": "4 dingen die nieuw zijn in Claude, en die je echt moet kennen",
+        "url": "https://asklien.ai/claude-nieuw-oktober-2026/"
+      },
       {
         "@type": "ListItem",
         "position": 23,
@@ -166,6 +187,12 @@
       },
       {
         "@type": "ListItem",
+        "position": 27,
+        "name": "Reels maken met AI, zonder één regel code",
+        "url": "https://asklien.ai/reels-maken-met-ai/"
+      },
+      {
+        "@type": "ListItem",
         "position": 2,
         "name": "Vraag AI wat het over jouw gemeente weet",
         "url": "https://asklien.ai/gemeente-test/"
@@ -257,13 +284,52 @@
 </header>
 
 <!-- GIDSEN -->
-<section style="max-width:1000px; margin:0 auto; padding:44px 32px 0;">
+<section style="max-width:1000px; margin:0 auto; padding:30px 32px 0;">
+  <div class="zoek-wrap">
+    <div class="zoek-veld">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="zoek" type="search" placeholder="Zoek een gids, bv. reels, offerte, watermerk, Excel..." aria-label="Zoek in de gidsen" autocomplete="off">
+    </div>
+    <div class="chips" role="group" aria-label="Filter op onderwerp">
+      <button class="chip aan" data-filter="">Alles</button>
+      <button class="chip" data-filter="claude">Claude</button>
+      <button class="chip" data-filter="chatgpt">ChatGPT</button>
+      <button class="chip" data-filter="gemini grok copilot">Andere AI</button>
+      <button class="chip" data-filter="reel video instagram content">Content en video</button>
+      <button class="chip" data-filter="prompt">Met prompts</button>
+      <button class="chip" data-filter="update september oktober veranderde uitgelegd">Nieuws</button>
+      <button class="chip" data-filter="veilig privacy watermerk risico">Veilig en privacy</button>
+    </div>
+    <div class="zoek-teller" id="zoek-teller" aria-live="polite"></div>
+  </div>
+  <div class="geen-resultaat" id="geen-resultaat">
+    <h2>Daar heb ik nog geen gids over<span style="color:#ff4d24;">.</span></h2>
+    <p>Probeer een ander woord, of <a href="/contact/" style="color:#ff4d24; font-weight:600;">laat me weten</a> waar je een gids over wil. De vaakst gevraagde onderwerpen schrijf ik eerst.</p>
+  </div>
+</section>
+<section style="max-width:1000px; margin:0 auto; padding:0 32px 0;">
   <div data-reveal class="gids-grid">
+    <a href="/claude-nieuw-oktober-2026/" class="gids-kaart">
+      <div class="label">Nieuw · Claude · Wat er veranderde</div>
+      <h2>4 dingen die nieuw zijn in Claude, en die je echt moet kennen</h2>
+      <p>Opus, Sonnet en Haiku 5.5 met Effort, documenten en dashboards in elk gesprek, Claude in Google Docs, Sheets en Slides, en Claude in je auto via CarPlay. Per onderdeel: voor wie, hoe je begint, en een prompt.</p>
+      <div class="meta">16 oktober 2026 · leestijd ± 7 min · 4 prompts om te kopiëren</div>
+      <div class="lees">Open de gids →</div>
+    </a>
+
     <a href="/reels-met-claude-code/" class="gids-kaart">
       <div class="label">Nieuw · Stappenplan · Claude Code</div>
       <h2>20 Reels op één avond, met Claude Code</h2>
       <p>Niet twintig keer filmen, wel één keer goed opzetten. Hooks die al werken, context in één bestand, Claude Code dat monteert, en proefreels om te testen. Met elke prompt die je nodig hebt.</p>
       <div class="meta">15 oktober 2026 · leestijd ± 12 min · 8 stappen + 6 prompts</div>
+      <div class="lees">Open de gids →</div>
+    </a>
+
+    <a href="/reels-maken-met-ai/" class="gids-kaart">
+      <div class="label">Nieuw · Zonder code · Claude of ChatGPT</div>
+      <h2>Reels maken met AI, zonder één regel code</h2>
+      <p>Van een los idee tot een gepubliceerde reel: Claude of ChatGPT voor hooks, script en caption, CapCut of Descript voor de edit. De vijf stappen, wat AI wél en niet voor je doet, en mijn ritme voor vier reels op één voormiddag.</p>
+      <div class="meta">14 oktober 2026 · leestijd ± 11 min · 5 prompts om te kopiëren</div>
       <div class="lees">Open de gids →</div>
     </a>
 
@@ -542,6 +608,47 @@
 </footer>
 
 <script src="/js/site.js?v=3"></script>
+<script>
+(function(){
+  var veld=document.getElementById('zoek'), teller=document.getElementById('zoek-teller'), leeg=document.getElementById('geen-resultaat');
+  var kaarten=Array.prototype.slice.call(document.querySelectorAll('.gids-grid .gids-kaart'));
+  var chips=Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var filter='';
+  function norm(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+  var echte=kaarten.filter(function(k){ return !k.classList.contains('binnenkort'); });
+  echte.forEach(function(k){ k._tekst=norm(k.textContent + ' ' + (k.getAttribute('href')||'').replace(/[-\/]/g,' ')); k._h=k.querySelector('h2'); var lb=k.querySelector('.label'); k._kop=norm((lb?lb.textContent:'')+' '+(k._h?k._h.textContent:'')+' '+(k.getAttribute('href')||'').replace(/[-\/]/g,' ')); k._hOrig=k._h?k._h.innerHTML:''; });
+  function markeer(k,woorden){
+    if(!k._h) return; k._h.innerHTML=k._hOrig;
+    if(!woorden.length) return;
+    var tekst=k._h.textContent, n=norm(tekst), stukken=[], i=0;
+    var re=new RegExp('('+woorden.map(function(w){return w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}).join('|')+')','g');
+    var m; while((m=re.exec(n))!==null){ if(!m[0].length){re.lastIndex++;continue;} stukken.push([m.index,m.index+m[0].length]); }
+    if(!stukken.length) return;
+    var html='', pos=0; stukken.forEach(function(s){ if(s[0]<pos) return; html+=esc(tekst.slice(pos,s[0]))+'<mark>'+esc(tekst.slice(s[0],s[1]))+'</mark>'; pos=s[1]; });
+    k._h.innerHTML=html+esc(tekst.slice(pos));
+  }
+  function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function pas(){
+    var q=norm(veld.value.trim()), woorden=q.split(/\s+/).filter(Boolean), opties=filter?filter.split(' '):[], zichtbaar=0;
+    echte.forEach(function(k){
+      var ok=woorden.every(function(w){ return k._tekst.indexOf(w)>-1; }) && (!opties.length || opties.some(function(o){ return k._kop.indexOf(o)>-1; }));
+      k.style.display=ok?'':'none'; if(ok){ zichtbaar++; k.style.opacity='1'; k.style.transform='none'; }
+      markeer(k, ok?woorden:[]);
+    });
+    var actief=woorden.length||opties.length;
+    kaarten.forEach(function(k){ if(k.classList.contains('binnenkort')) k.style.display=actief?'none':''; });
+    teller.textContent=actief?(zichtbaar===1?'1 gids gevonden':zichtbaar+' gidsen gevonden'):echte.length+' gidsen';
+    leeg.style.display=(actief&&!zichtbaar)?'block':'none';
+    try{ var u=new URL(location); if(veld.value.trim()) u.searchParams.set('q',veld.value.trim()); else u.searchParams.delete('q'); history.replaceState(null,'',u); }catch(e){}
+  }
+  chips.forEach(function(c){ c.addEventListener('click',function(){ chips.forEach(function(x){x.classList.remove('aan');}); c.classList.add('aan'); filter=c.getAttribute('data-filter'); pas(); }); });
+  veld.addEventListener('input',pas);
+  document.addEventListener('keydown',function(e){ if(e.key==='/' && document.activeElement!==veld && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)){ e.preventDefault(); veld.focus(); } });
+  try{ var q=new URL(location).searchParams.get('q'); if(q) veld.value=q; }catch(e){}
+  pas();
+})();
+</script>
+
 <script src="/js/analytics.js?v=6" defer></script>
 <script src="/js/menu.js?v=3" defer></script>
 </body>

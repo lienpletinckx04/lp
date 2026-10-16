@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://asklien.ai/gidsen/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -212,7 +212,19 @@
   </url>
   <url>
     <loc>https://asklien.ai/reels-met-claude-code/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://asklien.ai/reels-maken-met-ai/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://asklien.ai/claude-nieuw-oktober-2026/</loc>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
