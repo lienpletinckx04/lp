@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Bot uitgelegd: wat het is, wat het kost en wat het risico is — AskLien.ai</title>
+<meta name="description" content="Wat is Grok Bot van xAI? Hoe de altijd-aan AI-agents werken, wat het kost, de zeven risico's (gedeelde logins, handelen namens jou) en een eerlijke vergelijking met Claude en ChatGPT.">
+<link rel="canonical" href="https://asklien.ai/grok-bot-gids/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Grok Bot uitgelegd: wat het is, wat het kost en wat het risico is">
+<meta property="og:description" content="Een eerlijke gids over de altijd-aan AI-agents van xAI, met risico's en de vergelijking met Claude en ChatGPT.">
+<meta property="og:url" content="https://asklien.ai/grok-bot-gids/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=3">
+<style>
+.regel { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:20px; }
+  .regel-kop { display:flex; align-items:baseline; gap:16px; margin-bottom:10px; }
+  .regel-nr { font-family:'Archivo'; font-weight:900; font-size:38px; color:#ff4d24; line-height:1; }
+  .regel h2 { margin:0; font-family:'Archivo'; font-weight:800; font-size:25px; letter-spacing:-1px; line-height:1.15; }
+  .vergelijk { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
+  .vak { border-radius:14px; padding:20px 22px; font-size:14px; line-height:1.65; position:relative; }
+  .vak .vak-label { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px; display:block; }
+  .fout { background:#fdf2ee; border:1px solid #f6d5c9; color:#8a5c4c; }
+  .fout .vak-label { color:#c9543a; }
+  .goed { background:#1c1a1f; color:#e8e2d4; }
+  .goed .vak-label { color:#ff4d24; }
+  .copy-btn { position:absolute; top:14px; right:14px; background:#ff4d24; color:#fff; border:none; font-family:'Schibsted Grotesk'; font-weight:600; font-size:11.5px; padding:6px 12px; border-radius:7px; cursor:pointer; }
+  .copy-btn:hover { background:#fff; color:#1c1a1f; }
+  .waarom { margin-top:18px; font-size:15px; line-height:1.7; color:#57534a; }
+  .waarom strong { color:#1c1a1f; }
+  .mening { background:#fff8ef; border-left:4px solid #ff4d24; border-radius:12px; padding:20px 24px; margin-top:20px; }
+  .mening .m-label { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; display:block; margin-bottom:8px; }
+  .mening p { margin:0; font-size:15px; line-height:1.7; color:#57534a; font-style:italic; }
+  .check-item { display:flex; align-items:flex-start; gap:14px; padding:14px 0; border-bottom:1px solid rgba(255,255,255,.10); }
+  .check-item:last-child { border-bottom:none; }
+  .check-vak { width:20px; height:20px; border:2px solid #ff4d24; border-radius:5px; flex-shrink:0; margin-top:2px; }
+  .check-item p { margin:0; font-size:15px; line-height:1.6; color:#e8e2d4; }
+  .check-item p strong { color:#fff; }
+  #ctaPopup { position:fixed; bottom:24px; right:24px; max-width:340px; background:#1c1a1f; color:#f6f1e7; border-radius:18px; padding:24px 26px; box-shadow:0 20px 50px rgba(0,0,0,.35); z-index:200; transform:translateY(140%); transition:transform .5s cubic-bezier(.2,.8,.2,1); }
+  #ctaPopup.show { transform:translateY(0); }
+  #ctaPopup .close { position:absolute; top:10px; right:14px; color:#8a8378; cursor:pointer; font-size:18px; background:none; border:none; }
+  @media (max-width:760px){
+    .vergelijk { grid-template-columns:1fr; }
+    .regel { padding:28px 24px; }
+    #ctaPopup{ left:16px; right:16px; bottom:16px; max-width:none; }
+  }
+.tabel { width:100%; border-collapse:collapse; font-size:14.5px; line-height:1.55; }
+.tabel th { text-align:left; font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.2px; text-transform:uppercase; color:#8a8378; padding:10px 12px; border-bottom:2px solid #1c1a1f; }
+.tabel td { padding:12px 12px; border-bottom:1px solid #e6ddcb; vertical-align:top; color:#57534a; }
+.tabel td:first-child { font-weight:600; color:#1c1a1f; white-space:nowrap; }
+.stap { display:flex; gap:18px; padding:18px 0; border-top:1px solid #e6ddcb; }
+.stap .nr { font-family:'Archivo'; font-weight:900; font-size:30px; color:#ff4d24; line-height:1; width:48px; flex-shrink:0; }
+.stap h3 { margin:0 0 6px; font-family:'Archivo'; font-weight:800; font-size:19px; letter-spacing:-.6px; }
+.stap p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+.risico { display:flex; gap:16px; padding:16px 0; border-top:1px solid #e6ddcb; }
+.risico .lvl { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; width:70px; flex-shrink:0; padding-top:4px; }
+.risico h3 { margin:0 0 4px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px; }
+.risico p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+@media (max-width:760px) { .tabel { font-size:13px; } .tabel td:first-child { white-space:normal; } }
+</style>
+</head>
+<body id="top">
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+      <a href="/gidsen/">Alle gidsen</a>
+      <a href="https://hub.asklien.ai">Gratis Hub</a>
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">De challenge</a>
+    </div>
+  </div>
+</nav>
+<header style="max-width:900px; margin:0 auto; padding:72px 32px 8px;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">EERLIJK BEKEKEN</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Grok Bot is leuk om te kennen. Het is nog geen plek voor je klantgegevens<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">xAI lanceerde Grok Bot op 11 augustus 2026: AI-agents met een eigen computer in de cloud die 24/7 doorwerken en elkaar taken doorgeven. Hieronder wat het precies is, wat het kost, waar het echt anders is dan Claude en ChatGPT, en wat je moet aanvinken voor je er eentje aan je inbox laat.</p>
+  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 14 oktober 2026 · feiten gecontroleerd op 14 oktober 2026</div>
+</header>
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:36px 40px;">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">WAT HET IS</div>
+    <h2 style="margin:0 0 16px; font-family:'Archivo'; font-weight:900; font-size:28px; letter-spacing:-1.5px; line-height:1.15; color:#f6f1e7;">Je team van altijd-aan agents, met een eigen computer.</h2>
+    <p style="margin:0 0 14px; font-size:16px; line-height:1.75; color:#b3ab9e;">Grok Bot is een product van <strong style='color:#f6f1e7;'>xAI</strong>, in bèta sinds 11 augustus 2026. Je maakt er agents mee die inloggen in de tools die jij al gebruikt, en die blijven werken terwijl jouw laptop dicht is. Je praat ermee zoals met een collega: je geeft een taak, en de bot komt pas terug als er iets is waar jouw goedkeuring voor nodig is.</p><p style="margin:0 0 14px; font-size:16px; line-height:1.75; color:#b3ab9e;">Eén misverstand meteen rechtgezet: Grok Bot is een officieel product van xAI, niet iets van een externe ontwikkelaar. Wat wél bestaat zijn onofficiële installers op GitHub en downloadsites die zich "Grok Bot" noemen. Die laat je liggen. Downloaden doe je alleen via x.ai/bot of het dashboard van je account.</p>
+  </div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;"><h2 data-reveal style="margin:0 0 4px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px;">Drie dingen maken het anders dan een chatbot<span style="color:#ff4d24;">.</span></h2><div style="height:20px"></div></section>
+<section style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="regel">
+    <div class="regel-kop"><span class="regel-nr">01</span><h2>Agents-first: je begint met een werknemer, niet met een chat.</h2></div>
+    <p class='waarom' style='margin-top:0'>Je geeft de bot een naam, een titel en een beschrijving van wat hij moet doen. Daarna gaat hij zelf aan de slag en vraagt hij alleen hulp bij beslissingen die jij wilt nemen. Bijvoorbeeld: elke ochtend de nieuwe aanvragen bekijken, opzoeken wie het is, inschatten of het interessant is, en een voorstel klaarzetten.</p><div class="mening"><span class="m-label">Wat ik erover denk</span><p>Dit is het stuk dat ik zelf het leukst vind. 's Ochtends krijg je: twaalf aanvragen binnen, vier interessant, drie twijfel. Jij beslist in twee minuten, de bot deed het zoekwerk. Maar laat ons eerlijk zijn: dit kan je met Claude en ChatGPT ondertussen ook al.</p></div>
+  </div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="regel">
+    <div class="regel-kop"><span class="regel-nr">02</span><h2>Hij leeft in de cloud, dus hij werkt verder als je computer uit staat.</h2></div>
+    <p class='waarom' style='margin-top:0'>Elke gebruiker krijgt één computer in de cloud (Linux), met een bureaublad, bestanden, een browser en apps. Je bots werken daarop. Die computer blijft bestaan, dus logins en bestanden blijven staan. Je kunt meekijken zoals op een extern bureaublad en overnemen als er bijvoorbeeld een captcha of een 2FA-code nodig is.</p><div class="mening"><span class="m-label">Wat ik erover denk</span><p>Het verschil met Claude Code of ChatGPT zit precies hier: niet in wat de agent kan, maar in de computer die er permanent bij hoort. Dat is handig. Het is ook meteen het risico, zie verderop.</p></div>
+  </div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:0 32px;">
+  <div data-reveal class="regel">
+    <div class="regel-kop"><span class="regel-nr">03</span><h2>Bots geven taken aan elkaar door.</h2></div>
+    <p class='waarom' style='margin-top:0'>Bots kunnen elkaar berichten sturen. Je kunt er een paar in een groepschat zetten: een bot voor verkoop, een voor de inbox, een die de anderen aanstuurt. xAI noemt die laatste een "chief of staff"-bot. De ene stuurt iets door, de andere pakt het verder op.</p>
+  </div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;"><h2 data-reveal style="margin:0 0 4px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px;">Wat het kost en waar het werkt<span style="color:#ff4d24;">.</span></h2><div style="height:20px"></div></section>
+<section style="max-width:900px; margin:0 auto; padding:0 32px 20px;">
+  <div data-reveal style="background:#fff; border-radius:20px; padding:36px 40px;"><table class="tabel">
+<tr><th>Wat</th><th>Hoe het zit</th></tr>
+<tr><td>Inbegrepen in</td><td>SuperGrok, SuperGrok Plus en SuperGrok Heavy, en in Cursor Pro, Pro+, Ultra en Cursor Teams Standard en Premium.</td></tr>
+<tr><td>Gebruikslimiet</td><td>Grok Bot heeft een aparte verbruiksteller, los van je gewone Grok- of Cursor-gebruik. Zware bots lopen sneller tegen een limiet dan je denkt.</td></tr>
+<tr><td>Bedrijven</td><td>Enterprise-klanten komen op een wachtlijst. Beheerders bepalen per groep wie Grok Bot mag gebruiken en krijgen auditlogs.</td></tr>
+<tr><td>Platformen</td><td>Desktop-app voor macOS (Apple silicon en Intel), Windows en Linux, plus iPhone (iOS 18+) en Android (9+). Je ziet op je telefoon exact dezelfde bots als op je laptop.</td></tr>
+<tr><td>Zelf hosten</td><td>Nee. De apps zijn vensters op de cloud van xAI.</td></tr>
+</table>
+<p style="margin:16px 0 0; font-size:13.5px; color:#8a8378;">Concrete maandprijzen staan niet in de aankondiging van xAI en veranderen regelmatig. Check x.ai voor je beslist.</p></div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;"><h2 data-reveal style="margin:0 0 4px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px;">De risico's, eerlijk op een rij<span style="color:#ff4d24;">.</span></h2><p data-reveal style="margin:0 0 24px; font-size:16px; color:#8a8378;">Dit is het deel dat in de meeste video's ontbreekt.</p></section>
+<section style="max-width:900px; margin:0 auto; padding:0 32px 20px;">
+  <div data-reveal style="background:#fff; border-radius:20px; padding:36px 40px;"><div class="risico"><div class="lvl">HOOG</div><div><h3>Hij handelt namens jou</h3><p>Een bot die ingelogd is in je mail, kan mailen. Een bot die ingelogd is op een webshop, kan technisch gezien bestellen. xAI zegt dat zelf en raadt aan om goedkeuringsstappen in te bouwen. Doe dat voor alles wat geld kost of naar buiten gaat.</p></div></div><div class="risico"><div class="lvl">HOOG</div><div><h3>Alle bots delen dezelfde logins</h3><p>Je bots draaien op één computer. Log je met één bot in op een site, dan kan elke andere bot daar ook aan.</p></div></div><div class="risico"><div class="lvl">HOOG</div><div><h3>Je vertrouwt op regels in gewone taal</h3><p>De toelatingen schrijf je als tekst in Settings › General › Agent, en xAI zegt letterlijk dat je erop vertrouwt dat het model die regels volgt. Een sterke richtlijn, geen slot.</p></div></div><div class="risico"><div class="lvl">MIDDEL</div><div><h3>Bots lezen alles wat binnenkomt</h3><p>Een bot die mails en webpagina's leest, leest ook instructies die iemand erin verstopt heeft. Dat heet prompt injection en geldt voor alle AI-agents. Hoe meer de bot mag, hoe erger het kan aflopen.</p></div></div><div class="risico"><div class="lvl">MIDDEL</div><div><h3>Je gegevens staan op een cloud-computer van xAI</h3><p>Werk je met persoonsgegevens van klanten, kijk dan naar de verwerkersovereenkomst en privacyvoorwaarden van xAI voor je er gevoelige data in laat.</p></div></div><div class="risico"><div class="lvl">MIDDEL</div><div><h3>Het is bèta</h3><p>Er zijn nog geen onafhankelijke cijfers over betrouwbaarheid, en de functies veranderen snel. Bouw er nog geen proces op waar je bedrijf van afhangt.</p></div></div><div class="risico"><div class="lvl">LAAG</div><div><h3>Onofficiële installers</h3><p>Een nep-installer op de computer waar al je logins staan, is het slechtste wat je kunt doen. Enkel downloaden via x.ai/bot.</p></div></div></div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:16px 32px 0;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:36px 40px;">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">VOOR JE EEN BOT LOSLAAT</div>
+    <h2 style="margin:0 0 16px; font-family:'Archivo'; font-weight:900; font-size:28px; letter-spacing:-1.5px; line-height:1.15; color:#f6f1e7;">De checklist.</h2>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Goedkeuring verplicht</strong> voor alles wat verstuurt, koopt, verwijdert of publiceert.</p></div><div class="check-item"><div class="check-vak"></div><p><strong>Reviewer ingesteld</strong> in Settings › General › Agent, met een blokkeerlijst: bank, betaalplatform, admin-panelen.</p></div><div class="check-item"><div class="check-vak"></div><p><strong>Geen bankieren, geen betaalkaarten, geen wachtwoordmanager</strong> op de cloud-computer.</p></div><div class="check-item"><div class="check-vak"></div><p><strong>Aparte of beperkte accounts</strong> voor de bot waar dat kan, bijvoorbeeld een mailbox voor aanvragen in plaats van je hoofdmailbox.</p></div><div class="check-item"><div class="check-vak"></div><p><strong>Eerst twee weken alleen lezen en samenvatten</strong>, pas daarna laten handelen.</p></div><div class="check-item"><div class="check-vak"></div><p><strong>Wekelijks de logboeken bekijken:</strong> wat heeft hij gedaan, en waarom.</p></div>
+  </div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;"><h2 data-reveal style="margin:0 0 4px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px;">Eerlijk vergeleken met Claude en ChatGPT<span style="color:#ff4d24;">.</span></h2><div style="height:20px"></div></section>
+<section style="max-width:900px; margin:0 auto; padding:0 32px 20px;">
+  <div data-reveal style="background:#fff; border-radius:20px; padding:36px 40px;"><table class="tabel">
+<tr><th></th><th>Grok Bot (xAI)</th><th>Claude (Anthropic)</th><th>ChatGPT (OpenAI)</th></tr>
+<tr><td>Wat het is</td><td>Benoemde agents met een eigen permanente cloud-computer</td><td>Chat plus Claude Code: een agent die in je bestanden en tools werkt, lokaal of in de cloud</td><td>Chat plus agent-modus die in een eigen browser taken uitvoert</td></tr>
+<tr><td>Werkt verder als je laptop dicht is</td><td>Ja, standaard</td><td>Ja, via cloud-sessies en ingeplande routines in Claude Code</td><td>Ja, voor ingeplande taken en agent-opdrachten in de cloud</td></tr>
+<tr><td>Onthoudt logins en bestanden</td><td>Ja, op de cloud-computer, gedeeld door al je bots</td><td>Per project en per sessie, geen gedeelde desktop met logins</td><td>Per gesprek en via geheugen; voor logins in agent-modus log je telkens zelf in</td></tr>
+<tr><td>Meerdere agents die elkaar taken doorgeven</td><td>Ja, ingebouwd</td><td>Ja, maar je zet het zelf op</td><td>Beperkt</td></tr>
+<tr><td>Zelf hosten of lokaal</td><td>Nee</td><td>Claude Code draait lokaal op je eigen machine</td><td>Nee</td></tr>
+</table>
+<p style="margin:16px 0 0; font-size:13.5px; color:#8a8378;">Op basis van de officiële documentatie van de drie bedrijven op 14 oktober 2026. "Grok Build" is een apart product van xAI voor programmeurs.</p></div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:24px 32px 96px;">
+  <div data-reveal style="background:#fff; border-radius:24px; padding:44px 42px;">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">MIJN ADVIES</div>
+    <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.5px; line-height:1.1;">Begin met wat je al hebt<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0 0 20px; font-size:16px; line-height:1.7; color:#57534a; max-width:640px;">Heb je al Claude of ChatGPT, probeer de taak daar eerst, met goedkeuring per stap. Grok Bot is interessant als je echt meerdere bots wilt die elkaar taken doorgeven op een machine die altijd aan staat, en als je bereid bent om de toegang streng te beheren.</p>
+    <div class="mening" style="margin-top:0; margin-bottom:26px;"><span class="m-label">Wat ik erover denk</span><p>Ik vind het nog altijd risky. Maar wel leuk om te weten dat het bestaat. En het zegt iets over waar het naartoe gaat: niet meer prompten, maar collega's inwerken. Dat leer je het best met de tools die je al betaalt.</p></div>
+    <div class="cta-row" style="display:flex; gap:14px; flex-wrap:wrap;">
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">Bekijk de challenge →</a>
+      <a href="https://hub.asklien.ai" class="btn-outline" style="border:2px solid #1c1a1f; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px;">Eerst gratis rondkijken in de Hub</a>
+    </div>
+  </div>
+</section>
+<section data-kruislinks style="max-width:1000px; margin:0 auto; padding:0 32px 72px;"><h2 style="font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-1px; margin:0 0 18px;">Andere gratis gidsen</h2><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;"><a href="/reels-met-claude-code/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">20 Reels op één avond</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Het stappenplan om met Claude Code Reels in batch te maken.</div></a><a href="/prompten-claude-5/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Korter prompten, beter resultaat</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Drie dingen die ik veranderde, plus de checklist.</div></a><a href="/github-repos-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">10 GitHub-repo's die je AI beter maken</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Zonder dat je code schrijft.</div></a><a href="/fable-5-1/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Fable 5.1: waarvoor gebruik je het</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wanneer je het zwaarste model inzet, en acht taken die het waard zijn.</div></a><a href="/connectors-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Connectors: AI in je mailbox en agenda</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Zonder spijt achteraf.</div></a><a href="/veilig-met-ai-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Wat je nooit in ChatGPT of Claude plakt</div><div style="font-size:14px; line-height:1.6; color:#57534a;">En wat wél mag.</div></a><a href="/claude-of-chatgpt/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Claude of ChatGPT?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wat gebruik je waarvoor.</div></a></div><p style="margin:18px 0 0; font-size:15px;"><a href="/gidsen/" style="font-weight:600; color:#ff4d24;">Bekijk alle gidsen →</a></p></section>
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="/gidsen/">Alle gidsen</a><a href="https://hub.asklien.ai">Hub</a><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/privacy/">Privacy en cookies</a> · <a href="#cookievoorkeuren">Cookievoorkeuren</a></div>
+  </div>
+</footer>
+<div id="ctaPopup">
+  <button class="close" onclick="document.getElementById('ctaPopup').classList.remove('show')">×</button>
+  <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.5px; color:#ff4d24; margin-bottom:10px;">GRATIS VERDER LEREN</div>
+  <div style="font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px; line-height:1.2; margin-bottom:10px;">Alles staat klaar in de Hub.</div>
+  <p style="margin:0 0 16px; font-size:13.5px; line-height:1.5; color:#b3ab9e;">Skills, templates en gidsen om meteen mee te starten. Gratis account, geen kaartgegevens.</p>
+  <a href="https://hub.asklien.ai" class="btn-primary" style="display:block; background:#ff4d24; color:#fff; font-weight:600; font-size:14px; padding:13px; border-radius:9px; text-align:center;">Naar de gratis Hub →</a>
+  <a href="/challenge/" style="display:block; margin-top:10px; font-size:13px; color:#b3ab9e; text-align:center; text-decoration:underline;">Of bekijk de challenge van 3 november</a>
+</div>
+<script src="/js/site.js?v=3"></script>
+<script>
+function copyVak(btn) { var vak = btn.parentElement.cloneNode(true); var b = vak.querySelector('.copy-btn'); if (b) b.remove(); var l = vak.querySelector('.vak-label'); if (l) l.remove(); navigator.clipboard.writeText(vak.innerText.trim()).then(function () { var old = btn.textContent; btn.textContent = 'Gekopieerd!'; setTimeout(function () { btn.textContent = old; }, 1800); }); }
+setTimeout(function () { document.getElementById('ctaPopup').classList.add('show'); }, 15000);
+window.addEventListener('scroll', function onScroll() { if (window.scrollY > document.body.scrollHeight * 0.45) { document.getElementById('ctaPopup').classList.add('show'); window.removeEventListener('scroll', onScroll); } });
+</script>
+<script src="/js/analytics.js?v=6" defer></script>
+<script src="/js/menu.js?v=3" defer></script>
+<script src="/js/challenge-popup.js?v=2" defer></script>
+</body>
+</html>

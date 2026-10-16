@@ -129,7 +129,7 @@ Tel onderaan op wat die tweede lijst mij per maand en per jaar kost.
 
 Vraag me niets over gebruik. Zeg gewoon per lijn welke vraag ik
 mezelf moet stellen om te beslissen of het weg mag.</div>
-    <div class="uitkomst"><strong>Wat je eruit haalt:</strong> een lijst zoals ik ze bij mezelf kreeg. Spotify Duo aan € 14,99 die ik vandaag nog gebruikte, iCloud+ aan € 2,99 die dagelijks draait, en daarnaast € 113,43 per maand aan dingen die gewoon bleven lopen. Een ontwerptool die over zes dagen stilzwijgend verlengde voor een jaar aan € 130, was daar het duurste stuk van.</div>
+    <div class="uitkomst"><strong>Wat je eruit haalt:</strong> een lijst zoals ik ze bij mezelf kreeg. Spotify Duo aan € 19,99 die ik vandaag nog gebruikte, iCloud+ aan € 2,99 die dagelijks draait, en daarnaast € 113,43 per maand aan dingen die gewoon bleven lopen. Een ontwerptool die over zes dagen stilzwijgend verlengde voor een jaar aan € 130, was daar het duurste stuk van.</div>
   </div>
 </section>
 
@@ -307,15 +307,19 @@ vermeldt in plaats van aan te nemen dat het gedekt is.</div>
       <h3 style="margin:0; font-family:'Archivo'; font-weight:800; font-size:24px; letter-spacing:-1px;">Huurverhoging natrekken</h3>
     </div>
     <p style="margin:0 0 18px; font-size:14px; color:#8a8378;">Een ronde vraagprijs is meestal geen berekening</p>
-    <div class="how-box"><strong>Wat je meegeeft:</strong> je huidige huurprijs, de startmaand van je contract, en wat er nu gevraagd wordt. <br><strong>Let op:</strong> huurindexatie is in België gewestelijke materie en er zijn periodes geweest met bijkomende regels. Laat Claude de berekening tonen, en leg ze daarna naast je eigen contract.</div>
+    <div class="how-box"><strong>Wat je meegeeft:</strong> je basishuurprijs uit je contract, de maand waarin het ondertekend werd en inging, en wat er nu gevraagd wordt. <br><strong>Let op:</strong> huurindexatie is in België gewestelijke materie en in Brussel geldt voor woningen met een EPB E, F of G nog altijd een correctiefactor. Laat Claude de berekening tonen, en leg ze daarna naast je eigen contract.</div>
     <div class="prompt-box"><button class="copy-btn" onclick="copyPrompt(this)">Kopieer</button>Mijn huursituatie:
-- huidige huurprijs: € [BEDRAG]
-- startmaand en jaar van het contract: [BV. MEI 2021]
+- basishuurprijs uit je contract: € [BEDRAG]
+- maand en jaar waarin je contract ondertekend werd én waarin het inging: [BV. SEPTEMBER 2025]
 - gewest: [Vlaanderen / Brussel / Wallonië]
 - de eigenaar vraagt nu: € [BEDRAG]
 
-Reken de wettelijke indexatie na volgens de gezondheidsindex
-van mijn startmaand tegenover die van vandaag.
+Reken de wettelijke indexatie na: basishuurprijs × gezondheidsindex
+van de maand vóór de verjaardag van mijn contract ÷ aanvangsindex
+(in Vlaanderen voor contracten vanaf 2019: de maand vóór de
+ingangsdatum; in Brussel en Wallonië: de maand vóór de
+ondertekening). Zoek de indexcijfers op bij Statbel. Woon ik in
+Brussel, check dan ook of de EPB-correctiefactor geldt.
 
 Toon de berekening stap voor stap, met de indexcijfers die je
 gebruikt en waar ze vandaan komen. Ik wil ze zelf kunnen
@@ -451,7 +455,7 @@ mijn woorden, niet in verkooptaal.</div>
   </div>
 </section>
 
-<section data-kruislinks style="max-width:860px; margin:0 auto; padding:40px 32px 72px;"><h2 style="font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-1px; margin:0 0 18px;">Andere gratis gidsen</h2><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;"><a href="/gemeente-test/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Wat weet AI over jouw gemeente?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">De simpelste test om te leren zien wanneer AI iets verzint.</div></a><a href="/9-dingen-claude-doet-gratis/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">9 dingen die Claude gratis doet</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Negen taken waar je nu voor betaalt, met kant-en-klare prompts.</div></a><a href="/prompten-claude-5/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Beter prompten in Claude</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Drie dingen die veranderd zijn aan goed prompten, plus de checklist.</div></a><a href="/watermerk-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Het watermerk in Claude</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wat dat onzichtbare watermerk is, en hoe je het weghaalt.</div></a><a href="/ai-in-jouw-sector/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">AI in jouw sector volgens de data</div><div style="font-size:14px; line-height:1.6; color:#57534a;">De gratis dataset die toont welke beroepen AI het meest gebruiken.</div></a><a href="/chatgpt-advertenties/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Advertenties in ChatGPT</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wat er verandert voor jou als gebruiker en als je een zaak hebt.</div></a><a href="/chatgpt-apple-berichten/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">ChatGPT in je Apple Berichten</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Je berichten doorzoeken en beantwoorden, plus het privacystuk.</div></a></div><p style="margin:18px 0 0; font-size:15px;"><a href="/gidsen/" style="font-weight:600; color:#ff4d24;">Bekijk alle gidsen →</a></p></section>
+<section data-kruislinks style="max-width:860px; margin:0 auto; padding:40px 32px 72px;"><h2 style="font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-1px; margin:0 0 18px;">Andere gratis gidsen</h2><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;"><a href="/reels-met-claude-code/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">20 Reels op één avond</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Het stappenplan om met Claude Code Reels in batch te maken.</div></a><a href="/gemeente-test/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Wat weet AI over jouw gemeente?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">De simpelste test om te leren zien wanneer AI iets verzint.</div></a><a href="/9-dingen-claude-doet-gratis/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">9 dingen die Claude gratis doet</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Negen taken waar je nu voor betaalt, met kant-en-klare prompts.</div></a><a href="/prompten-claude-5/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Beter prompten in Claude</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Drie dingen die veranderd zijn aan goed prompten, plus de checklist.</div></a><a href="/watermerk-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Het watermerk in Claude</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wat dat onzichtbare watermerk is, en hoe je het weghaalt.</div></a><a href="/ai-in-jouw-sector/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">AI in jouw sector volgens de data</div><div style="font-size:14px; line-height:1.6; color:#57534a;">De gratis dataset die toont welke beroepen AI het meest gebruiken.</div></a><a href="/chatgpt-advertenties/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Advertenties in ChatGPT</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wat er verandert voor jou als gebruiker en als je een zaak hebt.</div></a><a href="/chatgpt-apple-berichten/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">ChatGPT in je Apple Berichten</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Je berichten doorzoeken en beantwoorden, plus het privacystuk.</div></a></div><p style="margin:18px 0 0; font-size:15px;"><a href="/gidsen/" style="font-weight:600; color:#ff4d24;">Bekijk alle gidsen →</a></p></section>
 
 <footer style="border-top:1px solid #e6ddcb;">
   <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
@@ -466,7 +470,7 @@ mijn woorden, niet in verkooptaal.</div>
   <button class="close" onclick="document.getElementById('ctaPopup').classList.remove('show')">×</button>
   <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.5px; color:#ff4d24; margin-bottom:10px;">GRATIS GIDS GELEZEN?</div>
   <div style="font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px; line-height:1.2; margin-bottom:10px;">Ga verder dan losse prompts.</div>
-  <p style="margin:0 0 16px; font-size:13.5px; line-height:1.5; color:#b3ab9e;">In 10 dagen bouw je je volledige Claude-setup, met live begeleiding. Start 15 september, max 25 plekken.</p>
+  <p style="margin:0 0 16px; font-size:13.5px; line-height:1.5; color:#b3ab9e;">In 10 dagen bouw je je volledige Claude-setup, met live begeleiding. Start dinsdag 3 november, max 25 plekken.</p>
   <a href="/challenge/" class="btn-primary" style="display:block; background:#ff4d24; color:#fff; font-weight:600; font-size:14px; padding:13px; border-radius:9px; text-align:center;">Bekijk de challenge →</a>
   <a href="https://hub.asklien.ai" style="display:block; margin-top:10px; font-size:13px; color:#b3ab9e; text-align:center; text-decoration:underline;">Of ontdek eerst gratis de Hub</a>
 </div>
@@ -492,7 +496,8 @@ window.addEventListener('scroll', function onScroll() {
   }
 });
 </script>
-<script src="/js/analytics.js?v=3" defer></script>
+<script src="/js/analytics.js?v=6" defer></script>
 <script src="/js/menu.js?v=3" defer></script>
+<script src="/js/challenge-popup.js?v=2" defer></script>
 </body>
 </html>
