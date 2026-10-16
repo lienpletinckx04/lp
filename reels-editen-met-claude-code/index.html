@@ -128,7 +128,7 @@
   <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Je reels laten editen door Claude Code of Codex<span style="color:#ff4d24;">.</span></h1>
   <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Jij praat tegen je camera. Daarna sleep je het bestand in een map, typt één commando, en een kwartier later staat er een geëdite reel in jouw stijl: stiltes weg, ondertitels woord per woord, kaartjes bovenaan, geëxporteerd in het juiste formaat. Je schrijft geen code. Je laat ze schrijven. Dit is hoe dat werkt, eerlijk, ook over de eerste namiddag die het kost.</p>
 
-  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 14 oktober 2026 · leestijd ± 14 min · setup + 6 stappen + 7 prompts</div>
+  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 14 oktober 2026 · leestijd ± 14 min · setup + 6 stappen + 6 prompts + het stijlbestand</div>
 </header>
 
 <section style="max-width:860px; margin:0 auto; padding:40px 32px 0;">
@@ -165,7 +165,7 @@ npm install -g @anthropic-ai/claude-code
 npm install -g @openai/codex
 
 # Een map voor al je reels
-mkdir -p ~/reels/ruw ~/reels/schermopnames ~/reels/klaar
+mkdir -p ~/reels/{ruw,schermopnames,werk,controle,tools,fonts,klaar}
 cd ~/reels</div>
     <p style="margin-top:18px;">Start dan de agent in die map: typ <strong>claude</strong> of <strong>codex</strong> en log de eerste keer in met je account. Vanaf hier typ je geen commando's meer, enkel gewone zinnen.</p>
     <div class="tip"><span class="t-label">Vast?</span><p>Alles wat hierboven misloopt, los je op door de foutmelding letterlijk aan de agent te geven. "Dit krijg ik als ik brew install ffmpeg typ, wat moet ik doen?" Dat is geen omweg, dat is exact waarvoor het dient.</p></div>
@@ -178,7 +178,7 @@ cd ~/reels</div>
     <p>Maak in je map een bestand <strong>CLAUDE.md</strong> (Claude Code) of <strong>AGENTS.md</strong> (Codex). Zelfde inhoud. Dit is de mijne, veralgemeend. Vul je eigen kleuren, font en handle in, en schrap wat je niet wil.</p>
     <div class="vak goed"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">CLAUDE.md of AGENTS.md · plak in je reels-map</span># Reels editen voor [jouw merk]
 
-Je edit talking-head reels voor Instagram. Lien levert per reel: één doorlopende opname in /ruw, het script als .txt, en schermopnames in /schermopnames. Jij levert een afgewerkte mp4 in /klaar.
+Je edit talking-head reels voor Instagram. Ik lever per reel: één doorlopende opname in de map ruw/, het script als .txt ernaast, en schermopnames in schermopnames/. Jij levert een afgewerkte mp4 in klaar/. Tussenbestanden gaan in werk/, controleframes in controle/, scripts die je schrijft in tools/.
 
 ## Merk
 Kleuren: achtergrond [#hex], tekst [#hex], accent [#hex].
@@ -198,7 +198,7 @@ Hook (0 tot 3 s) met kaartje. Stappen met elk een eigen kaartje. Eindkaart: beel
 1080x1920, 30 fps, H.264, CRF 18, audio AAC 192k.
 
 ## Controle voor je klaar zegt
-Exporteer per stap één frame naar /controle en bekijk ze: kaartje leesbaar, gezicht vrij, accentwoord juist. Bekijk de eerste 3 seconden apart. Meld wat je twijfelachtig vindt in plaats van het stil op te lossen.
+Exporteer per stap één frame naar controle/ en bekijk ze: kaartje leesbaar, gezicht vrij, accentwoord juist. Bekijk de eerste 3 seconden apart. Meld wat je twijfelachtig vindt in plaats van het stil op te lossen.
 
 ## Wat nooit mag
 Zwarte blokken, harde randen, hoofdletters als stijl, meer dan één accentwoord per zin, graphics over het gezicht, een andere kleur of font dan hierboven. Als iets niet lukt in de stijl, vraag het, verander de stijl niet.</div>
@@ -209,11 +209,11 @@ Zwarte blokken, harde randen, hoofdletters als stijl, meer dan één accentwoord
   <div data-reveal class="kaart">
     <div class="stap-kop"><span class="stap-nr">2</span><h2>Transcriptie met een tijdstempel per woord</h2></div>
     <p>Alles wat daarna komt (knippen, ondertitels, kaartjes op het juiste moment) hangt af van één ding: weten welk woord op welke seconde valt. Daarvoor dient Whisper, het spraakmodel van OpenAI dat gratis en lokaal op je computer draait. Je installeert het niet zelf. Je vraagt het.</p>
-    <div class="vak goed"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">Prompt 1 · transcriptie</span>Lees eerst CLAUDE.md. In /ruw staat reel-01.mov en in /ruw/reel-01.txt het script.
+    <div class="vak goed"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">Prompt 1 · transcriptie</span>Lees eerst CLAUDE.md. In ruw/ staat reel-01.mov en in ruw/reel-01.txt het script.
 
 Installeer wat je nodig hebt om de opname lokaal te transcriberen met Whisper, met een tijdstempel per woord. Taal is Nederlands, Vlaams accent. Gebruik het grootste model dat vlot draait op deze computer; geef het script mee als referentie om namen en vaktermen juist te krijgen.
 
-Bewaar het resultaat als /werk/reel-01.woorden.json. Toon mij daarna de eerste twintig woorden met hun tijden, zodat ik kan zien of het klopt.</div>
+Bewaar het resultaat als werk/reel-01.woorden.json. Toon mij daarna de eerste twintig woorden met hun tijden, zodat ik kan zien of het klopt.</div>
     <div class="tip"><span class="t-label">Goed om te weten</span><p>De eerste keer downloadt Whisper een model van enkele honderden megabytes tot een paar gigabyte. Dat duurt even en gebeurt één keer. Vlaams herkent het verrassend goed, maar eigennamen en Engelse toolnamen gaan vaker mis. Daarom geef je altijd je script mee.</p></div>
   </div>
 
@@ -221,11 +221,11 @@ Bewaar het resultaat als /werk/reel-01.woorden.json. Toon mij daarna de eerste t
   <div data-reveal class="kaart">
     <div class="stap-kop"><span class="stap-nr">3</span><h2>Stiltes en versprekingen eruit</h2></div>
     <p>Hier gebeurt de magie van de doorlopende take uit deel 1. Je zei elke moeilijke zin twee keer. De agent vergelijkt het transcript met je script, houdt van elke zin de versie die het dichtst bij het script zit, en gooit de rest weg, samen met elke stilte.</p>
-    <div class="vak goed"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">Prompt 2 · ruwe knip</span>Vergelijk /werk/reel-01.woorden.json met het script in /ruw/reel-01.txt.
+    <div class="vak goed"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">Prompt 2 · ruwe knip</span>Vergelijk werk/reel-01.woorden.json met het script in ruw/reel-01.txt.
 
 Maak een kniplijst: welke stukken van de opname blijven, in volgorde van het script. Regels: van zinnen die twee keer gezegd zijn, hou je de versie die het best bij het script past en het vlotst klinkt. Elke stilte langer dan 0,25 seconde gaat eruit. Laat 3 frames ademruimte aan het begin van elke zin zodat de knip niet hard klinkt.
 
-Bewaar de kniplijst als /werk/reel-01.knip.json, leesbaar voor mij, met per stuk de begin- en eindtijd en de tekst. Render daarna met ffmpeg een ruwe versie zonder lagen naar /werk/reel-01.ruw.mp4. Zeg mij hoe lang de reel nu is.</div>
+Bewaar de kniplijst als werk/reel-01.knip.json, leesbaar voor mij, met per stuk de begin- en eindtijd en de tekst. Render daarna met ffmpeg een ruwe versie zonder lagen naar werk/reel-01.ruw.mp4. Zeg mij hoe lang de reel nu is.</div>
     <p style="margin-top:18px;">Bekijk die ruwe versie. Dit is het enige moment waarop je zelf moet luisteren. Klinkt een knip raar, dan zeg je gewoon: "de knip rond 'installeer' op seconde 14 klinkt hard, neem de andere versie". De agent past de kniplijst aan en rendert opnieuw.</p>
   </div>
 
@@ -237,29 +237,29 @@ Bewaar de kniplijst als /werk/reel-01.knip.json, leesbaar voor mij, met per stuk
       <div><h3>HyperFrames (mijn keuze)</h3><p>Open source van HeyGen, gratis ook commercieel. Je beschrijft je lagen als een webpagina (tekst, kleuren, animaties) en het rendert die beeld voor beeld naar video. Gemaakt om door agents bediend te worden. In Claude Code voeg je de skills toe met <strong>npx skills add heygen-com/hyperframes</strong>. Codex kan het ook gebruiken, maar dan leg je het zelf de documentatie voor.</p></div>
       <div><h3>ffmpeg plus overlays</h3><p>Geen extra tool. De agent tekent elke pill en ondertitel als een afbeelding met afgeronde hoeken en legt die met ffmpeg op het juiste moment over je beeld. Minder elegant, werkt overal, en als HyperFrames morgen verandert, werkt dit nog.</p></div>
     </div>
-    <div class="vak goed" style="margin-top:20px;"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">Prompt 3 · ondertitels</span>Leg ondertitels over /werk/reel-01.ruw.mp4 volgens de regels in CLAUDE.md, op basis van de woordtijden in /werk/reel-01.woorden.json (herrekend naar de kniplijst).
+    <div class="vak goed" style="margin-top:20px;"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">Prompt 3 · ondertitels</span>Leg ondertitels over werk/reel-01.ruw.mp4 volgens de regels in CLAUDE.md, op basis van de woordtijden in werk/reel-01.woorden.json (herrekend naar de kniplijst).
 
 Groepeer in 1 tot 3 woorden per blok, nooit een zin breken na een lidwoord. Kies per zin zelf het accentwoord volgens de regel in CLAUDE.md en toon mij eerst de lijst van gekozen accentwoorden per zin, zodat ik ze kan aanpassen voor je rendert.
 
-Gebruik [HyperFrames / ffmpeg met PNG-overlays]. Render naar /werk/reel-01.subs.mp4 en exporteer één frame op seconde 5 naar /controle zodat ik positie en grootte kan nakijken.</div>
-    <div class="tip"><span class="t-label">Dit gaat de eerste keer mis</span><p>Lettertypes. De agent vindt je font niet en valt stil terug op iets anders. Zeg dan: "download [font] als TTF-bestand in /fonts en gebruik dat pad expliciet". En het accentwoord: AI kiest graag het werkwoord, terwijl het bijna altijd het zelfstandig naamwoord is. Daarom laat je de lijst eerst tonen.</p></div>
+Gebruik [HyperFrames / ffmpeg met PNG-overlays]. Render naar werk/reel-01.subs.mp4 en exporteer één frame op seconde 5 naar controle/ zodat ik positie en grootte kan nakijken.</div>
+    <div class="tip"><span class="t-label">Dit gaat de eerste keer mis</span><p>Lettertypes. De agent vindt je font niet en valt stil terug op iets anders. Zeg dan: "download [font] als TTF-bestand in fonts/ en gebruik dat pad expliciet". En het accentwoord: AI kiest graag het werkwoord, terwijl het bijna altijd het zelfstandig naamwoord is. Daarom laat je de lijst eerst tonen.</p></div>
   </div>
 
   <!-- STAP 5 -->
   <div data-reveal class="kaart">
     <div class="stap-kop"><span class="stap-nr">5</span><h2>Kaartjes, schermopnames, eindkaart en export</h2></div>
     <p>Dezelfde logica, laag na laag. Je script bepaalt waar de stappen beginnen, de woordtijden bepalen de seconde.</p>
-    <div class="vak goed"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">Prompt 4 · kaartjes en inserts</span>Werk verder op /werk/reel-01.subs.mp4.
+    <div class="vak goed"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">Prompt 4 · kaartjes en inserts</span>Werk verder op werk/reel-01.subs.mp4.
 
 1. Stapkaartjes: haal uit het script de stappen en hun titel (maximaal vijf woorden). Zet per stap een pill bovenaan vanaf het eerste woord van die stap tot het eerste woord van de volgende, volgens CLAUDE.md.
-2. Schermopnames: in /schermopnames staan bestanden met de naam stap-1.mov, stap-2.mov, enzovoort. Zet elk full screen op het moment dat de bijbehorende stap benoemd wordt, 1,5 tot 3 seconden, ondertitels blijven erover.
+2. Schermopnames: in schermopnames/ staan bestanden met de naam stap-1.mov, stap-2.mov, enzovoort. Zet elk full screen op het moment dat de bijbehorende stap benoemd wordt, 1,5 tot 3 seconden, ondertitels blijven erover.
 3. Punch-ins: om de andere knip 108 tot 115 procent, harde punch-in op de hook en op de laatste zin.
 4. Eindkaart: laatste 3 seconden beeld wazig en donkerder, kaart met alle stappen genummerd, daarna de handle.
 5. Handle rechtsboven de hele video.
 
-Exporteer per stap één frame naar /controle en toon ze mij voor de eindexport.</div>
+Exporteer per stap één frame naar controle/ en toon ze mij voor de eindexport.</div>
     <p style="margin-top:18px;">Bekijk de frames. Dit is je tweede en laatste controlemoment. Daarna:</p>
-    <div class="vak goed"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">Prompt 5 · export</span>Goed zo. Exporteer naar /klaar/reel-01.mp4 volgens de exportregels in CLAUDE.md. Controleer daarna zelf met ffprobe of resolutie, framerate en codec kloppen, en bekijk de eerste 3 seconden apart: staat de hook meteen in beeld, is er geen zwart frame aan het begin? Rapporteer kort.</div>
+    <div class="vak goed"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">Prompt 5 · export</span>Goed zo. Exporteer naar klaar/reel-01.mp4 volgens de exportregels in CLAUDE.md. Controleer daarna zelf met ffprobe of resolutie, framerate en codec kloppen, en bekijk de eerste 3 seconden apart: staat de hook meteen in beeld, is er geen zwart frame aan het begin? Rapporteer kort.</div>
     <div class="tip"><span class="t-label">Wat ik nog zelf doe</span><p>Meme- en gif-inserts. Die kiezen is smaak, en de rechten op fragmenten zijn een mijnenveld. Ik plak ze er in CapCut of rechtstreeks in Instagram bij, op de drie reactiemomenten die ik tijdens het schrijven al in het script zette. Twee minuten werk, en het enige deel van de edit dat ik niet wil uitbesteden.</p></div>
   </div>
 
@@ -272,8 +272,8 @@ Exporteer per stap één frame naar /controle en toon ze mij voor de eindexport.
 Voor Claude Code: maak een slash-commando /reel in .claude/commands/reel.md dat de hele flow doorloopt en enkel stopt op de twee controlemomenten (na de ruwe knip, en bij de frames voor export).
 Voor Codex: zet dezelfde flow als genummerde werkwijze in AGENTS.md onder een kop "Werkwijze: edit reel" en zorg dat "edit reel-02" die flow start.
 
-Neem de scripts die je schreef op in /tools zodat ze niet opnieuw geschreven worden. Toon mij het resultaat.</div>
-    <p style="margin-top:18px;">Vanaf nu is een reel: opname in /ruw, script ernaast, schermopnames in hun map, en dan <strong>/reel reel-02</strong> of <strong>edit reel-02</strong>. Twee keer kijken, één keer "ja". Dat is het.</p>
+Neem de scripts die je schreef op in tools/ zodat ze niet opnieuw geschreven worden. Toon mij het resultaat.</div>
+    <p style="margin-top:18px;">Vanaf nu is een reel: opname in ruw/, script ernaast, schermopnames in hun map, en dan <strong>/reel reel-02</strong> of <strong>edit reel-02</strong>. Twee keer kijken, één keer "ja". Dat is het.</p>
     <div class="tip"><span class="t-label">De echte winst</span><p>Niet de tijd, al is die groot. De echte winst is dat elke reel er hetzelfde uitziet. Consistentie is wat mensen onthouden, en consistentie is precies waar mensen die zelf editen op afhaken na reel zes.</p></div>
   </div>
 
