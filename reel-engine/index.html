@@ -527,20 +527,30 @@
         <div class="aftel"><div><b data-d>0</b><small>DAGEN</small></div><div><b data-h>0</b><small>UUR</small></div><div><b data-m>0</b><small>MIN</small></div><div><b data-s>0</b><small>SEC</small></div></div>
       </div>
     </div>
-    <!-- Formulier: nu via formsubmit.co (zelfde als de bevraging). Wil je het in Brevo? Vervang action door de URL van je Brevo-formulier en de namen door FIRSTNAME en EMAIL. -->
-    <form action="https://formsubmit.co/hello@asklien.ai" method="POST" style="display:flex; flex-direction:column; gap:12px;">
-      <input type="hidden" name="_subject" value="Wachtlijst Reel-engine: nieuwe inschrijving">
-      <input type="hidden" name="_next" value="https://asklien.ai/bedankt-reel-engine/">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+    <!-- Formulier: Brevo-inschrijvingsformulier "Reel-engine wachtlijst". -->
+    <form id="wachtlijst-form" action="https://bae29b1d.sibforms.com/serve/MUIFANRzwUxRurgxOzwV9DEhlnXCtg2EjJuJd97mDIcTesh81TgzpImkmNycYiu-zOsFZF4CVBIrRY8mWWqE_MpOMnUGaRWqhxw0u4-vxEMtloZBZiuWhWtH_zew9w4IWI3ULquWeNdWitUoXpGse5OSKoXTSnryoplHPVjPqIvmjddB-7fMR6pEyagyAOhGsl3F-1y-VMGpxCDy" method="POST" style="display:flex; flex-direction:column; gap:12px;">
       <label for="wl-voornaam" style="font-size:13px; font-weight:600; color:#b3ab9e;">Je voornaam</label>
-      <input id="wl-voornaam" class="wachtlijst-veld" type="text" name="Voornaam" placeholder="Lien" required autocomplete="given-name">
+      <input id="wl-voornaam" class="wachtlijst-veld" type="text" name="FIRSTNAME" placeholder="Lien" required autocomplete="given-name">
       <label for="wl-email" style="font-size:13px; font-weight:600; color:#b3ab9e;">Je e-mailadres</label>
-      <input id="wl-email" class="wachtlijst-veld" type="email" name="E-mail" placeholder="jij@voorbeeld.be" required autocomplete="email">
+      <input id="wl-email" class="wachtlijst-veld" type="email" name="EMAIL" placeholder="jij@voorbeeld.be" required autocomplete="email">
+      <input type="text" name="email_address_check" value="" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="locale" value="nl">
       <button type="submit" class="btn-dark-to-white" style="margin-top:6px; background:#ff4d24; color:#fff; font-weight:600; font-size:17px; padding:18px 32px; border-radius:10px; border:none; cursor:pointer; font-family:inherit;">Zet me op de wachtlijst</button>
       <p style="margin:4px 0 0; font-size:13px; color:#8a8378; line-height:1.5;">Alleen je voornaam en e-mailadres. Geen tracking, geen cookies. Zie <a href="/privacy/" style="color:#b3ab9e; text-decoration:underline;">privacy</a>.</p>
     </form>
+    <script>
+    /* Inschrijving gaat naar Brevo (lijst "Reel-engine wachtlijst"); daarna naar onze eigen bedanktpagina. */
+    (function () {
+      var f = document.getElementById('wachtlijst-form'); if (!f) return;
+      f.addEventListener('submit', function (ev) {
+        if (!window.fetch || !window.FormData) return;
+        ev.preventDefault();
+        var knop = f.querySelector('button[type=submit]'); if (knop) { knop.disabled = true; knop.textContent = 'Even geduld…'; }
+        var klaar = function () { window.location.href = '/bedankt-reel-engine/'; };
+        fetch(f.action + '?isAjax=1', { method: 'POST', body: new FormData(f), mode: 'no-cors', credentials: 'omit' }).then(klaar, function () { f.submit(); });
+      });
+    })();
+    </script>
   </div>
 </section>
 
