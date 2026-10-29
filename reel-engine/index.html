@@ -56,6 +56,11 @@
   .chat-engine { align-self:flex-start; background:#2a272c; color:#f6f1e7; border-bottom-left-radius:4px; }
   .chat-wie { display:block; font-size:11px; letter-spacing:1.5px; font-weight:700; opacity:.7; margin-bottom:4px; }
 
+  .studio-rij { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px; }
+  .studio-rij figure { margin:0; border-radius:16px; overflow:hidden; background:#fff; border:1px solid rgba(28,26,31,.08); box-shadow:0 12px 30px rgba(28,26,31,.12); }
+  .studio-rij img { display:block; width:100%; height:auto; }
+  .studio-rij figcaption { padding:12px 14px; font-size:13px; color:#57534a; line-height:1.45; }
+  @media (max-width:760px) { .studio-rij { grid-template-columns:1fr; } }
   /* Galerij met covers */
   .galerij { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
   .cover { position:relative; aspect-ratio:9/16; border-radius:18px; overflow:hidden; padding:14px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 14px 34px rgba(28,26,31,.14); }
@@ -182,40 +187,36 @@
 <!-- GESPREK + VOOR/NA -->
 <section style="max-width:1240px; margin:0 auto; padding:96px 32px;">
   <h2 data-reveal style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:48px; line-height:1.02; letter-spacing:-2.5px;">Zo gaat dat<span style="color:#ff4d24;">.</span></h2>
-  <p data-reveal style="margin:0 0 40px; font-size:17px; color:#8a8378; max-width:600px;">Geen tijdlijn, geen knoppen. Je typt wat je wil, zoals je het tegen een monteur zou zeggen. Dit is letterlijk hoe zo'n gesprek eruitziet.</p>
+  <p data-reveal style="margin:0 0 40px; font-size:17px; color:#8a8378; max-width:600px;">Je typt wat je wil, zoals je het tegen een monteur zou zeggen. Dit is het gesprek achter de reel rechts, woord voor woord.</p>
   <div data-reveal style="display:grid; grid-template-columns:1.2fr 1fr; gap:24px; align-items:stretch;">
     <div style="background:#1c1a1f; border-radius:24px; padding:32px 36px; color:#f6f1e7; display:flex; flex-direction:column; gap:18px; min-height:520px;">
       <div style="display:flex; align-items:center; gap:8px; font-size:12px; color:#8a8378; font-weight:600; letter-spacing:1.5px;"><span style="width:10px; height:10px; border-radius:50%; background:#ff4d24;"></span><span style="width:10px; height:10px; border-radius:50%; background:#3a363c;"></span><span style="width:10px; height:10px; border-radius:50%; background:#3a363c;"></span><span style="margin-left:10px;">CLAUDE CODE · MAP REELS</span></div>
       <div class="chat" data-chat>
-        <div class="chat-lien" data-stap="0"><span class="chat-wie">Lien</span>Maak van opnames/offerte.mp4 een reel in mijn stijl. Drie hooks.</div>
-        <div class="chat-engine" data-stap="1"><span class="chat-wie">Engine</span>Transcriptie klaar: 118 woorden, 0:41.<br>Ik knip 14 stiltes en 3 keer "euh" weg. Nieuwe duur: <strong>0:17</strong>.</div>
-        <div class="chat-engine" data-stap="2"><span class="chat-wie">Engine</span>Ondertitels woord per woord, accentwoord in <span style="color:#ff4d24; font-weight:700;">#ff4d24</span>. Punch-in op "inspreken", "vier minuten" en "klaar". Stap-pills bij 0:02 en 0:09. Eindkaart: comment OFFERTE.</div>
-        <div class="chat-engine" data-stap="3"><span class="chat-wie">Engine</span>Drie hooks:<br>A · Ik schrijf geen offertes meer. Ik spreek ze in.<br>B · 4 minuten van klantgesprek naar offerte.<br>C · De 8 dingen die ik inspreek na elk gesprek.</div>
-        <div class="chat-lien" data-stap="4"><span class="chat-wie">Lien</span>Pill wat hoger en hook B iets korter.</div>
-        <div class="chat-engine" data-stap="5"><span class="chat-wie">Engine</span>Gedaan. Pill 40 px hoger, hook B: "4 minuten. Van gesprek naar offerte." Gerenderd naar <strong>export/offerte-A.mp4</strong>, -B en -C. ✦</div>
+        <div class="chat-lien" data-stap="0"><span class="chat-wie">Lien</span>Maak van opnames/demo.mp4 een reel in mijn stijl. Drie hooks.</div>
+        <div class="chat-engine" data-stap="1"><span class="chat-wie">Engine</span>Transcriptie klaar: 56 woorden, 0:20. Je zei het drie keer, ik hou de eerste take. Whisper schreef "klat", ik maak er Claude van. Nieuwe duur: <strong>0:07</strong>.</div>
+        <div class="chat-engine" data-stap="2"><span class="chat-wie">Engine</span>Ondertitels woord per woord, accent op "Claude" en "zelf" in <span style="color:#ff4d24; font-weight:700;">#ff4d24</span>. Punch-in op die twee woorden. Pills: 1 Eén keer meekijken, 2 Nu doet hij het zelf. Eindkaart: comment OFFERTE.</div>
+        <div class="chat-engine" data-stap="3"><span class="chat-wie">Engine</span>Drie hooks:<br>A · Ik liet Claude één keer meekijken. Nu maakt hij mijn offertes.<br>B · Mijn offertes maakt Claude. Exact zoals ik het doe.<br>C · Eén keer tonen. Daarna doet hij het zelf.</div>
+        <div class="chat-lien" data-stap="4"><span class="chat-wie">Lien</span>Hook A als standaard. Render maar.</div>
+        <div class="chat-engine" data-stap="5"><span class="chat-wie">Engine</span>Gedaan: <strong>export/demo.mp4</strong> (0:11 met eindkaart) en de cover. Wil je B en C ook, als trial reels? ✦</div>
       </div>
     </div>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start;">
       <div>
-        <div style="font-size:12px; font-weight:700; letter-spacing:1.5px; color:#8a8378; margin-bottom:10px;">RUWE OPNAME · 0:41</div>
-        <div class="tel tel-klein tel-ruw">
-          <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="/media/les-lien.mp4" type="video/mp4"></video>
-          <div class="ruw-strook"><span>euh</span><span>ja dus</span><span>stilte 1,4 s</span><span>euh</span><span>opnieuw…</span></div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:1.5px; color:#8a8378; margin-bottom:10px;">RUWE OPNAME · 0:20</div>
+        <div class="tel tel-klein">
+          <video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/demo-ruw.jpg" aria-label="Ruwe opname: drie keer dezelfde zin"><source src="/media/reel-engine/demo-ruw.mp4" type="video/mp4"></video>
+          <div class="ruw-strook"><span>take 2</span><span>take 3</span><span>stilte 1,3 s</span></div>
           <div class="tel-ui"><span>♡</span><span>◯</span><span>➤</span></div>
         </div>
+        <p style="margin:10px 0 0; font-size:13px; color:#8a8378; line-height:1.5;">Dezelfde zin drie keer ingesproken, zoals dat gaat.</p>
       </div>
       <div>
-        <div style="font-size:12px; font-weight:700; letter-spacing:1.5px; color:#ff4d24; margin-bottom:10px;">NA DE ENGINE · 0:17</div>
-        <div class="tel tel-klein" data-reel data-hook="4 minuten. Van gesprek naar offerte." data-woord="OFFERTE" data-pill="STAP 2" data-script="Ik|spreek|acht|dingen|in|en|de|offerte|staat|klaar." data-accent="2,7,9">
-          <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="/media/les-lien.mp4" type="video/mp4"></video>
-          <div class="tel-schaduw"></div>
-          <div class="tel-hook"></div>
-          <div class="tel-pill"></div>
-          <div class="tel-captions"></div>
-          <div class="tel-balk"><i></i></div>
-          <div class="tel-eind"><div class="tel-eind-kaart"><span>comment</span><strong></strong></div></div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:1.5px; color:#ff4d24; margin-bottom:10px;">NA DE ENGINE · 0:11</div>
+        <div class="tel tel-klein">
+          <video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/demo-na.jpg" aria-label="Dezelfde opname na de engine: hook, ondertitels, pills en eindkaart"><source src="/media/reel-engine/demo-na.mp4" type="video/mp4"></video>
           <div class="tel-ui"><span>♡</span><span>◯</span><span>➤</span></div>
         </div>
+        <p style="margin:10px 0 0; font-size:13px; color:#8a8378; line-height:1.5;">Eén take, hook, ondertitels, twee pills, eindkaart. Niets met de hand.</p>
       </div>
     </div>
   </div>
@@ -246,11 +247,28 @@
   </div>
 </section>
 
+<!-- DE STUDIO -->
+<section id="studio" style="max-width:1240px; margin:0 auto; padding:96px 32px 0;">
+  <div data-reveal style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:36px;">
+    <h2 style="margin:0; font-family:'Archivo'; font-weight:900; font-size:48px; letter-spacing:-2.5px;">Zo ziet hij eruit<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0; font-size:16px; color:#8a8378; max-width:560px;">Liever klikken dan typen? De studio opent in je browser, op je eigen laptop, naast Claude Code. Acht stappen, van opname tot render. Alles wat je daar aanklikt, kan je ook gewoon vragen.</p>
+  </div>
+  <figure data-reveal style="margin:0; border-radius:20px; overflow:hidden; box-shadow:0 24px 60px rgba(28,26,31,.18); border:1px solid rgba(28,26,31,.08); background:#fff;">
+    <img src="/media/reel-engine/studio-beeld.jpg" alt="De studio, stap Beeld: per zin kies je wat er in beeld komt, rechts speelt de reel mee" width="1600" height="1000" loading="lazy" style="display:block; width:100%; height:auto;">
+  </figure>
+  <div class="studio-rij" data-reveal>
+    <figure><img src="/media/reel-engine/studio-knippen.jpg" alt="Stap Knippen: stiltes zijn al weg, klik op woorden die je kwijt wil" width="1600" height="1000" loading="lazy"><figcaption><strong>Knippen.</strong> Stiltes zijn al weg. Klik op een woord dat weg mag.</figcaption></figure>
+    <figure><img src="/media/reel-engine/studio-tijdlijn.jpg" alt="Stap Tijdlijn: splitsen, inkorten en pills verslepen zoals in een videobewerker" width="1600" height="1000" loading="lazy"><figcaption><strong>Tijdlijn.</strong> Zelf splitsen, inkorten en verslepen, als je dat wil.</figcaption></figure>
+    <figure><img src="/media/reel-engine/studio-afwerken.jpg" alt="Stap Afwerken: drie hooks, comment-woord, caption en de renderknop" width="1600" height="1000" loading="lazy"><figcaption><strong>Afwerken.</strong> Drie hooks, één comment-woord, caption, renderen.</figcaption></figure>
+  </div>
+  <p data-reveal style="margin:16px 0 0; font-size:13px; color:#8a8378;">Echte schermafbeeldingen van de studio, met de reel hierboven erin geladen.</p>
+</section>
+
 <!-- VOORBEELDEN -->
 <section id="voorbeelden" style="max-width:1240px; margin:0 auto; padding:96px 32px 0;">
   <div data-reveal style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:40px;">
     <h2 style="margin:0; font-family:'Archivo'; font-weight:900; font-size:56px; letter-spacing:-3px;">Uit mijn eigen batch<span style="color:#ff4d24;">.</span></h2>
-    <p style="margin:0; font-size:16px; color:#8a8378; max-width:520px;">Allemaal gemaakt met Claude, in mijn stijl en in die van een klant. Talking heads, b-roll, een pand, een animatie: één motor, andere stijlpakketten.</p>
+    <p style="margin:0; font-size:16px; color:#8a8378; max-width:520px;">Allemaal gemaakt met Claude Code: in mijn stijl en in die van een klant. Talking heads, b-roll, een pand, een animatie.</p>
   </div>
   <div class="galerij" data-reveal>
     <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/claude-nieuw.jpg" aria-label="Wat is er nieuw in Claude"><source src="/media/reel-engine/claude-nieuw.mp4" type="video/mp4"></video><div class="cover-top"><span>ASKLIEN · TALKING HEAD</span></div></div>
