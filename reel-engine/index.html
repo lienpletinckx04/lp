@@ -57,23 +57,23 @@
   .chat-wie { display:block; font-size:11px; letter-spacing:1.5px; font-weight:700; opacity:.7; margin-bottom:4px; }
 
   /* Galerij met covers */
-  .galerij { display:grid; grid-template-columns:repeat(6,1fr); gap:14px; }
+  .galerij { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
   .cover { position:relative; aspect-ratio:9/16; border-radius:18px; overflow:hidden; padding:14px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 14px 34px rgba(28,26,31,.14); }
   .cover video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
   .cover > * { position:relative; z-index:1; }
-  .cover-video::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,26,31,.6), rgba(28,26,31,.1) 40%, rgba(28,26,31,.8)); z-index:0; }
+  .cover-video::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(28,26,31,.7), rgba(28,26,31,0) 30%); z-index:0; }
   .cover-donker { background:#1c1a1f; color:#f6f1e7; }
   .cover-oranje { background:#ff4d24; color:#fff; }
   .cover-licht { background:#fff; color:#1c1a1f; }
   .cover-video { color:#fff; }
-  .cover-top { display:flex; justify-content:space-between; font-size:10px; font-weight:700; letter-spacing:1.2px; opacity:.8; }
+  .cover-top { margin-top:auto; display:flex; justify-content:space-between; font-size:10px; font-weight:700; letter-spacing:1.2px; opacity:.95; text-shadow:0 1px 6px rgba(0,0,0,.5); }
   .cover-hook { font-family:'Archivo'; font-weight:900; font-size:clamp(14px,1.2vw,17px); line-height:1.15; letter-spacing:-.4px; }
   .cover-oranje .cover-hook { color:#1c1a1f; }
   .cover-woord { font-size:11px; opacity:.85; }
   .cover-woord strong { font-family:'Archivo'; font-weight:800; }
   .cover-oranje .cover-woord strong { color:#1c1a1f; }
   .cover-licht .cover-woord strong, .cover-donker .cover-woord strong, .cover-video .cover-woord strong { color:#ff4d24; }
-  @media (max-width:960px) { .galerij { grid-template-columns:repeat(3,1fr); } .cover-hook { font-size:14px; } }
+  @media (max-width:960px) { .galerij { grid-template-columns:repeat(2,1fr); } .cover-hook { font-size:14px; } }
   @media (max-width:560px) { .galerij { grid-template-columns:repeat(2,1fr); } }
 
   /* Hergebruik: één reel wordt slides en stories */
@@ -256,17 +256,19 @@
 <section id="voorbeelden" style="max-width:1240px; margin:0 auto; padding:96px 32px 0;">
   <div data-reveal style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:40px;">
     <h2 style="margin:0; font-family:'Archivo'; font-weight:900; font-size:56px; letter-spacing:-3px;">Uit mijn eigen batch<span style="color:#ff4d24;">.</span></h2>
-    <p style="margin:0; font-size:16px; color:#8a8378; max-width:520px;">Tien reels, elk met drie hooks, uit één opnamesessie. Dezelfde beelden, een andere eerste zin. Instagram test ze bij mensen die me nog niet volgen.</p>
+    <p style="margin:0; font-size:16px; color:#8a8378; max-width:520px;">Allemaal gemaakt met Claude, in mijn stijl en in die van een klant. Talking heads, b-roll, een pand, een animatie: één motor, andere stijlpakketten.</p>
   </div>
   <div class="galerij" data-reveal>
-    <div class="cover cover-donker"><div class="cover-top"><span>TRIAL REEL · A</span><span>0:16</span></div><div class="cover-hook">Ik plak klantmails in AI. Elke dag. Zonder dat één klant herkenbaar is.</div><div class="cover-woord">comment <strong>VEILIG</strong></div></div>
-    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="/media/les-lien.mp4" type="video/mp4"></video><div class="cover-top"><span>TRIAL REEL · B</span><span>0:14</span></div><div class="cover-hook cover-hook-wit">Je mag bijna alles in AI plakken. Als je eerst dit doet.</div><div class="cover-woord">comment <strong>VEILIG</strong></div></div>
-    <div class="cover cover-oranje"><div class="cover-top"><span>TRIAL REEL · A</span><span>0:17</span></div><div class="cover-hook">Ik schrijf geen offertes meer. Ik spreek ze in.</div><div class="cover-woord">comment <strong>OFFERTE</strong></div></div>
-    <div class="cover cover-licht"><div class="cover-top"><span>TRIAL REEL · B</span><span>0:19</span></div><div class="cover-hook">De mail die je al 3 dagen uitstelt is in 2 minuten weg. Zo:</div><div class="cover-woord">comment <strong>MAIL</strong></div></div>
-    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="/media/les-lien.mp4" type="video/mp4"></video><div class="cover-top"><span>TRIAL REEL · C</span><span>0:15</span></div><div class="cover-hook cover-hook-wit">Ik typ bijna geen prompts meer. Ik antwoord op vragen.</div><div class="cover-woord">comment <strong>VRAGEN</strong></div></div>
-    <div class="cover cover-donker"><div class="cover-top"><span>TRIAL REEL · A</span><span>0:18</span></div><div class="cover-hook">Al mijn social media voor de week: één uur. Dit is de verdeling.</div><div class="cover-woord">comment <strong>SOCIAL</strong></div></div>
+    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/claude-nieuw.jpg" aria-label="Wat is er nieuw in Claude"><source src="/media/reel-engine/claude-nieuw.mp4" type="video/mp4"></video><div class="cover-top"><span>ASKLIEN · TALKING HEAD</span></div></div>
+    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/vergelijking.jpg" aria-label="ChatGPT of Claude: welke edit wint?"><source src="/media/reel-engine/vergelijking.mp4" type="video/mp4"></video><div class="cover-top"><span>ASKLIEN · A/B-TEST</span></div></div>
+    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/github.jpg" aria-label="Wat is GitHub"><source src="/media/reel-engine/github.mp4" type="video/mp4"></video><div class="cover-top"><span>ASKLIEN · UITLEG</span></div></div>
+    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/instinct.jpg" aria-label="Tafel gereserveerd via WhatsApp"><source src="/media/reel-engine/instinct.mp4" type="video/mp4"></video><div class="cover-top"><span>ASKLIEN · VERHAAL</span></div></div>
+    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/uwhuis-dubai-vastgoed.jpg" aria-label="Vastgoed in Dubai: wat leerden we?"><source src="/media/reel-engine/uwhuis-dubai-vastgoed.mp4" type="video/mp4"></video><div class="cover-top"><span>UW HUIS · TALKING HEAD</span></div></div>
+    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/uwhuis-dubai-team.jpg" aria-label="Teambuilding met het Uw-Huis-team"><source src="/media/reel-engine/uwhuis-dubai-team.mp4" type="video/mp4"></video><div class="cover-top"><span>UW HUIS · B-ROLL</span></div></div>
+    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/uwhuis-elstlaan.jpg" aria-label="Hof ter Elstlaan, Temse"><source src="/media/reel-engine/uwhuis-elstlaan.mp4" type="video/mp4"></video><div class="cover-top"><span>UW HUIS · PAND</span></div></div>
+    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/uwhuis-satelliet.jpg" aria-label="Vanuit de lucht naar de voordeur"><source src="/media/reel-engine/uwhuis-satelliet.mp4" type="video/mp4"></video><div class="cover-top"><span>UW HUIS · ANIMATIE</span></div></div>
   </div>
-  <p data-reveal style="margin:16px 0 0; font-size:13px; color:#8a8378;">Covers nagebootst op basis van mijn echte scripts. Zodra de engine af is, komen hier de gerenderde reels.</p>
+  <p data-reveal style="margin:16px 0 0; font-size:13px; color:#8a8378;">Echte reels, ingekort tot de eerste seconden en zonder geluid. De volledige versies staan op Instagram.</p>
 </section>
 
 <!-- WAT HET DOET -->
