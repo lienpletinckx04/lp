@@ -6,6 +6,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#ff4d24">
 
+<meta name="color-scheme" content="light only">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>De Reel-engine: reels maken in Claude Code | AskLien.ai</title>
 <meta name="description" content="Film het op je gsm, zeg in gewone taal wat je wil, en Claude Code knipt, ondertitelt en rendert je reel in jouw stijl. Lokaal op je laptop, in het Nederlands. Zet je op de wachtlijst.">
@@ -65,6 +66,12 @@
   .tijdlijn-blok { display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:center; margin-top:48px; }
   @media (max-width:860px) { .tijdlijn-blok { grid-template-columns:1fr; gap:24px; } }
   @media (max-width:560px) { .galerij .cover.cover-extra { display:none; } }
+  .cta-tussen { display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-top:28px; }
+  .cta-tussen a { display:inline-block; background:#ff4d24; color:#fff; font-weight:600; font-size:15px; padding:14px 22px; border-radius:10px; text-decoration:none; }
+  .cta-tussen a:hover { background:#1c1a1f; }
+  .cta-tussen span { font-size:13px; color:#8a8378; }
+  .cta-tussen--donker span { color:#b3ab9e; }
+  .cta-tussen--donker a:hover { background:#f6f1e7; color:#1c1a1f; }
   /* Galerij met covers */
   .galerij { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
   .cover { position:relative; aspect-ratio:9/16; border-radius:18px; overflow:hidden; padding:14px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 14px 34px rgba(28,26,31,.14); }
@@ -200,6 +207,7 @@
         <div style="display:flex; gap:14px;"><span style="color:#ff4d24; font-weight:800;">✦</span><span>Je wil wel vaker posten, maar niet ten koste van je avonden.</span></div>
       </div>
       <p style="margin:28px 0 0; font-size:16px; line-height:1.6; color:#f6f1e7; max-width:520px;">Dat ligt niet aan je discipline. Monteren is gewoon traag werk. Dus laat je het doen door iets dat niet moe wordt en jouw stijl onthoudt.</p>
+      <div class="cta-tussen cta-tussen--donker" data-reveal><a href="#wachtlijst">Zet me op de wachtlijst →</a><span>€97 voor de lijst · opent 10 november</span></div>
     </div>
     <div data-reveal style="position:relative;">
       <video autoplay muted loop playsinline preload="metadata" style="width:100%; height:auto; border-radius:20px; display:block;" aria-label="Lien aan het werk"><source src="/media/les-lien.mp4" type="video/mp4"></video>
@@ -217,7 +225,7 @@
 <!-- GESPREK + VOOR/NA -->
 <section id="hoe" style="max-width:1240px; margin:0 auto; padding:96px 32px;">
   <h2 data-reveal style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:48px; line-height:1.02; letter-spacing:-2.5px;">Zo gaat dat<span style="color:#ff4d24;">.</span></h2>
-  <p data-reveal style="margin:0 0 40px; font-size:17px; color:#8a8378; max-width:600px;">Je typt wat je wil, zoals je het tegen een monteur zou zeggen. Dit is het gesprek achter de reel rechts, woord voor woord.</p>
+  <p data-reveal style="margin:0 0 40px; font-size:17px; color:#8a8378; max-width:600px;">Je typt wat je wil, zoals je het tegen een monteur zou zeggen. Dit is het gesprek achter de demo-reel, woord voor woord.</p>
   <div data-reveal style="display:grid; grid-template-columns:1.2fr 1fr; gap:24px; align-items:stretch;">
     <div style="background:#1c1a1f; border-radius:24px; padding:32px 36px; color:#f6f1e7; display:flex; flex-direction:column; gap:18px; min-height:520px;">
       <div style="display:flex; align-items:center; gap:8px; font-size:12px; color:#8a8378; font-weight:600; letter-spacing:1.5px;"><span style="width:10px; height:10px; border-radius:50%; background:#ff4d24;"></span><span style="width:10px; height:10px; border-radius:50%; background:#3a363c;"></span><span style="width:10px; height:10px; border-radius:50%; background:#3a363c;"></span><span style="margin-left:10px;">CLAUDE CODE · MAP REELS</span></div>
@@ -247,6 +255,7 @@
           <div class="tel-ui"><span>♡</span><span>◯</span><span>➤</span></div>
         </div>
         <p style="margin:10px 0 0; font-size:13px; color:#8a8378; line-height:1.5;">Eén take, hook, ondertitels, twee pills, eindkaart. Niets met de hand.</p>
+        <div class="cta-tussen" data-reveal><a href="#wachtlijst">Zet me op de wachtlijst →</a><span>€97 voor de lijst · opent 10 november</span></div>
       </div>
     </div>
   </div>
@@ -299,6 +308,7 @@
     <div class="cover cover-video cover-extra"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/uwhuis-satelliet.jpg" aria-label="Vanuit de lucht naar de voordeur"><source src="/media/reel-engine/uwhuis-satelliet.mp4" type="video/mp4"></video><div class="cover-top"><span>UW HUIS · ANIMATIE</span></div></div>
   </div>
   <p data-reveal style="margin:16px 0 0; font-size:13px; color:#8a8378;">Echte reels, ingekort tot de eerste seconden en zonder geluid.</p>
+  <div class="cta-tussen" data-reveal><a href="#wachtlijst">Zet me op de wachtlijst →</a><span>€97 voor de lijst · opent 10 november</span></div>
 </section>
 
 <!-- FORMATEN -->
@@ -368,6 +378,7 @@
         <div style="font-family:'Archivo'; font-weight:800; font-size:17px; margin-bottom:6px;">De engine vergeet geen stap</div>
         <p style="margin:0; font-size:15px; line-height:1.6; color:#b3ab9e;">Hook, accentwoord, pills, comment-woord, cover, caption: hij loopt ze elke keer af, in jouw stijl. Zo blijft elke reel herkenbaar van jou, en niet van het sjabloon.</p>
       </div>
+      <div class="cta-tussen" data-reveal><a href="#wachtlijst">Zet me op de wachtlijst →</a><span>€97 voor de lijst · opent 10 november</span></div>
     </div>
   </div>
 </section>
