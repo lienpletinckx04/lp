@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>De Reel-engine: reels maken in Claude Code | AskLien.ai</title>
+<meta name="description" content="Film het op je gsm, zeg in gewone taal wat je wil, en Claude Code knipt, ondertitelt en rendert je reel in jouw stijl. Lokaal op je laptop, in het Nederlands. Zet je op de wachtlijst.">
+<link rel="canonical" href="https://asklien.ai/reel-engine/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="De Reel-engine: reels maken in Claude Code | AskLien.ai">
+<meta property="og:description" content="Film het. Zeg wat je wil. Klaar. Een reel-editor die in Claude Code draait, in jouw stijl en in het Nederlands. Wachtlijst open.">
+<meta property="og:url" content="https://asklien.ai/reel-engine/">
+<meta property="og:image" content="https://asklien.ai/media/foto/begeleider.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=3">
+<style>
+  /* Telefoonkaders met nagebootste reels */
+  .tel-wrap { max-width:340px; margin:0 auto; }
+  .tel { position:relative; aspect-ratio:9/16; width:100%; border-radius:30px; background:#1c1a1f; overflow:hidden; box-shadow:0 30px 70px rgba(28,26,31,.28), 0 0 0 6px #1c1a1f, 0 0 0 7px #3a363c; }
+  .tel video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .tel-schaduw { position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,26,31,.55) 0%, rgba(28,26,31,0) 30%, rgba(28,26,31,0) 55%, rgba(28,26,31,.75) 100%); }
+  .tel-hook { position:absolute; left:8%; right:8%; top:11%; background:#f6f1e7; color:#1c1a1f; font-family:'Archivo'; font-weight:900; font-size:clamp(14px,1.25vw,17px); line-height:1.15; letter-spacing:-.4px; padding:10px 12px; border-radius:10px; opacity:0; transform:translateY(-8px); transition:opacity .3s ease, transform .3s ease; }
+  .tel-pill { position:absolute; left:8%; top:27%; background:#ff4d24; color:#fff; font-size:11px; font-weight:800; letter-spacing:1px; padding:6px 11px; border-radius:999px; opacity:0; transform:translateX(-10px); transition:opacity .25s ease, transform .25s ease; }
+  .tel-captions { position:absolute; left:8%; right:8%; top:58%; display:flex; flex-wrap:wrap; justify-content:center; gap:5px; }
+  .tel-captions span { font-family:'Archivo'; font-weight:900; font-size:clamp(16px,1.5vw,21px); letter-spacing:-.4px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,.55); padding:3px 7px; border-radius:7px; }
+  .tel-captions span.aan { background:#ff4d24; text-shadow:none; }
+  .tel-balk { position:absolute; left:8%; right:8%; bottom:7%; height:4px; border-radius:999px; background:rgba(246,241,231,.3); overflow:hidden; }
+  .tel-balk i { display:block; height:100%; width:0; background:#ff4d24; transition:width .25s linear; }
+  .tel-eind { position:absolute; inset:0; background:#1c1a1f; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .35s ease; pointer-events:none; }
+  .tel-eind-kaart { text-align:center; color:#f6f1e7; }
+  .tel-eind-kaart span { display:block; font-size:13px; letter-spacing:2px; color:#8a8378; font-weight:600; margin-bottom:8px; }
+  .tel-eind-kaart strong { display:inline-block; font-family:'Archivo'; font-weight:900; font-size:clamp(22px,2.2vw,30px); letter-spacing:-1px; background:#ff4d24; color:#fff; padding:8px 16px; border-radius:10px; }
+  .tel-ui { position:absolute; right:5%; bottom:12%; display:flex; flex-direction:column; gap:14px; color:#fff; font-size:18px; opacity:.85; }
+  .tel-klein { box-shadow:0 18px 40px rgba(28,26,31,.22), 0 0 0 4px #1c1a1f, 0 0 0 5px #3a363c; border-radius:22px; }
+  .tel-klein .tel-hook { font-size:12px; padding:8px 9px; }
+  .tel-klein .tel-captions span { font-size:14px; }
+  .tel-ruw video { filter:saturate(.55) contrast(.92) brightness(.9); }
+  .ruw-strook { position:absolute; left:6%; right:6%; bottom:9%; display:flex; flex-wrap:wrap; gap:5px; }
+  .ruw-strook span { font-size:11px; font-weight:600; color:#f6f1e7; background:rgba(28,26,31,.75); padding:4px 8px; border-radius:6px; text-decoration:line-through; text-decoration-color:#ff4d24; text-decoration-thickness:2px; }
+  .tel.is-klaar .tel-eind { opacity:1; }
+  .tel.is-hook .tel-hook { opacity:1; transform:none; }
+  .tel.is-pill .tel-pill { opacity:1; transform:none; }
+
+  /* Gesprek met de engine */
+  .chat { display:flex; flex-direction:column; gap:12px; }
+  .chat > div { max-width:92%; padding:12px 16px; border-radius:14px; font-size:14.5px; line-height:1.55; opacity:0; transform:translateY(8px); transition:opacity .35s ease, transform .35s ease; }
+  .chat > div.zichtbaar { opacity:1; transform:none; }
+  .chat-lien { align-self:flex-end; background:#ff4d24; color:#fff; border-bottom-right-radius:4px; }
+  .chat-engine { align-self:flex-start; background:#2a272c; color:#f6f1e7; border-bottom-left-radius:4px; }
+  .chat-wie { display:block; font-size:11px; letter-spacing:1.5px; font-weight:700; opacity:.7; margin-bottom:4px; }
+
+  /* Galerij met covers */
+  .galerij { display:grid; grid-template-columns:repeat(6,1fr); gap:14px; }
+  .cover { position:relative; aspect-ratio:9/16; border-radius:18px; overflow:hidden; padding:14px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 14px 34px rgba(28,26,31,.14); }
+  .cover video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+  .cover > * { position:relative; z-index:1; }
+  .cover-video::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,26,31,.6), rgba(28,26,31,.1) 40%, rgba(28,26,31,.8)); z-index:0; }
+  .cover-donker { background:#1c1a1f; color:#f6f1e7; }
+  .cover-oranje { background:#ff4d24; color:#fff; }
+  .cover-licht { background:#fff; color:#1c1a1f; }
+  .cover-video { color:#fff; }
+  .cover-top { display:flex; justify-content:space-between; font-size:10px; font-weight:700; letter-spacing:1.2px; opacity:.8; }
+  .cover-hook { font-family:'Archivo'; font-weight:900; font-size:clamp(14px,1.2vw,17px); line-height:1.15; letter-spacing:-.4px; }
+  .cover-oranje .cover-hook { color:#1c1a1f; }
+  .cover-woord { font-size:11px; opacity:.85; }
+  .cover-woord strong { font-family:'Archivo'; font-weight:800; }
+  .cover-oranje .cover-woord strong { color:#1c1a1f; }
+  .cover-licht .cover-woord strong, .cover-donker .cover-woord strong, .cover-video .cover-woord strong { color:#ff4d24; }
+  @media (max-width:960px) { .galerij { grid-template-columns:repeat(3,1fr); } .cover-hook { font-size:14px; } }
+  @media (max-width:560px) { .galerij { grid-template-columns:repeat(2,1fr); } }
+
+  /* Hergebruik: één reel wordt slides en stories */
+  .hergebruik { display:grid; grid-template-columns:120px 1fr; gap:40px; align-items:center; }
+  .tegels { display:grid; grid-template-columns:repeat(8,1fr); gap:8px; }
+  .tegel { aspect-ratio:4/5; border-radius:8px; background:#fff; border:1px solid #e6ddcb; display:flex; align-items:flex-end; padding:8px; font-family:'Archivo'; font-weight:900; font-size:11px; color:#1c1a1f; }
+  .tegel.oranje { background:#ff4d24; color:#fff; border-color:#ff4d24; }
+  .tegel.donker { background:#1c1a1f; color:#f6f1e7; border-color:#1c1a1f; }
+  .stories { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; max-width:300px; }
+  .story { aspect-ratio:9/16; border-radius:8px; background:#1c1a1f; color:#f6f1e7; padding:8px; font-size:10px; font-weight:700; display:flex; align-items:flex-end; }
+  .story.oranje { background:#ff4d24; color:#fff; }
+  @media (max-width:960px) { .hergebruik { grid-template-columns:1fr; } .tegels { grid-template-columns:repeat(4,1fr); } }
+
+  /* Stijlpakketten: mini-voorbeeld van de ondertitels */
+  .stijl-kaart { border-radius:18px; padding:26px 28px; display:flex; flex-direction:column; gap:14px; }
+  .stijl-preview { border-radius:12px; padding:22px 16px; min-height:120px; display:flex; flex-wrap:wrap; gap:6px; align-content:center; justify-content:center; }
+  .stijl-preview span { font-family:'Archivo'; font-weight:900; font-size:17px; letter-spacing:-.3px; padding:3px 7px; border-radius:6px; }
+
+  .formaat-kaart { background:#fff; border-radius:18px; padding:30px 32px; display:flex; flex-direction:column; gap:12px; min-height:200px; }
+  .vink { display:flex; gap:12px; align-items:flex-start; font-size:15px; line-height:1.6; color:#57534a; }
+  .vink b { color:#ff4d24; font-family:'Archivo'; font-weight:800; }
+  .wachtlijst-veld { padding:16px 18px; border:none; border-radius:10px; font-size:16px; font-family:inherit; background:#2a272c; color:#f6f1e7; width:100%; box-sizing:border-box; }
+  .wachtlijst-veld::placeholder { color:#8a8378; }
+  .wachtlijst-veld:focus { outline:2px solid #ff4d24; outline-offset:2px; }
+  .aftel { display:flex; gap:14px; }
+  .aftel div { background:#fff; border-radius:14px; padding:14px 0; min-width:76px; text-align:center; }
+  .aftel b { display:block; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.5px; line-height:1; color:#1c1a1f; font-variant-numeric:tabular-nums; }
+  .aftel small { display:block; margin-top:6px; font-size:11px; letter-spacing:1.5px; color:#8a8378; font-weight:600; }
+  @media (max-width:960px) { .aftel { flex-wrap:wrap; } .aftel div { min-width:calc(50% - 7px); } .tel-wrap { max-width:300px; } }
+  @media (prefers-reduced-motion: reduce) { .tel-hook, .tel-pill, .tel-balk i, .chat > div { transition:none; } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "De Reel-engine",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "macOS, Windows",
+  "inLanguage": "nl-BE",
+  "url": "https://asklien.ai/reel-engine/",
+  "description": "Een reel-editor die in Claude Code draait: knipt, ondertitelt en rendert je reels in jouw stijl, lokaal op je laptop.",
+  "author": { "@type": "Person", "name": "Lien Pletinckx", "url": "https://asklien.ai/over-lien/" }
+}
+</script>
+</head>
+<body id="top">
+
+<!-- NAV -->
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+      <a href="#hoe">Hoe het werkt</a>
+      <a href="#formaten">Formaten</a>
+      <a href="#vragen">Vragen</a>
+      <a href="#wachtlijst" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">Zet me op de lijst</a>
+    </div>
+  </div>
+</nav>
+
+<!-- AFTELBALK: vul data-deadline in (bv. 2026-11-10T09:00:00+01:00) en hij verschijnt vanzelf -->
+<div id="aftelbalk" data-deadline="" hidden style="background:#1c1a1f; color:#f6f1e7; padding:12px 32px; text-align:center; font-size:14px; font-weight:600;">
+  De deuren gaan open over <span data-aftel-kort style="color:#ff4d24; font-variant-numeric:tabular-nums;"></span> · de wachtlijst krijgt als eerste de laagste prijs
+</div>
+
+<!-- HERO -->
+<header style="max-width:1240px; margin:0 auto; padding:72px 32px 64px;">
+  <div style="display:grid; grid-template-columns:1fr 340px; gap:64px; align-items:center;">
+    <div>
+      <div style="display:inline-flex; align-items:center; gap:10px; font-size:14px; font-weight:600; color:#ff4d24; border:1px solid #f0c9bc; background:#fff; padding:8px 18px; border-radius:999px; margin-bottom:24px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">
+        <span style="width:8px; height:8px; border-radius:50%; background:#ff4d24; animation:pulse 1.6s infinite;"></span>DE REEL-ENGINE · WACHTLIJST OPEN · IN HET NEDERLANDS
+      </div>
+      <h1 style="margin:0; font-size:inherit; font-weight:inherit;"><span style="display:block; overflow:hidden;"><span style="display:block; margin:0; font-family:'Archivo'; font-weight:900; font-size:clamp(42px,5.2vw,72px); line-height:.97; letter-spacing:-.045em; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Film het. Zeg wat je wil.</span></span>
+      <span style="display:block; overflow:hidden;"><span style="display:block; margin:0; font-family:'Archivo'; font-weight:900; font-size:clamp(42px,5.2vw,72px); line-height:.97; letter-spacing:-.045em; color:#ff4d24; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .25s both;"><span style="position:relative; display:inline-block;">Je reel is klaar<span style="position:absolute; left:0; right:0; bottom:2px; height:9px; background:#1c1a1f; transform-origin:left; animation:growX .7s cubic-bezier(.2,.8,.2,1) 1s both;"></span></span>.</span></span></h1>
+      <p style="margin:32px 0 0; font-size:19px; line-height:1.55; color:#57534a; max-width:560px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .35s both;">Een reel-editor die in Claude Code draait. Je filmt op je gsm, zet het bestand in een map en typt wat je wil: "knip dit, haal de stiltes eruit en zet ondertitels in mijn stijl". Hij knipt woord per woord, ondertitelt, zoomt op het juiste moment en levert een mp4. Op je eigen laptop. Zonder CapCut, zonder sleepwerk.</p>
+      <div class="cta-row" style="display:flex; gap:14px; margin-top:32px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .45s both;">
+        <a href="#wachtlijst" class="btn-dark" style="background:#1c1a1f; color:#f6f1e7; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">Zet me op de wachtlijst</a>
+        <a href="#voorbeelden" class="btn-outline" style="border:2px solid #1c1a1f; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px;">Bekijk voorbeelden</a>
+      </div>
+    </div>
+    <!-- Telefoon met een nagebootste reel: jouw video, jouw hook, ondertitels woord per woord -->
+    <div class="tel-wrap" style="animation:riseIn .9s cubic-bezier(.2,.8,.2,1) .3s both;">
+      <div class="tel" data-reel data-hook="Ik schrijf geen offertes meer. Ik spreek ze in." data-woord="OFFERTE" data-pill="STAP 1" data-script="Na|elk|klantgesprek|spreek|ik|acht|dingen|in.|Vier|minuten|later|staat|de|offerte|klaar.|Zonder|dat|ik|typ." data-accent="3,8,13,18">
+        <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="/media/les-lien.mp4" type="video/mp4"></video>
+        <div class="tel-schaduw"></div>
+        <div class="tel-hook"></div>
+        <div class="tel-pill"></div>
+        <div class="tel-captions"></div>
+        <div class="tel-balk"><i></i></div>
+        <div class="tel-eind"><div class="tel-eind-kaart"><span>comment</span><strong></strong></div></div>
+        <div class="tel-ui"><span>♡</span><span>◯</span><span>➤</span></div>
+      </div>
+      <div style="margin-top:14px; text-align:center; font-size:13px; color:#8a8378;">Nagebootst voorbeeld in mijn stijl. Jouw opname, jouw woorden, jouw kleuren.</div>
+    </div>
+  </div>
+  <div style="margin-top:56px; display:grid; grid-template-columns:repeat(4,1fr); gap:16px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .55s both;">
+    <div style="background:#fff; border-radius:16px; padding:22px 24px;"><div style="font-family:'Archivo'; font-weight:900; font-size:36px; letter-spacing:-2px; line-height:1; color:#ff4d24;">30</div><div style="margin-top:8px; font-size:14px; color:#57534a;">reels uit één opnamesessie: 10 scripts met elk 3 hooks</div></div>
+    <div style="background:#fff; border-radius:16px; padding:22px 24px;"><div style="font-family:'Archivo'; font-weight:900; font-size:36px; letter-spacing:-2px; line-height:1; color:#ff4d24;">0 u</div><div style="margin-top:8px; font-size:14px; color:#57534a;">in CapCut. Je sleept niets meer op een tijdlijn</div></div>
+    <div style="background:#fff; border-radius:16px; padding:22px 24px;"><div style="font-family:'Archivo'; font-weight:900; font-size:36px; letter-spacing:-2px; line-height:1; color:#ff4d24;">1×</div><div style="margin-top:8px; font-size:14px; color:#57534a;">je stijl uitleggen. Daarna zit hij in elke reel</div></div>
+    <div style="background:#fff; border-radius:16px; padding:22px 24px;"><div style="font-family:'Archivo'; font-weight:900; font-size:36px; letter-spacing:-2px; line-height:1; color:#ff4d24;">100%</div><div style="margin-top:8px; font-size:14px; color:#57534a;">op je eigen laptop. Je video's verlaten je computer niet</div></div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div style="background:#1c1a1f; padding:16px 0; overflow:hidden; white-space:nowrap;">
+  <div style="display:inline-flex; gap:48px; animation:marquee 18s linear infinite; font-family:'Archivo'; font-weight:800; font-size:17px; color:#f6f1e7; letter-spacing:.5px;">
+    <span>KNIPT WOORD PER WOORD</span><span style="color:#ff4d24;">✦</span><span>ONDERTITELS IN JOUW STIJL</span><span style="color:#ff4d24;">✦</span><span>3 TRIAL REELS PER VIDEO</span><span style="color:#ff4d24;">✦</span><span>DRAAIT IN CLAUDE CODE</span><span style="color:#ff4d24;">✦</span><span>IN HET NEDERLANDS</span><span style="color:#ff4d24;">✦</span>
+    <span>KNIPT WOORD PER WOORD</span><span style="color:#ff4d24;">✦</span><span>ONDERTITELS IN JOUW STIJL</span><span style="color:#ff4d24;">✦</span><span>3 TRIAL REELS PER VIDEO</span><span style="color:#ff4d24;">✦</span><span>DRAAIT IN CLAUDE CODE</span><span style="color:#ff4d24;">✦</span><span>IN HET NEDERLANDS</span><span style="color:#ff4d24;">✦</span>
+  </div>
+</div>
+
+<!-- GESPREK + VOOR/NA -->
+<section style="max-width:1240px; margin:0 auto; padding:96px 32px;">
+  <h2 data-reveal style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:48px; line-height:1.02; letter-spacing:-2.5px;">Zo gaat dat<span style="color:#ff4d24;">.</span></h2>
+  <p data-reveal style="margin:0 0 40px; font-size:17px; color:#8a8378; max-width:600px;">Geen tijdlijn, geen knoppen. Je typt wat je wil, zoals je het tegen een monteur zou zeggen. Dit is letterlijk hoe zo'n gesprek eruitziet.</p>
+  <div data-reveal style="display:grid; grid-template-columns:1.2fr 1fr; gap:24px; align-items:stretch;">
+    <div style="background:#1c1a1f; border-radius:24px; padding:32px 36px; color:#f6f1e7; display:flex; flex-direction:column; gap:18px; min-height:520px;">
+      <div style="display:flex; align-items:center; gap:8px; font-size:12px; color:#8a8378; font-weight:600; letter-spacing:1.5px;"><span style="width:10px; height:10px; border-radius:50%; background:#ff4d24;"></span><span style="width:10px; height:10px; border-radius:50%; background:#3a363c;"></span><span style="width:10px; height:10px; border-radius:50%; background:#3a363c;"></span><span style="margin-left:10px;">CLAUDE CODE · MAP REELS</span></div>
+      <div class="chat" data-chat>
+        <div class="chat-lien" data-stap="0"><span class="chat-wie">Lien</span>Maak van opnames/offerte.mp4 een reel in mijn stijl. Drie hooks.</div>
+        <div class="chat-engine" data-stap="1"><span class="chat-wie">Engine</span>Transcriptie klaar: 118 woorden, 0:41.<br>Ik knip 14 stiltes en 3 keer "euh" weg. Nieuwe duur: <strong>0:17</strong>.</div>
+        <div class="chat-engine" data-stap="2"><span class="chat-wie">Engine</span>Ondertitels woord per woord, accentwoord in <span style="color:#ff4d24; font-weight:700;">#ff4d24</span>. Punch-in op "inspreken", "vier minuten" en "klaar". Stap-pills bij 0:02 en 0:09. Eindkaart: comment OFFERTE.</div>
+        <div class="chat-engine" data-stap="3"><span class="chat-wie">Engine</span>Drie hooks:<br>A · Ik schrijf geen offertes meer. Ik spreek ze in.<br>B · 4 minuten van klantgesprek naar offerte.<br>C · De 8 dingen die ik inspreek na elk gesprek.</div>
+        <div class="chat-lien" data-stap="4"><span class="chat-wie">Lien</span>Pill wat hoger en hook B iets korter.</div>
+        <div class="chat-engine" data-stap="5"><span class="chat-wie">Engine</span>Gedaan. Pill 40 px hoger, hook B: "4 minuten. Van gesprek naar offerte." Gerenderd naar <strong>export/offerte-A.mp4</strong>, -B en -C. ✦</div>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start;">
+      <div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:1.5px; color:#8a8378; margin-bottom:10px;">RUWE OPNAME · 0:41</div>
+        <div class="tel tel-klein tel-ruw">
+          <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="/media/les-lien.mp4" type="video/mp4"></video>
+          <div class="ruw-strook"><span>euh</span><span>ja dus</span><span>stilte 1,4 s</span><span>euh</span><span>opnieuw…</span></div>
+          <div class="tel-ui"><span>♡</span><span>◯</span><span>➤</span></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:1.5px; color:#ff4d24; margin-bottom:10px;">NA DE ENGINE · 0:17</div>
+        <div class="tel tel-klein" data-reel data-hook="4 minuten. Van gesprek naar offerte." data-woord="OFFERTE" data-pill="STAP 2" data-script="Ik|spreek|acht|dingen|in|en|de|offerte|staat|klaar." data-accent="2,7,9">
+          <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="/media/les-lien.mp4" type="video/mp4"></video>
+          <div class="tel-schaduw"></div>
+          <div class="tel-hook"></div>
+          <div class="tel-pill"></div>
+          <div class="tel-captions"></div>
+          <div class="tel-balk"><i></i></div>
+          <div class="tel-eind"><div class="tel-eind-kaart"><span>comment</span><strong></strong></div></div>
+          <div class="tel-ui"><span>♡</span><span>◯</span><span>➤</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRIE STAPPEN -->
+<section id="hoe" style="background:#1c1a1f; color:#f6f1e7; padding:96px 0;">
+  <div style="max-width:1240px; margin:0 auto; padding:0 32px;">
+    <h2 data-reveal style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:48px; letter-spacing:-2.5px;">Drie stappen<span style="color:#ff4d24;">.</span></h2>
+    <p data-reveal style="margin:0 0 48px; font-size:17px; color:#b3ab9e; max-width:560px;">De engine leeft in Claude Code, op je eigen laptop. Je praat ertegen zoals tegen een monteur die jouw stijl kent.</p>
+    <div data-reveal style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+      <div style="border-top:3px solid #ff4d24; padding-top:20px;">
+        <div style="font-family:'Archivo'; font-weight:900; font-size:32px; color:#ff4d24; margin-bottom:10px;">01</div>
+        <h3 style="margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px;">Film op je gsm</h3>
+        <p style="margin:0; font-size:14px; line-height:1.6; color:#b3ab9e;">Jij die praat, of een map met korte clips van jezelf aan het werk. Versprekingen geven niet: die gaan er toch uit.</p>
+      </div>
+      <div style="border-top:3px solid #ff4d24; padding-top:20px;">
+        <div style="font-family:'Archivo'; font-weight:900; font-size:32px; color:#ff4d24; margin-bottom:10px;">02</div>
+        <h3 style="margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px;">Zeg wat je wil</h3>
+        <p style="margin:0; font-size:14px; line-height:1.6; color:#b3ab9e;">In gewone taal. "Maak hier een reel van", "korter", "pill wat hoger", "drie hooks". Elke aanpassing zie je meteen terug.</p>
+      </div>
+      <div style="border-top:3px solid #ff4d24; padding-top:20px;">
+        <div style="font-family:'Archivo'; font-weight:900; font-size:32px; color:#ff4d24; margin-bottom:10px;">03</div>
+        <h3 style="margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px;">Post</h3>
+        <p style="margin:0; font-size:14px; line-height:1.6; color:#b3ab9e;">Een mp4 in je map export/, klaar voor Instagram of TikTok. Muziek kies je bij het posten, dan zijn de rechten geregeld.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOORBEELDEN -->
+<section id="voorbeelden" style="max-width:1240px; margin:0 auto; padding:96px 32px 0;">
+  <div data-reveal style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:40px;">
+    <h2 style="margin:0; font-family:'Archivo'; font-weight:900; font-size:56px; letter-spacing:-3px;">Uit mijn eigen batch<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0; font-size:16px; color:#8a8378; max-width:520px;">Tien reels, elk met drie hooks, uit één opnamesessie. Dezelfde beelden, een andere eerste zin. Instagram test ze bij mensen die me nog niet volgen.</p>
+  </div>
+  <div class="galerij" data-reveal>
+    <div class="cover cover-donker"><div class="cover-top"><span>TRIAL REEL · A</span><span>0:16</span></div><div class="cover-hook">Ik plak klantmails in AI. Elke dag. Zonder dat één klant herkenbaar is.</div><div class="cover-woord">comment <strong>VEILIG</strong></div></div>
+    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="/media/les-lien.mp4" type="video/mp4"></video><div class="cover-top"><span>TRIAL REEL · B</span><span>0:14</span></div><div class="cover-hook cover-hook-wit">Je mag bijna alles in AI plakken. Als je eerst dit doet.</div><div class="cover-woord">comment <strong>VEILIG</strong></div></div>
+    <div class="cover cover-oranje"><div class="cover-top"><span>TRIAL REEL · A</span><span>0:17</span></div><div class="cover-hook">Ik schrijf geen offertes meer. Ik spreek ze in.</div><div class="cover-woord">comment <strong>OFFERTE</strong></div></div>
+    <div class="cover cover-licht"><div class="cover-top"><span>TRIAL REEL · B</span><span>0:19</span></div><div class="cover-hook">De mail die je al 3 dagen uitstelt is in 2 minuten weg. Zo:</div><div class="cover-woord">comment <strong>MAIL</strong></div></div>
+    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="/media/les-lien.mp4" type="video/mp4"></video><div class="cover-top"><span>TRIAL REEL · C</span><span>0:15</span></div><div class="cover-hook cover-hook-wit">Ik typ bijna geen prompts meer. Ik antwoord op vragen.</div><div class="cover-woord">comment <strong>VRAGEN</strong></div></div>
+    <div class="cover cover-donker"><div class="cover-top"><span>TRIAL REEL · A</span><span>0:18</span></div><div class="cover-hook">Al mijn social media voor de week: één uur. Dit is de verdeling.</div><div class="cover-woord">comment <strong>SOCIAL</strong></div></div>
+  </div>
+  <p data-reveal style="margin:16px 0 0; font-size:13px; color:#8a8378;">Covers nagebootst op basis van mijn echte scripts. Zodra de engine af is, komen hier de gerenderde reels.</p>
+</section>
+
+<!-- WAT HET DOET -->
+<section style="max-width:1240px; margin:0 auto; padding:96px 32px;">
+  <h2 data-reveal style="margin:0 0 40px; font-family:'Archivo'; font-weight:900; font-size:48px; letter-spacing:-2.5px;">Wat hij voor je doet<span style="color:#ff4d24;">.</span></h2>
+  <div data-reveal style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+    <div style="background:#fff; border-radius:18px; padding:30px 32px;">
+      <div style="font-family:'Archivo'; font-weight:800; font-size:13px; color:#ff4d24; margin-bottom:14px;">HET KNIPWERK</div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div class="vink"><b>✦</b><span>Knipt woord per woord. Stiltes, euh's en valse starts verdwijnen, je beste take blijft.</span></div>
+        <div class="vink"><b>✦</b><span>Kiest zelf de behandeling per clip. Jij hoeft geen instellingen te kiezen.</span></div>
+        <div class="vink"><b>✦</b><span>Je originele opname blijft onaangeroerd staan.</span></div>
+      </div>
+    </div>
+    <div style="background:#fff; border-radius:18px; padding:30px 32px;">
+      <div style="font-family:'Archivo'; font-weight:800; font-size:13px; color:#ff4d24; margin-bottom:14px;">DE LOOK</div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div class="vink"><b>✦</b><span>Ondertitels woord per woord, karaoke of fullscreen, met het actieve woord in jouw accentkleur.</span></div>
+        <div class="vink"><b>✦</b><span>Hooks bovenaan, stap-pills, punch-ins op de kernwoorden, geluidseffecten op de beats.</span></div>
+        <div class="vink"><b>✦</b><span>Een eindkaart met je comment-woord en een cover uit je beste frame.</span></div>
+      </div>
+    </div>
+    <div style="background:#fff; border-radius:18px; padding:30px 32px;">
+      <div style="font-family:'Archivo'; font-weight:800; font-size:13px; color:#ff4d24; margin-bottom:14px;">JOUW CONTROLE</div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div class="vink"><b>✦</b><span>Je stijl staat in één bestand. Plak een reel die je mooi vindt en hij bestudeert de opbouw.</span></div>
+        <div class="vink"><b>✦</b><span>Elke reel is een leesbaar bestand dat je kan aanpassen. "Zet in alle reels de pill hoger" is één zin.</span></div>
+        <div class="vink"><b>✦</b><span>Eigen beelden, logo's en lettertypes gooi je er gewoon in.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATEN -->
+<section id="formaten" style="max-width:1240px; margin:0 auto; padding:0 32px 96px;">
+  <div data-reveal style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:40px;">
+    <h2 style="margin:0; font-family:'Archivo'; font-weight:900; font-size:56px; letter-spacing:-3px;">Vier formaten<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0; font-size:16px; color:#8a8378; max-width:520px;">Eén engine, vier manieren om hem te gebruiken. Elke reel kan daarbovenop een carrousel, stories en drie trial reels worden.</p>
+  </div>
+  <div data-reveal style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
+    <div class="formaat-kaart" data-tilt>
+      <div style="font-size:12px; font-weight:600; color:#ff4d24;">TALKING HEAD</div>
+      <h3 style="margin:0; font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-.5px;">Jij voor de camera</h3>
+      <p style="margin:0; font-size:15px; line-height:1.6; color:#57534a; flex:1;">Dertig seconden tot een minuut praten, zonder script perfect te kennen. Hij knipt strak, ondertitelt en zet de nadruk waar jij ze legt. Hier is hij het sterkst.</p>
+    </div>
+    <div class="formaat-kaart" data-tilt>
+      <div style="font-size:12px; font-weight:600; color:#ff4d24;">B-ROLL IN BATCH</div>
+      <h3 style="margin:0; font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-.5px;">Een map clips, een maand content</h3>
+      <p style="margin:0; font-size:15px; line-height:1.6; color:#57534a; flex:1;">Tien korte clips van jezelf aan het werk. Hij schrijft de scripts, zet de hooks groot in beeld en levert een genummerde postwachtrij met captions.</p>
+    </div>
+    <div class="formaat-kaart" data-tilt>
+      <div style="font-size:12px; font-weight:600; color:#ff4d24;">TRIAL REELS</div>
+      <h3 style="margin:0; font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-.5px;">Eén video, drie hooks</h3>
+      <p style="margin:0; font-size:15px; line-height:1.6; color:#57534a; flex:1;">Dezelfde reel met drie andere eerste zinnen, als drie trial reels. Instagram toont ze aan mensen die je nog niet volgen. De winnaar deel je met je volgers.</p>
+    </div>
+    <div class="formaat-kaart" data-tilt>
+      <div style="font-size:12px; font-weight:600; color:#ff4d24;">HERGEBRUIK</div>
+      <h3 style="margin:0; font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-.5px;">Van reel naar carrousel en stories</h3>
+      <p style="margin:0; font-size:15px; line-height:1.6; color:#57534a; flex:1;">Eén reel wordt acht carrouselslides en drie storyframes, in dezelfde stijl. Zonder dat je er iets voor moet doen.</p>
+    </div>
+  </div>
+  <div data-reveal style="margin-top:16px; background:#fff; border-radius:20px; padding:36px 40px;">
+    <div class="hergebruik">
+      <div style="text-align:center;">
+        <div style="width:90px; aspect-ratio:9/16; margin:0 auto; border-radius:14px; background:#1c1a1f; color:#f6f1e7; display:flex; align-items:flex-end; padding:10px; font-family:'Archivo'; font-weight:900; font-size:12px; line-height:1.1; letter-spacing:-.3px;">Ik spreek offertes in.</div>
+        <div style="margin-top:8px; font-size:11px; font-weight:700; letter-spacing:1.2px; color:#8a8378;">1 REEL</div>
+      </div>
+      <div>
+        <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;"><span style="font-family:'Archivo'; font-weight:900; font-size:22px; color:#ff4d24;">→</span><span style="font-size:14px; font-weight:600; color:#1c1a1f;">8 carrouselslides</span></div>
+        <div class="tegels"><div class="tegel oranje">Ik schrijf geen offertes meer</div><div class="tegel">1. Gesprek</div><div class="tegel">2. Inspreken</div><div class="tegel">3. 8 dingen</div><div class="tegel">4. Vier min</div><div class="tegel">5. Nalezen</div><div class="tegel">6. Versturen</div><div class="tegel donker">Bewaar dit</div></div>
+        <div style="display:flex; align-items:center; gap:14px; margin:22px 0 14px;"><span style="font-family:'Archivo'; font-weight:900; font-size:22px; color:#ff4d24;">→</span><span style="font-size:14px; font-weight:600; color:#1c1a1f;">3 stories</span></div>
+        <div class="stories"><div class="story oranje">Nieuwe reel ↑</div><div class="story">Poll: typ jij nog offertes?</div><div class="story">Link in bio</div></div>
+      </div>
+    </div>
+  </div>
+  <p data-reveal style="margin:20px 0 0; font-size:14px; color:#8a8378;">Later: voice-over over je b-roll en animatiereels zonder camera. Wie op de wachtlijst staat, krijgt elke update gratis.</p>
+</section>
+
+<!-- HERKENBAAR -->
+<section style="background:#1c1a1f; color:#f6f1e7; padding:96px 0;">
+  <div style="max-width:1240px; margin:0 auto; padding:0 32px; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+    <div data-reveal>
+      <h2 style="margin:0 0 24px; font-family:'Archivo'; font-weight:900; font-size:48px; letter-spacing:-2.5px; line-height:1.02;">Herkenbaar<span style="color:#ff4d24;">?</span></h2>
+      <div style="display:flex; flex-direction:column; gap:16px; font-size:16px; line-height:1.6; color:#b3ab9e;">
+        <div style="display:flex; gap:14px;"><span style="color:#ff4d24; font-weight:800;">✦</span><span>Je hebt tien opnames op je gsm staan die nooit een reel geworden zijn, omdat het monteren je tegenhoudt.</span></div>
+        <div style="display:flex; gap:14px;"><span style="color:#ff4d24; font-weight:800;">✦</span><span>Je zit een uur in CapCut voor een video van twintig seconden. En dan klopt de timing van de ondertitels nog niet.</span></div>
+        <div style="display:flex; gap:14px;"><span style="color:#ff4d24; font-weight:800;">✦</span><span>Je reels lijken op die van iedereen, want je gebruikt dezelfde sjablonen als iedereen.</span></div>
+        <div style="display:flex; gap:14px;"><span style="color:#ff4d24; font-weight:800;">✦</span><span>Je wil wel vaker posten, maar niet ten koste van je avonden.</span></div>
+      </div>
+      <p style="margin:28px 0 0; font-size:16px; line-height:1.6; color:#f6f1e7; max-width:520px;">Dat ligt niet aan je discipline. Monteren is gewoon traag werk. Dus laat je het doen door iets dat niet moe wordt en jouw stijl onthoudt.</p>
+    </div>
+    <div data-reveal style="position:relative;">
+      <video autoplay muted loop playsinline preload="metadata" style="width:100%; height:auto; border-radius:20px; display:block;" aria-label="Lien aan het werk"><source src="/media/les-lien.mp4" type="video/mp4"></video>
+      <div class="decor-badge decor-badge--challenge" style="position:absolute; right:-20px; top:-20px; width:110px; height:110px; animation:spin 16s linear infinite;">
+        <svg viewBox="0 0 150 150" width="110" height="110">
+          <defs><path id="cirkel2" d="M 75,75 m -58,0 a 58,58 0 1,1 116,0 a 58,58 0 1,1 -116,0"></path></defs>
+          <circle cx="75" cy="75" r="72" fill="#ff4d24"></circle>
+          <text style="font-family:'Archivo'; font-weight:800; font-size:14px; letter-spacing:2.5px; fill:#fff;"><textPath href="#cirkel2">JOUW STIJL ✦ JOUW LAPTOP ✦ NEDERLANDS ✦ </textPath></text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STIJL -->
+<section style="max-width:1240px; margin:0 auto; padding:96px 32px;">
+  <h2 data-reveal style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:48px; letter-spacing:-2.5px;">Jouw stijl, niet de mijne<span style="color:#ff4d24;">.</span></h2>
+  <p data-reveal style="margin:0 0 40px; font-size:17px; color:#8a8378; max-width:600px;">Je start met een kant-en-klaar stijlpakket en maakt er het jouwe van. Of je plakt een reel waarvan je de opbouw mooi vindt, en hij schrijft het pakket voor je uit.</p>
+  <div data-reveal style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+    <div class="stijl-kaart" style="background:#1c1a1f; color:#f6f1e7;">
+      <div class="stijl-preview" style="background:#2a272c;"><span style="color:#fff;">Ik</span><span style="color:#fff;">spreek</span><span style="background:#ff4d24; color:#fff;">offertes</span><span style="color:#fff;">in.</span></div>
+      <h3 style="margin:0; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px;">Het AskLien-pakket</h3>
+      <p style="margin:0; font-size:14px; line-height:1.6; color:#b3ab9e;">De stijl van mijn eigen reels: woord-per-woord ondertitels met een oranje accentwoord, stap-pills, punch-ins en een eindkaart. Meteen bruikbaar.</p>
+    </div>
+    <div class="stijl-kaart" style="background:#fff;">
+      <div class="stijl-preview" style="background:#f6f1e7;"><span style="color:#1c1a1f; font-weight:500; font-family:'Schibsted Grotesk'; font-size:16px;">Ik spreek</span><span style="color:#1c1a1f; font-family:'Schibsted Grotesk'; font-weight:700; font-size:16px; text-decoration:underline; text-decoration-color:#1c1a1f; text-underline-offset:4px;">offertes</span><span style="color:#1c1a1f; font-weight:500; font-family:'Schibsted Grotesk'; font-size:16px;">in.</span></div>
+      <h3 style="margin:0; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px;">Rustig en strak</h3>
+      <p style="margin:0; font-size:14px; line-height:1.6; color:#57534a;">Zinnen in plaats van losse woorden, één onderlijning als accent, geen zooms. Voor wie liever kalm overkomt.</p>
+    </div>
+    <div class="stijl-kaart" style="background:#fff; border:2px dashed #e6ddcb;">
+      <div class="stijl-preview" style="background:#fff3e0;"><span style="color:#1c1a1f; transform:rotate(-3deg);">IK</span><span style="color:#1c1a1f; transform:rotate(2deg);">SPREEK</span><span style="background:#ffd166; color:#1c1a1f; transform:rotate(-2deg);">OFFERTES</span><span style="color:#1c1a1f;">IN!</span></div>
+      <h3 style="margin:0; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px;">Speels, of helemaal het jouwe</h3>
+      <p style="margin:0; font-size:14px; line-height:1.6; color:#57534a;">Grotere bewegingen en felle markeringen. Of je eigen lettertypes, kleuren en ritme: één keer instellen, daarna zit het in alles.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NODIG -->
+<section style="max-width:1240px; margin:0 auto; padding:0 32px 96px;">
+  <div data-reveal style="background:#fff; border-radius:24px; padding:48px 56px; display:grid; grid-template-columns:1fr 1fr; gap:48px;">
+    <div>
+      <h2 style="margin:0 0 16px; font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; line-height:1.02;">Wat je nodig hebt<span style="color:#ff4d24;">.</span></h2>
+      <p style="margin:0; font-size:16px; line-height:1.6; color:#57534a; max-width:440px;">Geen technische achtergrond. Wel een laptop en een betaald Claude-abonnement. De installatie doen we samen in de lessen, stap voor stap.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div class="vink"><b>✦</b><span><strong style="color:#1c1a1f;">Mac of Windows.</strong> Mac met Apple-chip werkt het vlotst. Geen iPad, geen Chromebook.</span></div>
+      <div class="vink"><b>✦</b><span><strong style="color:#1c1a1f;">Claude Code</strong> met een betaald Claude-abonnement (dat betaal je aan Anthropic, niet aan mij).</span></div>
+      <div class="vink"><b>✦</b><span><strong style="color:#1c1a1f;">Zo'n 10 GB vrije ruimte.</strong> Video's nemen plaats in.</span></div>
+      <div class="vink"><b>✦</b><span><strong style="color:#1c1a1f;">Een gsm om te filmen.</strong> Meer camera heb je niet nodig.</span></div>
+      <div class="vink"><b>✦</b><span><strong style="color:#1c1a1f;">Geen CapCut nodig.</strong> Je krijgt een afgewerkte mp4.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- OVER LIEN -->
+<section style="max-width:1240px; margin:0 auto; padding:0 32px 96px;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:24px; padding:56px 64px; display:grid; grid-template-columns:240px 1fr; gap:48px; align-items:center;">
+    <div class="img-slot img-filled" style="width:240px; height:280px; border-radius:16px;"><img src="/media/foto/begeleider.jpg" alt="Lien Pletinckx" loading="lazy"></div>
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div style="font-family:'Archivo'; font-weight:800; font-size:13px; color:#ff4d24;">WAAROM IK DIT BOUW</div>
+      <h2 style="margin:0; font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px;">Lien Pletinckx<span style="color:#ff4d24;">.</span></h2>
+      <p style="margin:0; font-size:16px; line-height:1.7; color:#b3ab9e; max-width:640px;">Ik maak mijn eigen reels al in Claude Code: filmen, inspreken, en de rest laten doen. Het verschil met een uur CapCut is zo groot dat ik het niet voor mezelf wou houden. Ik bouw dagelijks met Claude voor klanten en leer honderden ondernemers in het Nederlands hoe ze het echt gebruiken. Dit is daar het logische vervolg op.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VRAGEN -->
+<section id="vragen" style="max-width:1240px; margin:0 auto; padding:0 32px 96px;">
+  <h2 data-reveal style="margin:0 0 40px; font-family:'Archivo'; font-weight:900; font-size:48px; letter-spacing:-2.5px;">Nog vragen<span style="color:#ff4d24;">?</span></h2>
+  <div data-reveal style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px;">
+    <div style="background:#fff; border-radius:18px; padding:28px 32px;">
+      <h3 style="margin:0 0 8px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px;">Moet ik kunnen coderen?</h3>
+      <p style="margin:0; font-size:15px; line-height:1.65; color:#57534a;">Nee. Je typt zinnen, geen code. De installatie doen we samen in korte lessen, en als iets hapert, zeg je gewoon "los dit op".</p>
+    </div>
+    <div style="background:#fff; border-radius:18px; padding:28px 32px;">
+      <h3 style="margin:0 0 8px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px;">Waar gaan mijn video's naartoe?</h3>
+      <p style="margin:0; font-size:15px; line-height:1.65; color:#57534a;">Nergens. Alles draait op je eigen laptop. Je opnames worden niet geüpload naar een server van mij of van iemand anders.</p>
+    </div>
+    <div style="background:#fff; border-radius:18px; padding:28px 32px;">
+      <h3 style="margin:0 0 8px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px;">Wat kost het?</h3>
+      <p style="margin:0; font-size:15px; line-height:1.65; color:#57534a;">Een eenmalige prijs, geen abonnement. De wachtlijst hoort het eerst en krijgt de laagste prijs. Je Claude-abonnement komt daar los bij, dat heb je waarschijnlijk al.</p>
+    </div>
+    <div style="background:#fff; border-radius:18px; padding:28px 32px;">
+      <h3 style="margin:0 0 8px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px;">Krijg ik updates?</h3>
+      <p style="margin:0; font-size:15px; line-height:1.65; color:#57534a;">Ja, gratis. Je typt "update" en je hebt de nieuwste versie, zonder dat je eigen stijl en bestanden overschreven worden.</p>
+    </div>
+    <div style="background:#fff; border-radius:18px; padding:28px 32px;">
+      <h3 style="margin:0 0 8px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px;">Werkt het ook in het Frans of Engels?</h3>
+      <p style="margin:0; font-size:15px; line-height:1.65; color:#57534a;">De lessen en de engine zelf zijn in het Nederlands. Je reels mogen in eender welke taal: de transcriptie herkent de taal zelf.</p>
+    </div>
+    <div style="background:#fff; border-radius:18px; padding:28px 32px;">
+      <h3 style="margin:0 0 8px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px;">Ik zit in Voorsprong. Wat betekent dit voor mij?</h3>
+      <p style="margin:0; font-size:15px; line-height:1.65; color:#57534a;">Leden horen het als eerste en krijgen een eigen voorwaarde. Zet je toch op de lijst, dan mis je niets.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WACHTLIJST -->
+<section id="wachtlijst" style="max-width:1240px; margin:0 auto; padding:0 32px 96px;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:24px; padding:64px; display:grid; grid-template-columns:1fr 420px; gap:56px; align-items:center;">
+    <div>
+      <div style="display:flex; align-items:center; gap:8px; font-family:'Archivo'; font-weight:800; font-size:13px; color:#ff4d24; margin-bottom:16px;"><span style="width:8px; height:8px; border-radius:50%; background:#ff4d24; animation:pulse 1.6s infinite;"></span>WACHTLIJST · GRATIS · GEEN VERPLICHTING</div>
+      <h2 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:44px; letter-spacing:-2px; line-height:1;">Zet je op de lijst<span style="color:#ff4d24;">.</span></h2>
+      <div style="display:flex; flex-direction:column; gap:12px; font-size:15px; line-height:1.6; color:#b3ab9e;">
+        <div><span style="color:#ff4d24; font-weight:800;">✦</span>&nbsp; Je hoort als eerste wanneer de deuren opengaan</div>
+        <div><span style="color:#ff4d24; font-weight:800;">✦</span>&nbsp; De laagste prijs, alleen voor de lijst, de eerste 48 uur</div>
+        <div><span style="color:#ff4d24; font-weight:800;">✦</span>&nbsp; Tussendoor: de reels die ik ermee maak, met de prompts erbij</div>
+        <div><span style="color:#ff4d24; font-weight:800;">✦</span>&nbsp; Uitschrijven kan altijd, met één klik</div>
+      </div>
+      <div id="aftel" data-deadline="" hidden style="margin-top:28px;">
+        <div style="font-size:12px; font-weight:600; letter-spacing:1.5px; color:#8a8378; margin-bottom:10px;">DE DEUREN GAAN OPEN OVER</div>
+        <div class="aftel"><div><b data-d>0</b><small>DAGEN</small></div><div><b data-h>0</b><small>UUR</small></div><div><b data-m>0</b><small>MIN</small></div><div><b data-s>0</b><small>SEC</small></div></div>
+      </div>
+    </div>
+    <!-- Formulier: nu via formsubmit.co (zelfde als de bevraging). Wil je het in Brevo? Vervang action door de URL van je Brevo-formulier en de namen door FIRSTNAME en EMAIL. -->
+    <form action="https://formsubmit.co/hello@asklien.ai" method="POST" style="display:flex; flex-direction:column; gap:12px;">
+      <input type="hidden" name="_subject" value="Wachtlijst Reel-engine: nieuwe inschrijving">
+      <input type="hidden" name="_next" value="https://asklien.ai/bedankt-reel-engine/">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <label for="wl-voornaam" style="font-size:13px; font-weight:600; color:#b3ab9e;">Je voornaam</label>
+      <input id="wl-voornaam" class="wachtlijst-veld" type="text" name="Voornaam" placeholder="Lien" required autocomplete="given-name">
+      <label for="wl-email" style="font-size:13px; font-weight:600; color:#b3ab9e;">Je e-mailadres</label>
+      <input id="wl-email" class="wachtlijst-veld" type="email" name="E-mail" placeholder="jij@voorbeeld.be" required autocomplete="email">
+      <button type="submit" class="btn-dark-to-white" style="margin-top:6px; background:#ff4d24; color:#fff; font-weight:600; font-size:17px; padding:18px 32px; border-radius:10px; border:none; cursor:pointer; font-family:inherit;">Zet me op de wachtlijst</button>
+      <p style="margin:4px 0 0; font-size:13px; color:#8a8378; line-height:1.5;">Alleen je voornaam en e-mailadres. Geen tracking, geen cookies. Zie <a href="/privacy/" style="color:#b3ab9e; text-decoration:underline;">privacy</a>.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="#hoe">Hoe het werkt</a><a href="#wachtlijst">Wachtlijst</a><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/privacy/">Privacy en cookies</a> · <a href="#cookievoorkeuren">Cookievoorkeuren</a></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* Aftelling: vul data-deadline in op #aftel en #aftelbalk, bv. "2026-11-10T09:00:00+01:00". Leeg = verborgen. */
+  function aftel(el, kort) {
+    var dl = el.getAttribute('data-deadline'); if (!dl) return;
+    var t = new Date(dl).getTime(); if (isNaN(t)) return;
+    el.hidden = false;
+    function tik() {
+      var rest = Math.max(0, t - Date.now());
+      var d = Math.floor(rest / 864e5), h = Math.floor(rest / 36e5) % 24, m = Math.floor(rest / 6e4) % 60, s = Math.floor(rest / 1e3) % 60;
+      if (kort) { kort.textContent = d + ' d ' + h + ' u ' + m + ' min'; return; }
+      el.querySelector('[data-d]').textContent = d; el.querySelector('[data-h]').textContent = h;
+      el.querySelector('[data-m]').textContent = m; el.querySelector('[data-s]').textContent = s;
+    }
+    tik(); setInterval(tik, 1000);
+  }
+  var balk = document.getElementById('aftelbalk'); if (balk) aftel(balk, balk.querySelector('[data-aftel-kort]'));
+  var blok = document.getElementById('aftel'); if (blok) aftel(blok, null);
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Nagebootste reels: hook, pill, ondertitels woord per woord, eindkaart, en opnieuw. */
+  document.querySelectorAll('[data-reel]').forEach(function (tel, n) {
+    var woorden = (tel.getAttribute('data-script') || '').split('|');
+    var accent = {}; (tel.getAttribute('data-accent') || '').split(',').forEach(function (i) { if (i !== '') accent[+i] = true; });
+    var cap = tel.querySelector('.tel-captions'), balk = tel.querySelector('.tel-balk i');
+    tel.querySelector('.tel-hook').textContent = tel.getAttribute('data-hook');
+    tel.querySelector('.tel-pill').textContent = tel.getAttribute('data-pill');
+    tel.querySelector('.tel-eind-kaart strong').textContent = tel.getAttribute('data-woord');
+    var tempo = reduce ? 120 : 420;
+    function speel() {
+      tel.classList.remove('is-klaar', 'is-hook', 'is-pill'); cap.innerHTML = ''; balk.style.width = '0';
+      var k = 0;
+      setTimeout(function () { tel.classList.add('is-hook'); }, 200);
+      var stap = setInterval(function () {
+        if (k >= woorden.length) {
+          clearInterval(stap);
+          setTimeout(function () { tel.classList.add('is-klaar'); }, 400);
+          setTimeout(speel, 3800);
+          return;
+        }
+        if (k === Math.floor(woorden.length / 3)) tel.classList.add('is-pill');
+        var van = Math.max(0, k - 2); cap.innerHTML = '';
+        for (var i = van; i <= k; i++) { var s = document.createElement('span'); s.textContent = woorden[i]; if (i === k && accent[k]) s.className = 'aan'; cap.appendChild(s); }
+        balk.style.width = Math.round(((k + 1) / woorden.length) * 100) + '%';
+        k++;
+      }, tempo);
+    }
+    setTimeout(speel, 600 + n * 900);
+  });
+
+  /* Het gesprek: berichten verschijnen één voor één, en herhalen. */
+  var chat = document.querySelector('[data-chat]');
+  if (chat) {
+    var items = chat.querySelectorAll('[data-stap]');
+    function rondje() {
+      items.forEach(function (el) { el.classList.remove('zichtbaar'); });
+      items.forEach(function (el, i) { setTimeout(function () { el.classList.add('zichtbaar'); }, 400 + i * (reduce ? 300 : 1500)); });
+      setTimeout(rondje, 400 + items.length * (reduce ? 300 : 1500) + 7000);
+    }
+    rondje();
+  }
+})();
+</script>
+<script src="/js/site.js?v=3"></script>
+<script src="/js/analytics.js?v=6" defer></script>
+<script src="/js/menu.js?v=3" defer></script>
+</body>
+</html>
