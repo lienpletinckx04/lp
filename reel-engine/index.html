@@ -61,8 +61,11 @@
   .studio-rij img { display:block; width:100%; height:auto; }
   .studio-rij figcaption { padding:12px 14px; font-size:13px; color:#57534a; line-height:1.45; }
   @media (max-width:760px) { .studio-rij { grid-template-columns:1fr; } }
+  @media (max-width:860px) { .twee-kolommen { grid-template-columns:1fr !important; gap:32px !important; } }
+  .tijdlijn-blok { display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:center; margin-top:48px; }
+  @media (max-width:860px) { .tijdlijn-blok { grid-template-columns:1fr; gap:24px; } }
   /* Galerij met covers */
-  .galerij { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .galerij { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
   .cover { position:relative; aspect-ratio:9/16; border-radius:18px; overflow:hidden; padding:14px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 14px 34px rgba(28,26,31,.14); }
   .cover video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
   .cover > * { position:relative; z-index:1; }
@@ -256,9 +259,20 @@
   <figure data-reveal style="margin:0; border-radius:20px; overflow:hidden; box-shadow:0 24px 60px rgba(28,26,31,.18); border:1px solid rgba(28,26,31,.08); background:#fff;">
     <img src="/media/reel-engine/studio-beeld.jpg" alt="De studio, stap Beeld: per zin kies je wat er in beeld komt, rechts speelt de reel mee" width="1600" height="1000" loading="lazy" style="display:block; width:100%; height:auto;">
   </figure>
-  <div class="studio-rij" data-reveal>
+  <div class="tijdlijn-blok" data-reveal>
+    <figure style="margin:0; border-radius:18px; overflow:hidden; box-shadow:0 18px 44px rgba(28,26,31,.16); border:1px solid rgba(28,26,31,.08); background:#fff;">
+      <img src="/media/reel-engine/studio-tijdlijn.jpg" alt="Stap Tijdlijn: splitsen, inkorten, verwijderen en pills of b-roll verslepen op een echte tijdlijn" width="1600" height="1000" loading="lazy" style="display:block; width:100%; height:auto;">
+    </figure>
+    <div>
+      <div style="font-size:12px; font-weight:700; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">ZELF FINE-TUNEN</div>
+      <h3 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.5px; line-height:1.05;">Een echte tijdlijn, voor als je toch zelf wil.</h3>
+      <p style="margin:0; font-size:16px; line-height:1.65; color:#57534a;">De engine doet het zware werk. Maar soms wil je net die ene knip een halve seconde later, of die pill een stukje verder. Daarvoor is er de tijdlijn: splitsen, inkorten, verwijderen, slepen. Zoals je het kent, zonder dat je eerst alles zelf moet bouwen.</p>
+      <p style="margin:14px 0 0; font-size:16px; line-height:1.65; color:#57534a;">Wat je daar met de hand zet, blijft staan. Ook als je hem daarna nog iets vraagt.</p>
+    </div>
+  </div>
+  <div class="studio-rij" data-reveal style="margin-top:40px;">
     <figure><img src="/media/reel-engine/studio-knippen.jpg" alt="Stap Knippen: stiltes zijn al weg, klik op woorden die je kwijt wil" width="1600" height="1000" loading="lazy"><figcaption><strong>Knippen.</strong> Stiltes zijn al weg. Klik op een woord dat weg mag.</figcaption></figure>
-    <figure><img src="/media/reel-engine/studio-tijdlijn.jpg" alt="Stap Tijdlijn: splitsen, inkorten en pills verslepen zoals in een videobewerker" width="1600" height="1000" loading="lazy"><figcaption><strong>Tijdlijn.</strong> Zelf splitsen, inkorten en verslepen, als je dat wil.</figcaption></figure>
+    <figure><img src="/media/reel-engine/studio-stijl.jpg" alt="Stap Stijl: kleuren, lettertypes, ondertitels en pills als eigen pakket" width="1600" height="1000" loading="lazy"><figcaption><strong>Stijl.</strong> Kleuren, lettertypes, pills. Bewaar het als jouw pakket.</figcaption></figure>
     <figure><img src="/media/reel-engine/studio-afwerken.jpg" alt="Stap Afwerken: drie hooks, comment-woord, caption en de renderknop" width="1600" height="1000" loading="lazy"><figcaption><strong>Afwerken.</strong> Drie hooks, één comment-woord, caption, renderen.</figcaption></figure>
   </div>
   <p data-reveal style="margin:16px 0 0; font-size:13px; color:#8a8378;">Echte schermafbeeldingen van de studio, met de reel hierboven erin geladen.</p>
@@ -275,6 +289,8 @@
     <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/vergelijking.jpg" aria-label="ChatGPT of Claude: welke edit wint?"><source src="/media/reel-engine/vergelijking.mp4" type="video/mp4"></video><div class="cover-top"><span>ASKLIEN · A/B-TEST</span></div></div>
     <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/github.jpg" aria-label="Wat is GitHub"><source src="/media/reel-engine/github.mp4" type="video/mp4"></video><div class="cover-top"><span>ASKLIEN · UITLEG</span></div></div>
     <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/instinct.jpg" aria-label="Tafel gereserveerd via WhatsApp"><source src="/media/reel-engine/instinct.mp4" type="video/mp4"></video><div class="cover-top"><span>ASKLIEN · VERHAAL</span></div></div>
+    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/getuigenissen.jpg" aria-label="Wat deelnemers over Lien zeggen"><source src="/media/reel-engine/getuigenissen.mp4" type="video/mp4"></video><div class="cover-top"><span>ASKLIEN · GETUIGENISSEN</span></div></div>
+    <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/demo-na.jpg" aria-label="Demo-reel uit de engine: ik liet Claude één keer meekijken"><source src="/media/reel-engine/demo-na.mp4" type="video/mp4"></video><div class="cover-top"><span>ASKLIEN · DEMO HIERBOVEN</span></div></div>
     <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/uwhuis-dubai-vastgoed.jpg" aria-label="Vastgoed in Dubai: wat leerden we?"><source src="/media/reel-engine/uwhuis-dubai-vastgoed.mp4" type="video/mp4"></video><div class="cover-top"><span>UW HUIS · TALKING HEAD</span></div></div>
     <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/uwhuis-dubai-team.jpg" aria-label="Teambuilding met het Uw-Huis-team"><source src="/media/reel-engine/uwhuis-dubai-team.mp4" type="video/mp4"></video><div class="cover-top"><span>UW HUIS · B-ROLL</span></div></div>
     <div class="cover cover-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/reel-engine/uwhuis-elstlaan.jpg" aria-label="Hof ter Elstlaan, Temse"><source src="/media/reel-engine/uwhuis-elstlaan.mp4" type="video/mp4"></video><div class="cover-top"><span>UW HUIS · PAND</span></div></div>
@@ -380,6 +396,32 @@
           <circle cx="75" cy="75" r="72" fill="#ff4d24"></circle>
           <text style="font-family:'Archivo'; font-weight:800; font-size:14px; letter-spacing:2.5px; fill:#fff;"><textPath href="#cirkel2">JOUW STIJL ✦ JOUW LAPTOP ✦ NEDERLANDS ✦ </textPath></text>
         </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NIET HETZELFDE ALS IEDEREEN -->
+<section style="max-width:1240px; margin:0 auto; padding:96px 32px;">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;" class="twee-kolommen">
+    <div data-reveal>
+      <div style="font-size:12px; font-weight:700; letter-spacing:2px; color:#ff4d24; margin-bottom:14px;">EERLIJK</div>
+      <h2 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:48px; letter-spacing:-2.5px; line-height:1.02;">Niet weer dezelfde reel als iedereen<span style="color:#ff4d24;">.</span></h2>
+      <p style="margin:0; font-size:17px; line-height:1.65; color:#57534a;">Je kent het van de carrousels: op een bepaald moment zag elke feed er hetzelfde uit. Dezelfde sjablonen, dezelfde kleuren, dezelfde opbouw. Met reels uit Claude kan precies hetzelfde gebeuren, als iedereen dezelfde standaardmontage vraagt.</p>
+      <p style="margin:16px 0 0; font-size:17px; line-height:1.65; color:#57534a;">Daarom krijg je bij de engine niet alleen je huisstijl, maar ook de kennis om iets anders te vragen dan de rest.</p>
+    </div>
+    <div data-reveal style="display:flex; flex-direction:column; gap:14px;">
+      <div style="background:#fff; border:1px solid rgba(28,26,31,.08); border-radius:18px; padding:22px 24px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:17px; margin-bottom:6px;">Welke montages er bestaan</div>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#57534a;">Talking head met punch-ins, karaoke-ondertitels, fullscreen-woorden, stap-pills, b-roll als kaart of beeldvullend, split-screen, voice-over over clips. Met voorbeelden, zodat je weet wat je vraagt.</p>
+      </div>
+      <div style="background:#fff; border:1px solid rgba(28,26,31,.08); border-radius:18px; padding:22px 24px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:17px; margin-bottom:6px;">Welke effecten wanneer werken</div>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#57534a;">Zoom op het kernwoord, een geluidje op de beat, een kaartje bij een cijfer, een eindkaart die reacties uitlokt. En vooral: wanneer je ze beter weglaat.</p>
+      </div>
+      <div style="background:#1c1a1f; color:#f6f1e7; border-radius:18px; padding:22px 24px;">
+        <div style="font-family:'Archivo'; font-weight:800; font-size:17px; margin-bottom:6px;">De engine vergeet geen stap</div>
+        <p style="margin:0; font-size:15px; line-height:1.6; color:#b3ab9e;">Hook, accentwoord, pills, comment-woord, cover, caption: hij loopt ze elke keer af, in jouw stijl. Zo blijft elke reel herkenbaar van jou, en niet van het sjabloon.</p>
       </div>
     </div>
   </div>
