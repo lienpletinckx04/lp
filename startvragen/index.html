@@ -47,10 +47,7 @@
 </header>
 
 <section style="max-width:680px; margin:0 auto; padding:24px 32px 120px;">
-  <form action="https://formsubmit.co/hello@asklien.ai" method="POST" style="display:flex; flex-direction:column; gap:22px; background:#fff; border-radius:20px; padding:40px;">
-    <input type="hidden" name="_subject" value="Startvragen challenge november ingevuld">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" value="https://asklien.ai/bedankt-startvragen/">
+  <form id="startvragen" action="/bedankt-startvragen/" method="GET" style="display:flex; flex-direction:column; gap:22px; background:#fff; border-radius:20px; padding:40px;">
     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
@@ -208,5 +205,46 @@
 <script src="/js/site.js?v=3"></script>
 <script src="/js/analytics.js?v=6" defer></script>
 <script src="/js/menu.js?v=3" defer></script>
+
+<script>
+(function () {
+  var f = document.getElementById('startvragen');
+  var knop = f.querySelector('button[type=submit]');
+  var fout = document.createElement('p');
+  fout.style.cssText = 'margin:0; color:#b3261e; font-size:14.5px; display:none;';
+  knop.parentNode.appendChild(fout);
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (f.querySelector('[name=_honey]').value) return;
+    var fd = new FormData(f), ant = {}, naam = '', email = '';
+    fd.forEach(function (v, k) {
+      if (k === '_honey') return;
+      if (k === 'Naam') { naam = v; return; }
+      if (k === 'Email') { email = v; return; }
+      if (!v) return;
+      var key = k.replace('[]', '');
+      if (ant[key] === undefined) ant[key] = (k.slice(-2) === '[]') ? [v] : v;
+      else ant[key] = [].concat(ant[key], v);
+    });
+    knop.disabled = true; knop.textContent = 'Bezig...'; fout.style.display = 'none';
+    fetch('https://vgrlwcocnveysurkahuz.supabase.co/rest/v1/startvragen_antwoorden', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': 'sb_publishable_KhneoLkf0_X66zrIvwkDcA_FVKE-XZS',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ naam: naam, email: email, antwoorden: ant })
+    }).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      location.href = '/bedankt-startvragen/';
+    }).catch(function () {
+      knop.disabled = false; knop.textContent = 'Versturen';
+      fout.textContent = 'Versturen is niet gelukt. Probeer het zo meteen nog eens, of stuur me je antwoorden via hello@asklien.ai.';
+      fout.style.display = 'block';
+    });
+  });
+})();
+</script>
 </body>
 </html>
