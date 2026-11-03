@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Startvragen challenge — AskLien.ai</title>
+<meta name="description" content="Vijf korte vragen vooraf, zodat ik de challenge op jouw niveau kan brengen.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=3">
+<style>
+  .veld { display:flex; flex-direction:column; gap:6px; }
+  .veld label.hoofdlabel { font-size:14.5px; font-weight:600; }
+  .veld input[type=text], .veld input[type=email], .veld select, .veld textarea { padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; background:#fff; resize:vertical; }
+  .checkrow { display:flex; align-items:flex-start; gap:10px; font-size:14.5px; line-height:1.5; color:#57534a; cursor:pointer; }
+  .checkrow input { margin-top:3px; accent-color:#ff4d24; width:16px; height:16px; flex-shrink:0; }
+  .scorerow { display:flex; gap:8px; flex-wrap:wrap; }
+  .scorerow label { display:flex; align-items:center; justify-content:center; width:42px; height:42px; border:1px solid #e6ddcb; border-radius:8px; font-weight:600; cursor:pointer; background:#fff; }
+  .scorerow input { display:none; }
+  .scorerow label:has(input:checked) { background:#ff4d24; border-color:#ff4d24; color:#fff; }
+  .sectiekop { display:flex; align-items:center; gap:12px; margin:14px 0 2px; }
+  .sectiekop .nr { font-family:'Archivo'; font-weight:900; font-size:22px; color:#ff4d24; }
+  .sectiekop h2 { margin:0; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px; }
+</style>
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; align-items:center; gap:10px; font-size:14px; font-weight:500; color:#8a8378;">
+      <span style="width:8px; height:8px; border-radius:50%; background:#2fa36b;"></span>±2 minuten
+    </div>
+  </div>
+</nav>
+
+<header style="max-width:760px; margin:0 auto; padding:64px 32px 16px; text-align:center;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px;">CLAUDE IN 10 DAGEN · NOVEMBER</div>
+  <h1 style="margin:0 0 16px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,52px); letter-spacing:-2px; line-height:1.02;">Wie zit er vandaag in de les<span style="color:#ff4d24;">?</span></h1>
+  <p style="margin:0; font-size:17px; line-height:1.6; color:#57534a;">Met een paar korte vragen weet ik waar jullie staan, zodat ik vandaag het juiste tempo kies. Invullen duurt twee minuten.</p>
+</header>
+
+<section style="max-width:680px; margin:0 auto; padding:24px 32px 120px;">
+  <form action="https://formsubmit.co/hello@asklien.ai" method="POST" style="display:flex; flex-direction:column; gap:22px; background:#fff; border-radius:20px; padding:40px;">
+    <input type="hidden" name="_subject" value="Startvragen challenge november ingevuld">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://asklien.ai/bedankt-startvragen/">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div class="veld"><label class="hoofdlabel">Naam</label><input type="text" name="Naam" required></div>
+      <div class="veld"><label class="hoofdlabel">E-mail</label><input type="email" name="Email" required></div>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Hoeveel ervaring heb je met AI?</label>
+      <select name="Ervaring" required>
+        <option value="">Kies</option>
+        <option>Ik begin helemaal van nul</option>
+        <option>Ik heb het al eens uitgeprobeerd</option>
+        <option>Ik gebruik het af en toe</option>
+        <option>Ik gebruik het wekelijks</option>
+        <option>Ik gebruik het dagelijks en wil dieper gaan</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Welke AI-tool gebruik je nu het meest?</label>
+      <select name="Huidige tool" required>
+        <option value="">Kies</option>
+        <option>Geen</option>
+        <option>ChatGPT</option>
+        <option>Claude</option>
+        <option>Gemini</option>
+        <option>Copilot</option>
+        <option>Iets anders</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Heb je al een Claude-account?</label>
+      <select name="Claude account" required>
+        <option value="">Kies</option>
+        <option>Nee, nog niet</option>
+        <option>Ja, gratis versie</option>
+        <option>Ja, betaald abonnement (Pro of Max)</option>
+        <option>Ja, via mijn werkgever (Team of Enterprise)</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Op welk toestel werk je tijdens de les?</label>
+      <select name="Toestel" required>
+        <option value="">Kies</option>
+        <option>Windows-laptop</option>
+        <option>Mac</option>
+        <option>Tablet of telefoon</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Wat wil je na 10 dagen kunnen met Claude?</label>
+      <textarea name="Doel" rows="3" placeholder="Bv. mijn mails sneller schrijven, offertes automatiseren, mijn team laten werken met Claude..."></textarea>
+    </div>
+
+    <button type="submit" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border:none; border-radius:10px; cursor:pointer; font-family:inherit;">Versturen</button>
+  </form>
+</section>
+
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="/voorsprong/">Voorsprong</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/privacy/">Privacy en cookies</a> · <a href="#cookievoorkeuren">Cookievoorkeuren</a></div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=3"></script>
+<script src="/js/analytics.js?v=6" defer></script>
+<script src="/js/menu.js?v=3" defer></script>
+</body>
+</html>
