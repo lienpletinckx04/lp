@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Startvragen challenge — AskLien.ai</title>
-<meta name="description" content="Vijf korte vragen vooraf, zodat ik de challenge op jouw niveau kan brengen.">
+<meta name="description" content="Je opdracht tijdens de eerste les: vul je startvragen in.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,15 +35,15 @@
   <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
     <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
     <div style="display:flex; align-items:center; gap:10px; font-size:14px; font-weight:500; color:#8a8378;">
-      <span style="width:8px; height:8px; border-radius:50%; background:#2fa36b;"></span>±2 minuten
+      <span style="width:8px; height:8px; border-radius:50%; background:#2fa36b;"></span>±5 minuten
     </div>
   </div>
 </nav>
 
 <header style="max-width:760px; margin:0 auto; padding:64px 32px 16px; text-align:center;">
   <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px;">CLAUDE IN 10 DAGEN · NOVEMBER</div>
-  <h1 style="margin:0 0 16px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,52px); letter-spacing:-2px; line-height:1.02;">Wie zit er vandaag in de les<span style="color:#ff4d24;">?</span></h1>
-  <p style="margin:0; font-size:17px; line-height:1.6; color:#57534a;">Met een paar korte vragen weet ik waar jullie staan, zodat ik vandaag het juiste tempo kies. Invullen duurt twee minuten.</p>
+  <h1 style="margin:0 0 16px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,52px); letter-spacing:-2px; line-height:1.02;">Je startvragen<span style="color:#ff4d24;">?</span></h1>
+  <p style="margin:0; font-size:17px; line-height:1.6; color:#57534a;">Je opdracht tijdens de eerste les: vul deze vragen in. Zo weet ik waar je staat, wat je met Claude wil bereiken en kan ik de rest van de challenge op jullie groep afstemmen. Invullen duurt vijf minuutjes.</p>
 </header>
 
 <section style="max-width:680px; margin:0 auto; padding:24px 32px 120px;">
@@ -107,6 +107,74 @@
     <div class="veld">
       <label class="hoofdlabel">Wat wil je na 10 dagen kunnen met Claude?</label>
       <textarea name="Doel" rows="3" placeholder="Bv. mijn mails sneller schrijven, offertes automatiseren, mijn team laten werken met Claude..."></textarea>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">In welke sector werk je en wat doe je?</label>
+      <input type="text" name="Sector en rol" placeholder="Bv. boekhouder, zaakvoerder marketingbureau, HR in een KMO...">
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Wat beschrijft jou het best?</label>
+      <select name="Profiel" required>
+        <option value="">Kies</option>
+        <option>Solo-ondernemer / freelancer</option>
+        <option>Zaakvoerder van een KMO (2-10 mensen)</option>
+        <option>Zaakvoerder van een KMO (10+ mensen)</option>
+        <option>Werknemer</option>
+        <option>Iets anders</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Waarvoor wil je Claude vooral inzetten? (meerdere mogelijk)</label>
+      <label class="checkrow"><input type="checkbox" name="Gebruik[]" value="Mails en teksten schrijven"> Mails en teksten schrijven</label>
+      <label class="checkrow"><input type="checkbox" name="Gebruik[]" value="Offertes en documenten"> Offertes en documenten</label>
+      <label class="checkrow"><input type="checkbox" name="Gebruik[]" value="Content en social media"> Content en social media</label>
+      <label class="checkrow"><input type="checkbox" name="Gebruik[]" value="Analyse en cijfers"> Analyse en cijfers</label>
+      <label class="checkrow"><input type="checkbox" name="Gebruik[]" value="Taken automatiseren"> Taken automatiseren</label>
+      <label class="checkrow"><input type="checkbox" name="Gebruik[]" value="Onderzoek en samenvattingen"> Onderzoek en samenvattingen</label>
+      <label class="checkrow"><input type="checkbox" name="Gebruik[]" value="Klantenservice"> Klantenservice</label>
+      <label class="checkrow"><input type="checkbox" name="Gebruik[]" value="Iets anders"> Iets anders</label>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Welke functies van Claude gebruik je al?</label>
+      <select name="Claude functies">
+        <option value="">Kies</option>
+        <option>Enkel gewoon chatten</option>
+        <option>Projects</option>
+        <option>Connectors (Gmail, Drive, agenda...)</option>
+        <option>Skills of Artifacts</option>
+        <option>Cowork of Claude Code</option>
+        <option>Nog niets, ik begin nu</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Hoeveel tijd kan je gemiddeld per dag vrijmaken voor de opdrachten?</label>
+      <select name="Tijd per dag" required>
+        <option value="">Kies</option>
+        <option>Minder dan 15 minuten</option>
+        <option>15 tot 30 minuten</option>
+        <option>30 tot 60 minuten</option>
+        <option>Meer dan een uur</option>
+      </select>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Wat kost je nu het meeste tijd in je werk?</label>
+      <textarea name="Grootste tijdsvreter" rows="3" placeholder="Bv. mails beantwoorden, offertes opstellen, rapporten maken..."></textarea>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Is er iets waar je tegenop ziet of waar je bang voor bent bij AI?</label>
+      <textarea name="Zorgen" rows="3" placeholder="Bv. privacy, fouten, te technisch, geen tijd..."></textarea>
+    </div>
+
+    <div class="veld">
+      <label class="hoofdlabel">Heb je een vraag voor mij, of iets dat zeker aan bod moet komen?</label>
+      <textarea name="Vraag aan Lien" rows="3"></textarea>
     </div>
 
     <button type="submit" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border:none; border-radius:10px; cursor:pointer; font-family:inherit;">Versturen</button>
