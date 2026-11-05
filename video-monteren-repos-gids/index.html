@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4 gratis GitHub-repo's die je video's monteren met Claude Code — AskLien.ai</title>
+<meta name="description" content="Herk Edit Kit, OpenFilm, OpenMontage en HyperFrames: vier gratis open-sourceprojecten die van Claude Code of Codex een videomonteur maken. Welke je eerst kiest, wat je installeert en de eerste prompt op je eigen beelden.">
+<link rel="canonical" href="https://asklien.ai/video-monteren-repos-gids/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4 gratis GitHub-repo's die je video's monteren met Claude Code">
+<meta property="og:description" content="Vier gratis open-sourceprojecten die van Claude Code een videomonteur maken. Welke je eerst kiest, wat je installeert en de eerste prompt op je eigen beelden.">
+<meta property="og:url" content="https://asklien.ai/video-monteren-repos-gids/">
+<meta property="og:image" content="https://asklien.ai/media/foto/hero.jpg">
+<meta property="og:site_name" content="AskLien.ai">
+<meta property="og:locale" content="nl_BE">
+<meta property="article:published_time" content="2026-11-05">
+<meta property="article:modified_time" content="2026-11-05">
+<meta name="author" content="Lien Pletinckx">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=3">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "4 gratis GitHub-repo's die je video's monteren met Claude Code",
+  "description": "Herk Edit Kit, OpenFilm, OpenMontage en HyperFrames: vier gratis open-sourceprojecten die van Claude Code of Codex een videomonteur maken. Welke je eerst kiest, wat je installeert en de eerste prompt op je eigen beelden.",
+  "inLanguage": "nl-BE",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://asklien.ai/video-monteren-repos-gids/" },
+  "url": "https://asklien.ai/video-monteren-repos-gids/",
+  "image": "https://asklien.ai/media/foto/hero.jpg",
+  "author": { "@type": "Person", "name": "Lien Pletinckx", "url": "https://asklien.ai/", "jobTitle": "AI-coach en consultant", "sameAs": ["https://www.instagram.com/asklien.ai/"] },
+  "publisher": { "@type": "Organization", "name": "AskLien.ai", "url": "https://asklien.ai/", "logo": { "@type": "ImageObject", "url": "https://asklien.ai/media/foto/hero.jpg" } },
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "keywords": "video monteren met AI, Claude Code video, Herk Edit Kit, OpenFilm, OpenMontage, HyperFrames, reels monteren AI, open source video editor AI, Codex video",
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://asklien.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Gratis gidsen", "item": "https://asklien.ai/gidsen/" },
+    { "@type": "ListItem", "position": 3, "name": "4 GitHub-repo's die je video's monteren", "item": "https://asklien.ai/video-monteren-repos-gids/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Moet ik kunnen programmeren om dit te gebruiken?", "acceptedAnswer": { "@type": "Answer", "text": "Nee. Je typt in gewone taal wat je wil, en Claude Code of Codex voert de commando's uit. De installatiestappen plak je als één blok in Claude Code met de vraag om het voor jou te doen." } },
+    { "@type": "Question", "name": "Werkt dit met een gratis account?", "acceptedAnswer": { "@type": "Answer", "text": "Claude Code vraagt een betaald Claude-abonnement. Codex zit bij elk ChatGPT-plan, ook het gratis plan, met lagere limieten. De vier repo's zelf zijn gratis en open source." } },
+    { "@type": "Question", "name": "Zijn mijn beelden veilig?", "acceptedAnswer": { "@type": "Answer", "text": "Het knippen en renderen gebeurt op je eigen computer. Alleen als je een betaalde dienst zoals ElevenLabs koppelt voor transcriptie of stem, gaat er audio naar die dienst. Elke repo heeft een gratis lokale optie." } },
+    { "@type": "Question", "name": "Vervangt dit CapCut of Premiere?", "acceptedAnswer": { "@type": "Answer", "text": "Voor talking-head video's, shorts uit lange opnames en animaties vervangt het al een groot deel van het handwerk. Voor fijne kleurcorrectie of complexe montages blijft een klassiek programma handiger. OpenFilm geeft je een tijdlijn om zelf bij te sturen." } }
+  ]
+}
+</script>
+<style>
+  .kaart { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:22px; }
+  .kaart h2 { margin:0 0 14px; font-family:'Archivo'; font-weight:800; font-size:26px; letter-spacing:-1.2px; line-height:1.12; }
+  .kaart h3 { margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:21px; letter-spacing:-.6px; }
+  .kaart p { font-size:16px; line-height:1.8; color:#57534a; }
+  .kaart p:last-child { margin-bottom:0; }
+  .nr { font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; color:#ff4d24; line-height:1; margin-bottom:12px; }
+  .feiten { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px; }
+  .feiten span { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; padding:6px 11px; border-radius:20px; background:#f6f1e7; color:#8a8378; border:1px solid #e6ddcb; }
+  .feiten span.ok { background:#ff4d24; color:#fff; border-color:#ff4d24; }
+  .feiten span.link { text-transform:none; letter-spacing:0; font-family:'Schibsted Grotesk'; font-weight:600; font-size:13px; color:#1c1a1f; }
+  .feiten a { color:inherit; text-decoration:none; }
+  .feiten a:hover { text-decoration:underline; text-decoration-color:#ff4d24; }
+  .prompt { position:relative; background:#f6f1e7; border-left:3px solid #ff4d24; border-radius:10px; padding:24px; margin:18px 0 0; }
+  .prompt pre { margin:0; white-space:pre-wrap; word-break:break-word; font-family:'Schibsted Grotesk',sans-serif; font-size:15px; line-height:1.7; color:#1c1a1f; }
+  .prompt.code pre { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:14px; }
+  .prompt .pk { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:2px; color:#ff4d24; margin-bottom:10px; }
+  .kopieer { position:absolute; top:14px; right:14px; background:#1c1a1f; color:#f6f1e7; border:none; border-radius:7px; padding:7px 13px; font-family:inherit; font-weight:600; font-size:12px; cursor:pointer; }
+  .kopieer.ok { background:#ff4d24; }
+  .let { background:#fff8ef; border:2px dashed #e6ddcb; border-radius:12px; padding:18px 22px; margin:16px 0 0; }
+  .let p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+  .let strong { color:#1c1a1f; }
+  .probeer { background:#f6f1e7; border-radius:12px; padding:20px 22px; margin:18px 0 0; }
+  .probeer .kop { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:10px; }
+  .probeer p { margin:0 0 8px; font-size:15px; line-height:1.7; color:#57534a; }
+  .probeer p:last-child { margin-bottom:0; }
+  .probeer strong { color:#1c1a1f; }
+  .probeer code { font-family:ui-monospace,Menlo,monospace; font-size:13.5px; background:#fff; padding:2px 7px; border-radius:6px; color:#1c1a1f; }
+
+  .regel { display:flex; align-items:flex-start; gap:18px; padding:18px 0; border-bottom:1px solid #e6ddcb; }
+  .regel:last-child { border-bottom:none; padding-bottom:0; }
+  .regel .rn { font-family:'Archivo'; font-weight:900; font-size:26px; color:#ff4d24; min-width:38px; line-height:1.2; }
+  .regel h3 { margin:0 0 6px; font-size:19px; }
+  .regel p { margin:0; font-size:15px; line-height:1.7; }
+
+  .kies { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:6px; }
+  .kies a { display:block; background:#f6f1e7; border-radius:14px; padding:20px 22px; color:inherit; text-decoration:none; transition:transform .2s ease; }
+  .kies a:hover { transform:translateY(-2px); }
+  .kies .k1 { font-size:14px; color:#8a8378; margin-bottom:6px; }
+  .kies .k2 { font-family:'Archivo'; font-weight:800; font-size:19px; letter-spacing:-.6px; color:#1c1a1f; }
+  .kies .k2 span { color:#ff4d24; }
+  @media (max-width:640px){ .kies { grid-template-columns:1fr; } }
+
+  .faq details { border-bottom:1px solid #e6ddcb; padding:16px 0; }
+  .faq details:last-child { border-bottom:none; }
+  .faq summary { cursor:pointer; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#1c1a1f; list-style:none; display:flex; justify-content:space-between; gap:16px; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:'+'; color:#ff4d24; font-weight:900; font-size:22px; line-height:1; }
+  .faq details[open] summary::after { content:'–'; }
+  .faq details p { margin:12px 0 0; font-size:15px; line-height:1.75; color:#57534a; }
+
+  @media (max-width:640px){ .kaart{ padding:26px 24px; } .prompt{ padding:20px 18px; } .kopieer{ position:static; display:inline-block; margin-bottom:12px; } }
+</style>
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+      <a href="/gidsen/">Alle gidsen</a>
+      <a href="/">Terug naar de site</a>
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">De challenge</a>
+    </div>
+  </div>
+</nav>
+
+<header style="max-width:860px; margin:0 auto; padding:72px 32px 8px;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">GRATIS GIDS · 4 REPO'S · CLAUDE CODE OF CODEX</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">4 gratis GitHub-repo's die je video's monteren, terwijl jij toekijkt<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Je filmt, je sleept het bestand in Claude Code, en je zegt in gewone taal wat je wil: de stiltes eruit, ondertitels erop, een titel vooraan. Vier gratis open-sourceprojecten doen de rest op je eigen computer. Per repo zeg ik voor wie het is, wat je installeert en de eerste prompt die je op je eigen beelden loslaat.</p>
+
+  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 5 november 2026 · leestijd ± 10 min</div>
+</header>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;">
+
+  <div data-reveal class="kaart">
+    <h2>Welke kies je eerst?</h2>
+    <p>Samen hebben deze vier meer dan 158.000 sterren op GitHub, gecontroleerd begin november 2026. Het zijn dus geen hobbyprojectjes. Maar ze doen elk iets anders, en je hebt er aan één genoeg om te beginnen. Kies op basis van wat jij filmt.</p>
+    <div class="kies">
+      <a href="#herk"><div class="k1">Je praat tegen de camera</div><div class="k2">Herk Edit Kit <span>→</span></div></a>
+      <a href="#openfilm"><div class="k1">Je wil zelf nog kunnen bijsturen op een tijdlijn</div><div class="k2">OpenFilm <span>→</span></div></a>
+      <a href="#openmontage"><div class="k1">Je hebt lange opnames die shorts moeten worden</div><div class="k2">OpenMontage <span>→</span></div></a>
+      <a href="#hyperframes"><div class="k1">Je wil titels, animaties en motion graphics</div><div class="k2">HyperFrames <span>→</span></div></a>
+    </div>
+    <div class="let"><p><strong>Nog nooit Claude Code geopend?</strong> Lees dan eerst <a href="/reels-met-claude-code/" style="color:#ff4d24; font-weight:600;">20 Reels op één avond met Claude Code</a>. Daar leg ik uit wat Claude Code is en hoe je het de eerste keer opstart. Deze gids pikt in waar die stopt.</p></div>
+  </div>
+
+  <div data-reveal class="kaart" style="background:#1c1a1f; color:#f6f1e7;">
+    <h2 style="color:#f6f1e7;">Drie dingen voor je begint</h2>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">01</span><div><h3 style="color:#f6f1e7;">Je hebt Claude Code of Codex nodig</h3><p style="color:#b3ab9e;">Claude Code zit bij een betaald Claude-abonnement. Codex zit bij elk ChatGPT-plan, ook het gratis plan, met lagere limieten. Alles in deze gids werkt met allebei. Waar een commando verschilt, zeg ik het.</p></div></div>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">02</span><div><h3 style="color:#f6f1e7;">Je computer doet het werk, niet de cloud</h3><p style="color:#b3ab9e;">Het knippen gebeurt lokaal met FFmpeg, een gratis programma dat al twintig jaar onder zowat elke videotool zit. Je beelden verlaten je computer niet, tenzij je zelf een betaalde dienst koppelt voor ondertitels of stem.</p></div></div>
+    <div class="regel" style="border-color:#3a3740;"><span class="rn">03</span><div><h3 style="color:#f6f1e7;">Je typt zelf geen commando's</h3><p style="color:#b3ab9e;">De installatieblokken hieronder plak je in Claude Code met de vraag "installeer dit voor mij". Het legt uit wat het doet en vraagt bevestiging. Een video geef je door het bestand in het venster te slepen.</p></div></div>
+  </div>
+
+  <div data-reveal class="kaart">
+    <h2>Eerst de basis installeren, in één prompt</h2>
+    <p>Alle vier draaien op dezelfde gratis onderdelen: Node.js (versie 22 of hoger), FFmpeg, Git en Chrome. OpenMontage wil daarbovenop Python. Je hoeft niet te weten wat dat allemaal is. Open Claude Code of Codex in om het even welke map en plak dit.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><div class="pk">PROMPT · DE BASIS</div><pre>Ik ben contentmaker, geen developer, en ik wil op deze computer video's monteren met AI. Controleer of ik Node.js 22 of nieuwer, FFmpeg met ffprobe, Git, Chrome en Python 3.10 of nieuwer heb. Installeer wat ontbreekt, één stap per keer, en leg me in gewone woorden uit wat elke stap doet voor je ze uitvoert. Toon me op het einde van elk onderdeel het versienummer, zodat ik weet dat het gelukt is.</pre></div>
+    <div class="let"><p><strong>Over de blokken met commando's hieronder.</strong> Die horen in je terminal: Terminal op een Mac, PowerShell op Windows. Eén regel per keer plakken en Enter. Vind je dat eng, plak dan het hele blok in Claude Code en zeg "doe dit voor mij". Dat werkt even goed.</p></div>
+  </div>
+
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 0;" id="repos">
+  <h2 style="margin:0 0 10px; font-family:'Archivo'; font-weight:900; font-size:clamp(28px,4.5vw,42px); letter-spacing:-2px; line-height:1.05;">De vier repo's<span style="color:#ff4d24;">.</span></h2>
+  <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#57534a; max-width:700px;">Sterrenaantallen zijn van begin november 2026. Bij elke repo: voor wie, wat je nodig hebt, de installatie en de eerste prompt die je op je eigen beelden probeert.</p>
+
+  <div data-reveal class="kaart" id="herk">
+    <div class="nr">01</div>
+    <h3>Herk Edit Kit: voor wie tegen de camera praat</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/nateherkai/herk-edit-kit" target="_blank" rel="noopener">github.com/nateherkai/herk-edit-kit</a></span><span>2.500 sterren</span><span>MIT</span><span class="ok">Mac, Windows, Linux</span></div>
+    <p style="margin:0;">De eigen montagekit van Nate Herk, gebouwd bovenop HyperFrames (nummer 4). Je geeft het je ruwe opname, het knipt de stiltes en de versprekingen eruit, zet ondertitels erop en bouwt de visuals. Het mooie: het toont je eerst elke knip die het wil maken, en pas na jouw oké gaat het snijden. Dat is precies hoe ik het met een menselijke monteur ook zou willen.</p>
+    <div class="probeer"><div class="kop">WAT JE NODIG HEBT</div>
+      <p>Alles uit de basisprompt hierboven, behalve Python. Voor de transcriptie gebruikt het standaard ElevenLabs met je eigen sleutel (betalend per gebruik). Wil je dat niet, vraag dan om gratis Whisper op je eigen computer. Beide staan uitgelegd in de map <em>docs</em> van de repo.</p>
+    </div>
+    <div class="prompt code"><button class="kopieer">Kopieer</button><div class="pk">INSTALLATIE</div><pre>git clone https://github.com/nateherkai/herk-edit-kit.git
+cd herk-edit-kit
+npm ci
+npm run setup
+npm test
+claude</pre></div>
+    <p style="margin:14px 0 0; font-size:15px;">De laatste regel opent Claude Code in de kit. Gebruik je Codex, typ dan <code style="font-family:ui-monospace,Menlo,monospace; font-size:13.5px; background:#f6f1e7; padding:2px 7px; border-radius:6px;">codex</code> in plaats van <code style="font-family:ui-monospace,Menlo,monospace; font-size:13.5px; background:#f6f1e7; padding:2px 7px; border-radius:6px;">claude</code>.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><div class="pk">EERSTE PROMPT</div><pre>/edit-video Monteer mijn opname [sleep hier je videobestand in]. Knip de dode momenten en lange pauzes eruit, en toon me elke knip die je wil maken voor je ze maakt. Hou mijn voorbeelden en hoofdpunten, en zet ondertitels erop. Heb ik geen ElevenLabs-sleutel, gebruik dan gratis lokale Whisper voor de transcriptie. Geef me een eerste versie die ik kan nakijken.</pre></div>
+    <div class="let"><p><strong>In Codex</strong> vervang je <strong>/edit-video</strong> door <strong>$edit-video</strong>. Voor de rest is de prompt dezelfde.</p></div>
+  </div>
+
+  <div data-reveal class="kaart" id="openfilm">
+    <div class="nr">02</div>
+    <h3>OpenFilm: AI monteert, jij stuurt bij op een echte tijdlijn</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/openfilm/openfilm" target="_blank" rel="noopener">github.com/openfilm/openfilm</a></span><span>4.200 sterren</span><span>MIT</span><span class="ok">Desktop-app beschikbaar</span></div>
+    <p style="margin:0;">Dit is de keuze voor wie het niet helemaal uit handen wil geven. Claude Code of Codex bouwt de montage, en die opent daarna in Studio, een editor in je browser met een echte tijdlijn. Clips inkorten, tekst verschuiven, iets anders stylen: dat doe je gewoon met je muis, zonder een nieuwe prompt te schrijven. Voor de meeste ondernemers die ik begeleid is dit de meest geruststellende instap.</p>
+    <div class="probeer"><div class="kop">WAT JE NODIG HEBT</div>
+      <p>Node 22.2 of hoger en FFmpeg, plus Git om versies bij te houden. Geen account. De makkelijkste weg is de desktop-app op <strong>openfilm.dev</strong> voor Mac of Windows: daar zit alles al in, met een ingebouwde chat voor Claude Code of Codex. Ondertitels en AI-stem of -muziek vragen een dienst als ElevenLabs of OpenAI, met je eigen sleutel, in Studio onder Settings en dan Providers.</p>
+    </div>
+    <div class="prompt code"><button class="kopieer">Kopieer</button><div class="pk">INSTALLATIE</div><pre>mkdir mijn-videos
+cd mijn-videos
+npx skills add openfilm/openfilm
+claude</pre></div>
+    <p style="margin:14px 0 0; font-size:15px;">Als het vraagt, kies je Claude Code of Codex. De eerste keer downloadt het een browserengine van zo'n 100 MB. Geef het een minuut.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><div class="pk">EERSTE PROMPT</div><pre>Maak met OpenFilm een verticale video van 30 seconden uit mijn clip [sleep hier je videobestand in]. Hou mijn sterkste take, knip de pauzes weg en zet een eenvoudige titel vooraan. Open het daarna in Studio zodat ik zelf dingen kan aanpassen op de tijdlijn. Hebben de ondertitels een dienst nodig die ik nog niet gekoppeld heb, zeg me dan welke.</pre></div>
+  </div>
+
+  <div data-reveal class="kaart" id="openmontage">
+    <div class="nr">03</div>
+    <h3>OpenMontage: van één lange opname naar een reeks shorts</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener">github.com/calesthio/OpenMontage</a></span><span>74.600 sterren</span><span>AGPL-3.0</span><span class="ok">Werkt volledig gratis</span></div>
+    <p style="margin:0;">Je hebt een webinar van een uur opgenomen, een podcastaflevering, een workshop. Daar zitten vijf goeie reels in, maar wie heeft er tijd om ze te zoeken? OpenMontage heeft daar een vaste werkwijze voor, Clip Factory: het zoekt de sterkste momenten, rangschikt ze en knipt ze op formaat. Het is één van een twaalftal ingebouwde pijplijnen voor groter productiewerk, en de enige waar je mee begint.</p>
+    <div class="probeer"><div class="kop">WAT JE NODIG HEBT</div>
+      <p>Python 3.10 of hoger, FFmpeg en Node 18 of hoger. Elke API-sleutel is optioneel: zonder sleutels gebruikt het gratis lokale tools voor transcriptie, ondertitels en knippen. Koppel je later een betaalde dienst, dan zegt het je op voorhand wat iets kost voor het geld uitgeeft. Dat vind ik een goed teken.</p>
+    </div>
+    <div class="prompt code"><button class="kopieer">Kopieer</button><div class="pk">INSTALLATIE</div><pre>git clone https://github.com/calesthio/OpenMontage.git
+cd OpenMontage
+make setup
+claude</pre></div>
+    <div class="let"><p><strong>Op Windows</strong> is <strong>make</strong> meestal niet geïnstalleerd. Plak dan de link van de repo in Claude Code en vraag om de Windows-installatie uit de README te volgen. Dat lost het zelf op.</p></div>
+    <div class="prompt"><button class="kopieer">Kopieer</button><div class="pk">EERSTE PROMPT</div><pre>Gebruik de Clip Factory-pijplijn op mijn opname [sleep hier je videobestand in]. Zoek de 3 sterkste momenten die werken als verticale clips van 30 tot 60 seconden en rangschik ze. Zet op elke clip ondertitels per woord. Gebruik alleen gratis lokale tools, en toon me het plan voor je iets rendert.</pre></div>
+  </div>
+
+  <div data-reveal class="kaart" id="hyperframes">
+    <div class="nr">04</div>
+    <h3>HyperFrames: titels, animaties en motion graphics</h3>
+    <div class="feiten"><span class="link"><a href="https://github.com/heygen-com/hyperframes" target="_blank" rel="noopener">github.com/heygen-com/hyperframes</a></span><span>77.300 sterren</span><span>Apache-2.0</span><span class="ok">Van HeyGen</span></div>
+    <p style="margin:0;">Het open-sourceproject van HeyGen dat webpagina's omzet in video. Klinkt technisch, komt hierop neer: alles wat je in een browser kan tonen, kan HyperFrames animeren en renderen als MP4. Titelkaarten, een naambalk onderaan die inschuift, cijfers die oplopen, een logo-animatie. Het is ook de motor onder Herk Edit Kit. Bekijk de showcase op <strong>hyperframes.heygen.com/showcase</strong> voor ideeën, en reken erop dat je er een uur kwijt bent.</p>
+    <div class="probeer"><div class="kop">WAT JE NODIG HEBT</div>
+      <p>Node 22 of hoger en FFmpeg. Gratis, en het rendert op je eigen computer.</p>
+    </div>
+    <div class="prompt code"><button class="kopieer">Kopieer</button><div class="pk">INSTALLATIE</div><pre>cd mijn-videos
+npx skills add heygen-com/hyperframes
+claude</pre></div>
+    <p style="margin:14px 0 0; font-size:15px;">Heb je OpenFilm overgeslagen, typ dan eerst <code style="font-family:ui-monospace,Menlo,monospace; font-size:13.5px; background:#f6f1e7; padding:2px 7px; border-radius:6px;">mkdir mijn-videos</code>. Als het keuzemenu opent staat er niets aangevinkt: kies de groep <strong>Core Skills</strong>, en dan Claude Code of Codex. In Claude Code kan je het ook als plugin installeren met de twee commando's uit de README.</p>
+    <div class="prompt"><button class="kopieer">Kopieer</button><div class="pk">EERSTE PROMPT</div><pre>Maak met /hyperframes een geanimeerde titelkaart van 5 seconden met de tekst [de titel van je video] in [je huisstijlkleuren]. Maak daarna een naambalk onderaan met mijn naam en @[je handle] die over mijn clip [sleep hier je videobestand in] inschuift. Toon me eerst een preview, en render het dan als MP4.</pre></div>
+  </div>
+
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:14px 32px 0;" id="veilig">
+  <div data-reveal class="kaart">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:10px;">ÉÉN REGEL OVER VEILIGHEID</div>
+    <h2>Een repo installeren is code van een ander op je computer draaien</h2>
+    <p>Dat is geen reden om het niet te doen, wel om te kijken naar wie je binnenlaat. Deze vier hebben elk duizenden sterren en zijn de voorbije weken nog bijgewerkt. Dat zijn de twee dingen waar ik altijd naar kijk, en ik leg ze uit in <a href="/github-repos-gids/" style="color:#ff4d24; font-weight:600;">mijn gids over GitHub-repo's zonder code</a>. En nog dit: je API-sleutels horen in het .env-bestand dat de installatie aanmaakt. Nooit in een chatvenster.</p>
+    <div class="let"><p><strong>Twijfel je bij een repo die hier niet in staat?</strong> Plak de link in Claude met webzoeken aan en vraag: hoeveel sterren, wanneer laatst gewijzigd, is het gearchiveerd, en wat installeert het precies op mijn computer. Pas dan beslis je.</p></div>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:14px 32px 0;" id="faq">
+  <div data-reveal class="kaart faq">
+    <h2>Vragen die ik hierover krijg</h2>
+    <details><summary>Moet ik kunnen programmeren om dit te gebruiken?</summary><p>Nee. Je typt in gewone taal wat je wil, en Claude Code of Codex voert de commando's uit. De installatiestappen plak je als één blok in Claude Code met de vraag om het voor jou te doen. Het legt uit wat het doet en vraagt bevestiging voor elke stap.</p></details>
+    <details><summary>Werkt dit met een gratis account?</summary><p>Claude Code vraagt een betaald Claude-abonnement. Codex zit bij elk ChatGPT-plan, ook het gratis plan, met lagere limieten. De vier repo's zelf zijn gratis en open source. Alleen als je een dienst als ElevenLabs koppelt, betaal je per gebruik.</p></details>
+    <details><summary>Zijn mijn beelden veilig?</summary><p>Het knippen en renderen gebeurt op je eigen computer. Alleen als je een betaalde dienst koppelt voor transcriptie of stem, gaat er audio naar die dienst. Elke repo heeft een gratis lokale optie, en ik zeg er in elke prompt bij dat het die moet gebruiken als je geen sleutel hebt.</p></details>
+    <details><summary>Vervangt dit CapCut of Premiere?</summary><p>Voor talking-head video's, shorts uit lange opnames en animaties vervangt het al een groot deel van het handwerk. Voor fijne kleurcorrectie of complexe montages blijft een klassiek programma handiger. OpenFilm zit daar mooi tussenin: AI bouwt, jij stuurt bij op de tijdlijn.</p></details>
+    <details><summary>Welke zou jij kiezen als je er maar één mag?</summary><p>Film je vooral jezelf, dan Herk Edit Kit. Heb je lange opnames liggen, dan OpenMontage. Twijfel je, begin dan met OpenFilm: de desktop-app installeert alles voor je en je ziet meteen wat er gebeurt.</p></details>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:36px 32px 0;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:24px; padding:52px 48px; display:grid; grid-template-columns:1.1fr .9fr; gap:44px; align-items:center;">
+    <div>
+      <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px;">ELKE WEEK IN JE MAILBOX</div>
+      <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:34px; letter-spacing:-1.5px; line-height:1.1;">Elke week zo&rsquo;n vondst in je mailbox<span style="color:#ff4d24;">.</span></h2>
+      <p style="margin:0; font-size:16px; line-height:1.7; color:#b3ab9e;">Elke week wat er echt verandert in AI, in klare taal, met iets dat je meteen kan proberen. Gratis, en je kan altijd weg.</p>
+    </div>
+    <div>
+      <form action="https://bae29b1d.sibforms.com/serve/MUIFAMlmZRYFZYcxJGaoUhXbAJTxCEVZm_78YOICuP4QoQsuKXhS0YXkkyU1eKA8KrYjdEFOzQmFwFO1mBUZGTH6TNezpUEHdSTI0bF7xFe8b45hQcb2s4upUTvpO7ZLNMOlGDdT_dzMF9W1m2wJ-jV4-ldVsEBAqc47rtwz6YW9Jbu8YD59S9KtHIQuqbr92uFAB-hVYIuxZWAW" method="POST" style="display:flex; flex-direction:column; gap:10px;">
+        <input type="text" name="FIRSTNAME" placeholder="Je voornaam" required style="padding:14px 16px; border:none; border-radius:9px; font-size:15px; font-family:inherit; background:#2a272c; color:#f6f1e7;">
+        <input type="email" name="EMAIL" placeholder="Je e-mailadres" required style="padding:14px 16px; border:none; border-radius:9px; font-size:15px; font-family:inherit; background:#2a272c; color:#f6f1e7;">
+        <input type="text" name="email_address_check" value="" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="locale" value="nl">
+        <button type="submit" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:15px; border-radius:9px; border:none; cursor:pointer;">Schrijf je in →</button>
+      </form>
+      <p style="margin:12px 0 0; font-size:13px; color:#8a8378; text-align:center;">Meer dan 1.300 ondernemers lezen mee · uitschrijven kan altijd</p>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:860px; margin:0 auto; padding:22px 32px 96px;">
+  <div data-reveal style="background:#fff; border-radius:24px; padding:44px 40px; text-align:center;">
+    <h2 style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.5px; line-height:1.1;">Eén video laten monteren is leuk. Twintig per maand zonder erbij te denken, dat is iets anders<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0 0 26px; font-size:16px; line-height:1.7; color:#57534a; max-width:520px; margin-left:auto; margin-right:auto;">In de challenge zet je Claude in tien dagen echt in voor je werk, met live begeleiding. In Voorsprong krijg je elke nieuwe tool zoals deze binnen de week uitgelegd, met een werkende setup.</p>
+    <div class="cta-row" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">Bekijk de challenge →</a>
+      <a href="/voorsprong/" class="btn-outline" style="border:2px solid #1c1a1f; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px;">Ontdek Voorsprong</a>
+    </div>
+  </div>
+</section>
+
+<section data-kruislinks style="max-width:1000px; margin:0 auto; padding:0 32px 72px;"><h2 style="font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-1px; margin:0 0 18px;">Andere gratis gidsen</h2><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;"><a href="/ai-smaak-websites-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">12 websites die je AI smaak geven</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Waar je referenties haalt voor video, motion en websites, en de prompt die er een stijlbrief van maakt.</div></a><a href="/reels-met-claude-code/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">20 Reels op één avond</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Het stappenplan om met Claude Code Reels in batch te maken.</div></a><a href="/reels-maken-met-ai/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Reels maken met AI, zonder code</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Van los idee tot gepubliceerde reel met Claude of ChatGPT en CapCut.</div></a><a href="/github-repos-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">10 GitHub-repo's zonder code</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Hoe je een repo leest, en tien verzamelingen die Claude en ChatGPT beter maken.</div></a><a href="/welk-claude-model-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Welk Claude-model wanneer?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Eén regel om te onthouden en de vier modellen naast elkaar.</div></a><a href="/connectors-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Connectors veilig gebruiken</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wat je controleert voor je Claude aan je mailbox of agenda hangt.</div></a></div></section>
+
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/privacy/">Privacy en cookies</a> · <a href="#cookievoorkeuren">Cookievoorkeuren</a></div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=3"></script>
+<script>
+document.querySelectorAll('.kopieer').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = b.parentElement.querySelector('pre').innerText;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent = 'Gekopieerd ✓'; b.classList.add('ok');
+      setTimeout(function(){ b.textContent='Kopieer'; b.classList.remove('ok'); }, 1800);
+    });
+  });
+});
+</script>
+<script src="/js/analytics.js?v=6" defer></script>
+<script src="/js/menu.js?v=3" defer></script>
+<script src="/js/challenge-popup.js?v=2" defer></script>
+</body>
+</html>
