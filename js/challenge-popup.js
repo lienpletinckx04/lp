@@ -6,7 +6,7 @@
   var CHALLENGE = {
     titel: 'Claude in 10 dagen',
     tekst: 'Bouw je volledige Claude-setup in 10 dagen, met 4 live online sessies. In het Nederlands, maximaal 25 deelnemers. Niet live erbij? De opname staat dezelfde dag in de hub.',
-    detail: 'Start dinsdag 1 december · max 25 plekken',
+    detail: 'Extra laatste editie wegens succes · start dinsdag 1 december · max 25 plekken',
     knop: 'Bekijk de challenge →',
     link: '/challenge/'
   };
