@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://asklien.ai/gidsen/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -225,6 +225,18 @@
   <url>
     <loc>https://asklien.ai/claude-nieuw-oktober-2026/</loc>
     <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://asklien.ai/video-monteren-repos-gids/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://asklien.ai/ai-smaak-websites-gids/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
