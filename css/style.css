@@ -121,3 +121,9 @@ html, body { overflow-x: hidden; max-width: 100%; }
 }
 
 @keyframes menuIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Tijdlijn op de challengepagina: op desktop zes punten op een lijn, op mobiel twee kolommen zonder lijn */
+@media (max-width: 960px) {
+  .tijdlijn { grid-template-columns: 1fr 1fr !important; gap: 24px 16px !important; }
+  .tijdlijn > span[aria-hidden] { display: none; }
+}
