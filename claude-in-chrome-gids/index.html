@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude in Chrome: zo werk je er slim en veilig mee — AskLien.ai</title>
+<meta name="description" content="De Chrome-extensie van Claude leest pagina's, klikt, typt en vult formulieren in. Wat ze kan, de drie toestemmingsstanden, zeven regels om er slim mee te werken, drie taken om vandaag te proberen en wat je er nooit mee doet.">
+<link rel="canonical" href="https://asklien.ai/claude-in-chrome-gids/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Claude in Chrome: zo werk je er slim en veilig mee">
+<meta property="og:description" content="Wat de extensie kan, de ene instelling die telt, zeven regels en drie taken om vandaag te proberen.">
+<meta property="og:url" content="https://asklien.ai/claude-in-chrome-gids/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=3">
+<style>
+.regel { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:20px; }
+  .regel-kop { display:flex; align-items:baseline; gap:16px; margin-bottom:10px; }
+  .regel-nr { font-family:'Archivo'; font-weight:900; font-size:38px; color:#ff4d24; line-height:1; }
+  .regel h2 { margin:0; font-family:'Archivo'; font-weight:800; font-size:25px; letter-spacing:-1px; line-height:1.15; }
+  .vergelijk { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
+  .vak { border-radius:14px; padding:20px 22px; font-size:14px; line-height:1.65; position:relative; }
+  .vak .vak-label { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px; display:block; }
+  .fout { background:#fdf2ee; border:1px solid #f6d5c9; color:#8a5c4c; }
+  .fout .vak-label { color:#c9543a; }
+  .goed { background:#1c1a1f; color:#e8e2d4; }
+  .goed .vak-label { color:#ff4d24; }
+  .copy-btn { position:absolute; top:14px; right:14px; background:#ff4d24; color:#fff; border:none; font-family:'Schibsted Grotesk'; font-weight:600; font-size:11.5px; padding:6px 12px; border-radius:7px; cursor:pointer; }
+  .copy-btn:hover { background:#fff; color:#1c1a1f; }
+  .waarom { margin-top:18px; font-size:15px; line-height:1.7; color:#57534a; }
+  .waarom strong { color:#1c1a1f; }
+  .mening { background:#fff8ef; border-left:4px solid #ff4d24; border-radius:12px; padding:20px 24px; margin-top:20px; }
+  .mening .m-label { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; display:block; margin-bottom:8px; }
+  .mening p { margin:0; font-size:15px; line-height:1.7; color:#57534a; font-style:italic; }
+  .check-item { display:flex; align-items:flex-start; gap:14px; padding:14px 0; border-bottom:1px solid rgba(255,255,255,.10); }
+  .check-item:last-child { border-bottom:none; }
+  .check-vak { width:20px; height:20px; border:2px solid #ff4d24; border-radius:5px; flex-shrink:0; margin-top:2px; }
+  .check-item p { margin:0; font-size:15px; line-height:1.6; color:#e8e2d4; }
+  .check-item p strong { color:#fff; }
+  #ctaPopup { position:fixed; bottom:24px; right:24px; max-width:340px; background:#1c1a1f; color:#f6f1e7; border-radius:18px; padding:24px 26px; box-shadow:0 20px 50px rgba(0,0,0,.35); z-index:200; transform:translateY(140%); transition:transform .5s cubic-bezier(.2,.8,.2,1); }
+  #ctaPopup.show { transform:translateY(0); }
+  #ctaPopup .close { position:absolute; top:10px; right:14px; color:#8a8378; cursor:pointer; font-size:18px; background:none; border:none; }
+  @media (max-width:760px){
+    .vergelijk { grid-template-columns:1fr; }
+    .regel { padding:28px 24px; }
+    #ctaPopup{ left:16px; right:16px; bottom:16px; max-width:none; }
+  }
+.tabel { width:100%; border-collapse:collapse; font-size:14.5px; line-height:1.55; }
+.tabel th { text-align:left; font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.2px; text-transform:uppercase; color:#8a8378; padding:10px 12px; border-bottom:2px solid #1c1a1f; }
+.tabel td { padding:12px 12px; border-bottom:1px solid #e6ddcb; vertical-align:top; color:#57534a; }
+.tabel td:first-child { font-weight:600; color:#1c1a1f; white-space:nowrap; }
+.stap { display:flex; gap:18px; padding:18px 0; border-top:1px solid #e6ddcb; }
+.stap .nr { font-family:'Archivo'; font-weight:900; font-size:30px; color:#ff4d24; line-height:1; width:48px; flex-shrink:0; }
+.stap h3 { margin:0 0 6px; font-family:'Archivo'; font-weight:800; font-size:19px; letter-spacing:-.6px; }
+.stap p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+.risico { display:flex; gap:16px; padding:16px 0; border-top:1px solid #e6ddcb; }
+.risico .lvl { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; width:70px; flex-shrink:0; padding-top:4px; }
+.risico h3 { margin:0 0 4px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px; }
+.risico p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+@media (max-width:760px) { .tabel { font-size:13px; } .tabel td:first-child { white-space:normal; } }
+</style>
+</head>
+<body id="top">
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;">
+      <a href="/gidsen/">Alle gidsen</a>
+      <a href="https://hub.asklien.ai">Gratis Hub</a>
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">De challenge</a>
+    </div>
+  </div>
+</nav>
+<header style="max-width:900px; margin:0 auto; padding:72px 32px 8px;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">DE GIDS</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Claude zit nu in je Chrome-browser. Zo werk je er slim én veilig mee<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">De Chrome-extensie van Claude leest de pagina waar je op zit, klikt, typt en vult formulieren in. Handig, maar één instelling bepaalt of dat veilig gebeurt. Hieronder: wat het precies kan, de zeven regels die ik zelf volg, drie taken om vandaag te proberen en de lijst van wat je er nooit mee doet.</p>
+  <div style="margin-top:26px; padding-top:20px; border-top:1px solid #e6ddcb; font-size:14px; color:#8a8378;">Geschreven door <strong style="color:#1c1a1f;">Lien Pletinckx</strong> · AI-coach bij AskLien.ai<br>Gepubliceerd op 5 november 2026 · feiten gecontroleerd op 5 november 2026 bij de officiële pagina's van Anthropic</div>
+</header>
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:36px 40px;">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">DE REGEL</div>
+    <h2 style="margin:0 0 16px; font-family:'Archivo'; font-weight:900; font-size:28px; letter-spacing:-1.5px; line-height:1.15; color:#f6f1e7;">Laat hem eerst vragen. Pas als je weet wat hij doet, laat je hem los.</h2>
+    <p style="margin:0 0 14px; font-size:16px; line-height:1.75; color:#b3ab9e;">De extensie heeft drie standen: <strong style='color:#f6f1e7;'>Manually approve</strong> (hij vraagt voor elke actie), <strong style='color:#f6f1e7;'>Automatically approve</strong> (hij werkt door op sites die je toeliet) en <strong style='color:#f6f1e7;'>Skip all approvals</strong>. In het nieuwe zijpaneel staat de tweede stand standaard aan.</p><p style="margin:0 0 14px; font-size:16px; line-height:1.75; color:#b3ab9e;">Mijn aanpak: de eerste week op <strong style='color:#f6f1e7;'>Manually approve</strong>, op sites die ik vertrouw. Je ziet dan precies wat hij wil klikken en waarom. Daarna zet je per site "Always allow" aan voor de taken die hij goed doet. Skip all approvals gebruik ik niet.</p>
+  </div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;"><h2 data-reveal style="margin:0 0 4px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px;">Wat het is en wat het kan<span style="color:#ff4d24;">.</span></h2><div style="height:20px"></div></section>
+<section style="max-width:900px; margin:0 auto; padding:0 32px 20px;">
+  <div data-reveal style="background:#fff; border-radius:20px; padding:36px 40px;"><table class="tabel">
+<tr><th>Wat</th><th>Hoe het werkt</th><th>Voorbeeld</th></tr>
+<tr><td>Zijpaneel</td><td>Klik op het Claude-icoon in je werkbalk. Claude ziet de pagina die openstaat en je praat erover zoals in een gewone chat.</td><td>"Vat deze offertepagina samen en zeg wat er ontbreekt tegenover mijn checklist."</td></tr>
+<tr><td>Zelf handelen</td><td>Hij klikt, typt, navigeert en vult formulieren in, binnen de toestemmingen die jij gaf.</td><td>"Zet deze vijf contactgegevens in het CRM-formulier en wacht op mijn oké voor je verzendt."</td></tr>
+<tr><td>Meerdere tabbladen</td><td>Sleep tabbladen in de tabgroep van Claude en hij werkt over die tabbladen heen.</td><td>"Vergelijk de prijzen op deze drie leverancierspagina's in één tabel."</td></tr>
+<tr><td>Geplande taken</td><td>Via het klok-icoon plan je een taak dagelijks, wekelijks, maandelijks of jaarlijks. Chrome moet wel openstaan.</td><td>"Check elke maandag om 9 u de nieuwe reviews en zet ze in mijn Sheet."</td></tr>
+<tr><td>Overal verder werken</td><td>Op Max, Ultra en Team loopt het paneel als een Cowork-sessie die je op desktop en mobiel kunt verderzetten.</td><td>Start een onderzoek in Chrome, lees het resultaat 's avonds op je gsm.</td></tr>
+<tr><td>Voor wie bouwt</td><td>Claude leest de console, netwerkverzoeken en de structuur van de pagina. Handig samen met Claude Code.</td><td>"Waarom laadt dit formulier niet? Kijk in de console en stel een fix voor."</td></tr>
+</table>
+<p style="margin:16px 0 0; font-size:13.5px; color:#8a8378;">Beschikbaar op alle betalende plannen (Pro, Max, Ultra, Team, Enterprise), alleen in Google Chrome op desktop, niet in andere browsers of op je gsm. Installeren via de Chrome Web Store, daarna aanmelden met je Claude-account. Op Enterprise moet een beheerder het aanzetten. Bron: <a href="https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome" target="_blank" rel="noopener" style="color:#ff4d24; font-weight:600;">Getting started with Claude in Chrome</a> en <a href="https://claude.com/chrome" target="_blank" rel="noopener" style="color:#ff4d24; font-weight:600;">claude.com/chrome</a>.</p></div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;"><h2 data-reveal style="margin:0 0 4px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px;">Zeven regels om er slim mee te werken<span style="color:#ff4d24;">.</span></h2><div style="height:20px"></div></section>
+<section style="max-width:900px; margin:0 auto; padding:0 32px 20px;">
+  <div data-reveal style="background:#fff; border-radius:20px; padding:36px 40px;">
+<div class="stap"><div class="nr">01</div><div><h3>Begin op Manually approve</h3><p>Zet de stand in de instellingen van de extensie. Je leert in een paar dagen welke stappen hij goed doet en waar hij twijfelt. Pas daarna geef je per site meer vrijheid.</p></div></div>
+<div class="stap"><div class="nr">02</div><div><h3>Geef toestemming per site, niet in het algemeen</h3><p>Bij elke nieuwe site vraagt hij: "Allow this action", "Always allow on this site" of "Decline". Kies "Always allow" alleen voor sites waar hij een vaste taak doet. Alles beheer je achteraf onder Extension settings › Permissions.</p></div></div>
+<div class="stap"><div class="nr">03</div><div><h3>Gebruik een apart Chrome-profiel</h3><p>Anthropic raadt het zelf aan: een profiel zonder je bank, je gezondheidsportaal en je wachtwoordkluis. Dan kan er nooit iets zichtbaar zijn dat hij niet hoeft te zien.</p></div></div>
+<div class="stap"><div class="nr">04</div><div><h3>Weet dat hij ziet wat jij ziet</h3><p>Schermafbeeldingen van je actieve tabblad worden deel van het gesprek. Sluit tabbladen met klantdata of persoonlijke info voor je hem aan het werk zet.</p></div></div>
+<div class="stap"><div class="nr">05</div><div><h3>Geef hem één taak met een eindpunt</h3><p>"Zoek de drie goedkoopste treinopties en stop" werkt beter dan "regel mijn reis". Zeg wat klaar betekent en waar hij moet wachten op jou.</p></div></div>
+<div class="stap"><div class="nr">06</div><div><h3>Laat hem lezen, niet beslissen</h3><p>Het sterkste gebruik voor ondernemers is lezen en voorbereiden: samenvatten, vergelijken, invullen tot aan de verzendknop. De klik die geld kost of iets verstuurt, doe je zelf.</p></div></div>
+<div class="stap"><div class="nr">07</div><div><h3>Plan wat terugkomt</h3><p>Taken die elke week hetzelfde zijn (reviews nalezen, een lijst bijwerken, een prijs checken) zet je in een geplande taak. Chrome moet daarvoor openstaan, dus plan ze op momenten dat je toch werkt.</p></div></div>
+  </div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:36px 32px 0;"><h2 data-reveal style="margin:0 0 4px; font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px;">Drie taken om vandaag te proberen<span style="color:#ff4d24;">.</span></h2><div style="height:20px"></div></section>
+<section style="max-width:900px; margin:0 auto; padding:0 32px 20px;">
+  <div data-reveal class="regel">
+    <div class="regel-kop"><div class="regel-nr">1</div><h2>Een lange pagina lezen voor jou</h2></div>
+    <div class="vergelijk">
+      <div class="vak fout"><span class="vak-label">Niet zo</span>Lees dit.</div>
+      <div class="vak goed"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">Wel zo</span>Lees deze pagina. Geef me in vijf punten wat voor een zelfstandige in België relevant is, en zeg welke zin je niet zeker begrijpt.</div>
+    </div>
+    <p class="waarom"><strong>Waarom:</strong> hij ziet de hele pagina, maar jij moet zeggen door welke bril hij moet kijken.</p>
+  </div>
+  <div data-reveal class="regel">
+    <div class="regel-kop"><div class="regel-nr">2</div><h2>Drie sites vergelijken</h2></div>
+    <div class="vergelijk">
+      <div class="vak fout"><span class="vak-label">Niet zo</span>Welke is het beste?</div>
+      <div class="vak goed"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">Wel zo</span>Je hebt drie tabbladen in je tabgroep. Maak één tabel: prijs per maand, opzegtermijn, en of er een Nederlandstalige helpdesk is. Zet "onbekend" als je het niet vindt.</div>
+    </div>
+    <p class="waarom"><strong>Waarom:</strong> een vaste tabel met "onbekend" als optie voorkomt dat hij gaten zelf invult.</p>
+  </div>
+  <div data-reveal class="regel">
+    <div class="regel-kop"><div class="regel-nr">3</div><h2>Een formulier voorbereiden</h2></div>
+    <div class="vergelijk">
+      <div class="vak fout"><span class="vak-label">Niet zo</span>Vul dit in en verstuur.</div>
+      <div class="vak goed"><button class="copy-btn" onclick="copyVak(this)">Kopieer</button><span class="vak-label">Wel zo</span>Vul dit aanvraagformulier in met de gegevens uit het tabblad "Bedrijfsgegevens". Verstuur niets. Toon me wat je ingevuld hebt en wat je niet zeker wist.</div>
+    </div>
+    <p class="waarom"><strong>Waarom:</strong> de verzendknop blijft van jou. Zo heb je de snelheid zonder het risico.</p>
+  </div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:16px 32px 0;">
+  <div data-reveal style="background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:36px 40px;">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">WAT JE ER NOOIT MEE DOET</div>
+    <h2 style="margin:0 0 16px; font-family:'Archivo'; font-weight:900; font-size:28px; letter-spacing:-1.5px; line-height:1.15; color:#f6f1e7;">De korte lijst, en waarom hij er zelf ook niet aan begint.</h2>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Betalen of geld overschrijven.</strong> Claude voert zelf geen aankopen of financiële transacties uit, in geen enkele stand.</p></div>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Kaartgegevens, wachtwoorden of identiteitsgegevens intypen.</strong> Gevoelige info vraagt altijd jouw goedkeuring, en kaart- en ID-gegevens doet hij niet.</p></div>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Accounts aanmaken of definitief verwijderen.</strong> Ook dat doe je zelf.</p></div>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Bestanden downloaden van sites die je niet kent.</strong> Elke download vraagt om een expliciete oké.</p></div>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Instructies volgen die in een mail of webpagina staan.</strong> Dat heet prompt injection. Anthropic filtert erop met classifiers, maar zegt zelf dat het risico niet nul is. Daarom: vertrouwde sites, en de stand Manually approve als je twijfelt.</p></div>
+    <div class="check-item"><div class="check-vak"></div><p><strong>Werken met patiënten- of gezondheidsdata.</strong> Voor organisaties onder HIPAA staat de extensie standaard uit en valt ze niet onder de verwerkersovereenkomst.</p></div>
+    <p style="margin:18px 0 0; font-size:13.5px; color:#8a8378;">Bron: <a href="https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide" target="_blank" rel="noopener" style="color:#ff4d24; font-weight:600;">Claude in Chrome permissions guide</a> en <a href="https://support.claude.com/en/articles/12902428-use-claude-in-chrome-safely" target="_blank" rel="noopener" style="color:#ff4d24; font-weight:600;">Use Claude in Chrome safely</a>. Sites met volwassen inhoud en gekende piraterijsites zijn geblokkeerd; financiële sites vragen eerst toestemming.</p>
+  </div>
+</section>
+<section style="max-width:900px; margin:0 auto; padding:24px 32px 96px;">
+  <div data-reveal style="background:#fff; border-radius:24px; padding:44px 42px;">
+    <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:12px;">EN NU?</div>
+    <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.5px; line-height:1.1;">De extensie is één stuk. Het systeem errond maakt het verschil<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0 0 20px; font-size:16px; line-height:1.7; color:#57534a; max-width:640px;">Claude in je browser is handig voor losse taken. Het wordt pas echt sterk als hij ook je manier van werken kent: Projects met je context, skills voor wat je vaak doet, en connectors naar je mail en agenda. Dat bouwen we in tien dagen samen.</p>
+    <div class="mening" style="margin-top:0; margin-bottom:26px;"><span class="m-label">Wat ik erover denk</span><p>De meeste mensen zetten hem aan, laten hem één keer iets boeken, schrikken van hoe traag of hoe stout dat gaat, en laten hem liggen. Terwijl het echte nut in het saaie zit: lezen, vergelijken, voorbereiden. Daar wint hij elke dag een kwartier voor je.</p></div>
+    <div class="cta-row" style="display:flex; gap:14px; flex-wrap:wrap;">
+      <a href="/challenge/" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">Bekijk de challenge →</a>
+      <a href="https://hub.asklien.ai" class="btn-outline" style="border:2px solid #1c1a1f; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px;">Eerst gratis rondkijken in de Hub</a>
+    </div>
+  </div>
+</section>
+<section data-kruislinks style="max-width:1000px; margin:0 auto; padding:0 32px 72px;"><h2 style="font-family:'Archivo'; font-weight:800; font-size:22px; letter-spacing:-1px; margin:0 0 18px;">Andere gratis gidsen</h2><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;"><a href="/prompten-claude-5/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Korter prompten, beter resultaat</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Drie dingen die ik veranderde, plus de checklist.</div></a><a href="/github-repos-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">10 GitHub-repo's die je AI beter maken</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Zonder dat je code schrijft.</div></a><a href="/welk-claude-model-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Welk Claude-model wanneer?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Fable beslist, Opus voert uit. De cheat sheet.</div></a><a href="/connectors-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Connectors: AI in je mailbox en agenda</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Zonder spijt achteraf.</div></a><a href="/veilig-met-ai-gids/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Wat je nooit in ChatGPT of Claude plakt</div><div style="font-size:14px; line-height:1.6; color:#57534a;">En wat wél mag.</div></a><a href="/claude-of-chatgpt/" style="display:block; background:#fff; border-radius:14px; padding:20px 22px;"><div style="font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.5px; margin-bottom:6px; color:#1c1a1f;">Claude of ChatGPT?</div><div style="font-size:14px; line-height:1.6; color:#57534a;">Wat gebruik je waarvoor.</div></a></div><p style="margin:18px 0 0; font-size:15px;"><a href="/gidsen/" style="font-weight:600; color:#ff4d24;">Bekijk alle gidsen →</a></p></section>
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px;"><a href="/gidsen/">Alle gidsen</a><a href="https://hub.asklien.ai">Hub</a><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="/">Terug naar de site</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/privacy/">Privacy en cookies</a> · <a href="#cookievoorkeuren">Cookievoorkeuren</a></div>
+  </div>
+</footer>
+<div id="ctaPopup">
+  <button class="close" onclick="document.getElementById('ctaPopup').classList.remove('show')">×</button>
+  <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.5px; color:#ff4d24; margin-bottom:10px;">GRATIS VERDER LEREN</div>
+  <div style="font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px; line-height:1.2; margin-bottom:10px;">Alles staat klaar in de Hub.</div>
+  <p style="margin:0 0 16px; font-size:13.5px; line-height:1.5; color:#b3ab9e;">Skills, templates en gidsen om meteen mee te starten. Gratis account, geen kaartgegevens.</p>
+  <a href="https://hub.asklien.ai" class="btn-primary" style="display:block; background:#ff4d24; color:#fff; font-weight:600; font-size:14px; padding:13px; border-radius:9px; text-align:center;">Naar de gratis Hub →</a>
+  <a href="/challenge/" style="display:block; margin-top:10px; font-size:13px; color:#b3ab9e; text-align:center; text-decoration:underline;">Of bekijk de challenge van 3 november</a>
+</div>
+<script src="/js/site.js?v=3"></script>
+<script>
+function copyVak(btn) { var vak = btn.parentElement.cloneNode(true); var b = vak.querySelector('.copy-btn'); if (b) b.remove(); var l = vak.querySelector('.vak-label'); if (l) l.remove(); navigator.clipboard.writeText(vak.innerText.trim()).then(function () { var old = btn.textContent; btn.textContent = 'Gekopieerd!'; setTimeout(function () { btn.textContent = old; }, 1800); }); }
+setTimeout(function () { document.getElementById('ctaPopup').classList.add('show'); }, 15000);
+window.addEventListener('scroll', function onScroll() { if (window.scrollY > document.body.scrollHeight * 0.45) { document.getElementById('ctaPopup').classList.add('show'); window.removeEventListener('scroll', onScroll); } });
+</script>
+<script src="/js/analytics.js?v=6" defer></script>
+<script src="/js/menu.js?v=3" defer></script>
+<script src="/js/challenge-popup.js?v=2" defer></script>
+</body>
+</html>
