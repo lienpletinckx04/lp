@@ -1,13 +1,13 @@
 /* AskLien.ai — melding linksonder: wie schreef zich recent in voor de challenge.
    Gegevens komen uit de hub (echte Stripe-betalingen), enkel voornaam en tijdstip.
-   De hub geeft pas iets terug vanaf 5 inschrijvingen; daaronder verschijnt niets.
+   Verschijnt vanaf de eerste inschrijving; meerdere inschrijvingen = meerdere meldingen na elkaar.
    Geen cookies, niets bewaard. */
 (function () {
   var BRON = 'https://vgrlwcocnveysurkahuz.supabase.co/functions/v1/challenge-inschrijvingen';
-  var EERSTE_NA_MS = 7000;
+  var EERSTE_NA_MS = 5000;
   var TONEN_MS = 6000;
-  var PAUZE_MS = 14000;
-  var MAX_MELDINGEN = 4;
+  var PAUZE_MS = 9000;
+  var MAX_MELDINGEN = 8;
 
   var gesloten = false;
   try { gesloten = sessionStorage.getItem('asklien-melding-weg') === '1'; } catch (e) {}
