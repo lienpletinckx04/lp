@@ -63,7 +63,7 @@
       if (!el) el = maak();
       var r = recent[i++];
       var wie = r.voornaam ? '<strong>' + r.voornaam.replace(/[<>&"]/g, '') + '</strong>' : '<strong>Iemand</strong>';
-      el.querySelector('[data-tekst]').innerHTML = wie + ' schreef zich in voor de challenge van november' +
+      el.querySelector('[data-tekst]').innerHTML = wie + ' schreef zich in voor de challenge' +
         '<br><span style="color:#8a8378;font-size:13px;">' + geleden(r.op) + '</span>';
       el.style.opacity = '1'; el.style.transform = 'none'; el.style.pointerEvents = 'auto';
       setTimeout(function () {
