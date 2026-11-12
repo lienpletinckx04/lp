@@ -208,6 +208,17 @@
   .tijdlijn strong { font-weight:600; }
   .stappen span { font-size:20px; }
   .cijfers b { font-size:28px; }
+  details.verhaal { margin:0 0 22px; }
+  details.verhaal > summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px; background:#fff; border-radius:20px; padding:22px 28px; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px; }
+  details.verhaal > summary::-webkit-details-marker { display:none; }
+  details.verhaal > summary span { font-family:'Schibsted Grotesk',sans-serif; font-weight:400; font-size:14.5px; letter-spacing:0; color:#8a8378; display:block; margin-top:4px; }
+  details.verhaal > summary::after { content:'+'; flex:none; width:38px; height:38px; border-radius:50%; background:#ff4d24; color:#fff; font-size:24px; font-weight:600; line-height:36px; text-align:center; }
+  details.verhaal[open] > summary::after { content:'–'; }
+  details.verhaal[open] > summary { margin-bottom:22px; }
+  .herkomst { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .herkomst span { font-size:13px; font-weight:600; color:#57534a; background:#fff; border:1px solid #e6ddcb; border-radius:999px; padding:6px 13px; }
+  .casekaart .duim { margin:-30px -30px 6px; border-radius:20px 20px 0 0; overflow:hidden; border-bottom:1px solid #e6ddcb; aspect-ratio:16/9.6; background:#f6f1e7; }
+  .casekaart .duim img { display:block; width:100%; height:100%; object-fit:cover; object-position:top left; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -216,6 +227,7 @@
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
     .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
+    details.verhaal > summary { padding:18px 20px; font-size:18px; }
     .keten ol { flex-direction:column; } .keten li:not(:last-child)::after { right:auto; left:22px; top:auto; bottom:-9px; margin:0; clip-path:polygon(0 0,100% 0,50% 100%); } .keten { padding:22px 20px; } .galerij { grid-template-columns:1fr; }
     .inv { padding:26px 24px; } .inv dl > div { grid-template-columns:1fr; gap:4px; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
@@ -244,6 +256,7 @@
   <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">CASE · RENARD BAKERY · BRUSSEL</div>
   <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,58px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Van één auditdag naar de cockpit van een bakkerij<span style="color:#ff4d24;">.</span></h1>
   <p style="margin:0; font-size:19px; line-height:1.65; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Renard Bakery stond voor de opening van een tweede winkel. Alle cijfers zaten in de kassa, maar niemand kreeg ze er leesbaar uit. Een kleine vijf maanden later opent het management elke dag één app op de gsm: de omzet van gisteren, de prognose voor de komende week en wat er morgen meer gebakken mag worden. Dit is hoe dat gegaan is, van de eerste auditdag tot vandaag.</p>
+
 </header>
 
 <section class="case-breed" style="padding-top:36px;">
@@ -274,14 +287,16 @@
 </section>
 
 <section class="case-smal" style="padding-top:44px;">
-  <div data-reveal class="kaart">
+  <details class="verhaal">
+    <summary><div>Lees het volledige verhaal<span>Waar het begon · De auditdag · De keuze: smaller en dieper</span></div></summary>
+  <div class="kaart">
     <div class="nr">01</div>
     <h2>Waar het begon</h2>
     <p>Renard Bakery is een ambachtelijke bakkerij in Brussel. Een centraal atelier waar alles gebakken wordt, een winkel in Elsene, en in juni 2026 een tweede winkel in Ukkel die twee maanden later zou opengaan. Daarnaast leveren ze aan bedrijven en verkopen ze via een webshop en via Deliveroo. Zeven dagen op zeven.</p>
     <p>Het product zat goed. De groei ook. Alleen draaide de zaak op wat een paar mensen in hun hoofd hadden. Hoeveel er gebakken werd, was ervaring en buikgevoel. Wat er 's avonds overbleef, werd nergens bijgehouden. En de kassa wist alles, maar gaf weinig prijs: wie wilde weten wat een dag had opgebracht, moest door rapporten waar je een opleiding voor nodig hebt.</p>
     <p>Met één winkel lukt dat. Met twee winkels, vier verkoopkanalen en een ploeg die voortdurend wisselt, niet meer.</p>
   </div>
-  <div data-reveal class="kaart">
+  <div class="kaart">
     <div class="nr">02</div>
     <h2>De auditdag</h2>
     <p>Op 24 juni zat ik een dag in het atelier. Geen presentatie over wat AI allemaal kan. Wel meekijken en doorvragen: hoe komen bestellingen binnen, wie beslist wat er gebakken wordt, waar gaat de tijd naartoe, welke tools staan er al en wat kosten ze.</p>
@@ -296,13 +311,14 @@
     <p>De rode draad was telkens dezelfde: de kennis zat in hoofden, niet in systemen. Alles wat ik voorstelde deed in de grond één ding. Die kennis eruit halen, zodat groeien niet betekent dat de chaos meegroeit.</p>
     <p>Het rapport sloot af met tien prioriteiten in volgorde, een doorlichting van hun tools en abonnementen, en drie voorstellen: een lichte basis met snelle winsten, een volledig ecosysteem, en alles samen in één app.</p>
   </div>
-  <div data-reveal class="kaart">
+  <div class="kaart">
     <div class="nr">03</div>
     <h2>De keuze: smaller en dieper</h2>
     <p>Wat daarna gebeurde, vind ik eerlijk gezegd het interessantste stuk. Ze kozen niet het grootste pakket. Ze kozen ook niet de snelle winsten. Ze schrapten bewust alles wat leuk was om te hebben en hielden de twee zwaarste lagen over: financieel inzicht en voorspellen. In één app, op de gsm. Met een opleiding erbij, zodat het team er ook echt mee werkt.</p>
     <p>Ik denk dat dat de juiste reflex was. Een audit legt het hele menu op tafel. Daarna moet je durven kiezen wat eerst komt, en de rest laten wachten.</p>
     <p>Op 13 juli was er een akkoord, vier dagen later zaten we samen voor de opstart.</p>
   </div>
+  </details>
   <div data-reveal class="oproep">
     <div><strong>Herken je dit?</strong><p>Cijfers die ergens zitten maar nergens leesbaar uitkomen, en een zaak die draait op wat een paar mensen in hun hoofd hebben. Daar begint een audit.</p></div>
     <a href="/ai-audit/#aanvraag" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:15px; padding:14px 26px; border-radius:10px; white-space:nowrap;">Vertel me waar je vastloopt →</a>

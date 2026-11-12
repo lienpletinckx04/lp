@@ -208,6 +208,17 @@
   .tijdlijn strong { font-weight:600; }
   .stappen span { font-size:20px; }
   .cijfers b { font-size:28px; }
+  details.verhaal { margin:0 0 22px; }
+  details.verhaal > summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px; background:#fff; border-radius:20px; padding:22px 28px; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px; }
+  details.verhaal > summary::-webkit-details-marker { display:none; }
+  details.verhaal > summary span { font-family:'Schibsted Grotesk',sans-serif; font-weight:400; font-size:14.5px; letter-spacing:0; color:#8a8378; display:block; margin-top:4px; }
+  details.verhaal > summary::after { content:'+'; flex:none; width:38px; height:38px; border-radius:50%; background:#ff4d24; color:#fff; font-size:24px; font-weight:600; line-height:36px; text-align:center; }
+  details.verhaal[open] > summary::after { content:'–'; }
+  details.verhaal[open] > summary { margin-bottom:22px; }
+  .herkomst { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .herkomst span { font-size:13px; font-weight:600; color:#57534a; background:#fff; border:1px solid #e6ddcb; border-radius:999px; padding:6px 13px; }
+  .casekaart .duim { margin:-30px -30px 6px; border-radius:20px 20px 0 0; overflow:hidden; border-bottom:1px solid #e6ddcb; aspect-ratio:16/9.6; background:#f6f1e7; }
+  .casekaart .duim img { display:block; width:100%; height:100%; object-fit:cover; object-position:top left; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -216,6 +227,7 @@
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
     .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
+    details.verhaal > summary { padding:18px 20px; font-size:18px; }
     .keten ol { flex-direction:column; } .keten li:not(:last-child)::after { right:auto; left:22px; top:auto; bottom:-9px; margin:0; clip-path:polygon(0 0,100% 0,50% 100%); } .keten { padding:22px 20px; } .galerij { grid-template-columns:1fr; }
     .inv { padding:26px 24px; } .inv dl > div { grid-template-columns:1fr; gap:4px; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
@@ -245,6 +257,7 @@
   <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">CASE STUDY · RENARD BAKERY · BRUSSELS</div>
   <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,58px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">From a one-day audit to the bakery's command center<span style="color:#ff4d24;">.</span></h1>
   <p style="margin:0; font-size:19px; line-height:1.65; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Renard Bakery was about to open a second store. Every number they needed was sitting in the register system, and nobody could pull it out in a form they could read. Less than five months later, management opens one app on their phones every day. It shows yesterday's sales, the forecast for the week ahead, and what to bake more of tomorrow. Here's how we got there, from the first audit day to today.</p>
+  <div class="herkomst"><span>Client in Brussels, Belgium</span><span>Project run in Dutch</span><span>Screens translated to English for this page</span></div>
 </header>
 
 <section class="case-breed" style="padding-top:36px;">
@@ -275,14 +288,16 @@
 </section>
 
 <section class="case-smal" style="padding-top:44px;">
-  <div data-reveal class="kaart">
+  <details class="verhaal">
+    <summary><div>Read the full story<span>Where things stood · The audit day · What they chose: fewer things, done deeper</span></div></summary>
+  <div class="kaart">
     <div class="nr">01</div>
     <h2>Where things stood</h2>
     <p>Renard Bakery is an artisan bakery in Brussels. Everything is baked in one central kitchen. In June 2026 they had one store in Ixelles and a second one in Uccle set to open two months later. They also deliver to businesses, sell through an online store, and take orders on Deliveroo. They're open seven days a week.</p>
     <p>The bread was great and the business was growing. The trouble was that it all ran on what a few people kept in their heads. How much to bake came down to experience and gut feel. Nobody tracked what was left at closing time. The register system had all the data, but getting a simple answer out of it, like what a given day brought in, meant digging through reports that take training to read.</p>
     <p>That works with one store. Add a second store, four sales channels and a staff that keeps turning over, and it stops working.</p>
   </div>
-  <div data-reveal class="kaart">
+  <div class="kaart">
     <div class="nr">02</div>
     <h2>The audit day</h2>
     <p>On June 24 I spent a day in their production kitchen. I didn't bring slides. I watched and asked questions. How do orders come in? Who decides what gets baked? Where does the time go? Which tools are they already paying for, and what do those cost?</p>
@@ -297,13 +312,14 @@
     <p>The same thing kept coming up: what the business knew lived in people's heads instead of in a system. Every proposal I made came back to getting that knowledge out, so the chaos doesn't grow along with the company.</p>
     <p>The report closed with ten priorities in order, a review of their tools and subscriptions, and three proposals: a light starter package with quick wins, a full ecosystem, and everything combined in one app.</p>
   </div>
-  <div data-reveal class="kaart">
+  <div class="kaart">
     <div class="nr">03</div>
     <h2>What they chose: fewer things, done deeper</h2>
     <p>What happened next is the part I still think about. They passed on the biggest package, and they passed on the quick wins too. They cut everything that was nice to have and kept the two heaviest pieces: financial visibility and forecasting, in one app on their phones, with training included so the team would really use it.</p>
     <p>I think that was a smart call. An audit puts the whole menu in front of you. Then you have to pick what comes first and let the rest wait.</p>
     <p>We had a signed agreement on July 13 and held the kickoff four days later.</p>
   </div>
+  </details>
   <div data-reveal class="oproep">
     <div><strong>Sound familiar?</strong><p>The numbers exist somewhere, but you can't get a clear answer out of them, and the business runs on what a few people keep in their heads. That's where an audit starts.</p></div>
     <a href="/en/ai-audit/#request" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:15px; padding:14px 26px; border-radius:10px; white-space:nowrap;">Tell me where you're stuck →</a>

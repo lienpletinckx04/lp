@@ -207,6 +207,17 @@
   .tijdlijn strong { font-weight:600; }
   .stappen span { font-size:20px; }
   .cijfers b { font-size:28px; }
+  details.verhaal { margin:0 0 22px; }
+  details.verhaal > summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px; background:#fff; border-radius:20px; padding:22px 28px; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px; }
+  details.verhaal > summary::-webkit-details-marker { display:none; }
+  details.verhaal > summary span { font-family:'Schibsted Grotesk',sans-serif; font-weight:400; font-size:14.5px; letter-spacing:0; color:#8a8378; display:block; margin-top:4px; }
+  details.verhaal > summary::after { content:'+'; flex:none; width:38px; height:38px; border-radius:50%; background:#ff4d24; color:#fff; font-size:24px; font-weight:600; line-height:36px; text-align:center; }
+  details.verhaal[open] > summary::after { content:'–'; }
+  details.verhaal[open] > summary { margin-bottom:22px; }
+  .herkomst { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .herkomst span { font-size:13px; font-weight:600; color:#57534a; background:#fff; border:1px solid #e6ddcb; border-radius:999px; padding:6px 13px; }
+  .casekaart .duim { margin:-30px -30px 6px; border-radius:20px 20px 0 0; overflow:hidden; border-bottom:1px solid #e6ddcb; aspect-ratio:16/9.6; background:#f6f1e7; }
+  .casekaart .duim img { display:block; width:100%; height:100%; object-fit:cover; object-position:top left; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -215,6 +226,7 @@
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
     .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
+    details.verhaal > summary { padding:18px 20px; font-size:18px; }
     .keten ol { flex-direction:column; } .keten li:not(:last-child)::after { right:auto; left:22px; top:auto; bottom:-9px; margin:0; clip-path:polygon(0 0,100% 0,50% 100%); } .keten { padding:22px 20px; } .galerij { grid-template-columns:1fr; }
     .inv { padding:26px 24px; } .inv dl > div { grid-template-columns:1fr; gap:4px; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
@@ -244,6 +256,7 @@
   <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">CASE STUDY · KNOWLEDGE PLATFORM · LEGAL EXPERT</div>
   <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,58px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Years of expertise, all in one place<span style="color:#ff4d24;">.</span></h1>
   <p style="margin:0; font-size:19px; line-height:1.65; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">He's a legal expert in a niche corner of real estate, with books, a podcast, videos and decades of experience. I'm not sharing his name yet, because his platform is about to launch publicly on his own schedule. All that material existed, but it was spread all over the place. He came to me asking for a chatbot. We ended up building a full knowledge platform with a revenue model built in.</p>
+  <div class="herkomst"><span>Client in Belgium</span><span>Project run in Dutch</span><span>Written up in English for this page</span></div>
 </header>
 
 <section class="case-breed" style="padding-top:36px;">
@@ -268,26 +281,29 @@
   </div>
 </section>
 
-<section class="case-smal" style="padding-top:36px;">
-  <div data-reveal class="kaart">
+<section class="case-smal" style="padding-top:26px;">
+  <details class="verhaal">
+    <summary><div>Read the full story<span>Where things stood · No audit, just a clear idea · From chatbot to platform</span></div></summary>
+  <div class="kaart">
     <div class="nr">01</div>
     <h2>Where things stood</h2>
     <p>He has written books in his field, hosts a podcast, gives talks and works as a mediator and expert. His audience is a mix of private individuals and professionals who come to him with very specific questions.</p>
     <p>His knowledge was scattered. Some of it was in a book, some in a podcast episode, some in a video, some in case law. To find an answer you had to know where to start, and almost nobody did.</p>
     <p>He had a clear idea from our first conversation: put as much as possible on each topic in one place, and add a chatbot that figures out what kind of question you're asking before it sends you to the right spot.</p>
   </div>
-  <div data-reveal class="kaart">
+  <div class="kaart">
     <div class="nr">02</div>
     <h2>No audit, just a clear idea</h2>
     <p>This project didn't start with an audit day, and it didn't need one. When a client already knows exactly what he wants, he mostly needs someone to build it and think it through with him.</p>
     <p>His first request was a chatbot trained on his knowledge and a secure area for his members. The revenue model was part of the plan from day one: sponsors and advertisers would fund the operation, with subscriptions added later. That shaped how we built it, because a platform that has to make money needs a different design than a nice-looking library.</p>
   </div>
-  <div data-reveal class="kaart">
+  <div class="kaart">
     <div class="nr">03</div>
     <h2>From chatbot to platform</h2>
     <p>The project grew as we went, which often happens once a client sees what's possible. The chatbot turned into a knowledge base. The knowledge base got user roles, with free and paid content. The sponsors got their own login so he doesn't have to place every banner himself.</p>
     <p>Halfway through, we moved the platform from a rapid prototyping tool to custom code and its own database, and we did a security and privacy review. You can't see that work from the outside, but it's what separates a prototype from something you can build a business on.</p>
   </div>
+  </details>
   <div data-reveal class="oproep">
     <div><strong>Is your expertise scattered everywhere too?</strong><p>Books, videos, a podcast, twenty years of experience. That's a platform waiting to be built.</p></div>
     <a href="/en/ai-audit/#request" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:15px; padding:14px 26px; border-radius:10px; white-space:nowrap;">Tell me what you have →</a>
