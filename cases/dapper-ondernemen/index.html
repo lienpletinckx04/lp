@@ -10,7 +10,9 @@
 <title>Case Dapper Ondernemen: van 19 losse tools naar één platform | AskLien.ai</title>
 <meta name="description" content="Hoe een AI audit bij een financieel begeleidingsbureau uitkwam bij één diagnose: versnippering. En hoe daar één platform op maat uit groeide, met klantenportaal, automatische flows en een dagelijkse briefing.">
 <link rel="canonical" href="https://asklien.ai/cases/dapper-ondernemen/">
+<link rel="alternate" hreflang="nl-BE" href="https://asklien.ai/cases/dapper-ondernemen/">
 <link rel="alternate" hreflang="nl" href="https://asklien.ai/cases/dapper-ondernemen/">
+<link rel="alternate" hreflang="en-US" href="https://asklien.ai/en/cases/dapper-ondernemen/">
 <link rel="alternate" hreflang="en" href="https://asklien.ai/en/cases/dapper-ondernemen/">
 <link rel="alternate" hreflang="x-default" href="https://asklien.ai/cases/dapper-ondernemen/">
 <meta property="og:type" content="article">
@@ -150,6 +152,7 @@
   .regels div { border-top:3px solid #ff4d24; padding-top:16px; }
   .regels strong { display:block; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#f6f1e7; margin-bottom:8px; }
   .regels p { margin:0; font-size:14.5px; line-height:1.7; color:#b3ab9e; }
+  .regels.licht strong { color:#1c1a1f; } .regels.licht p { color:#57534a; }
   .oproep { display:flex; align-items:center; justify-content:space-between; gap:24px; background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:26px 32px; margin-bottom:22px; }
   .oproep strong { display:block; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.6px; margin-bottom:4px; }
   .oproep p { margin:0; font-size:15px; line-height:1.65; color:#b3ab9e; max-width:520px; }
@@ -168,6 +171,11 @@
   .casekaart h3 { margin:0; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1.1px; line-height:1.08; }
   .casekaart p { margin:0; font-size:15.5px; line-height:1.7; color:#57534a; flex:1; }
   .casekaart .meer { font-weight:600; font-size:15px; color:#ff4d24; }
+  .soorten { display:grid; grid-template-columns:repeat(2,1fr); gap:22px 30px; margin-top:24px; }
+  .soorten > div { border-top:1px solid #3a363f; padding-top:16px; }
+  .soorten .tag { display:inline-block; font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.6px; color:#1c1a1f; background:#ff4d24; border-radius:5px; padding:4px 8px; margin-bottom:10px; }
+  .soorten strong { display:block; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#f6f1e7; margin-bottom:5px; }
+  .soorten p { margin:0; font-size:14.5px; line-height:1.7; color:#b3ab9e; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -175,7 +183,7 @@
     .feat, .feat.gsmrij { grid-template-columns:1fr; gap:20px; margin-bottom:44px; }
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
-    .winst, .regels, .stappen, .modules, .casegrid { grid-template-columns:1fr; }
+    .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
     .case-breed, .case-smal { padding:0 22px; }
   }
@@ -255,6 +263,20 @@
     <div><span>06</span><strong>Meetings met actiepunten</strong><p>Opnames van gesprekken komen automatisch binnen, met de actiepunten eruit gehaald. Die stuur je in één klik door naar de klant of de freelancer.</p></div>
     <div><span>07</span><strong>Klantenportaal</strong><p>Klanten loggen in op hun eigen omgeving. Het portaal staat er en wordt nu stap voor stap opengezet voor bestaande klanten.</p></div>
     <div><span>08</span><strong>Leerplatform en webshop</strong><p>Twee cursussen met 48 lessen staan klaar, naast een eigen webshop. Gebouwd, en klaar om gelanceerd te worden.</p></div>
+  </div>
+</section>
+
+<section class="case-breed" style="padding-top:26px;">
+  <div data-reveal class="kaart" style="background:#1c1a1f; color:#f6f1e7; padding:44px; margin-bottom:0;">
+    <h2 style="color:#f6f1e7; font-size:30px;">Wat hier vanzelf loopt</h2>
+    <p style="color:#b3ab9e; max-width:640px;">Vooral workflows, op een platform. De agent komt erbij waar hij iets toevoegt.</p>
+    <div class="soorten">
+      <div><span class="tag">WORKFLOW</span><strong>Een aankoop start een keten.</strong><p>Opstartmail, betaalherinnering, toegang tot het portaal en een voorbereidingstaak, in de juiste volgorde.</p></div>
+      <div><span class="tag">WORKFLOW</span><strong>Meetings worden taken.</strong><p>Opnames komen automatisch binnen en de actiepunten gaan door naar de klant of de freelancer.</p></div>
+      <div><span class="tag">WORKFLOW</span><strong>Elke ochtend een briefing.</strong><p>Wat vandaag aandacht vraagt, voor de mailbox opengaat.</p></div>
+      <div><span class="tag">AGENT</span><strong>Een AI-assistent in het platform.</strong><p>In opbouw: een assistent die het team vragen kan stellen over klanten en dossiers.</p></div>
+      <div><span class="tag">PLATFORM</span><strong>Eén omgeving voor team, klanten en cijfers.</strong><p>Waar al het voorgaande samenkomt achter één login.</p></div>
+    </div>
   </div>
 </section>
 
