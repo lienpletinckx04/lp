@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=7">
+<link rel="stylesheet" href="/css/style.css?v=8">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -195,6 +195,18 @@
   .galerij { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:8px; }
   .galerij .breed { grid-column:1 / -1; }
   .galerij figure.scherm figcaption { font-size:13.5px; }
+  /* RANGORDE: alleen koppen en cijfers zijn zwaar; alles daaronder is een trap lichter */
+  .kaart .nr, .feat .nr, [data-reveal] > .nr { font-size:13px; letter-spacing:2px; font-weight:800; margin-bottom:8px; }
+  .winst strong { font-family:'Schibsted Grotesk',sans-serif; font-weight:600; font-size:16px; letter-spacing:0; }
+  .modules strong { font-weight:600; font-size:18.5px; letter-spacing:-.3px; }
+  .modules span { font-size:12px; font-weight:600; }
+  .soorten strong, .regels strong, .stappen strong { font-weight:600; letter-spacing:-.2px; }
+  .inv dt { font-family:'Schibsted Grotesk',sans-serif; font-weight:600; font-size:16px; letter-spacing:0; }
+  .keten li { font-weight:600; letter-spacing:0; }
+  .lijst li strong, .kaart p strong { font-weight:600; }
+  .tijdlijn strong { font-weight:600; }
+  .stappen span { font-size:20px; }
+  .cijfers b { font-size:28px; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -253,6 +265,18 @@
       <li><span>5</span>Voorbereidingstaak voor de eerste sessie</li>
     </ol>
   </div>
+</section>
+
+<section class="case-breed" style="padding-top:18px;">
+  <div data-reveal class="galerij">
+    <figure class="scherm breed"><div class="balk"><i></i><i></i><i></i><em>Platform Dapper Ondernemen · demodata</em></div><img src="/media/cases/dapper/dashboard.jpg" alt="Het dashboard: de focus van de dag en de deadlines van vandaag." loading="lazy" width="1400" height="875"><figcaption>Het dashboard: de focus van de dag en de deadlines van vandaag.</figcaption></figure>
+    <figure class="scherm"><div class="balk"><i></i><i></i><i></i><em>Platform Dapper Ondernemen · demodata</em></div><img src="/media/cases/dapper/klantenflows.jpg" alt="Klantenflows: wat er vanzelf gebeurt zodra iemand klant wordt." loading="lazy" width="1400" height="875"><figcaption>Klantenflows: wat er vanzelf gebeurt zodra iemand klant wordt.</figcaption></figure>
+    <figure class="scherm"><div class="balk"><i></i><i></i><i></i><em>Platform Dapper Ondernemen · demodata</em></div><img src="/media/cases/dapper/betalingen.jpg" alt="Betalingen: wat betaald is en wat openstaat, op één scherm." loading="lazy" width="1400" height="875"><figcaption>Betalingen: wat betaald is en wat openstaat, op één scherm.</figcaption></figure>
+    <figure class="scherm"><div class="balk"><i></i><i></i><i></i><em>Platform Dapper Ondernemen · demodata</em></div><img src="/media/cases/dapper/klanten.jpg" alt="Klanten: elk met status, traject en fase." loading="lazy" width="1400" height="875"><figcaption>Klanten: elk met status, traject en fase.</figcaption></figure>
+    <figure class="scherm"><div class="balk"><i></i><i></i><i></i><em>Platform Dapper Ondernemen · demodata</em></div><img src="/media/cases/dapper/ochtendbriefing.jpg" alt="De ochtendbriefing: nieuwe leads en antwoorden van de dag." loading="lazy" width="1400" height="739"><figcaption>De ochtendbriefing: nieuwe leads en antwoorden van de dag.</figcaption></figure>
+    <figure class="scherm breed"><div class="balk"><i></i><i></i><i></i><em>Platform Dapper Ondernemen · demodata</em></div><img src="/media/cases/dapper/meetings.jpg" alt="Meetings: opnames komen vanzelf binnen, met een samenvatting." loading="lazy" width="1400" height="797"><figcaption>Meetings: opnames komen vanzelf binnen, met een samenvatting.</figcaption></figure>
+  </div>
+  <p style="margin:16px 0 0; font-size:14px; line-height:1.6; color:#8a8378;"><span class="fictief">De schermen zijn echt, de klanten niet</span>&nbsp; Dit is het platform zelf, lokaal gedraaid met verzonnen klanten en bedragen.</p>
 </section>
 
 <section class="case-smal" style="padding-top:36px;">
