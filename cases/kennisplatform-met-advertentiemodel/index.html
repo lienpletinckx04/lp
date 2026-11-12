@@ -176,6 +176,15 @@
   .soorten .tag { display:inline-block; font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.6px; color:#1c1a1f; background:#ff4d24; border-radius:5px; padding:4px 8px; margin-bottom:10px; }
   .soorten strong { display:block; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#f6f1e7; margin-bottom:5px; }
   .soorten p { margin:0; font-size:14.5px; line-height:1.7; color:#b3ab9e; }
+  .inv { padding:34px 40px; }
+  .invkop { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:8px; }
+  .invkop .tag { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.6px; color:#fff; background:#1c1a1f; border-radius:6px; padding:6px 10px; }
+  .invkop em { font-style:normal; font-size:15px; color:#8a8378; }
+  .inv dl { margin:0; }
+  .inv dl > div { display:grid; grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:24px; padding:14px 0; border-top:1px solid #e6ddcb; }
+  .inv dl > div:first-child { border-top:none; }
+  .inv dt { font-family:'Archivo'; font-weight:800; font-size:16.5px; letter-spacing:-.3px; color:#1c1a1f; }
+  .inv dd { margin:0; font-size:15px; line-height:1.65; color:#57534a; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -184,6 +193,7 @@
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
     .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
+    .inv { padding:26px 24px; } .inv dl > div { grid-template-columns:1fr; gap:4px; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
     .case-breed, .case-smal { padding:0 22px; }
   }

@@ -176,6 +176,15 @@
   .soorten .tag { display:inline-block; font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.6px; color:#1c1a1f; background:#ff4d24; border-radius:5px; padding:4px 8px; margin-bottom:10px; }
   .soorten strong { display:block; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#f6f1e7; margin-bottom:5px; }
   .soorten p { margin:0; font-size:14.5px; line-height:1.7; color:#b3ab9e; }
+  .inv { padding:34px 40px; }
+  .invkop { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:8px; }
+  .invkop .tag { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.6px; color:#fff; background:#1c1a1f; border-radius:6px; padding:6px 10px; }
+  .invkop em { font-style:normal; font-size:15px; color:#8a8378; }
+  .inv dl { margin:0; }
+  .inv dl > div { display:grid; grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:24px; padding:14px 0; border-top:1px solid #e6ddcb; }
+  .inv dl > div:first-child { border-top:none; }
+  .inv dt { font-family:'Archivo'; font-weight:800; font-size:16.5px; letter-spacing:-.3px; color:#1c1a1f; }
+  .inv dd { margin:0; font-size:15px; line-height:1.65; color:#57534a; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -184,6 +193,7 @@
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
     .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
+    .inv { padding:26px 24px; } .inv dl > div { grid-template-columns:1fr; gap:4px; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
     .case-breed, .case-smal { padding:0 22px; }
   }
@@ -215,8 +225,8 @@
 
 <section class="case-breed" style="padding-top:36px;">
   <div data-reveal class="cijfers">
+    <div><b>7</b><span>agents that work on a schedule every week</span></div>
     <div><b>13</b><span>skills of my own, each taking over one task</span></div>
-    <div><b>340+</b><span>members guided through the hub</span></div>
     <div><b>4,900+</b><span>emails that went out by themselves</span></div>
     <div><b>1</b><span>person who reads everything before it goes out</span></div>
   </div>
@@ -264,7 +274,7 @@
     <div><span>02</span><strong>The hub</strong><p>My learning platform for more than 340 members and my collaboration space for clients. Lessons, community, projects and chatbot monitoring behind one login.</p></div>
     <div><span>03</span><strong>Payment and access</strong><p>Whoever pays gets an account and a welcome email right away. Nobody has to touch it.</p></div>
     <div><span>04</span><strong>Emails that run by themselves</strong><p>Welcome, access, reminders, notifications when there is feedback on a project. Almost five thousand so far.</p></div>
-    <div><span>05</span><strong>The morning email</strong><p>Every morning an overview of what matters today, in my inbox.</p></div>
+    <div><span>05</span><strong>Agents on a schedule</strong><p>Seven of them. They prepare my day, follow up on client calls and turn what I already wrote into content.</p></div>
     <div><span>06</span><strong>The Reel engine</strong><p>From raw footage to an edited reel with captions, in my own style.</p></div>
     <div><span>07</span><strong>This website</strong><p>Built and maintained with Claude Code. Including the page you are reading now.</p></div>
     <div><span>08</span><strong>Chatbot monitoring</strong><p>Every night the numbers from my clients' chatbots come in, and a check runs to make sure nobody goes over their limit.</p></div>
@@ -282,6 +292,59 @@
       <div><span class="tag">WORKFLOW</span><strong>Meetings and nightly checks.</strong><p>Recordings land in the right project by themselves, chatbot numbers are fetched and checked every night.</p></div>
       <div><span class="tag">PLATFORM</span><strong>The hub.</strong><p>Where members learn and clients follow their project.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="case-breed" style="padding-top:26px;" id="lijst">
+  <div data-reveal style="max-width:796px; margin:0 auto 28px;">
+    <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; line-height:1.04;">The full list<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0; font-size:17px; line-height:1.75; color:#57534a;">Everything that runs in my business today, by type. Whatever an agent writes always lands with me as a draft. Nothing goes out before I have read it.</p>
+  </div>
+  <div data-reveal class="kaart inv">
+    <div class="invkop"><span class="tag">AGENTS ON A SCHEDULE</span><em>They start by themselves, without me asking.</em></div>
+    <dl>
+      <div><dt>Morning overview</dt><dd>Every morning at eight: what is going on today in my inbox, calendar and documents.</dd></div>
+      <div><dt>Check-ins through the day</dt><dd>Every three hours a quick look at what came in and what is coming up.</dd></div>
+      <div><dt>Follow-up after a client call</dt><dd>Every weekday: a summary of that day's calls, what was agreed, the action items and a draft email to the client. Plus a reminder in my calendar five days later.</dd></div>
+      <div><dt>From call to proposal</dt><dd>After an intro call, a proposal draft is waiting that evening, in their words. Anything that wasn't said stays a blank. The agent is not allowed to invent prices.</dd></div>
+      <div><dt>From newsletter to content</dt><dd>Twice a week: three posts, a carousel and two reel scripts from my latest newsletter.</dd></div>
+      <div><dt>Content idea of the week</dt><dd>Every Wednesday the strongest AI news of the week, checked at the source and worked out into a carousel.</dd></div>
+      <div><dt>Weekly summary</dt><dd>Every Friday: what got finished, what was decided and what is still open.</dd></div>
+    </dl>
+  </div>
+  <div data-reveal class="kaart inv">
+    <div class="invkop"><span class="tag">SKILLS ON DEMAND</span><em>I call them when I need them.</em></div>
+    <dl>
+      <div><dt>Audit prep and audit report</dt><dd>Two skills: one that sets up the audit day, one that turns notes and a recording into a report.</dd></div>
+      <div><dt>Agreement and invoicing</dt><dd>A proposal, an agreement or an invoice in my structure and with my terms.</dd></div>
+      <div><dt>Client file and client email</dt><dd>Everything about one client in one place, and an email in my tone.</dd></div>
+      <div><dt>Weekly status report</dt><dd>Where a project stands, per person.</dd></div>
+      <div><dt>Newsletter</dt><dd>My weekly newsletter, in my style.</dd></div>
+      <div><dt>Content and reels</dt><dd>Reworking content into other formats, making carousels, and my own editing style for reels.</dd></div>
+      <div><dt>My writing style</dt><dd>One skill that guards how I sound, and that all the others build on.</dd></div>
+    </dl>
+  </div>
+  <div data-reveal class="kaart inv">
+    <div class="invkop"><span class="tag">WORKFLOWS IN THE HUB</span><em>No AI, just chains that never forget anything.</em></div>
+    <dl>
+      <div><dt>Payment becomes access</dt><dd>Whoever pays gets an account, the right course and a welcome email.</dd></div>
+      <div><dt>Reminders</dt><dd>Whoever hasn't logged in yet gets a nudge. So does whoever missed a check-in on a project.</dd></div>
+      <div><dt>Meetings into projects</dt><dd>Recordings land in the right client project by themselves, with the action items pulled out.</dd></div>
+      <div><dt>Status report per project</dt><dd>Drawn up automatically every week for every running client.</dd></div>
+      <div><dt>Notifications</dt><dd>Feedback on a task, a question from a client, a mention in the community: the right person hears about it.</dd></div>
+      <div><dt>Watching the chatbots</dt><dd>Fetching the numbers every night, checking every morning whether a client is at their limit, an overview every month.</dd></div>
+      <div><dt>Keeping email lists in sync</dt><dd>Members and participants end up in the right list by themselves.</dd></div>
+    </dl>
+  </div>
+  <div data-reveal class="kaart inv">
+    <div class="invkop"><span class="tag">TOOLS I BUILT MYSELF</span><em>What I needed and couldn't find anywhere.</em></div>
+    <dl>
+      <div><dt>The hub</dt><dd>Learning platform, community, client projects and chatbot dashboard behind one login.</dd></div>
+      <div><dt>The Skill Generator</dt><dd>A tool in the hub that lets members have their own skill drawn up.</dd></div>
+      <div><dt>The Reel engine</dt><dd>Edits my footage into reels with captions.</dd></div>
+      <div><dt>My workspace</dt><dd>My own environment for projects, tasks and time tracking with freelancers. It is still young.</dd></div>
+      <div><dt>This website</dt><dd>Built and kept up to date with Claude Code.</dd></div>
+    </dl>
   </div>
 </section>
 
