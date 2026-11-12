@@ -17,7 +17,7 @@
 <meta property="og:title" content="Case Renard Bakery: van AI audit naar een eigen cijferplatform | AskLien.ai">
 <meta property="og:description" content="Hoe één AI auditdag bij een Brusselse bakkerij uitgroeide tot een eigen platform met dagomzet, kanalen, prognose en AI-advies. Het volledige verhaal, van audit tot vandaag.">
 <meta property="og:url" content="https://asklien.ai/cases/renard-bakery/">
-<meta property="og:image" content="https://asklien.ai/media/foto/hero.jpg">
+<meta property="og:image" content="https://asklien.ai/media/cases/renard/og.jpg">
 <meta property="og:site_name" content="AskLien.ai">
 <meta property="og:locale" content="nl_BE">
 <meta property="og:locale:alternate" content="en_US">
@@ -35,7 +35,7 @@
   "inLanguage": "nl-BE",
   "datePublished": "2026-11-12",
   "dateModified": "2026-11-12",
-  "image": "https://asklien.ai/media/foto/hero.jpg",
+  "image": "https://asklien.ai/media/cases/renard/og.jpg",
   "author": {
     "@id": "https://asklien.ai/over-lien/#lien",
     "@type": "Person",
@@ -158,13 +158,24 @@
   .stappen span { display:block; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1px; color:#ff4d24; line-height:1; margin-bottom:8px; }
   .stappen strong { display:block; font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.3px; margin-bottom:4px; }
   .stappen p { margin:0; font-size:14.5px; line-height:1.65; color:#57534a; }
+  .modules { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .modules > div { background:#fff; border-radius:18px; padding:26px 28px; }
+  .modules span { display:block; font-family:'Archivo'; font-weight:900; font-size:15px; letter-spacing:1.5px; color:#ff4d24; margin-bottom:8px; }
+  .modules strong { display:block; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.6px; margin-bottom:6px; }
+  .modules p { margin:0; font-size:15.5px; line-height:1.7; color:#57534a; }
+  .casegrid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:16px; }
+  .casekaart { background:#fff; border-radius:20px; padding:30px; display:flex; flex-direction:column; gap:12px; color:inherit; }
+  .casekaart .lab { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.6px; color:#ff4d24; }
+  .casekaart h3 { margin:0; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1.1px; line-height:1.08; }
+  .casekaart p { margin:0; font-size:15.5px; line-height:1.7; color:#57534a; flex:1; }
+  .casekaart .meer { font-weight:600; font-size:15px; color:#ff4d24; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
     .cijfers { grid-template-columns:1fr 1fr; }
     .feat, .feat.gsmrij { grid-template-columns:1fr; gap:20px; margin-bottom:44px; }
     .feat.om > :first-child { order:0; }
-    .winst, .regels, .stappen { grid-template-columns:1fr; }
+    .winst, .regels, .stappen, .modules, .casegrid { grid-template-columns:1fr; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
     .case-breed, .case-smal { padding:0 22px; }
   }
@@ -197,9 +208,14 @@
   <div data-reveal class="cijfers">
     <div><b>1</b><span>auditdag in het atelier</span></div>
     <div><b>8 weken</b><span>van audit tot de eerste versie online</span></div>
-    <div><b>11</b><span>schermen, in het Nederlands en het Frans</span></div>
+    <div><b>8</b><span>schermen, in het Nederlands en het Frans</span></div>
     <div><b>22 maanden</b><span>verkoophistoriek onder de prognose</span></div>
   </div>
+</section>
+
+<section class="case-breed" style="padding-top:28px;">
+  <div data-reveal><figure class="scherm"><div class="balk"><i></i><i></i><i></i><em>Platform Renard Bakery · demodata</em></div><img src="/media/cases/renard/overzicht.jpg" alt="Platform Renard Bakery · demodata" width="1600" height="1000"></figure></div>
+  <p style="margin:16px 0 0; font-size:14px; line-height:1.6; color:#8a8378;"><span class="fictief">De schermen zijn echt, de cijfers niet</span>&nbsp; Alle schermafbeeldingen op deze pagina komen uit het platform zoals het draait, gevuld met verzonnen data. De echte cijfers van Renard Bakery blijven van Renard Bakery.</p>
 </section>
 
 <section class="case-smal" style="padding-top:44px;">
@@ -245,13 +261,31 @@
     <p style="margin:0; font-size:17px; line-height:1.75; color:#57534a;">Geen dashboard dat bovenop de kassa geplakt is. Wel een eigen platform met een login, een database die automatisch bijwerkt uit de bronsystemen, en een rekenlaag die elk cijfer uitrekent voor het op een scherm komt. Kassa, Deliveroo, weer en schoolvakanties komen erin samen.</p>
     <p style="margin:14px 0 0;"><span class="fictief">De schermen zijn echt, de cijfers niet</span></p>
   </div>
-  <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">01</div><h3>Het dagoverzicht</h3><p>De omzet van gisteren, van de voorbije week en van de maand, per winkel of alles samen. Met de vergelijking met vorig jaar, het ritme per weekdag, het aantal klanten en het gemiddelde bonbedrag. Bovenaan staat een korte briefing in gewone taal: wat is in orde, waar moet je op letten, wat vraagt actie.</p></div></div>
-  <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">02</div><h3>Elk kanaal apart</h3><p>Winkel, Deliveroo, B2B en webshop naast elkaar. Bij Deliveroo niet alleen de omzet, maar ook wat er overblijft na commissie. Sinds oktober komen de bestellingen rechtstreeks binnen via een koppeling met Deliveroo, zonder dat iemand nog een bestand moet opladen.</p></div></div>
-  <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">03</div><h3>Wat verkoopt, en wat niet</h3><p>De toppers en de slechtste verkopers per winkel. Wat stijgt, en wat al drie periodes op rij zakt. Welk stukje van het assortiment de helft van de omzet draagt. En op welk uur van de dag welke productgroep piekt.</p></div></div>
-  <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">04</div><h3>De prognose</h3><p>Zeven dagen vooruit, per dag een verwachte omzet met een onder- en bovengrens. Het model kijkt naar de weekdag, het recente niveau, schoolvakanties en het weer. En het rekent zichzelf elke dag af: naast elke voorspelling staat wat het echt geworden is. In de test op meer dan 400 dagen uit het verleden zat het gemiddeld zo'n 8 procent naast de echte dagomzet.</p></div></div>
-  <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">05</div><h3>Van cijfers naar acties</h3><p>Het scherm waar cijfers beslissingen worden. Welke producten op drukke dagen te vroeg op zijn, en dus omzet laten liggen die je nergens anders ziet. Welke producten al maanden zakken en misschien weg mogen. Welke weekdag van een topproduct zwak genoeg is voor een actie.</p></div></div>
+  <div data-reveal class="feat">
+    <div><div class="nr">01</div><h3>Het dagoverzicht</h3><p>De omzet van gisteren, van de voorbije week en van de maand, per winkel of alles samen. Met de vergelijking met vorig jaar, het ritme per weekdag, het aantal klanten en het gemiddelde bonbedrag. Bovenaan staat een korte briefing in gewone taal: wat is in orde, waar moet je op letten, wat vraagt actie.</p></div>
+    <figure class="scherm"><div class="balk"><i></i><i></i><i></i><em>Platform Renard Bakery · demodata</em></div><img src="/media/cases/renard/omzet-per-maand.jpg" alt="Dagoverzicht van het platform met kerncijfers en omzetverloop, gevuld met demodata" loading="lazy" width="1400" height="863"></figure>
+  </div>
+  <div data-reveal class="feat om">
+    <div><div class="nr">02</div><h3>Elk kanaal apart</h3><p>Winkel, Deliveroo, B2B en webshop naast elkaar. Bij Deliveroo niet alleen de omzet, maar ook wat er overblijft na commissie. Sinds oktober komen de bestellingen rechtstreeks binnen via een koppeling met Deliveroo, zonder dat iemand nog een bestand moet opladen.</p></div>
+    <figure class="scherm"><div class="balk"><i></i><i></i><i></i><em>Platform Renard Bakery · demodata</em></div><img src="/media/cases/renard/verkoopkanalen.jpg" alt="Scherm Kanalen met winkel, Deliveroo, B2B en webshop, demodata" loading="lazy" width="1400" height="875"></figure>
+  </div>
+  <div data-reveal class="feat">
+    <div><div class="nr">03</div><h3>Wat verkoopt, en wat niet</h3><p>De toppers en de slechtste verkopers per winkel. Wat stijgt, en wat al drie periodes op rij zakt. Welk stukje van het assortiment de helft van de omzet draagt. En op welk uur van de dag welke productgroep piekt.</p></div>
+    <figure class="scherm"><div class="balk"><i></i><i></i><i></i><em>Platform Renard Bakery · demodata</em></div><img src="/media/cases/renard/top-15.jpg" alt="Scherm Producten met best en slechtst verkopende producten, demodata" loading="lazy" width="1400" height="886"></figure>
+  </div>
+  <div data-reveal class="feat om">
+    <div><div class="nr">04</div><h3>De prognose</h3><p>Zeven dagen vooruit, per dag een verwachte omzet met een onder- en bovengrens. Het model kijkt naar de weekdag, het recente niveau, schoolvakanties en het weer. En het rekent zichzelf elke dag af: naast elke voorspelling staat wat het echt geworden is. In de test op meer dan 400 dagen uit het verleden zat het gemiddeld zo'n 8 procent naast de echte dagomzet.</p></div>
+    <figure class="scherm"><div class="balk"><i></i><i></i><i></i><em>Platform Renard Bakery · demodata</em></div><img src="/media/cases/renard/prognose.jpg" alt="Scherm Prognose met zeven dagen vooruit en een onzekerheidsband, demodata" loading="lazy" width="1400" height="720"></figure>
+  </div>
+  <div data-reveal class="feat">
+    <div><div class="nr">05</div><h3>Van cijfers naar acties</h3><p>Het scherm waar cijfers beslissingen worden. Welke producten op drukke dagen te vroeg op zijn, en dus omzet laten liggen die je nergens anders ziet. Welke producten al maanden zakken en misschien weg mogen. Welke weekdag van een topproduct zwak genoeg is voor een actie.</p></div>
+    <figure class="scherm"><div class="balk"><i></i><i></i><i></i><em>Platform Renard Bakery · demodata</em></div><img src="/media/cases/renard/meer-bakken.jpg" alt="Scherm Acties met producten die te vroeg op zijn, demodata" loading="lazy" width="1400" height="502"></figure>
+  </div>
   <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">06</div><h3>AI die meeleest</h3><p>Bovenop de cijfers leest Claude mee. Elke dag een kort advies: wat valt er vandaag te doen, en waarom. Gebouwd op de cijfers van het platform, niet op een gok.</p></div></div>
-  <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">07</div><h3>Op de gsm, in twee talen</h3><p>Het platform staat als app op het startscherm van hun telefoon. In het Nederlands en het Frans, want zo werkt het team. En wie een overzicht mee wil naar een vergadering, stelt zelf een rapport samen en bewaart het als pdf.</p></div></div>
+  <div data-reveal class="feat gsmrij">
+    <div><div class="nr">07</div><h3>Op de gsm, in twee talen</h3><p>Het platform staat als app op het startscherm van hun telefoon. In het Nederlands en het Frans, want zo werkt het team. En wie een overzicht mee wil naar een vergadering, stelt zelf een rapport samen en bewaart het als pdf.</p></div>
+    <div class="gsm"><img src="/media/cases/renard/dagomzet-gsm.jpg" alt="Het platform op een gsm, demodata" loading="lazy" width="780" height="1580"></div>
+  </div>
 </section>
 
 <section class="case-breed">
