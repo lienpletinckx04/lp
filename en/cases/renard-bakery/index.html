@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study Renard Bakery: from AI audit to a custom numbers platform | AskLien.ai</title>
+<meta name="description" content="How one AI audit day at a Brussels bakery grew into a custom platform with daily revenue, sales channels, a tested forecast and AI advice. The full story, from audit to today.">
+<link rel="canonical" href="https://asklien.ai/en/cases/renard-bakery/">
+<link rel="alternate" hreflang="nl" href="https://asklien.ai/cases/renard-bakery/">
+<link rel="alternate" hreflang="en" href="https://asklien.ai/en/cases/renard-bakery/">
+<link rel="alternate" hreflang="x-default" href="https://asklien.ai/cases/renard-bakery/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Case study Renard Bakery: from AI audit to a custom numbers platform | AskLien.ai">
+<meta property="og:description" content="How one AI audit day at a Brussels bakery grew into a custom platform with daily revenue, sales channels, a tested forecast and AI advice. The full story, from audit to today.">
+<meta property="og:url" content="https://asklien.ai/en/cases/renard-bakery/">
+<meta property="og:image" content="https://asklien.ai/media/foto/hero.jpg">
+<meta property="og:site_name" content="AskLien.ai">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nl_BE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "From one audit day to the cockpit of a bakery",
+  "description": "How one AI audit day at a Brussels bakery grew into a custom platform with daily revenue, sales channels, a tested forecast and AI advice. The full story, from audit to today.",
+  "inLanguage": "en",
+  "datePublished": "2026-11-12",
+  "dateModified": "2026-11-12",
+  "image": "https://asklien.ai/media/foto/hero.jpg",
+  "author": {
+    "@id": "https://asklien.ai/over-lien/#lien",
+    "@type": "Person",
+    "name": "Lien Pletinckx"
+  },
+  "publisher": {
+    "@id": "https://asklien.ai/#bedrijf"
+  },
+  "mainEntityOfPage": "https://asklien.ai/en/cases/renard-bakery/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://asklien.ai/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cases",
+      "item": "https://asklien.ai/en/cases/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Renard Bakery",
+      "item": "https://asklien.ai/en/cases/renard-bakery/"
+    }
+  ]
+}
+</script>
+<style>
+  .kaart { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:22px; }
+  .kaart h2 { margin:0 0 14px; font-family:'Archivo'; font-weight:800; font-size:26px; letter-spacing:-1.2px; line-height:1.12; }
+  .kaart h3 { margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:21px; letter-spacing:-.6px; }
+  .kaart p { font-size:16px; line-height:1.8; color:#57534a; }
+  .kaart p:last-child { margin-bottom:0; }
+  .nr { font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; color:#ff4d24; line-height:1; margin-bottom:12px; }
+  .prompt { position:relative; background:#f6f1e7; border-left:3px solid #ff4d24; border-radius:10px; padding:24px; margin:18px 0 0; }
+  .prompt pre { margin:0; white-space:pre-wrap; word-break:break-word; font-family:'Schibsted Grotesk',sans-serif; font-size:15px; line-height:1.7; color:#1c1a1f; }
+  .kopieer { position:absolute; top:14px; right:14px; background:#1c1a1f; color:#f6f1e7; border:none; border-radius:7px; padding:7px 13px; font-family:inherit; font-weight:600; font-size:12px; cursor:pointer; }
+  .kopieer.ok { background:#ff4d24; }
+  .let { background:#fff8ef; border:2px dashed #e6ddcb; border-radius:12px; padding:18px 22px; margin:16px 0 0; }
+  .let p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+  .let strong { color:#1c1a1f; }
+  .lijst { margin:12px 0 0; padding:0; list-style:none; }
+  .lijst li { position:relative; padding:0 0 0 22px; margin:0 0 10px; font-size:15.5px; line-height:1.7; color:#57534a; }
+  .lijst li::before { content:''; position:absolute; left:0; top:11px; width:9px; height:9px; border-radius:50%; background:#ff4d24; }
+  .lijst li strong { color:#1c1a1f; }
+  .tijdlijn { margin:6px 0 0; padding:0; list-style:none; border-left:2px solid #e6ddcb; }
+  .tijdlijn li { position:relative; padding:0 0 18px 24px; font-size:15.5px; line-height:1.7; color:#57534a; }
+  .tijdlijn li::before { content:''; position:absolute; left:-7px; top:7px; width:12px; height:12px; border-radius:50%; background:#ff4d24; border:2px solid #fff; }
+  .tijdlijn li:last-child { padding-bottom:0; }
+  .tijdlijn .dag { display:block; font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; margin-bottom:2px; }
+  .tijdlijn strong { color:#1c1a1f; }
+  .modellen { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:18px 0 0; }
+  @media (max-width:760px){ .modellen { grid-template-columns:1fr; } }
+  .model { background:#f6f1e7; border-radius:14px; padding:20px 22px; }
+  .model .naam { font-family:'Archivo'; font-weight:900; font-size:20px; letter-spacing:-.8px; color:#1c1a1f; margin-bottom:4px; }
+  .model .rol { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; margin-bottom:10px; }
+  .model p { margin:0; font-size:14.5px; line-height:1.7; color:#57534a; }
+  .bron { font-size:13px; color:#8a8378; margin-top:14px !important; }
+  .bron a { color:#8a8378; text-decoration:underline; }
+  .faq details { border-bottom:1px solid #e6ddcb; padding:16px 0; }
+  .faq details:last-child { border-bottom:none; }
+  .faq summary { cursor:pointer; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#1c1a1f; list-style:none; display:flex; justify-content:space-between; gap:16px; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:'+'; color:#ff4d24; font-weight:900; font-size:22px; line-height:1; }
+  .faq details[open] summary::after { content:'–'; }
+  .faq details p { margin:12px 0 0; font-size:15px; line-height:1.75; color:#57534a; }
+  @media (max-width:640px){ .kaart{ padding:26px 24px; } .prompt{ padding:20px 18px; } .kopieer{ position:static; display:inline-block; margin-bottom:12px; } }
+  .voorna { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:18px 0 0; }
+  @media (max-width:640px){ .voorna { grid-template-columns:1fr; } }
+  .voorna div { background:#f6f1e7; border-radius:12px; padding:18px 20px; font-size:15px; line-height:1.7; color:#57534a; }
+  .voorna .kop { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#8a8378; margin-bottom:8px; }
+  .aanbod { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:860px){ .aanbod { grid-template-columns:1fr; } }
+  .pakket { background:#fff; border-radius:20px; padding:30px; display:flex; flex-direction:column; gap:12px; }
+  .pakket.top { background:#1c1a1f; color:#f6f1e7; }
+  .pakket .label { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#ff4d24; }
+  .pakket h3 { margin:0; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1px; line-height:1.1; }
+  .pakket p { margin:0; font-size:15px; line-height:1.7; color:#57534a; flex:1; }
+  .pakket.top p { color:#b3ab9e; }
+  .pakket .prijs { font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px; }
+  .pakket a { font-weight:600; font-size:15px; color:#ff4d24; }
+  .form label { font-size:14px; font-weight:600; }
+  .form input, .form select, .form textarea { padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; background:#fff; }
+  .foto { width:100%; height:auto; border-radius:18px; display:block; }
+</style>
+<style>
+  .case-breed { max-width:1040px; margin:0 auto; padding:0 32px; }
+  .case-smal { max-width:860px; margin:0 auto; padding:0 32px; }
+  .cijfers { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .cijfers div { background:#fff; border-radius:16px; padding:22px 20px; }
+  .cijfers b { display:block; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.4px; color:#ff4d24; line-height:1.05; margin-bottom:6px; }
+  .cijfers span { font-size:14px; line-height:1.5; color:#57534a; }
+  .feat { display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:36px; align-items:center; margin:0 0 56px; }
+  .feat.om > :first-child { order:2; }
+  .feat h3 { margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:24px; letter-spacing:-.9px; line-height:1.12; }
+  .feat p { margin:0; font-size:16px; line-height:1.75; color:#57534a; }
+  .feat .nr { font-size:15px; letter-spacing:1.5px; margin-bottom:10px; }
+  .feat.gsmrij { grid-template-columns:minmax(0,7fr) minmax(0,5fr); }
+  .winst { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:18px 0; }
+  .winst div { background:#f6f1e7; border-radius:14px; padding:18px 20px; font-size:15px; line-height:1.65; color:#57534a; }
+  .winst strong { display:block; color:#1c1a1f; font-family:'Archivo'; font-weight:800; font-size:16.5px; letter-spacing:-.3px; margin-bottom:4px; }
+  .regels { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:20px; }
+  .regels div { border-top:3px solid #ff4d24; padding-top:16px; }
+  .regels strong { display:block; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#f6f1e7; margin-bottom:8px; }
+  .regels p { margin:0; font-size:14.5px; line-height:1.7; color:#b3ab9e; }
+  .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
+  .kruimel a { color:#8a8378; text-decoration:underline; }
+  @media (max-width:860px){
+    .cijfers { grid-template-columns:1fr 1fr; }
+    .feat, .feat.gsmrij { grid-template-columns:1fr; gap:20px; margin-bottom:44px; }
+    .feat.om > :first-child { order:0; }
+    .winst, .regels { grid-template-columns:1fr; }
+    .case-breed, .case-smal { padding:0 22px; }
+  }
+</style>
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/en/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:26px; font-size:15px; font-weight:500;">
+      <a href="/en/#services">Services</a>
+      <a href="/en/cases/">Cases</a>
+      <a href="/en/speaker/">Speaking</a>
+      <a href="/en/about/">About</a>
+      <a href="/en/contact/">Contact</a>
+      <a href="/cases/renard-bakery/" class="taal" hreflang="nl" lang="nl" data-menu-label="Nederlands" title="Nederlands"><span>NL</span><b>EN</b></a>
+      <a href="/en/contact/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">Let's talk</a>
+    </div>
+  </div>
+</nav>
+
+<header class="case-smal" style="padding-top:64px; padding-bottom:8px;">
+  <div class="kruimel"><a href="/en/">Home</a> / <a href="/en/cases/">Cases</a> / Renard Bakery</div>
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">CASE STUDY · RENARD BAKERY · BRUSSELS</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,58px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">From one audit day to the cockpit of a bakery<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.65; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Renard Bakery was about to open its second shop. Every number they needed was sitting in the point of sale, and nobody could get it out in a readable way. Less than five months later, management opens one app on their phone every day: yesterday's revenue, the forecast for the week ahead, and what to bake more of tomorrow. This is how that happened, from the first audit day until today.</p>
+</header>
+
+<section class="case-breed" style="padding-top:36px;">
+  <div data-reveal class="cijfers">
+    <div><b>1</b><span>audit day at the production site</span></div>
+    <div><b>8 weeks</b><span>from audit to the first version online</span></div>
+    <div><b>11</b><span>screens, in Dutch and French</span></div>
+    <div><b>22 months</b><span>of sales history behind the forecast</span></div>
+  </div>
+</section>
+
+<section class="case-smal" style="padding-top:44px;">
+  <div data-reveal class="kaart">
+    <div class="nr">01</div>
+    <h2>Where it started</h2>
+    <p>Renard Bakery is an artisan bakery in Brussels. One central production site where everything is baked, a shop in Ixelles, and in June 2026 a second shop in Uccle that was due to open two months later. They also deliver to businesses and sell through a webshop and Deliveroo. Seven days a week.</p>
+    <p>The product was right. So was the growth. But the business ran on what a few people carried around in their heads. How much to bake was experience and gut feeling. What was left at closing time was not tracked anywhere. And the point of sale knew everything but gave very little away: if you wanted to know what a day had brought in, you had to dig through reports that almost require a course.</p>
+    <p>With one shop, that works. With two shops, four sales channels and a team that keeps rotating, it stops working.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <div class="nr">02</div>
+    <h2>The audit day</h2>
+    <p>On June 24 I spent a day at their production site. No presentation about everything AI can do. Just watching and asking: how do orders come in, who decides what gets baked, where does the time go, which tools are already there and what do they cost.</p>
+    <p>A week later there was a report. With five zones where time and money were leaking:</p>
+    <ul class="lijst">
+      <li><strong>Forecasting and waste:</strong> production on gut feeling, leftovers nobody measures.</li>
+      <li><strong>Financial insight:</strong> all the data is in the point of sale, but there is no daily picture.</li>
+      <li><strong>Staff planning:</strong> a large, rotating team scheduled through loose messages.</li>
+      <li><strong>Customer communication:</strong> reviews and newsletters done by hand, or not at all.</li>
+      <li><strong>Knowledge:</strong> every new team member gets the same explanation all over again.</li>
+    </ul>
+    <p>The common thread was the same every time: the knowledge lived in heads, not in systems. Everything I proposed did one thing at its core. Get that knowledge out, so growing doesn't mean the chaos grows with it.</p>
+    <p>The report closed with ten priorities in order, a review of their tools and subscriptions, and three proposals: a light foundation with quick wins, a full ecosystem, and everything together in one app.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <div class="nr">03</div>
+    <h2>The choice: narrower and deeper</h2>
+    <p>What happened next is honestly the part I find most interesting. They didn't pick the biggest package. They didn't pick the quick wins either. They deliberately cut everything that was nice to have and kept the two heaviest layers: financial insight and forecasting. In one app, on their phones. With training included, so the team would actually use it.</p>
+    <p>I think that was the right instinct. An audit puts the whole menu on the table. After that you have to dare to choose what comes first, and let the rest wait.</p>
+    <p>On July 13 we had an agreement. Four days later we sat down for the kickoff.</p>
+  </div>
+</section>
+
+<section class="case-breed" style="padding-top:34px;">
+  <div data-reveal style="max-width:796px; margin:0 auto 44px;">
+    <div class="nr">04</div>
+    <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; line-height:1.04;">What we built<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0; font-size:17px; line-height:1.75; color:#57534a;">Not a dashboard glued on top of the point of sale. A platform of their own, with a login, a database that refreshes automatically from the source systems, and a calculation layer that works out every number before it reaches a screen. Point of sale, Deliveroo, weather and school holidays all come together in it.</p>
+    <p style="margin:14px 0 0;"><span class="fictief">The screens are real, the numbers are not</span></p>
+  </div>
+  <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">01</div><h3>The daily overview</h3><p>Revenue for yesterday, the past week and the month, per shop or everything combined. With the comparison to last year, the rhythm per weekday, the number of customers and the average ticket. At the top sits a short briefing in normal language: what is fine, what to watch, what needs action.</p></div></div>
+  <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">02</div><h3>Every channel on its own</h3><p>Shop, Deliveroo, B2B and webshop side by side. For Deliveroo not just the revenue, but what is left after commission. Since October the orders come in directly through an integration with Deliveroo, without anyone uploading a file.</p></div></div>
+  <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">03</div><h3>What sells, and what doesn't</h3><p>The top sellers and the worst sellers per shop. What is rising, and what has been dropping three periods in a row. Which slice of the range carries half of the revenue. And which product group peaks at which hour of the day.</p></div></div>
+  <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">04</div><h3>The forecast</h3><p>Seven days ahead, an expected revenue per day with a lower and an upper bound. The model looks at the weekday, the recent level, school holidays and the weather. And it grades itself every day: next to each prediction you see what actually happened. Tested on more than 400 days of history, it was off by about 8 percent of daily revenue on average.</p></div></div>
+  <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">05</div><h3>From numbers to actions</h3><p>The screen where numbers turn into decisions. Which products sell out too early on busy days, leaving revenue on the table that you see nowhere else. Which products have been sliding for months and could go. Which weekday of a top product is weak enough for a promotion.</p></div></div>
+  <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">06</div><h3>AI that reads along</h3><p>On top of the numbers, Claude reads along. A short piece of advice every day: what to do today, and why. Built on the platform's own numbers, not on a guess.</p></div></div>
+  <div data-reveal class="feat" style="grid-template-columns:1fr;"><div><div class="nr">07</div><h3>On the phone, in two languages</h3><p>The platform sits as an app on the home screen of their phones. In Dutch and French, because that is how the team works. And whoever wants an overview for a meeting puts together their own report and saves it as a PDF.</p></div></div>
+</section>
+
+<section class="case-breed">
+  <div data-reveal class="kaart" style="background:#1c1a1f; color:#f6f1e7; padding:44px 44px 46px;">
+    <h2 style="color:#f6f1e7; font-size:30px;">Three rules I don't bend</h2>
+    <div class="regels">
+      <div><strong>No number without a source.</strong><p>What we can't back up, we don't show. The screen then says: unavailable, with the reason. Better an empty box than an invented margin.</p></div>
+      <div><strong>A forecast without a test is an opinion.</strong><p>Every forecast comes from a model that was first graded against the past, and that shows its own track record.</p></div>
+      <div><strong>No customer data.</strong><p>The database only holds aggregated sales figures. No names, no addresses. Hosted in the EU, personal logins with a second step, and a data processing agreement.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="case-smal" style="padding-top:22px;">
+  <div data-reveal class="kaart">
+    <div class="nr">05</div>
+    <h2>How we worked together</h2>
+    <p>From the first week the team had their own space in my hub: the project per phase, tasks per person with a deadline, the meeting notes and a place for feedback. A short status meeting every Thursday. And a shared Claude Team workspace, so they could start using AI themselves too.</p>
+    <p>It did not go in a straight line. It was the middle of the holiday season, and the second shop simply opened in the meantime. The first version went online on August 18, six days before the opening in Uccle. Then the real work started: around the table, screen by screen. What are you missing, what can't you read, what can go.</p>
+    <p>The feedback was very concrete. More businesslike, less colour, today's revenue as the first screen, the worst sellers on a separate list. That is exactly the kind of feedback that makes a platform better, and the reason I don't deliver anything the people who use it haven't sat in.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <div class="nr">06</div>
+    <h2>What it gives them</h2>
+    <p>I don't publish their revenue or margins. That is what we agreed, and I think it's simply how it should be. What I can say:</p>
+    <div class="winst">
+      <div><strong>It gets used every day.</strong>Not once a month at the accountant's, but in the morning on a phone.</div>
+      <div><strong>Ordering and baking happen with numbers next to them.</strong>How many of these did we sell on a Tuesday? The answer is two taps away.</div>
+      <div><strong>Missed revenue became visible.</strong>A product that is gone by mid-afternoon never showed up in the numbers before.</div>
+      <div><strong>The range is a decision, not a habit.</strong>The worst sellers per shop are on a list, ready to be discussed.</div>
+      <div><strong>Every channel has its own truth.</strong>Deliveroo looks different once the commission is taken off.</div>
+      <div><strong>The second shop had numbers from its first week.</strong>Uccle has been in there since it opened, next to Ixelles.</div>
+    </div>
+    <p>Can you put that in dollars or euros? Probably. But that is their story to tell, not mine.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <div class="nr">07</div>
+    <h2>And it keeps growing</h2>
+    <p>Since November 1 there is an ongoing retainer. I keep the platform running, every morning there is a check that the numbers came in, and every month I verify that the forecast still holds. Small changes are included. New things get a price first, so nobody is surprised.</p>
+    <p>And there is a next phase on the table, planned to start in early 2027. The idea: enter every evening what was left over and what ran short, so the platform turns that into a production list. Margin per product on top. A chat where the team can simply ask what they want to know. And roles, so not just management but the shops work with it too.</p>
+    <p>The platform is theirs, by the way. If they ever stop, I move everything to their own accounts. That has been on paper from the start. I think that is how you should build.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <h2>The timeline</h2>
+    <ul class="tijdlijn">
+      <li><span class="dag">June 24, 2026</span><strong>Audit day</strong> at the production site.</li>
+      <li><span class="dag">July 1</span><strong>The audit report</strong> with five zones, ten priorities and three proposals.</li>
+      <li><span class="dag">July 13</span><strong>Agreement</strong> on a narrower, deeper project: numbers and forecast in one app.</li>
+      <li><span class="dag">July 17</span><strong>Kickoff.</strong> The team gets access to the hub and Claude Team.</li>
+      <li><span class="dag">August 18</span><strong>First version online,</strong> with more than a year and a half of sales history in it.</li>
+      <li><span class="dag">August 24</span><strong>The second shop opens</strong> in Uccle.</li>
+      <li><span class="dag">September</span><strong>Feedback rounds</strong> with management. Channels, Deliveroo, actions and AI advice are added.</li>
+      <li><span class="dag">October</span><strong>Phase 1 delivered.</strong> Deliveroo comes in directly through the integration.</li>
+      <li><span class="dag">November 1</span><strong>Retainer starts:</strong> hosting, monitoring and tuning.</li>
+      <li><span class="dag">Early 2027</span><strong>Phase 2</strong> is planned.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="case-smal" style="padding-top:14px; padding-bottom:96px;">
+  <div data-reveal style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); border-radius:24px; padding:52px 44px; text-align:center; color:#fff;">
+    <h2 style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:36px; letter-spacing:-1.8px; line-height:1.06;">Curious where it leaks in your business?</h2>
+    <p style="margin:0 auto 28px; font-size:17px; line-height:1.7; color:#ffe4da; max-width:540px;">It starts with one day. I look at how you work today, and you get a report with concrete proposals. What you build after that is your call.</p>
+    <div class="cta-row" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="/en/ai-audit/#request" class="btn-dark-to-white" style="background:#1c1a1f; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">Plan an AI audit →</a>
+      <a href="/en/ai-audit/" class="btn-white-orange" style="background:#fff; color:#ff4d24; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">How the audit works</a>
+    </div>
+  </div>
+</section>
+
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/en/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px; flex-wrap:wrap;"><a href="/en/ai-audit/">AI audit</a><a href="/en/cases/">Cases</a><a href="/en/speaker/">Speaking</a><a href="/en/about/">About</a><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/lien-pletinckx/" target="_blank" rel="noopener">LinkedIn</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/en/privacy/">Privacy and cookies</a> · <a href="#cookievoorkeuren">Cookie settings</a></div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=3"></script>
+<script src="/js/analytics.js?v=7" defer></script>
+<script src="/js/menu.js?v=4" defer></script>
+</body>
+</html>

@@ -59,7 +59,8 @@
     '/bedankt-doe-mee': ['Purchase', { value: 297, currency: 'EUR', content_name: 'Claude in 10 dagen (ads)' }],
     '/bedankt-voorsprong': ['Subscribe', { value: 27, currency: 'EUR', predicted_ltv: 27 * 12, content_name: 'Voorsprong' }],
     '/bedankt-bevraging': ['Lead', { content_name: 'Bevraging' }],
-    '/bedankt-contact': ['Contact', {}]
+    '/bedankt-contact': ['Contact', {}],
+    '/en/thank-you': ['Contact', {}]
   };
 
   function stuurConversie() {
@@ -122,6 +123,30 @@
     if (keuze.ads) laadPixel(); else wisPixel();
   }
 
+  // De Engelse pagina's (html lang="en") krijgen de vraag in het Engels.
+  // De keuze zelf is dezelfde: wie op de ene taal kiest, wordt op de andere
+  // niet opnieuw lastiggevallen.
+  var ENGELS = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+  var T = ENGELS ? {
+    titel: 'Cookie settings',
+    vraag: 'May I use cookies? You choose what for, and you can change it at any time.',
+    meer: 'More info', privacy: '/en/privacy/',
+    stats: 'Statistics',
+    statsUitleg: 'seeing which pages are read, so I know what to write more about.',
+    ads: 'Advertising',
+    adsUitleg: 'measuring whether my ads on Facebook and Instagram work, and showing you there later what you looked at.',
+    nee: 'No, thanks', ja: 'Yes, all of it', bewaar: 'Save my choice'
+  } : {
+    titel: 'Cookievoorkeuren',
+    vraag: 'Mag ik cookies gebruiken? Je kiest zelf waarvoor, en je kan het altijd wijzigen.',
+    meer: 'Meer uitleg', privacy: '/privacy/',
+    stats: 'Statistieken',
+    statsUitleg: 'zien welke pagina\'s gelezen worden, zodat ik weet waar ik meer over moet schrijven.',
+    ads: 'Advertenties',
+    adsUitleg: 'meten of mijn advertenties op Facebook en Instagram werken, en je daar later nog eens tonen wat je bekeek.',
+    nee: 'Nee, bedankt', ja: 'Ja, alles mag', bewaar: 'Bewaar mijn keuze'
+  };
+
   var banner = null;
   function sluit() { if (banner) { banner.remove(); banner = null; } }
 
@@ -129,7 +154,7 @@
     if (banner) return;
     banner = document.createElement('div');
     banner.setAttribute('role', 'dialog');
-    banner.setAttribute('aria-label', 'Cookievoorkeuren');
+    banner.setAttribute('aria-label', T.titel);
     banner.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;' +
       'max-width:560px;margin:0 auto;background:#1c1a1f;color:#f6f1e7;border-radius:16px;' +
       'padding:22px 24px;box-shadow:0 10px 40px rgba(0,0,0,.28);' +
@@ -144,21 +169,21 @@
 
     banner.innerHTML =
       '<p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:#b3ab9e;">' +
-      'Mag ik cookies gebruiken? Je kiest zelf waarvoor, en je kan het altijd wijzigen. ' +
-      '<a href="/privacy/" style="color:#ff7a3d;text-decoration:underline;display:inline-block;padding:6px 0;">Meer uitleg</a></p>' +
+      T.vraag + ' ' +
+      '<a href="' + T.privacy + '" style="color:#ff7a3d;text-decoration:underline;display:inline-block;padding:6px 0;">' + T.meer + '</a></p>' +
       '<label style="' + rij + '"><input type="checkbox" data-stats style="' + vink + '">' +
-      '<span><strong style="color:#f6f1e7;">Statistieken</strong> (Google Analytics): ' +
-      'zien welke pagina\'s gelezen worden, zodat ik weet waar ik meer over moet schrijven.</span></label>' +
+      '<span><strong style="color:#f6f1e7;">' + T.stats + '</strong> (Google Analytics): ' +
+      T.statsUitleg + '</span></label>' +
       '<label style="' + rij + 'margin-bottom:18px;"><input type="checkbox" data-ads style="' + vink + '">' +
-      '<span><strong style="color:#f6f1e7;">Advertenties</strong> (Meta Pixel): ' +
-      'meten of mijn advertenties op Facebook en Instagram werken, en je daar later nog eens tonen wat je bekeek.</span></label>' +
+      '<span><strong style="color:#f6f1e7;">' + T.ads + '</strong> (Meta Pixel): ' +
+      T.adsUitleg + '</span></label>' +
       '<div style="display:flex;gap:10px;flex-wrap:wrap;">' +
-      '<button data-nee style="' + knop + '">Nee, bedankt</button>' +
-      '<button data-ja style="' + knop + '">Ja, alles mag</button>' +
+      '<button data-nee style="' + knop + '">' + T.nee + '</button>' +
+      '<button data-ja style="' + knop + '">' + T.ja + '</button>' +
       '</div>' +
       '<button data-bewaar style="display:block;margin:12px auto 0;background:none;border:none;' +
       'color:#f6f1e7;font:inherit;font-size:14px;text-decoration:underline;cursor:pointer;padding:6px 8px;">' +
-      'Bewaar mijn keuze</button>';
+      T.bewaar + '</button>';
 
     document.body.appendChild(banner);
 
