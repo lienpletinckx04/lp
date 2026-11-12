@@ -181,6 +181,17 @@
   .tijdlijn strong { font-weight:600; }
   .stappen span { font-size:20px; }
   .cijfers b { font-size:28px; }
+  details.verhaal { margin:0 0 22px; }
+  details.verhaal > summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px; background:#fff; border-radius:20px; padding:22px 28px; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px; }
+  details.verhaal > summary::-webkit-details-marker { display:none; }
+  details.verhaal > summary span { font-family:'Schibsted Grotesk',sans-serif; font-weight:400; font-size:14.5px; letter-spacing:0; color:#8a8378; display:block; margin-top:4px; }
+  details.verhaal > summary::after { content:'+'; flex:none; width:38px; height:38px; border-radius:50%; background:#ff4d24; color:#fff; font-size:24px; font-weight:600; line-height:36px; text-align:center; }
+  details.verhaal[open] > summary::after { content:'–'; }
+  details.verhaal[open] > summary { margin-bottom:22px; }
+  .herkomst { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .herkomst span { font-size:13px; font-weight:600; color:#57534a; background:#fff; border:1px solid #e6ddcb; border-radius:999px; padding:6px 13px; }
+  .casekaart .duim { margin:-30px -30px 6px; border-radius:20px 20px 0 0; overflow:hidden; border-bottom:1px solid #e6ddcb; aspect-ratio:16/9.6; background:#f6f1e7; }
+  .casekaart .duim img { display:block; width:100%; height:100%; object-fit:cover; object-position:top left; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -189,6 +200,7 @@
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
     .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
+    details.verhaal > summary { padding:18px 20px; font-size:18px; }
     .keten ol { flex-direction:column; } .keten li:not(:last-child)::after { right:auto; left:22px; top:auto; bottom:-9px; margin:0; clip-path:polygon(0 0,100% 0,50% 100%); } .keten { padding:22px 20px; } .galerij { grid-template-columns:1fr; }
     .inv { padding:26px 24px; } .inv dl > div { grid-template-columns:1fr; gap:4px; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
@@ -230,13 +242,13 @@
   </a>
   <div data-reveal class="casegrid">
     <a href="/cases/dapper-ondernemen/" class="logo casekaart">
-      <div class="lab">FINANCIËLE BEGELEIDING · AUDIT, PLATFORM, OPVOLGING</div>
+      <div class="duim"><img src="/media/cases/dapper/dashboard.jpg" alt="" loading="lazy" width="1400" height="875"></div><div class="lab">FINANCIËLE BEGELEIDING · AUDIT, PLATFORM, OPVOLGING</div>
       <h3>Van 19 losse tools naar één platform<span style="color:#ff4d24;">.</span></h3>
       <p>Een financieel begeleidingsbureau met negentien tools en één persoon die alles aan elkaar knoopte. De audit zei: stop met tools optimaliseren, bouw één plek. Dat platform draait nu.</p>
       <span class="meer">Lees de case →</span>
     </a>
     <a href="/cases/trimtime/" class="logo casekaart">
-      <div class="lab">HONDENTRIMSALON · VOORSTEL OP MAAT, APP, OPVOLGING</div>
+      <div class="duim"><img src="/media/cases/trimtime/agenda-week.jpg" alt="" loading="lazy" width="1400" height="875"></div><div class="lab">HONDENTRIMSALON · VOORSTEL OP MAAT, APP, OPVOLGING</div>
       <h3>De agenda uit haar hoofd, in één app<span style="color:#ff4d24;">.</span></h3>
       <p>Een trimsalon waar de hele planning in het hoofd van de zaakvoerder zat. Nu staat er één app met website, klantenzone en een boekingssysteem dat haar eigen regels kent.</p>
       <span class="meer">Lees de case →</span>
@@ -254,7 +266,7 @@
       <span class="meer">Lees de case →</span>
     </a>
     <a href="/cases/asklien-zelf/" class="logo casekaart">
-      <div class="lab">MIJN EIGEN BEDRIJF · AGENTS, WORKFLOWS, PLATFORM</div>
+      <div class="duim"><img src="/media/cases/asklien/traject.jpg" alt="" loading="lazy" width="1400" height="875"></div><div class="lab">MIJN EIGEN BEDRIJF · AGENTS, WORKFLOWS, PLATFORM</div>
       <h3>Ik bouw niets wat ik zelf niet gebruik<span style="color:#ff4d24;">.</span></h3>
       <p>De klant ben ik. Van aanvraag tot afrekening: welke agent of workflow bij elke stap zit in mijn eigen bedrijf, en wat ik bewust zelf blijf doen.</p>
       <span class="meer">Lees de case →</span>

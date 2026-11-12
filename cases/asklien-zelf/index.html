@@ -207,6 +207,17 @@
   .tijdlijn strong { font-weight:600; }
   .stappen span { font-size:20px; }
   .cijfers b { font-size:28px; }
+  details.verhaal { margin:0 0 22px; }
+  details.verhaal > summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px; background:#fff; border-radius:20px; padding:22px 28px; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px; }
+  details.verhaal > summary::-webkit-details-marker { display:none; }
+  details.verhaal > summary span { font-family:'Schibsted Grotesk',sans-serif; font-weight:400; font-size:14.5px; letter-spacing:0; color:#8a8378; display:block; margin-top:4px; }
+  details.verhaal > summary::after { content:'+'; flex:none; width:38px; height:38px; border-radius:50%; background:#ff4d24; color:#fff; font-size:24px; font-weight:600; line-height:36px; text-align:center; }
+  details.verhaal[open] > summary::after { content:'–'; }
+  details.verhaal[open] > summary { margin-bottom:22px; }
+  .herkomst { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .herkomst span { font-size:13px; font-weight:600; color:#57534a; background:#fff; border:1px solid #e6ddcb; border-radius:999px; padding:6px 13px; }
+  .casekaart .duim { margin:-30px -30px 6px; border-radius:20px 20px 0 0; overflow:hidden; border-bottom:1px solid #e6ddcb; aspect-ratio:16/9.6; background:#f6f1e7; }
+  .casekaart .duim img { display:block; width:100%; height:100%; object-fit:cover; object-position:top left; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -215,6 +226,7 @@
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
     .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
+    details.verhaal > summary { padding:18px 20px; font-size:18px; }
     .keten ol { flex-direction:column; } .keten li:not(:last-child)::after { right:auto; left:22px; top:auto; bottom:-9px; margin:0; clip-path:polygon(0 0,100% 0,50% 100%); } .keten { padding:22px 20px; } .galerij { grid-template-columns:1fr; }
     .inv { padding:26px 24px; } .inv dl > div { grid-template-columns:1fr; gap:4px; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
@@ -243,6 +255,7 @@
   <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">CASE · ASKLIEN.AI · MIJN EIGEN BEDRIJF</div>
   <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,58px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Ik bouw niets wat ik zelf niet gebruik<span style="color:#ff4d24;">.</span></h1>
   <p style="margin:0; font-size:19px; line-height:1.65; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Dit is een rare case, want de klant ben ik. Maar het is ook de eerlijkste. Als ik jou vraag om AI in je bedrijf te vertrouwen, mag je zien hoe het in het mijne loopt. AskLien is een klein team, met mij als oprichter. Wat hieronder staat, is hoe een klein team het werk van een veel groter aankan.</p>
+
 </header>
 
 <section class="case-breed" style="padding-top:36px;">
@@ -282,14 +295,16 @@
   <p style="margin:16px 0 0; font-size:14px; line-height:1.6; color:#8a8378;"><span class="fictief">De schermen zijn echt, de klanten niet</span>&nbsp; Dit is de hub zelf, lokaal gedraaid op verzonnen demogegevens. De klant, de leden, de taken en de cijfers zijn fictief.</p>
 </section>
 
-<section class="case-smal" style="padding-top:36px;">
-  <div data-reveal class="kaart">
+<section class="case-smal" style="padding-top:26px;">
+  <details class="verhaal">
+    <summary><div>Lees het volledige verhaal<span>Waarom ik dit toon · Een traject, van aanvraag tot afrekening · Wat ik bewust zelf doe</span></div></summary>
+  <div class="kaart">
     <div class="nr">01</div>
     <h2>Waarom ik dit toon</h2>
     <p>Elke consultant zegt dat AI tijd bespaart. Bijna niemand toont zijn eigen keuken. Ik vind dat je moet kunnen zien of iemand zelf doet wat ze verkoopt.</p>
     <p>En er is nog een reden. Alles wat ik bij een klant bouw, heb ik eerst bij mezelf gebouwd. De hub waarin klanten hun traject volgen, de statusrapporten, de chatbot-opvolging. Mijn eigen bedrijf is de plek waar ik uitvind wat werkt, voor ik het ergens anders neerzet.</p>
   </div>
-  <div data-reveal class="kaart">
+  <div class="kaart">
     <div class="nr">02</div>
     <h2>Een traject, van aanvraag tot afrekening</h2>
     <p>Neem een AI audit. Dit is wat er gebeurt, en waar een agent het werk doet:</p>
@@ -300,13 +315,14 @@
     <p><strong>De opvolging.</strong> Elke week ligt er een statusrapport klaar met wat gedaan is en wat openstaat, per persoon.</p>
     <p><strong>De afrekening.</strong> Ook daar zit een skill achter.</p>
   </div>
-  <div data-reveal class="kaart">
+  <div class="kaart">
     <div class="nr">03</div>
     <h2>Wat ik bewust zelf doe</h2>
     <p>De auditdag zelf. Daar zit geen agent tussen. Kijken hoe mensen werken, doorvragen, aanvoelen waar het wringt: dat is het werk.</p>
     <p>En nalezen. Een skill schrijft een eerste versie, ik beslis wat vertrekt. De wekelijkse mail naar mijn leden wordt elke maandagochtend voorbereid als concept. Hij gaat pas weg als ik hem gelezen heb.</p>
     <p>Dat is voor mij de regel bij elke agent die ik bouw, bij mezelf en bij klanten: de agent doet het voorwerk, een mens neemt de beslissing.</p>
   </div>
+  </details>
   <div data-reveal class="oproep">
     <div><strong>Wil je weten wat er bij jou vanzelf kan lopen?</strong><p>Niet alles moet een agent zijn. In een audit zoek ik uit wat een agent, een workflow of gewoon een beter systeem vraagt.</p></div>
     <a href="/ai-audit/#aanvraag" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:15px; padding:14px 26px; border-radius:10px; white-space:nowrap;">Vertel me hoe je werkt →</a>

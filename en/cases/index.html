@@ -181,6 +181,17 @@
   .tijdlijn strong { font-weight:600; }
   .stappen span { font-size:20px; }
   .cijfers b { font-size:28px; }
+  details.verhaal { margin:0 0 22px; }
+  details.verhaal > summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px; background:#fff; border-radius:20px; padding:22px 28px; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px; }
+  details.verhaal > summary::-webkit-details-marker { display:none; }
+  details.verhaal > summary span { font-family:'Schibsted Grotesk',sans-serif; font-weight:400; font-size:14.5px; letter-spacing:0; color:#8a8378; display:block; margin-top:4px; }
+  details.verhaal > summary::after { content:'+'; flex:none; width:38px; height:38px; border-radius:50%; background:#ff4d24; color:#fff; font-size:24px; font-weight:600; line-height:36px; text-align:center; }
+  details.verhaal[open] > summary::after { content:'–'; }
+  details.verhaal[open] > summary { margin-bottom:22px; }
+  .herkomst { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .herkomst span { font-size:13px; font-weight:600; color:#57534a; background:#fff; border:1px solid #e6ddcb; border-radius:999px; padding:6px 13px; }
+  .casekaart .duim { margin:-30px -30px 6px; border-radius:20px 20px 0 0; overflow:hidden; border-bottom:1px solid #e6ddcb; aspect-ratio:16/9.6; background:#f6f1e7; }
+  .casekaart .duim img { display:block; width:100%; height:100%; object-fit:cover; object-position:top left; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -189,6 +200,7 @@
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
     .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
+    details.verhaal > summary { padding:18px 20px; font-size:18px; }
     .keten ol { flex-direction:column; } .keten li:not(:last-child)::after { right:auto; left:22px; top:auto; bottom:-9px; margin:0; clip-path:polygon(0 0,100% 0,50% 100%); } .keten { padding:22px 20px; } .galerij { grid-template-columns:1fr; }
     .inv { padding:26px 24px; } .inv dl > div { grid-template-columns:1fr; gap:4px; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
@@ -231,13 +243,13 @@
   </a>
   <div data-reveal class="casegrid">
     <a href="/en/cases/dapper-ondernemen/" class="logo casekaart">
-      <div class="lab">FINANCIAL COACHING · AUDIT, PLATFORM, RETAINER</div>
+      <div class="duim"><img src="/media/cases/dapper/en/dashboard.jpg" alt="" loading="lazy" width="1400" height="875"></div><div class="lab">FINANCIAL COACHING · AUDIT, PLATFORM, RETAINER</div>
       <h3>From 19 separate tools to one platform<span style="color:#ff4d24;">.</span></h3>
       <p>A financial coaching firm with nineteen tools and one person holding it all together. The audit said to stop tuning tools and build one place for everything. That platform is up and running.</p>
       <span class="meer">Read the case study →</span>
     </a>
     <a href="/en/cases/trimtime/" class="logo casekaart">
-      <div class="lab">DOG GROOMING SALON · CUSTOM PROPOSAL, APP, RETAINER</div>
+      <div class="duim"><img src="/media/cases/trimtime/en/agenda-week.jpg" alt="" loading="lazy" width="1400" height="875"></div><div class="lab">DOG GROOMING SALON · CUSTOM PROPOSAL, APP, RETAINER</div>
       <h3>Her schedule, out of her head and into one app<span style="color:#ff4d24;">.</span></h3>
       <p>A grooming salon where the whole schedule lived in the owner's head. Now there's one app with a website, a client area and a booking system that follows her rules.</p>
       <span class="meer">Read the case study →</span>
@@ -255,7 +267,7 @@
       <span class="meer">Read the case study →</span>
     </a>
     <a href="/en/cases/asklien-zelf/" class="logo casekaart">
-      <div class="lab">MY OWN BUSINESS · AGENTS, WORKFLOWS, PLATFORM</div>
+      <div class="duim"><img src="/media/cases/asklien/en/traject.jpg" alt="" loading="lazy" width="1400" height="875"></div><div class="lab">MY OWN BUSINESS · AGENTS, WORKFLOWS, PLATFORM</div>
       <h3>I don't build anything I don't use myself<span style="color:#ff4d24;">.</span></h3>
       <p>I'm the client in this one. From first inquiry to invoice, here's which agent or workflow handles each step in my own business, and what I still do myself.</p>
       <span class="meer">Read the case study →</span>

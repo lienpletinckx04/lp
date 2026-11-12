@@ -207,6 +207,17 @@
   .tijdlijn strong { font-weight:600; }
   .stappen span { font-size:20px; }
   .cijfers b { font-size:28px; }
+  details.verhaal { margin:0 0 22px; }
+  details.verhaal > summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px; background:#fff; border-radius:20px; padding:22px 28px; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.5px; }
+  details.verhaal > summary::-webkit-details-marker { display:none; }
+  details.verhaal > summary span { font-family:'Schibsted Grotesk',sans-serif; font-weight:400; font-size:14.5px; letter-spacing:0; color:#8a8378; display:block; margin-top:4px; }
+  details.verhaal > summary::after { content:'+'; flex:none; width:38px; height:38px; border-radius:50%; background:#ff4d24; color:#fff; font-size:24px; font-weight:600; line-height:36px; text-align:center; }
+  details.verhaal[open] > summary::after { content:'–'; }
+  details.verhaal[open] > summary { margin-bottom:22px; }
+  .herkomst { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .herkomst span { font-size:13px; font-weight:600; color:#57534a; background:#fff; border:1px solid #e6ddcb; border-radius:999px; padding:6px 13px; }
+  .casekaart .duim { margin:-30px -30px 6px; border-radius:20px 20px 0 0; overflow:hidden; border-bottom:1px solid #e6ddcb; aspect-ratio:16/9.6; background:#f6f1e7; }
+  .casekaart .duim img { display:block; width:100%; height:100%; object-fit:cover; object-position:top left; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -215,6 +226,7 @@
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
     .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
+    details.verhaal > summary { padding:18px 20px; font-size:18px; }
     .keten ol { flex-direction:column; } .keten li:not(:last-child)::after { right:auto; left:22px; top:auto; bottom:-9px; margin:0; clip-path:polygon(0 0,100% 0,50% 100%); } .keten { padding:22px 20px; } .galerij { grid-template-columns:1fr; }
     .inv { padding:26px 24px; } .inv dl > div { grid-template-columns:1fr; gap:4px; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
@@ -243,6 +255,7 @@
   <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">CASE · HOPBOT · BIERJOURNALIST GEERT VAN LIERDE</div>
   <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,58px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Een chatbot die alleen zijn eigen werk citeert<span style="color:#ff4d24;">.</span></h1>
   <p style="margin:0; font-size:19px; line-height:1.65; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Geert Van Lierde schrijft al jaren over Belgisch bier. Op zijn website staan honderden artikels. En toch vragen mensen het tegenwoordig aan een algemene AI, die over bier met veel zelfvertrouwen dingen vertelt die niet kloppen. Dus kreeg hij een eigen chatbot. Eentje die alleen weet wat Geert weet.</p>
+
 </header>
 
 <section class="case-breed" style="padding-top:36px;">
@@ -267,21 +280,23 @@
   </div>
 </section>
 
-<section class="case-smal" style="padding-top:36px;">
-  <div data-reveal class="kaart">
+<section class="case-smal" style="padding-top:26px;">
+  <details class="verhaal">
+    <summary><div>Lees het volledige verhaal<span>Waar het begon · Het idee · De regels van Hopbot</span></div></summary>
+  <div class="kaart">
     <div class="nr">01</div>
     <h2>Waar het begon</h2>
     <p>Geert Van Lierde is bierjournalist en auteur. Zijn website is een archief van jaren schrijven over Belgisch bier en biercultuur: bierstijlen, brouwerijen, proeven, bier aan tafel.</p>
     <p>Het probleem zat niet in wat hij had, wel in hoe mensen zoeken. Wie vandaag iets wil weten over trappist of over een bierstijl, typt het in een chatbot. En als Geert dat zelf testte, zag hij antwoorden die er compleet naast zaten. Vlot geschreven, zelfverzekerd, en fout.</p>
     <p>Voor iemand die van juistheid zijn vak gemaakt heeft, is dat geen detail. Dat is precies het verschil tussen hem en de rest.</p>
   </div>
-  <div data-reveal class="kaart">
+  <div class="kaart">
     <div class="nr">02</div>
     <h2>Het idee</h2>
     <p>Wat als de vraag wel gesteld kan worden zoals mensen dat nu gewend zijn, maar het antwoord uit zijn werk komt? Een kort antwoord, en een link naar het volledige artikel. Zo worden zijn stukken opnieuw gevonden, en blijft hij de bron.</p>
     <p>Geen audit nodig voor zoiets. Wel een goed gesprek over wat de bot mag, en vooral over wat hij niet mag.</p>
   </div>
-  <div data-reveal class="kaart">
+  <div class="kaart">
     <div class="nr">03</div>
     <h2>De regels van Hopbot</h2>
     <p>Een chatbot op maat staat of valt met zijn grenzen. Bij Hopbot zijn die scherp:</p>
@@ -291,6 +306,7 @@
     <p><strong>Weet hij het niet, dan zegt hij dat.</strong> En verwijst hij naar Geert zelf. De eerste testers vonden net dat het menselijkst aan de hele bot.</p>
     <p><strong>Hij schrijft geen artikels.</strong> Daarvoor moet je bij Geert zijn.</p>
   </div>
+  </details>
   <div data-reveal class="oproep">
     <div><strong>Vertelt AI ook onzin over jouw vak?</strong><p>Dan heb je iets wat de algemene modellen niet hebben: jouw kennis. Een chatbot op maat maakt daar jouw voordeel van.</p></div>
     <a href="/ai-audit/#aanvraag" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:15px; padding:14px 26px; border-radius:10px; white-space:nowrap;">Vertel me over jouw vak →</a>
