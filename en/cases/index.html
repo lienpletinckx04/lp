@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=7">
+<link rel="stylesheet" href="/css/style.css?v=8">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -169,6 +169,18 @@
   .galerij { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:8px; }
   .galerij .breed { grid-column:1 / -1; }
   .galerij figure.scherm figcaption { font-size:13.5px; }
+  /* RANGORDE: alleen koppen en cijfers zijn zwaar; alles daaronder is een trap lichter */
+  .kaart .nr, .feat .nr, [data-reveal] > .nr { font-size:13px; letter-spacing:2px; font-weight:800; margin-bottom:8px; }
+  .winst strong { font-family:'Schibsted Grotesk',sans-serif; font-weight:600; font-size:16px; letter-spacing:0; }
+  .modules strong { font-weight:600; font-size:18.5px; letter-spacing:-.3px; }
+  .modules span { font-size:12px; font-weight:600; }
+  .soorten strong, .regels strong, .stappen strong { font-weight:600; letter-spacing:-.2px; }
+  .inv dt { font-family:'Schibsted Grotesk',sans-serif; font-weight:600; font-size:16px; letter-spacing:0; }
+  .keten li { font-weight:600; letter-spacing:0; }
+  .lijst li strong, .kaart p strong { font-weight:600; }
+  .tijdlijn strong { font-weight:600; }
+  .stappen span { font-size:20px; }
+  .cijfers b { font-size:28px; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){

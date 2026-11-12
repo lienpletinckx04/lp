@@ -217,3 +217,13 @@ html, body { overflow-x: hidden; max-width: 100%; }
   .hero2-log { position: static; width: auto; margin-top: 18px; }
   .hero2-video { width: 46%; }
 }
+
+/* Header zonder klantscherm: de video is het beeld, de kaart hangt eroverheen */
+.hero2-beeld.zonder-scherm { height: 560px; }
+.zonder-scherm .hero2-video { top: 0; right: 0; bottom: auto; width: 74%; height: 500px; aspect-ratio: auto; border-width: 0; border-radius: 24px; }
+.zonder-scherm .hero2-log { width: 60%; bottom: 0; left: 0; }
+@media (max-width: 960px) {
+  .hero2-beeld.zonder-scherm { height: auto; }
+  .zonder-scherm .hero2-video { position: static; width: 100%; height: auto; aspect-ratio: 4 / 5; margin: 0; }
+  .zonder-scherm .hero2-log { position: relative; width: auto; margin: -64px 14px 0; }
+}
