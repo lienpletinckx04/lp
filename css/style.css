@@ -231,3 +231,21 @@ html, body { overflow-x: hidden; max-width: 100%; }
 .hero2-tekst > p.hero2-zelf { margin: 20px 0 0; font-size: 14.5px; line-height: 1.6; color: #8a8378; max-width: 560px; }
 .hero2-zelf a { color: #1c1a1f; font-weight: 600; text-decoration: underline; text-decoration-color: #ff4d24; text-underline-offset: 3px; }
 .hero2-zelf a:hover { color: #ff4d24; }
+
+/* ---------- GSM-CONTROLE (nov 2026): wat de controle over alle pagina's vond ---------- */
+@media (max-width: 960px) {
+  /* Een lange knop die niet mocht afbreken duwde zijn hele kolom buiten de kaart. */
+  section [style*="grid-template-columns"] > * { min-width: 0; }
+  section a[style*="white-space:nowrap"], section button[style*="white-space:nowrap"] { white-space: normal !important; text-align: center; }
+  /* Raakzones van minstens een duim hoog. */
+  .klantstrook .namen a, .klantstrook .alle { display: inline-block; padding: 9px 0; }
+  .pakket a { display: inline-block; padding: 11px 0; }
+  .kopieer { min-height: 38px; padding: 9px 14px !important; font-size: 13px !important; }
+  /* Tabellen die breder zijn dan het scherm schuiven binnen hun eigen kader, niet erbuiten. */
+  table.tabel { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  /* Reel-engine: de tegels duwden hun blok buiten de kaart. */
+  .hergebruik > * { min-width: 0; }
+  .tegel, .story { min-width: 0; overflow: hidden; overflow-wrap: anywhere; }
+  /* Niets kleiner dan 12px. */
+  .badge, .tegel, .story, .m-label, span.ok, [style*="font-size:10px"], [style*="font-size: 10px"] { font-size: 12px !important; }
+}
