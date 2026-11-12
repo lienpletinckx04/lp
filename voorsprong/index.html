@@ -53,12 +53,12 @@
 
 <!-- HERO -->
 <header style="max-width:1240px; margin:0 auto; padding:32px 32px 0;">
-  <div class="vs-hero" style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); border-radius:24px; padding:80px 64px; color:#fff; position:relative; overflow:hidden;">
-    <div class="vs-badge" style="position:absolute; right:64px; top:64px; width:140px; height:140px; animation:spin 20s linear infinite;">
+  <div class="vs-hero" style="background:#ff4d24; border-radius:24px; padding:80px 64px; color:#fff; position:relative; overflow:hidden;">
+    <div class="vs-badge" style="position:absolute; right:64px; top:64px; width:140px; height:140px;">
       <svg viewBox="0 0 150 150" width="150" height="150">
         <defs><path id="vsCirkel" d="M 75,75 m -58,0 a 58,58 0 1,1 116,0 a 58,58 0 1,1 -116,0"></path></defs>
         <circle cx="75" cy="75" r="72" fill="#1c1a1f"></circle>
-        <text style="font-family:'Archivo'; font-weight:800; font-size:14px; letter-spacing:2.5px; fill:#f6f1e7;"><textPath href="#vsCirkel">VOORSPRONG ✦ ELKE MAAND ✦ </textPath></text>
+        <text style="font-family:'Archivo'; font-weight:800; font-size:14px; letter-spacing:2.5px; fill:#f6f1e7;"><textPath href="#vsCirkel">VOORSPRONG · ELKE MAAND · </textPath></text>
         <circle cx="75" cy="75" r="7" fill="#ff4d24"></circle>
       </svg>
     </div>
@@ -67,16 +67,15 @@
     <p style="margin:28px 0 0; font-size:19px; line-height:1.6; color:#ffe4da; max-width:620px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .25s both;">Een membership, meer niet. Voor iedereen die met Claude of ChatGPT werkt, of je nu de challenge deed of alles zelf leerde. AI verandert elke maand: Claude in de eerste plaats, maar ook de tools eromheen. Vanaf nu weet jij telkens wat er nieuw is en wat je ermee doet, zonder dat je zelf alles moet opvolgen.</p>
     <div style="margin-top:36px; display:flex; align-items:center; gap:20px; flex-wrap:wrap; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .35s both;">
       <a href="/voorsprong-inschrijven/" class="btn-white" style="background:#fff; color:#1c1a1f; font-weight:600; font-size:17px; padding:18px 40px; border-radius:10px;">Word lid</a>
-      <div style="display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.45); padding:12px 22px; border-radius:999px; font-size:15px; font-weight:600;"><span style="width:8px; height:8px; border-radius:50%; background:#fff; animation:pulse 1.6s infinite;"></span>€37 per maand, maandelijks opzegbaar</div>
+      <div style="display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.45); padding:12px 22px; border-radius:999px; font-size:15px; font-weight:600;"><span style="width:8px; height:8px; border-radius:50%; background:#fff;"></span>€37 per maand, maandelijks opzegbaar</div>
       <div id="ledenBadgeHero" style="display:none; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.45); padding:12px 22px; border-radius:999px; font-size:15px; font-weight:600;">👥&nbsp; Al <span id="ledenAantalHero"></span> leden gingen je voor</div>
     </div>
   </div>
 </header>
 
-<div style="background:#1c1a1f; margin-top:64px; padding:16px 0; overflow:hidden; white-space:nowrap;">
-  <div style="display:inline-flex; gap:48px; animation:marquee 20s linear infinite; font-family:'Archivo'; font-weight:800; font-size:17px; color:#f6f1e7; letter-spacing:.5px;">
-    <span>€37 PER MAAND</span><span style="color:#ff4d24;">✦</span><span>MAANDELIJKSE LIVE SESSIE</span><span style="color:#ff4d24;">✦</span><span>SKILLS EN TEMPLATES</span><span style="color:#ff4d24;">✦</span><span>VOOR IEDEREEN</span><span style="color:#ff4d24;">✦</span>
-    <span>€37 PER MAAND</span><span style="color:#ff4d24;">✦</span><span>MAANDELIJKSE LIVE SESSIE</span><span style="color:#ff4d24;">✦</span><span>SKILLS EN TEMPLATES</span><span style="color:#ff4d24;">✦</span><span>VOOR IEDEREEN</span><span style="color:#ff4d24;">✦</span>
+<div style="background:#1c1a1f; margin-top:64px; padding:16px 24px;">
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:8px 22px; max-width:1240px; margin:0 auto; font-family:'Archivo'; font-weight:800; font-size:16px; color:#f6f1e7; letter-spacing:.5px;">
+    <span>€37 PER MAAND</span><span style="width:5px; height:5px; border-radius:50%; background:#ff4d24; flex:none;"></span><span>MAANDELIJKSE LIVE SESSIE</span><span style="width:5px; height:5px; border-radius:50%; background:#ff4d24; flex:none;"></span><span>SKILLS EN TEMPLATES</span><span style="width:5px; height:5px; border-radius:50%; background:#ff4d24; flex:none;"></span><span>VOOR IEDEREEN</span>
   </div>
 </div>
 
@@ -87,22 +86,22 @@
     <h2 style="margin:0; font-family:'Archivo'; font-weight:900; font-size:48px; letter-spacing:-2.5px; line-height:1.02;">AI stond intussen niet stil<span style="color:#ff4d24;">.</span></h2>
   </div>
   <div data-reveal style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
-    <div style="background:#fff; border-radius:18px; padding:28px 30px;" data-tilt>
+    <div style="background:#fff; border-radius:18px; padding:28px 30px;">
       <div style="font-family:'Archivo'; font-weight:900; font-size:28px; color:#ff4d24; margin-bottom:14px;">01</div>
       <h3 style="margin:0 0 8px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px;">Claude Fable 5.1</h3>
       <p style="margin:0; font-size:14px; line-height:1.6; color:#57534a;">Het zwaarste model van Claude, net vernieuwd. En sinds 22 september doet Opus 5.5 het meeste even goed, goedkoper. <a href="/fable-5-1/" style="color:#ff4d24; text-decoration:none; font-weight:600;">Lees de gids</a></p>
     </div>
-    <div style="background:#fff; border-radius:18px; padding:28px 30px;" data-tilt>
+    <div style="background:#fff; border-radius:18px; padding:28px 30px;">
       <div style="font-family:'Archivo'; font-weight:900; font-size:28px; color:#ff4d24; margin-bottom:14px;">02</div>
       <h3 style="margin:0 0 8px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px;">Docs, Slides en Design in elk gesprek</h3>
       <p style="margin:0; font-size:14px; line-height:1.6; color:#57534a;">Sinds 16 september maakt Claude documenten, presentaties en ontwerpen in hetzelfde gesprek. <a href="/claude-update/" style="color:#ff4d24; text-decoration:none; font-weight:600;">Lees de gids</a></p>
     </div>
-    <div style="background:#fff; border-radius:18px; padding:28px 30px;" data-tilt>
+    <div style="background:#fff; border-radius:18px; padding:28px 30px;">
       <div style="font-family:'Archivo'; font-weight:900; font-size:28px; color:#ff4d24; margin-bottom:14px;">03</div>
       <h3 style="margin:0 0 8px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px;">Advertenties in ChatGPT</h3>
       <p style="margin:0; font-size:14px; line-height:1.6; color:#57534a;">Sinds eind augustus in 31 Europese landen, België inbegrepen. Enkel bij de gratis versie en Go. <a href="/adverteren-in-chatgpt/" style="color:#ff4d24; text-decoration:none; font-weight:600;">Lees de gids</a></p>
     </div>
-    <div style="background:#fff; border-radius:18px; padding:28px 30px;" data-tilt>
+    <div style="background:#fff; border-radius:18px; padding:28px 30px;">
       <div style="font-family:'Archivo'; font-weight:900; font-size:28px; color:#ff4d24; margin-bottom:14px;">04</div>
       <h3 style="margin:0 0 8px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.5px;">ChatGPT in je Apple Berichten</h3>
       <p style="margin:0; font-size:14px; line-height:1.6; color:#57534a;">Hij doorzoekt jaren aan gesprekken en schrijft antwoorden in jouw stijl. Met een privacystuk dat je moet kennen. <a href="/chatgpt-apple-berichten/" style="color:#ff4d24; text-decoration:none; font-weight:600;">Lees de gids</a></p>
@@ -132,9 +131,9 @@
       <div style="background:#1c1a1f; color:#f6f1e7; border-radius:16px; padding:24px 28px;">
         <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.5px; color:#ff4d24; margin-bottom:10px;">VOORSPRONG</div>
         <div style="display:flex; flex-direction:column; gap:8px; font-size:15px; line-height:1.55;">
-          <div><span style="color:#ff4d24; font-weight:800;">✦</span>&nbsp; Binnen de week na elke belangrijke update</div>
-          <div><span style="color:#ff4d24; font-weight:800;">✦</span>&nbsp; Altijd de nieuwste versie, nooit een archief</div>
-          <div><span style="color:#ff4d24; font-weight:800;">✦</span>&nbsp; Je blijft mee zonder er zelf achter te zitten</div>
+          <div><span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#ff4d24; flex:none; margin-top:.55em; vertical-align:middle;"></span>&nbsp; Binnen de week na elke belangrijke update</div>
+          <div><span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#ff4d24; flex:none; margin-top:.55em; vertical-align:middle;"></span>&nbsp; Altijd de nieuwste versie, nooit een archief</div>
+          <div><span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#ff4d24; flex:none; margin-top:.55em; vertical-align:middle;"></span>&nbsp; Je blijft mee zonder er zelf achter te zitten</div>
         </div>
       </div>
     </div>
@@ -198,7 +197,7 @@
 
 <!-- HET AANBOD -->
 <section id="aanbod" style="max-width:1240px; margin:0 auto; padding:0 32px 96px;">
-  <div data-reveal style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); border-radius:24px; padding:64px; color:#fff; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;">
+  <div data-reveal style="background:#ff4d24; border-radius:24px; padding:64px; color:#fff; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;">
     <div>
       <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ffd9cd; margin-bottom:14px;">HET AANBOD</div>
       <h2 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:56px; letter-spacing:-3px; line-height:.98;">€37 per maand.<br>Meer is het niet<span style="color:#1c1a1f;">.</span></h2>
@@ -216,8 +215,8 @@
         <div style="font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1px;">€0</div>
       </div>
       <div style="padding-top:20px; display:flex; flex-direction:column; gap:8px; font-size:15px; line-height:1.5;">
-        <div><span style="font-weight:800;">✦</span>&nbsp; Ledenzone meteen open na betaling</div>
-        <div><span style="font-weight:800;">✦</span>&nbsp; Maandelijks opzegbaar, geen verplichtingen</div>
+        <div><span style="font-weight:800;">·</span>&nbsp; Ledenzone meteen open na betaling</div>
+        <div><span style="font-weight:800;">·</span>&nbsp; Maandelijks opzegbaar, geen verplichtingen</div>
       </div>
     </div>
   </div>
@@ -280,7 +279,7 @@
 
 <!-- SLOT CTA -->
 <section id="slot" style="max-width:1240px; margin:0 auto; padding:0 32px 96px;">
-  <div data-reveal style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); border-radius:24px; padding:72px 64px; text-align:center; color:#fff;">
+  <div data-reveal style="background:#ff4d24; border-radius:24px; padding:72px 64px; text-align:center; color:#fff;">
     <h2 style="margin:0; font-family:'Archivo'; font-weight:900; font-size:56px; letter-spacing:-3px; line-height:1;">Word lid, en blijf mee<span style="color:#1c1a1f;">.</span></h2>
     <div style="margin:28px auto 32px; display:flex; flex-direction:column; gap:8px; font-size:18px; color:#ffe4da;">
       <div>€37 per maand, voor iedereen.</div>

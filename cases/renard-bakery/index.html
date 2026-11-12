@@ -10,7 +10,9 @@
 <title>Case Renard Bakery: van AI audit naar een eigen cijferplatform | AskLien.ai</title>
 <meta name="description" content="Hoe één AI auditdag bij een Brusselse bakkerij uitgroeide tot een eigen platform met dagomzet, kanalen, prognose en AI-advies. Het volledige verhaal, van audit tot vandaag.">
 <link rel="canonical" href="https://asklien.ai/cases/renard-bakery/">
+<link rel="alternate" hreflang="nl-BE" href="https://asklien.ai/cases/renard-bakery/">
 <link rel="alternate" hreflang="nl" href="https://asklien.ai/cases/renard-bakery/">
+<link rel="alternate" hreflang="en-US" href="https://asklien.ai/en/cases/renard-bakery/">
 <link rel="alternate" hreflang="en" href="https://asklien.ai/en/cases/renard-bakery/">
 <link rel="alternate" hreflang="x-default" href="https://asklien.ai/cases/renard-bakery/">
 <meta property="og:type" content="article">
@@ -151,6 +153,7 @@
   .regels div { border-top:3px solid #ff4d24; padding-top:16px; }
   .regels strong { display:block; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#f6f1e7; margin-bottom:8px; }
   .regels p { margin:0; font-size:14.5px; line-height:1.7; color:#b3ab9e; }
+  .regels.licht strong { color:#1c1a1f; } .regels.licht p { color:#57534a; }
   .oproep { display:flex; align-items:center; justify-content:space-between; gap:24px; background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:26px 32px; margin-bottom:22px; }
   .oproep strong { display:block; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.6px; margin-bottom:4px; }
   .oproep p { margin:0; font-size:15px; line-height:1.65; color:#b3ab9e; max-width:520px; }
@@ -169,6 +172,11 @@
   .casekaart h3 { margin:0; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1.1px; line-height:1.08; }
   .casekaart p { margin:0; font-size:15.5px; line-height:1.7; color:#57534a; flex:1; }
   .casekaart .meer { font-weight:600; font-size:15px; color:#ff4d24; }
+  .soorten { display:grid; grid-template-columns:repeat(2,1fr); gap:22px 30px; margin-top:24px; }
+  .soorten > div { border-top:1px solid #3a363f; padding-top:16px; }
+  .soorten .tag { display:inline-block; font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.6px; color:#1c1a1f; background:#ff4d24; border-radius:5px; padding:4px 8px; margin-bottom:10px; }
+  .soorten strong { display:block; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#f6f1e7; margin-bottom:5px; }
+  .soorten p { margin:0; font-size:14.5px; line-height:1.7; color:#b3ab9e; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -176,7 +184,7 @@
     .feat, .feat.gsmrij { grid-template-columns:1fr; gap:20px; margin-bottom:44px; }
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
-    .winst, .regels, .stappen, .modules, .casegrid { grid-template-columns:1fr; }
+    .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
     .case-breed, .case-smal { padding:0 22px; }
   }
@@ -289,10 +297,23 @@
   </div>
 </section>
 
-<section class="case-breed">
-  <div data-reveal class="kaart" style="background:#1c1a1f; color:#f6f1e7; padding:44px 44px 46px;">
-    <h2 style="color:#f6f1e7; font-size:30px;">Drie regels waar ik niet van afwijk</h2>
-    <div class="regels">
+<section class="case-breed" style="padding-top:26px;">
+  <div data-reveal class="kaart" style="background:#1c1a1f; color:#f6f1e7; padding:44px; margin-bottom:0;">
+    <h2 style="color:#f6f1e7; font-size:30px;">Wat hier vanzelf loopt</h2>
+    <p style="color:#b3ab9e; max-width:640px;">Hier zit een agent, een workflow én een platform in. Alle drie, omdat de vraag dat nodig had.</p>
+    <div class="soorten">
+      <div><span class="tag">WORKFLOW</span><strong>De cijfers halen zichzelf op.</strong><p>Elke nacht komen kassa, Deliveroo, weer en schoolvakanties binnen, zonder dat iemand iets doet.</p></div>
+      <div><span class="tag">WORKFLOW</span><strong>Het systeem controleert zichzelf.</strong><p>Zeven wachters kijken of de data klopt. Loopt er iets mis, dan staat dat op het scherm.</p></div>
+      <div><span class="tag">AGENT</span><strong>Claude leest mee en adviseert.</strong><p>Een AI-agent leest de cijfers van de dag en schrijft wat er te doen valt, en waarom.</p></div>
+      <div><span class="tag">PLATFORM</span><strong>De schermen waar het management in kijkt.</strong><p>Dagomzet, kanalen, producten en prognose, op de gsm en in twee talen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="case-breed" style="padding-top:22px;">
+  <div data-reveal class="kaart" style="background:#fff; padding:44px 44px 46px;">
+    <h2 style="font-size:30px;">Drie regels waar ik niet van afwijk</h2>
+    <div class="regels licht">
       <div><strong>Geen cijfer zonder bron.</strong><p>Wat we niet kunnen onderbouwen, tonen we niet. Het scherm zegt dan: onbeschikbaar, met de reden erbij. Liever een leeg vak dan een verzonnen marge.</p></div>
       <div><strong>Een voorspelling zonder test is een mening.</strong><p>Elke prognose komt uit een model dat eerst op het verleden is afgerekend, en dat zijn eigen trackrecord toont.</p></div>
       <div><strong>Geen klantgegevens.</strong><p>In de database zitten alleen opgetelde verkoopcijfers. Geen namen, geen adressen. Hosting in de EU, persoonlijke logins met een tweede stap, en een verwerkersovereenkomst.</p></div>

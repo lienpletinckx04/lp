@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
 <meta charset="utf-8">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -10,7 +10,9 @@
 <title>Case studies: from AI audit to what runs today | AskLien.ai</title>
 <meta name="description" content="Real projects, from the first conversation to what runs today. How the audit went, what was chosen, what was built. Without the client's numbers.">
 <link rel="canonical" href="https://asklien.ai/en/cases/">
+<link rel="alternate" hreflang="nl-BE" href="https://asklien.ai/cases/">
 <link rel="alternate" hreflang="nl" href="https://asklien.ai/cases/">
+<link rel="alternate" hreflang="en-US" href="https://asklien.ai/en/cases/">
 <link rel="alternate" hreflang="en" href="https://asklien.ai/en/cases/">
 <link rel="alternate" hreflang="x-default" href="https://asklien.ai/cases/">
 <meta property="og:type" content="website">
@@ -124,6 +126,7 @@
   .regels div { border-top:3px solid #ff4d24; padding-top:16px; }
   .regels strong { display:block; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#f6f1e7; margin-bottom:8px; }
   .regels p { margin:0; font-size:14.5px; line-height:1.7; color:#b3ab9e; }
+  .regels.licht strong { color:#1c1a1f; } .regels.licht p { color:#57534a; }
   .oproep { display:flex; align-items:center; justify-content:space-between; gap:24px; background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:26px 32px; margin-bottom:22px; }
   .oproep strong { display:block; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.6px; margin-bottom:4px; }
   .oproep p { margin:0; font-size:15px; line-height:1.65; color:#b3ab9e; max-width:520px; }
@@ -142,6 +145,11 @@
   .casekaart h3 { margin:0; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1.1px; line-height:1.08; }
   .casekaart p { margin:0; font-size:15.5px; line-height:1.7; color:#57534a; flex:1; }
   .casekaart .meer { font-weight:600; font-size:15px; color:#ff4d24; }
+  .soorten { display:grid; grid-template-columns:repeat(2,1fr); gap:22px 30px; margin-top:24px; }
+  .soorten > div { border-top:1px solid #3a363f; padding-top:16px; }
+  .soorten .tag { display:inline-block; font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.6px; color:#1c1a1f; background:#ff4d24; border-radius:5px; padding:4px 8px; margin-bottom:10px; }
+  .soorten strong { display:block; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#f6f1e7; margin-bottom:5px; }
+  .soorten p { margin:0; font-size:14.5px; line-height:1.7; color:#b3ab9e; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -149,7 +157,7 @@
     .feat, .feat.gsmrij { grid-template-columns:1fr; gap:20px; margin-bottom:44px; }
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
-    .winst, .regels, .stappen, .modules, .casegrid { grid-template-columns:1fr; }
+    .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
     .case-breed, .case-smal { padding:0 22px; }
   }
@@ -183,7 +191,7 @@
     <div style="display:flex; flex-direction:column; gap:14px;">
       <div style="font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#ff4d24;">BAKERY · BRUSSELS · AUDIT, PLATFORM, RETAINER</div>
       <h2 style="margin:0; font-family:'Archivo'; font-weight:900; font-size:34px; letter-spacing:-1.6px; line-height:1.05;">From one audit day to the cockpit of a bakery<span style="color:#ff4d24;">.</span></h2>
-      <p style="margin:0; font-size:16px; line-height:1.7; color:#57534a;">A bakery opening its second shop, with every number locked inside the point of sale. Eight weeks after the audit, the first version of their own platform was online. Today management opens it every day.</p>
+      <p style="margin:0; font-size:16px; line-height:1.7; color:#57534a;">A bakery opening its second store, with every number locked inside the point of sale. Eight weeks after the audit, the first version of their own platform was online. Today management opens it every day.</p>
       <span style="font-weight:600; font-size:15px; color:#ff4d24;">Read the case study →</span>
     </div>
     <figure class="scherm"><div class="balk"><i></i><i></i><i></i><em>Renard Bakery platform · demo data</em></div><img src="/media/cases/renard/overzicht.jpg" alt="Renard Bakery platform · demo data" loading="lazy" width="1600" height="1000"></figure>
@@ -192,7 +200,7 @@
     <a href="/en/cases/dapper-ondernemen/" class="logo casekaart">
       <div class="lab">FINANCIAL COACHING · AUDIT, PLATFORM, RETAINER</div>
       <h3>From 19 separate tools to one platform<span style="color:#ff4d24;">.</span></h3>
-      <p>A financial coaching firm with nineteen tools and one person tying it all together. The audit said: stop optimising tools, build one place. That platform is running now.</p>
+      <p>A financial coaching firm with nineteen tools and one person tying it all together. The audit said: stop optimizing tools, build one place. That platform is running now.</p>
       <span class="meer">Read the case study →</span>
     </a>
     <a href="/en/cases/trimtime/" class="logo casekaart">
