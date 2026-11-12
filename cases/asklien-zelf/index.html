@@ -176,6 +176,15 @@
   .soorten .tag { display:inline-block; font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.6px; color:#1c1a1f; background:#ff4d24; border-radius:5px; padding:4px 8px; margin-bottom:10px; }
   .soorten strong { display:block; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#f6f1e7; margin-bottom:5px; }
   .soorten p { margin:0; font-size:14.5px; line-height:1.7; color:#b3ab9e; }
+  .inv { padding:34px 40px; }
+  .invkop { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:8px; }
+  .invkop .tag { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.6px; color:#fff; background:#1c1a1f; border-radius:6px; padding:6px 10px; }
+  .invkop em { font-style:normal; font-size:15px; color:#8a8378; }
+  .inv dl { margin:0; }
+  .inv dl > div { display:grid; grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:24px; padding:14px 0; border-top:1px solid #e6ddcb; }
+  .inv dl > div:first-child { border-top:none; }
+  .inv dt { font-family:'Archivo'; font-weight:800; font-size:16.5px; letter-spacing:-.3px; color:#1c1a1f; }
+  .inv dd { margin:0; font-size:15px; line-height:1.65; color:#57534a; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -184,6 +193,7 @@
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
     .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
+    .inv { padding:26px 24px; } .inv dl > div { grid-template-columns:1fr; gap:4px; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
     .case-breed, .case-smal { padding:0 22px; }
   }
@@ -214,8 +224,8 @@
 
 <section class="case-breed" style="padding-top:36px;">
   <div data-reveal class="cijfers">
+    <div><b>7</b><span>agents die elke week op een vast uur werken</span></div>
     <div><b>13</b><span>eigen skills die elk één taak overnemen</span></div>
-    <div><b>340+</b><span>leden die door de hub begeleid worden</span></div>
     <div><b>4.900+</b><span>mails die vanzelf vertrokken zijn</span></div>
     <div><b>1</b><span>persoon die alles naleest</span></div>
   </div>
@@ -263,7 +273,7 @@
     <div><span>02</span><strong>De hub</strong><p>Mijn leerplatform voor ruim 340 leden en mijn samenwerkingsruimte voor klanten. Lessen, community, trajecten en chatbot-opvolging onder één login.</p></div>
     <div><span>03</span><strong>Betalen en toegang</strong><p>Wie betaalt, krijgt meteen een account en een welkomstmail. Daar komt niemand aan te pas.</p></div>
     <div><span>04</span><strong>Mails die vanzelf lopen</strong><p>Welkom, toegang, herinneringen, meldingen bij feedback op een traject. Bijna vijfduizend tot nu toe.</p></div>
-    <div><span>05</span><strong>De ochtendmail</strong><p>Elke ochtend een overzicht van wat vandaag telt, in mijn mailbox.</p></div>
+    <div><span>05</span><strong>Agents op een vast uur</strong><p>Zeven stuks. Ze bereiden mijn dag voor, volgen klantgesprekken op en maken content van wat ik al geschreven heb.</p></div>
     <div><span>06</span><strong>De Reel-engine</strong><p>Van ruwe opname naar gemonteerde reel met ondertitels, in mijn eigen stijl.</p></div>
     <div><span>07</span><strong>Deze website</strong><p>Gebouwd en onderhouden met Claude Code. Ook de pagina die je nu leest.</p></div>
     <div><span>08</span><strong>Chatbot-opvolging</strong><p>Elke nacht komen de cijfers van de chatbots van mijn klanten binnen, en wordt nagekeken of niemand over zijn limiet gaat.</p></div>
@@ -281,6 +291,59 @@
       <div><span class="tag">WORKFLOW</span><strong>Meetings en nachtelijke controles.</strong><p>Opnames komen vanzelf in het juiste traject, chatbotcijfers worden elke nacht opgehaald en nagekeken.</p></div>
       <div><span class="tag">PLATFORM</span><strong>De hub.</strong><p>Waar leden leren en klanten hun traject volgen.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="case-breed" style="padding-top:26px;" id="lijst">
+  <div data-reveal style="max-width:796px; margin:0 auto 28px;">
+    <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; line-height:1.04;">De volledige lijst<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0; font-size:17px; line-height:1.75; color:#57534a;">Alles wat vandaag bij mij draait, per soort. Wat een agent schrijft, komt altijd als concept bij mij terecht. Er vertrekt niets zonder dat ik het gelezen heb.</p>
+  </div>
+  <div data-reveal class="kaart inv">
+    <div class="invkop"><span class="tag">AGENTS OP EEN VAST UUR</span><em>Ze starten zelf, zonder dat ik iets vraag.</em></div>
+    <dl>
+      <div><dt>Ochtendoverzicht</dt><dd>Elke ochtend om acht uur: wat er vandaag in mijn mailbox, agenda en documenten speelt.</dd></div>
+      <div><dt>Check-ins doorheen de dag</dt><dd>Om de drie uur een korte blik op wat er binnenkwam en wat eraan komt.</dd></div>
+      <div><dt>Opvolging na een klantgesprek</dt><dd>Elke werkdag: van de gesprekken van die dag een samenvatting, de afspraken, de actiepunten en een conceptmail aan de klant. Plus een herinnering in mijn agenda vijf dagen later.</dd></div>
+      <div><dt>Van gesprek naar offerte</dt><dd>Na een kennismaking staat er 's avonds een offerteconcept klaar, in hun woorden. Wat niet gezegd is, blijft een open vak. De agent mag geen prijzen verzinnen.</dd></div>
+      <div><dt>Van nieuwsbrief naar content</dt><dd>Twee keer per week: van mijn laatste nieuwsbrief drie posts, een carrousel en twee reelscripts.</dd></div>
+      <div><dt>Contentidee van de week</dt><dd>Elke woensdag het sterkste AI-nieuws van de week, nagekeken bij de bron en uitgewerkt tot een carrousel.</dd></div>
+      <div><dt>Weekoverzicht</dt><dd>Elke vrijdag: wat er afgewerkt is, wat er beslist is en wat nog openstaat.</dd></div>
+    </dl>
+  </div>
+  <div data-reveal class="kaart inv">
+    <div class="invkop"><span class="tag">SKILLS OP AANVRAAG</span><em>Ik roep ze op wanneer ik ze nodig heb.</em></div>
+    <dl>
+      <div><dt>Audit voorbereiden en auditrapport</dt><dd>Twee skills: één die de auditdag klaarzet, één die van notities en opname een rapport maakt.</dd></div>
+      <div><dt>Overeenkomst en afrekening</dt><dd>Een voorstel, een overeenkomst of een afrekening in mijn opbouw en met mijn voorwaarden.</dd></div>
+      <div><dt>Klantdossier en klantmail</dt><dd>Alles over één klant bij elkaar, en een mail in mijn toon.</dd></div>
+      <div><dt>Wekelijks statusrapport</dt><dd>De stand van een traject, per persoon.</dd></div>
+      <div><dt>Nieuwsbrief</dt><dd>Mijn wekelijkse nieuwsbrief, in mijn stijl.</dd></div>
+      <div><dt>Content en reels</dt><dd>Content herwerken naar andere vormen, carrousels maken, en mijn eigen montagestijl voor reels.</dd></div>
+      <div><dt>Mijn schrijfstijl</dt><dd>Eén skill die bewaakt hoe ik klink, en waar alle andere op steunen.</dd></div>
+    </dl>
+  </div>
+  <div data-reveal class="kaart inv">
+    <div class="invkop"><span class="tag">WORKFLOWS IN DE HUB</span><em>Geen AI, wel ketens die nooit iets vergeten.</em></div>
+    <dl>
+      <div><dt>Betaling wordt toegang</dt><dd>Wie betaalt, krijgt een account, de juiste opleiding en een welkomstmail.</dd></div>
+      <div><dt>Herinneringen</dt><dd>Wie nog niet inlogde, krijgt een duwtje. Wie een check-in in een traject miste ook.</dd></div>
+      <div><dt>Meetings naar trajecten</dt><dd>Opnames komen vanzelf in het juiste klantproject terecht, met de actiepunten eruit gehaald.</dd></div>
+      <div><dt>Statusrapport per traject</dt><dd>Elke week automatisch opgemaakt voor elke lopende klant.</dd></div>
+      <div><dt>Meldingen</dt><dd>Feedback op een taak, een vraag van een klant, een vermelding in de community: de juiste persoon krijgt bericht.</dd></div>
+      <div><dt>Chatbots bewaken</dt><dd>Elke nacht de cijfers ophalen, elke ochtend nakijken of een klant aan zijn limiet zit, elke maand een overzicht.</dd></div>
+      <div><dt>Nieuwsbrieflijsten gelijk houden</dt><dd>Leden en deelnemers staan vanzelf in de juiste lijst.</dd></div>
+    </dl>
+  </div>
+  <div data-reveal class="kaart inv">
+    <div class="invkop"><span class="tag">TOOLS DIE IK ZELF GEBOUWD HEB</span><em>Wat ik nodig had en nergens vond.</em></div>
+    <dl>
+      <div><dt>De hub</dt><dd>Leerplatform, community, klantentrajecten en chatbotdashboard onder één login.</dd></div>
+      <div><dt>De Skill Generator</dt><dd>Een tool in de hub waarmee leden hun eigen skill laten opmaken.</dd></div>
+      <div><dt>De Reel-engine</dt><dd>Monteert mijn opnames tot reels met ondertitels.</dd></div>
+      <div><dt>Mijn werkplek</dt><dd>Een eigen omgeving voor projecten, taken en tijdregistratie met freelancers. Die is nog jong.</dd></div>
+      <div><dt>Deze website</dt><dd>Gebouwd en bijgehouden met Claude Code.</dd></div>
+    </dl>
   </div>
 </section>
 
