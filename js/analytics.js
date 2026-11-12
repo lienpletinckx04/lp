@@ -5,7 +5,7 @@
    - toestemming vervalt na 6 maanden en wordt dan opnieuw gevraagd
    - de keuze is altijd te herzien via een link naar #cookievoorkeuren */
 (function () {
-  var MEET_ID = 'G-X26E0J3ZQT';
+  var MEET_ID = 'G-J7950T84CV';
   var PIXEL_ID = '3740482536120977';
 
   var SLEUTEL = 'asklien-toestemming-v2';
