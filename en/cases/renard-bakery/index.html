@@ -151,13 +151,21 @@
   .regels div { border-top:3px solid #ff4d24; padding-top:16px; }
   .regels strong { display:block; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#f6f1e7; margin-bottom:8px; }
   .regels p { margin:0; font-size:14.5px; line-height:1.7; color:#b3ab9e; }
+  .oproep { display:flex; align-items:center; justify-content:space-between; gap:24px; background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:26px 32px; margin-bottom:22px; }
+  .oproep strong { display:block; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.6px; margin-bottom:4px; }
+  .oproep p { margin:0; font-size:15px; line-height:1.65; color:#b3ab9e; max-width:520px; }
+  .stappen { display:grid; grid-template-columns:repeat(3,1fr); gap:22px 26px; margin-top:22px; }
+  .stappen span { display:block; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1px; color:#ff4d24; line-height:1; margin-bottom:8px; }
+  .stappen strong { display:block; font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.3px; margin-bottom:4px; }
+  .stappen p { margin:0; font-size:14.5px; line-height:1.65; color:#57534a; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
     .cijfers { grid-template-columns:1fr 1fr; }
     .feat, .feat.gsmrij { grid-template-columns:1fr; gap:20px; margin-bottom:44px; }
     .feat.om > :first-child { order:0; }
-    .winst, .regels { grid-template-columns:1fr; }
+    .winst, .regels, .stappen { grid-template-columns:1fr; }
+    .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
     .case-breed, .case-smal { padding:0 22px; }
   }
 </style>
@@ -225,6 +233,10 @@
     <p>I think that was the right instinct. An audit puts the whole menu on the table. After that you have to dare to choose what comes first, and let the rest wait.</p>
     <p>On July 13 we had an agreement. Four days later we sat down for the kickoff.</p>
   </div>
+  <div data-reveal class="oproep">
+    <div><strong>Sound familiar?</strong><p>Numbers that exist somewhere but never come out readable, and a business that runs on what a few people carry in their heads. That is where an audit starts.</p></div>
+    <a href="/en/ai-audit/#request" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:15px; padding:14px 26px; border-radius:10px; white-space:nowrap;">Tell me where you get stuck →</a>
+  </div>
 </section>
 
 <section class="case-breed" style="padding-top:34px;">
@@ -276,6 +288,10 @@
     </div>
     <p>Can you put that in dollars or euros? Probably. But that is their story to tell, not mine.</p>
   </div>
+  <div data-reveal class="oproep">
+    <div><strong>Want this for your business too?</strong><p>It doesn't have to be a bakery. If there is data in your systems that you do nothing with today, this can work for you too.</p></div>
+    <a href="/en/ai-audit/#request" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:15px; padding:14px 26px; border-radius:10px; white-space:nowrap;">Get in touch →</a>
+  </div>
   <div data-reveal class="kaart">
     <div class="nr">07</div>
     <h2>And it keeps growing</h2>
@@ -297,6 +313,25 @@
       <li><span class="dag">November 1</span><strong>Retainer starts:</strong> hosting, monitoring and tuning.</li>
       <li><span class="dag">Early 2027</span><strong>Phase 2</strong> is planned.</li>
     </ul>
+  </div>
+</section>
+
+<section class="case-breed" style="padding-top:8px; padding-bottom:22px;" id="audit">
+  <div data-reveal class="kaart" style="padding:44px;">
+    <h2 style="font-size:30px;">How an AI audit works</h2>
+    <p>Every case on this site started the same way. No months of pre-work, just this:</p>
+    <div class="stappen">
+      <div><span>01</span><strong>Intro call</strong><p>You tell me what you do and where you get stuck. I tell you honestly whether an audit makes sense, or whether something smaller will do.</p></div>
+      <div><span>02</span><strong>One day on site</strong><p>I come to where the work happens and watch. How does work come in, who decides what, where does the time go, which tools are you already paying for.</p></div>
+      <div><span>03</span><strong>The report</strong><p>Within a week: where time and money leak, the priorities in order, a review of your tools, and concrete proposals in more than one size.</p></div>
+      <div><span>04</span><strong>You choose</strong><p>All of it, part of it, or nothing. If you continue with a build, the audit is fully credited.</p></div>
+      <div><span>05</span><strong>Built in phases</strong><p>Your team tests along the way. Nothing ships that the people who use it haven't sat in.</p></div>
+      <div><span>06</span><strong>Retainer</strong><p>If you want it to keep running and keep growing, I look after it on a fixed retainer.</p></div>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-top:26px; padding-top:22px; border-top:1px solid #e6ddcb;">
+      <p style="margin:0; font-size:15px; color:#57534a;">An AI audit costs €1,750, credited if you continue with a build.</p>
+      <a href="/en/ai-audit/#request" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:15px 30px; border-radius:10px;">Plan your audit day →</a>
+    </div>
   </div>
 </section>
 
