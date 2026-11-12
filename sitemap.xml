@@ -402,4 +402,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://asklien.ai/cases/asklien-zelf/</loc>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://asklien.ai/cases/asklien-zelf/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://asklien.ai/en/cases/asklien-zelf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asklien.ai/cases/asklien-zelf/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://asklien.ai/en/cases/asklien-zelf/</loc>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://asklien.ai/cases/asklien-zelf/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://asklien.ai/en/cases/asklien-zelf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asklien.ai/cases/asklien-zelf/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
