@@ -150,3 +150,23 @@ html, body { overflow-x: hidden; max-width: 100%; }
 .gsm img { display: block; width: 100%; height: auto; border-radius: 26px; }
 .fictief { display: inline-flex; align-items: center; gap: 8px; background: #fff8ef; border: 1px dashed #d8cdb4; border-radius: 999px; padding: 7px 14px; font-size: 13px; font-weight: 600; color: #57534a; }
 .fictief::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #ff4d24; flex: none; }
+
+/* ---------- Klantenstrook (vervangt de lopende band) ---------- */
+.klantstrook { background: #1c1a1f; color: #f6f1e7; }
+.klantstrook > div { max-width: 1240px; margin: 0 auto; padding: 17px 32px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.klantstrook .lab { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: 2px; color: #ff4d24; white-space: nowrap; }
+.klantstrook .namen { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; flex: 1; font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: -.2px; }
+.klantstrook .namen a { color: #f6f1e7; }
+.klantstrook .namen a:hover, .klantstrook .alle:hover { color: #ff4d24; }
+.klantstrook .punt { width: 5px; height: 5px; border-radius: 50%; background: #57534a; flex: none; }
+.klantstrook .alle { font-size: 14px; font-weight: 600; color: #b3ab9e; white-space: nowrap; }
+@media (max-width: 960px) {
+  .klantstrook > div { padding: 16px 24px; gap: 10px 16px; }
+  .klantstrook .namen { flex-basis: 100%; gap: 8px 14px; font-size: 16px; }
+}
+
+/* ---------- Eén stilstaande regel (vervangt de schuivende tekst) ---------- */
+.statement { max-width: 1240px; margin: 0 auto; padding: 48px 32px 40px; font-family: 'Archivo', sans-serif; font-weight: 900; font-size: clamp(54px, 13.2vw, 176px); letter-spacing: -.05em; line-height: .9; white-space: nowrap; }
+.statement span { color: transparent; -webkit-text-stroke: 2px #1c1a1f; }
+.statement b { color: #ff4d24; font-weight: 900; }
+@media (max-width: 960px) { .statement { padding: 32px 24px 28px; } .statement span { -webkit-text-stroke-width: 1.5px; } }
