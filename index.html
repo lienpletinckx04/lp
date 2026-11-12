@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=8">
+<link rel="stylesheet" href="/css/style.css?v=10">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -138,31 +138,52 @@
 </nav>
 
 <!-- HERO -->
-<header id="top" style="max-width:1240px; margin:0 auto; padding:80px 32px 72px;">
-  <div style="display:grid; grid-template-columns:1fr minmax(320px,560px); gap:48px; align-items:center;">
-    <div>
-      <h1 style="margin:0; font-size:inherit; font-weight:inherit;"><span style="display:block; overflow:hidden;"><span style="display:block; font-family:'Archivo'; font-weight:900; font-size:clamp(48px,6.5vw,88px); line-height:.95; letter-spacing:-.045em; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both; white-space:nowrap;">AI die écht</span></span>
-      <span style="display:block; overflow:hidden;"><span style="display:block; font-family:'Archivo'; font-weight:900; font-size:clamp(48px,6.5vw,88px); line-height:.95; letter-spacing:-.045em; color:#ff4d24; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .15s both; white-space:nowrap;">voor je <span style="position:relative; display:inline-block;">werkt.<span style="position:absolute; left:0; right:8px; bottom:2px; height:9px; background:#1c1a1f; transform-origin:left; animation:growX .7s cubic-bezier(.2,.8,.2,1) .9s both;"></span></span></span></span></h1>
-      <p style="margin:32px 0 0; font-size:20px; line-height:1.55; color:#57534a; max-width:480px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .3s both;">AI verandert elke week. Ik hou jou bij, in het Nederlands en zonder blabla. Van gratis starten tot een volledig AI-traject voor je bedrijf.</p>
-      <div class="cta-row" style="display:flex; gap:14px; margin-top:32px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .4s both;">
-        <a href="#aanbod" class="btn-dark" style="background:#1c1a1f; color:#f6f1e7; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">Bekijk het aanbod</a>
-        <a href="#start" class="btn-outline" style="border:2px solid #1c1a1f; font-weight:600; font-size:16px; padding:14px 32px; border-radius:10px;">Start gratis</a>
-      </div>
-      <a href="/cases/renard-bakery/" data-hero-case style="display:inline-block; margin-top:22px; font-weight:600; font-size:15px; color:#ff4d24; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .5s both;">Nieuw: hoe één auditdag de cockpit van Renard Bakery werd →</a>
+<header id="top" class="hero2">
+  <div class="hero2-tekst">
+    <div class="hero2-lab">AI VOOR ONDERNEMERS EN KMO'S · IN HET NEDERLANDS</div>
+    <h1><span>Eén dag in je bedrijf.</span> <span class="rood">Daarna doet AI het <em>saaie werk.</em></span></h1>
+    <p>Ik kijk een dag mee hoe je team echt werkt. Daarna bouwen we de AI-agents, workflows en platformen die het repetitieve werk overnemen, en houden we ze draaiende.</p>
+    <div class="cta-row hero2-cta">
+      <a href="/ai-audit/" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:17px; padding:17px 34px; border-radius:10px;">Plan een AI audit</a>
+      <a href="/cases/" class="btn-outline" style="border:2px solid #1c1a1f; font-weight:600; font-size:17px; padding:15px 30px; border-radius:10px;">Bekijk wat we bouwden</a>
     </div>
-    <div style="position:relative; justify-self:end; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .25s both;">
-      <div class="img-slot img-filled" style="width:300px; height:400px; border-radius:20px;"><video autoplay muted loop playsinline preload="metadata" poster="media/foto/hero.jpg" aria-label="Lien Pletinckx"><source src="media/foto/hero.mp4" type="video/mp4"></video></div>
-      <div class="decor-badge decor-badge--hero" style="position:absolute; left:-65px; bottom:-35px; width:130px; height:130px; transform:rotate(-12deg);">
-        <svg viewBox="0 0 150 150" width="130" height="130">
-          <defs><path id="cirkel" d="M 75,75 m -58,0 a 58,58 0 1,1 116,0 a 58,58 0 1,1 -116,0"></path></defs>
-          <circle cx="75" cy="75" r="72" fill="#f6f1e7"></circle>
-          <text style="font-family:'Archivo'; font-weight:800; font-size:13.5px; letter-spacing:2.5px; fill:#1c1a1f;"><textPath href="#cirkel">AI DIE ÉCHT WERKT · ASKLIEN.AI · </textPath></text>
-          <circle cx="75" cy="75" r="7" fill="#ff4d24"></circle>
-        </svg>
-      </div>
+    <ul class="hero2-feiten">
+      <li><b>€1.750</b>voor de audit, verrekend als je doorgaat</li>
+      <li><b>8 weken</b>van auditdag tot een eerste versie online</li>
+      <li><b>105</b>betalende klanten in 2026</li>
+    </ul>
+    <p class="hero2-zelf">Liever zelf leren? <a href="https://hub.asklien.ai">Start gratis in de Hub</a> of volg <a href="/challenge/">de challenge Claude in 10 dagen</a>.</p>
+  </div>
+  <div class="hero2-beeld zonder-scherm">
+    <div class="hero2-video"><video autoplay muted loop playsinline preload="metadata" poster="/media/foto/hero.jpg" aria-label="Lien Pletinckx"><source src="/media/foto/hero.mp4" type="video/mp4"></video></div>
+    <div class="hero2-log" aria-label="Een gewone dag van agents bij AskLien">
+      <div class="kop"><i></i>AGENTS AAN HET WERK<span>een gewone dag</span></div>
+      <ol>
+        <li><time>8:00</time><span>Ochtendoverzicht klaar</span></li>
+        <li><time>10:08</time><span>Nieuwsbrief omgezet in 3 posts en 2 reelscripts</span></li>
+        <li><time>18:40</time><span>Klantgesprek uitgeschreven, opvolging in concept</span></li>
+        <li><time>19:14</time><span>Offerteconcept klaar om na te lezen</span></li>
+      </ol>
+      <div class="voet">Er vertrekt niets voor een mens het gelezen heeft.</div>
     </div>
   </div>
 </header>
+<script>
+(function () {
+  var log = document.querySelector('.hero2-log'); if (!log) return;
+  var rijen = log.querySelectorAll('li');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { rijen.forEach(function (r) { r.classList.add('klaar'); }); return; }
+  function ronde() {
+    rijen.forEach(function (r) { r.classList.remove('bezig', 'klaar'); });
+    rijen.forEach(function (r, i) {
+      setTimeout(function () { r.classList.add('bezig'); }, 500 + i * 1500);
+      setTimeout(function () { r.classList.remove('bezig'); r.classList.add('klaar'); }, 500 + i * 1500 + 1000);
+    });
+    setTimeout(ronde, 500 + rijen.length * 1500 + 4200);
+  }
+  ronde();
+})();
+</script>
 
 <!-- KLANTEN -->
 <div class="klantstrook">
@@ -183,6 +204,14 @@
     </div>
   </div>
 </section>
+
+
+
+
+
+
+
+
 
 
 
@@ -287,6 +316,14 @@
     </div>
   </div>
 </section>
+
+
+
+
+
+
+
+
 
 
 
