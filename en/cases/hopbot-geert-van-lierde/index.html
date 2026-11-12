@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study Hopbot: the chatbot of beer journalist Geert Van Lierde | AskLien.ai</title>
+<meta name="description" content="Why a beer journalist had his own chatbot built: general AI gets beer wrong. Hopbot only answers from his own work, and never invents a link.">
+<link rel="canonical" href="https://asklien.ai/en/cases/hopbot-geert-van-lierde/">
+<link rel="alternate" hreflang="nl" href="https://asklien.ai/cases/hopbot-geert-van-lierde/">
+<link rel="alternate" hreflang="en" href="https://asklien.ai/en/cases/hopbot-geert-van-lierde/">
+<link rel="alternate" hreflang="x-default" href="https://asklien.ai/cases/hopbot-geert-van-lierde/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Case study Hopbot: the chatbot of beer journalist Geert Van Lierde | AskLien.ai">
+<meta property="og:description" content="Why a beer journalist had his own chatbot built: general AI gets beer wrong. Hopbot only answers from his own work, and never invents a link.">
+<meta property="og:url" content="https://asklien.ai/en/cases/hopbot-geert-van-lierde/">
+<meta property="og:image" content="https://asklien.ai/media/foto/hero.jpg">
+<meta property="og:site_name" content="AskLien.ai">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nl_BE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "A chatbot that only quotes his own work",
+  "description": "Why a beer journalist had his own chatbot built: general AI gets beer wrong. Hopbot only answers from his own work, and never invents a link.",
+  "inLanguage": "en",
+  "datePublished": "2026-11-12",
+  "dateModified": "2026-11-12",
+  "author": {
+    "@type": "Person",
+    "name": "Lien Pletinckx",
+    "@id": "https://asklien.ai/over-lien/#lien"
+  },
+  "publisher": {
+    "@id": "https://asklien.ai/#bedrijf"
+  },
+  "mainEntityOfPage": "https://asklien.ai/en/cases/hopbot-geert-van-lierde/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://asklien.ai/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cases",
+      "item": "https://asklien.ai/en/cases/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Hopbot",
+      "item": "https://asklien.ai/en/cases/hopbot-geert-van-lierde/"
+    }
+  ]
+}
+</script>
+<style>
+  .kaart { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:22px; }
+  .kaart h2 { margin:0 0 14px; font-family:'Archivo'; font-weight:800; font-size:26px; letter-spacing:-1.2px; line-height:1.12; }
+  .kaart h3 { margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:21px; letter-spacing:-.6px; }
+  .kaart p { font-size:16px; line-height:1.8; color:#57534a; }
+  .kaart p:last-child { margin-bottom:0; }
+  .nr { font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; color:#ff4d24; line-height:1; margin-bottom:12px; }
+  .prompt { position:relative; background:#f6f1e7; border-left:3px solid #ff4d24; border-radius:10px; padding:24px; margin:18px 0 0; }
+  .prompt pre { margin:0; white-space:pre-wrap; word-break:break-word; font-family:'Schibsted Grotesk',sans-serif; font-size:15px; line-height:1.7; color:#1c1a1f; }
+  .kopieer { position:absolute; top:14px; right:14px; background:#1c1a1f; color:#f6f1e7; border:none; border-radius:7px; padding:7px 13px; font-family:inherit; font-weight:600; font-size:12px; cursor:pointer; }
+  .kopieer.ok { background:#ff4d24; }
+  .let { background:#fff8ef; border:2px dashed #e6ddcb; border-radius:12px; padding:18px 22px; margin:16px 0 0; }
+  .let p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+  .let strong { color:#1c1a1f; }
+  .lijst { margin:12px 0 0; padding:0; list-style:none; }
+  .lijst li { position:relative; padding:0 0 0 22px; margin:0 0 10px; font-size:15.5px; line-height:1.7; color:#57534a; }
+  .lijst li::before { content:''; position:absolute; left:0; top:11px; width:9px; height:9px; border-radius:50%; background:#ff4d24; }
+  .lijst li strong { color:#1c1a1f; }
+  .tijdlijn { margin:6px 0 0; padding:0; list-style:none; border-left:2px solid #e6ddcb; }
+  .tijdlijn li { position:relative; padding:0 0 18px 24px; font-size:15.5px; line-height:1.7; color:#57534a; }
+  .tijdlijn li::before { content:''; position:absolute; left:-7px; top:7px; width:12px; height:12px; border-radius:50%; background:#ff4d24; border:2px solid #fff; }
+  .tijdlijn li:last-child { padding-bottom:0; }
+  .tijdlijn .dag { display:block; font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; margin-bottom:2px; }
+  .tijdlijn strong { color:#1c1a1f; }
+  .modellen { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:18px 0 0; }
+  @media (max-width:760px){ .modellen { grid-template-columns:1fr; } }
+  .model { background:#f6f1e7; border-radius:14px; padding:20px 22px; }
+  .model .naam { font-family:'Archivo'; font-weight:900; font-size:20px; letter-spacing:-.8px; color:#1c1a1f; margin-bottom:4px; }
+  .model .rol { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; margin-bottom:10px; }
+  .model p { margin:0; font-size:14.5px; line-height:1.7; color:#57534a; }
+  .bron { font-size:13px; color:#8a8378; margin-top:14px !important; }
+  .bron a { color:#8a8378; text-decoration:underline; }
+  .faq details { border-bottom:1px solid #e6ddcb; padding:16px 0; }
+  .faq details:last-child { border-bottom:none; }
+  .faq summary { cursor:pointer; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#1c1a1f; list-style:none; display:flex; justify-content:space-between; gap:16px; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:'+'; color:#ff4d24; font-weight:900; font-size:22px; line-height:1; }
+  .faq details[open] summary::after { content:'–'; }
+  .faq details p { margin:12px 0 0; font-size:15px; line-height:1.75; color:#57534a; }
+  @media (max-width:640px){ .kaart{ padding:26px 24px; } .prompt{ padding:20px 18px; } .kopieer{ position:static; display:inline-block; margin-bottom:12px; } }
+  .voorna { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:18px 0 0; }
+  @media (max-width:640px){ .voorna { grid-template-columns:1fr; } }
+  .voorna div { background:#f6f1e7; border-radius:12px; padding:18px 20px; font-size:15px; line-height:1.7; color:#57534a; }
+  .voorna .kop { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#8a8378; margin-bottom:8px; }
+  .aanbod { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:860px){ .aanbod { grid-template-columns:1fr; } }
+  .pakket { background:#fff; border-radius:20px; padding:30px; display:flex; flex-direction:column; gap:12px; }
+  .pakket.top { background:#1c1a1f; color:#f6f1e7; }
+  .pakket .label { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#ff4d24; }
+  .pakket h3 { margin:0; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1px; line-height:1.1; }
+  .pakket p { margin:0; font-size:15px; line-height:1.7; color:#57534a; flex:1; }
+  .pakket.top p { color:#b3ab9e; }
+  .pakket .prijs { font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px; }
+  .pakket a { font-weight:600; font-size:15px; color:#ff4d24; }
+  .form label { font-size:14px; font-weight:600; }
+  .form input, .form select, .form textarea { padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; background:#fff; }
+  .foto { width:100%; height:auto; border-radius:18px; display:block; }
+</style>
+<style>
+  .case-breed { max-width:1040px; margin:0 auto; padding:0 32px; }
+  .case-smal { max-width:860px; margin:0 auto; padding:0 32px; }
+  .cijfers { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .cijfers div { background:#fff; border-radius:16px; padding:22px 20px; }
+  .cijfers b { display:block; font-family:'Archivo'; font-weight:900; font-size:30px; letter-spacing:-1.4px; color:#ff4d24; line-height:1.05; margin-bottom:6px; }
+  .cijfers span { font-size:14px; line-height:1.5; color:#57534a; }
+  .feat { display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:36px; align-items:center; margin:0 0 56px; }
+  .feat.om > :first-child { order:2; }
+  .feat h3 { margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:24px; letter-spacing:-.9px; line-height:1.12; }
+  .feat p { margin:0; font-size:16px; line-height:1.75; color:#57534a; }
+  .feat .nr { font-size:15px; letter-spacing:1.5px; margin-bottom:10px; }
+  .feat.gsmrij { grid-template-columns:minmax(0,7fr) minmax(0,5fr); }
+  .winst { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:18px 0; }
+  .winst div { background:#f6f1e7; border-radius:14px; padding:18px 20px; font-size:15px; line-height:1.65; color:#57534a; }
+  .winst strong { display:block; color:#1c1a1f; font-family:'Archivo'; font-weight:800; font-size:16.5px; letter-spacing:-.3px; margin-bottom:4px; }
+  .regels { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:20px; }
+  .regels div { border-top:3px solid #ff4d24; padding-top:16px; }
+  .regels strong { display:block; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#f6f1e7; margin-bottom:8px; }
+  .regels p { margin:0; font-size:14.5px; line-height:1.7; color:#b3ab9e; }
+  .oproep { display:flex; align-items:center; justify-content:space-between; gap:24px; background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:26px 32px; margin-bottom:22px; }
+  .oproep strong { display:block; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.6px; margin-bottom:4px; }
+  .oproep p { margin:0; font-size:15px; line-height:1.65; color:#b3ab9e; max-width:520px; }
+  .stappen { display:grid; grid-template-columns:repeat(3,1fr); gap:22px 26px; margin-top:22px; }
+  .stappen span { display:block; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1px; color:#ff4d24; line-height:1; margin-bottom:8px; }
+  .stappen strong { display:block; font-family:'Archivo'; font-weight:800; font-size:17px; letter-spacing:-.3px; margin-bottom:4px; }
+  .stappen p { margin:0; font-size:14.5px; line-height:1.65; color:#57534a; }
+  .modules { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .modules > div { background:#fff; border-radius:18px; padding:26px 28px; }
+  .modules span { display:block; font-family:'Archivo'; font-weight:900; font-size:15px; letter-spacing:1.5px; color:#ff4d24; margin-bottom:8px; }
+  .modules strong { display:block; font-family:'Archivo'; font-weight:800; font-size:20px; letter-spacing:-.6px; margin-bottom:6px; }
+  .modules p { margin:0; font-size:15.5px; line-height:1.7; color:#57534a; }
+  .casegrid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:16px; }
+  .casekaart { background:#fff; border-radius:20px; padding:30px; display:flex; flex-direction:column; gap:12px; color:inherit; }
+  .casekaart .lab { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.6px; color:#ff4d24; }
+  .casekaart h3 { margin:0; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1.1px; line-height:1.08; }
+  .casekaart p { margin:0; font-size:15.5px; line-height:1.7; color:#57534a; flex:1; }
+  .casekaart .meer { font-weight:600; font-size:15px; color:#ff4d24; }
+  .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
+  .kruimel a { color:#8a8378; text-decoration:underline; }
+  @media (max-width:860px){
+    .cijfers { grid-template-columns:1fr 1fr; }
+    .feat, .feat.gsmrij { grid-template-columns:1fr; gap:20px; margin-bottom:44px; }
+    .feat.om > :first-child { order:0; }
+    .winst, .regels, .stappen, .modules, .casegrid { grid-template-columns:1fr; }
+    .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
+    .case-breed, .case-smal { padding:0 22px; }
+  }
+</style>
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/en/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:26px; font-size:15px; font-weight:500;">
+      <a href="/en/#services">Services</a>
+      <a href="/en/cases/">Cases</a>
+      <a href="/en/speaker/">Speaking</a>
+      <a href="/en/about/">About</a>
+      <a href="/en/contact/">Contact</a>
+      <a href="/cases/hopbot-geert-van-lierde/" class="taal" hreflang="nl" lang="nl" data-menu-label="Nederlands" title="Nederlands"><span>NL</span><b>EN</b></a>
+      <a href="/en/contact/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">Let's talk</a>
+    </div>
+  </div>
+</nav>
+
+<header class="case-smal" style="padding-top:64px; padding-bottom:8px;">
+  <div class="kruimel"><a href="/en/">Home</a> / <a href="/en/cases/">Cases</a></div>
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">CASE STUDY · HOPBOT · BEER JOURNALIST GEERT VAN LIERDE</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,58px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">A chatbot that only quotes his own work<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.65; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Geert Van Lierde has been writing about Belgian beer for years. His website holds hundreds of articles. And yet people now ask a general AI, which tells them things about beer with great confidence that simply aren't true. So he got his own chatbot. One that only knows what Geert knows.</p>
+</header>
+
+<section class="case-breed" style="padding-top:36px;">
+  <div data-reveal class="cijfers">
+    <div><b>300</b><span>pages of his own work as the knowledge source</span></div>
+    <div><b>250</b><span>conversations in the first month</span></div>
+    <div><b>161</b><span>unique visitors in the first month</span></div>
+    <div><b>0</b><span>invented links, that is the rule</span></div>
+  </div>
+</section>
+
+<section class="case-smal" style="padding-top:36px;">
+  <div data-reveal class="kaart">
+    <div class="nr">01</div>
+    <h2>Where it started</h2>
+    <p>Geert Van Lierde is a beer journalist and author. His website is an archive of years of writing about Belgian beer and beer culture: beer styles, breweries, tasting, beer at the table.</p>
+    <p>The problem wasn't what he had, but how people search. Anyone who wants to know something about Trappist beer or a beer style today types it into a chatbot. And when Geert tested that himself, he saw answers that were completely off. Smoothly written, confident, and wrong.</p>
+    <p>For someone who has made accuracy his profession, that is not a detail. It is exactly the difference between him and everyone else.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <div class="nr">02</div>
+    <h2>The idea</h2>
+    <p>What if the question can be asked the way people are now used to, but the answer comes from his work? A short answer, and a link to the full article. That way his pieces get found again, and he stays the source.</p>
+    <p>No audit needed for something like this. But a good conversation about what the bot may do, and above all about what it may not.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <div class="nr">03</div>
+    <h2>Hopbot's rules</h2>
+    <p>A custom chatbot stands or falls with its boundaries. Hopbot's are sharp:</p>
+    <p><strong>Geert first, everything else after.</strong> The bot looks in his own documents and standard answers first, then on his own web pages, and only then further.</p>
+    <p><strong>Never an invented link.</strong> If the article doesn't exist, there is no link.</p>
+    <p><strong>Only his territory.</strong> Belgian beer, beer culture, tasting, brewing and gastronomy. Outside of that it kindly says this isn't its field.</p>
+    <p><strong>If it doesn't know, it says so.</strong> And it points to Geert himself. The first testers found exactly that the most human thing about the whole bot.</p>
+    <p><strong>It doesn't write articles.</strong> For that you need Geert.</p>
+  </div>
+  <div data-reveal class="oproep">
+    <div><strong>Does AI talk nonsense about your field too?</strong><p>Then you have something the general models don't: your knowledge. A custom chatbot turns that into your advantage.</p></div>
+    <a href="/en/ai-audit/#request" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:15px; padding:14px 26px; border-radius:10px; white-space:nowrap;">Tell me about your field →</a>
+  </div>
+</section>
+
+<section class="case-breed" style="padding-top:26px;">
+  <div data-reveal style="max-width:796px; margin:0 auto 28px;">
+    <div class="nr">04</div>
+    <h2 style="margin:0 0 14px; font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; line-height:1.04;">What we built<span style="color:#ff4d24;">.</span></h2>
+    <p style="margin:0; font-size:17px; line-height:1.75; color:#57534a;">A chatbot on his website, with its own name and its own face:</p>
+  </div>
+  <div data-reveal class="modules">
+    <div><span>01</span><strong>A knowledge base from his own work</strong><p>His articles, his documents and a set of standard answers to the questions that come back most often.</p></div>
+    <div><span>02</span><strong>A fixed source order</strong><p>Own documents, then own pages, only then beyond. That keeps every answer his.</p></div>
+    <div><span>03</span><strong>Short answer, link to the article</strong><p>The bot summarises and sends people on. Whoever wants more reads the full piece on the site.</p></div>
+    <div><span>04</span><strong>Its own character</strong><p>Hopbot has a face, in a few versions: classic, in the kitchen, and a festive one for the holidays.</p></div>
+    <div><span>05</span><strong>Honest handover</strong><p>Where the bot stops, Geert starts. With an email address attached.</p></div>
+    <div><span>06</span><strong>Adjustable every month</strong><p>New articles, new answers, a stricter or looser tone. It keeps growing with his work.</p></div>
+  </div>
+</section>
+
+<section class="case-smal" style="padding-top:44px;">
+  <div data-reveal class="kaart">
+    <div class="nr">05</div>
+    <h2>How we worked together</h2>
+    <p>We first had the bot tested by fellow journalists. People who know the field and so immediately see where it goes wrong. Their remarks became the rules above.</p>
+    <p>Then a round of tuning in January, and since then we adjust whenever something new comes in.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <div class="nr">06</div>
+    <h2>What it gives him</h2>
+    <p>The numbers from the first month: 250 conversations with 161 unique visitors. Questions about beer styles, Trappist, how beer is made, which beer goes with which dish. But the real answer is this:</p>
+    <div class="winst">
+      <div><strong>He stays the source.</strong>Whoever asks a question gets an answer that comes from Geert and leads to Geert.</div>
+      <div><strong>His archive is alive again.</strong>An article from three years ago gets found by someone asking about it today.</div>
+      <div><strong>Right over smooth.</strong>A bot that says it doesn't know is worth more than one that guesses.</div>
+      <div><strong>His name is on it.</strong>Hopbot is recognisably his, not a general assistant with a logo on it.</div>
+      <div><strong>It works while he writes.</strong>Questions get answered without him opening his inbox.</div>
+      <div><strong>It is his.</strong>The knowledge, the rules and the tone remain his property.</div>
+    </div>
+    <p>After the first month things got quieter, as they do once the novelty wears off. That is what we are working on now: a page of its own for the bot, a button that stands out more and attention on his social channels. Building a good chatbot is one thing. Making sure people find it is the second.</p>
+  </div>
+  <div data-reveal class="oproep">
+    <div><strong>Want a chatbot that knows your work?</strong><p>On your website, with your rules and your tone. We start from the content you already have.</p></div>
+    <a href="/en/ai-audit/#request" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:15px; padding:14px 26px; border-radius:10px; white-space:nowrap;">Get in touch →</a>
+  </div>
+  <div data-reveal class="kaart">
+    <div class="nr">07</div>
+    <h2>And it keeps growing</h2>
+    <p>The next steps are mostly visibility: giving Hopbot a fixed place on the site and showing it in action. And content-wise it grows by itself, because every new article is new knowledge.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <h2>The timeline</h2>
+    <ul class="tijdlijn">
+      <li><span class="dag">November 2025</span><strong>First conversation</strong> about why general AI gets beer wrong.</li>
+      <li><span class="dag">December 2025</span><strong>Hopbot goes live.</strong> Fellow journalists test along.</li>
+      <li><span class="dag">January 2026</span><strong>Tuning:</strong> source order, scope and handover.</li>
+      <li><span class="dag">Since then</span><strong>Adjustable every month.</strong> </li>
+      <li><span class="dag">Now</span><strong>Working on visibility.</strong> </li>
+    </ul>
+  </div>
+</section>
+
+<section class="case-breed" style="padding-top:8px; padding-bottom:22px;" id="audit">
+  <div data-reveal class="kaart" style="padding:44px;">
+    <h2 style="font-size:30px;">How an AI audit works</h2>
+    <p>This is how it usually starts. No months of pre-work, just this:</p>
+    <div class="stappen">
+      <div><span>01</span><strong>Intro call</strong><p>You tell me what you do and where you get stuck. I tell you honestly whether an audit makes sense, or whether something smaller will do.</p></div>
+      <div><span>02</span><strong>One day on site</strong><p>I come to where the work happens and watch. How does work come in, who decides what, where does the time go, which tools are you already paying for.</p></div>
+      <div><span>03</span><strong>The report</strong><p>Within a week: where time and money leak, the priorities in order, a review of your tools, and concrete proposals in more than one size.</p></div>
+      <div><span>04</span><strong>You choose</strong><p>All of it, part of it, or nothing. If you continue with a build, the audit is fully credited.</p></div>
+      <div><span>05</span><strong>Built in phases</strong><p>Your team tests along the way. Nothing ships that the people who use it haven't sat in.</p></div>
+      <div><span>06</span><strong>Retainer</strong><p>If you want it to keep running and keep growing, I look after it on a fixed retainer.</p></div>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-top:26px; padding-top:22px; border-top:1px solid #e6ddcb;">
+      <p style="margin:0; font-size:15px; color:#57534a;">An AI audit costs $2,000, credited if you continue with a build.</p>
+      <a href="/en/ai-audit/#request" class="btn-primary" style="background:#ff4d24; color:#fff; font-weight:600; font-size:16px; padding:15px 30px; border-radius:10px;">Plan your audit day →</a>
+    </div>
+  </div>
+</section>
+
+<section class="case-smal" style="padding-top:14px; padding-bottom:96px;">
+  <div data-reveal style="background:linear-gradient(135deg,#ff4d24,#ff7a3d); border-radius:24px; padding:52px 44px; text-align:center; color:#fff;">
+    <h2 style="margin:0 0 12px; font-family:'Archivo'; font-weight:900; font-size:36px; letter-spacing:-1.8px; line-height:1.06;">Curious what this could be for your business?</h2>
+    <p style="margin:0 auto 28px; font-size:17px; line-height:1.7; color:#ffe4da; max-width:540px;">It starts with a conversation. You tell me where you get stuck, I tell you honestly what I would do and what it costs.</p>
+    <div class="cta-row" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="/en/ai-audit/#request" class="btn-dark-to-white" style="background:#1c1a1f; color:#fff; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">Get in touch →</a>
+      <a href="/en/ai-audit/" class="btn-white-orange" style="background:#fff; color:#ff4d24; font-weight:600; font-size:16px; padding:16px 32px; border-radius:10px;">How the AI audit works</a>
+    </div>
+  </div>
+</section>
+
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/en/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px; flex-wrap:wrap;"><a href="/en/ai-audit/">AI audit</a><a href="/en/cases/">Cases</a><a href="/en/speaker/">Speaking</a><a href="/en/about/">About</a><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/lien-pletinckx/" target="_blank" rel="noopener">LinkedIn</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/en/privacy/">Privacy and cookies</a> · <a href="#cookievoorkeuren">Cookie settings</a></div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=3"></script>
+<script src="/js/analytics.js?v=7" defer></script>
+<script src="/js/menu.js?v=4" defer></script>
+</body>
+</html>
