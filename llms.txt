@@ -19,6 +19,7 @@ Taal: Nederlands, met een Engelstalige versie voor bedrijven op https://asklien.
 - [Case TrimTime](https://asklien.ai/cases/trimtime/): website, klantenzone en boekingssysteem in één app voor een hondentrimsalon.
 - [Case Hopbot](https://asklien.ai/cases/hopbot-geert-van-lierde/): de chatbot op maat van bierjournalist Geert Van Lierde, die enkel uit zijn eigen werk antwoordt.
 - [Case kennisplatform](https://asklien.ai/cases/kennisplatform-met-advertentiemodel/): een kennisplatform met eigen chatbot en advertentieplatform voor een juridisch expert.
+- [Case AskLien zelf](https://asklien.ai/cases/asklien-zelf/): hoe Lien haar eigen bedrijf laat draaien op AI-agents, workflows en een eigen platform, van aanvraag tot afrekening.
 - [Alle cases](https://asklien.ai/cases/)
 
 ## English
