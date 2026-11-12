@@ -185,6 +185,16 @@
   .inv dl > div:first-child { border-top:none; }
   .inv dt { font-family:'Archivo'; font-weight:800; font-size:16.5px; letter-spacing:-.3px; color:#1c1a1f; }
   .inv dd { margin:0; font-size:15px; line-height:1.65; color:#57534a; }
+  .keten { background:#1c1a1f; color:#f6f1e7; border-radius:20px; padding:26px 30px 28px; }
+  .ketenkop { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#ff4d24; margin-bottom:18px; }
+  .keten ol { list-style:none; margin:0; padding:0; display:flex; gap:10px; }
+  .keten li { flex:1; position:relative; background:#2a272e; border-radius:12px; padding:14px 14px 15px; font-family:'Archivo'; font-weight:800; font-size:15px; letter-spacing:-.2px; line-height:1.25; }
+  .keten li span { display:block; font-size:11px; letter-spacing:1.5px; color:#ff4d24; margin-bottom:7px; }
+  .keten li:not(:last-child)::after { content:''; position:absolute; right:-9px; top:50%; width:9px; height:9px; margin-top:-5px; background:#ff4d24; clip-path:polygon(0 0,100% 50%,0 100%); z-index:1; }
+  .keten li:last-child { background:#ff4d24; color:#1c1a1f; } .keten li:last-child span { color:#1c1a1f; }
+  .galerij { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:8px; }
+  .galerij .breed { grid-column:1 / -1; }
+  .galerij figure.scherm figcaption { font-size:13.5px; }
   .kruimel { font-size:13px; color:#8a8378; margin-bottom:18px; }
   .kruimel a { color:#8a8378; text-decoration:underline; }
   @media (max-width:860px){
@@ -193,6 +203,7 @@
     .case-breed > a.logo { grid-template-columns:1fr !important; padding:26px !important; }
     .feat.om > :first-child { order:0; }
     .winst, .regels, .stappen, .modules, .casegrid, .soorten { grid-template-columns:1fr; }
+    .keten ol { flex-direction:column; } .keten li:not(:last-child)::after { right:auto; left:22px; top:auto; bottom:-9px; margin:0; clip-path:polygon(0 0,100% 0,50% 100%); } .keten { padding:22px 20px; } .galerij { grid-template-columns:1fr; }
     .inv { padding:26px 24px; } .inv dl > div { grid-template-columns:1fr; gap:4px; }
     .oproep { flex-direction:column; align-items:flex-start; padding:24px; }
     .case-breed, .case-smal { padding:0 22px; }
@@ -228,6 +239,20 @@
     <div><b>13</b><span>eigen skills die elk één taak overnemen</span></div>
     <div><b>4.900+</b><span>mails die vanzelf vertrokken zijn</span></div>
     <div><b>1</b><span>regel: een mens leest alles na</span></div>
+  </div>
+</section>
+
+<section class="case-breed" style="padding-top:22px;">
+  <div data-reveal class="keten">
+    <div class="ketenkop">Een traject, van eerste gesprek tot opvolging</div>
+    <ol>
+      <li><span>1</span>Kennismaking</li>
+      <li><span>2</span>Offerte in concept</li>
+      <li><span>3</span>Auditdag</li>
+      <li><span>4</span>Rapport</li>
+      <li><span>5</span>Traject in de hub</li>
+      <li><span>6</span>Wekelijks statusrapport</li>
+    </ol>
   </div>
 </section>
 
