@@ -15,6 +15,10 @@ Taal: Nederlands, met een Engelstalige versie voor bedrijven op https://asklien.
 ## Cases
 
 - [Case Renard Bakery](https://asklien.ai/cases/renard-bakery/): hoe één AI auditdag bij een Brusselse bakkerij uitgroeide tot een eigen cijferplatform met dagomzet, verkoopkanalen, een geteste prognose en AI-advies. Van audit tot opvolging, met schermen op demodata.
+- [Case Dapper Ondernemen](https://asklien.ai/cases/dapper-ondernemen/): van 19 losse tools naar één platform op maat voor een financieel begeleidingsbureau, na een AI audit.
+- [Case TrimTime](https://asklien.ai/cases/trimtime/): website, klantenzone en boekingssysteem in één app voor een hondentrimsalon.
+- [Case Hopbot](https://asklien.ai/cases/hopbot-geert-van-lierde/): de chatbot op maat van bierjournalist Geert Van Lierde, die enkel uit zijn eigen werk antwoordt.
+- [Case kennisplatform](https://asklien.ai/cases/kennisplatform-met-advertentiemodel/): een kennisplatform met eigen chatbot en advertentieplatform voor een juridisch expert.
 - [Alle cases](https://asklien.ai/cases/)
 
 ## English
