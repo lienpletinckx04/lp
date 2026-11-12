@@ -2,7 +2,7 @@
 
 > AskLien.ai is het bedrijf van Lien Pletinckx, AI-coach in België. Ze helpt iedereen die met AI wil werken, van zelfstandigen en teams tot kmo's, om Claude en ChatGPT echt te gebruiken. Alles in het Nederlands (Vlaams), hands-on en zonder jargon. Aanbod: gratis gidsen, een online opleiding "Claude in 10 dagen", het membership Voorsprong, AI audits en AI-implementatie voor bedrijven, en lezingen en workshops als gastspreker.
 
-Taal: Nederlands. Werkgebied: Vlaanderen en heel België, online ook daarbuiten. Contact: hello@asklien.ai.
+Taal: Nederlands, met een Engelstalige versie voor bedrijven op https://asklien.ai/en/. Werkgebied: Vlaanderen en heel België, online ook daarbuiten. Contact: hello@asklien.ai.
 
 ## Aanbod
 
@@ -11,6 +11,18 @@ Taal: Nederlands. Werkgebied: Vlaanderen en heel België, online ook daarbuiten.
 - [AI audit en AI-implementatie](https://asklien.ai/ai-audit/): AI Audit voor kmo's (één live auditdag op de vloer plus rapport met concrete voorstellen, €1.750, verrekend bij een traject), AI Setup Traject (drie skills op maat en een volledige AI-setup, remote, €1.250) en trajecten en retainers op maat (vanaf €6.500).
 - [Spreker en workshops](https://asklien.ai/spreker/): keynotes, panels, live demo's en workshops over AI in mensentaal. Sprak voor onder meer Creamoda, VBVD (diëtisten), Besko (beautyspecialisten) en op AI Day in Gent.
 - [Gratis Hub](https://hub.asklien.ai/): gratis ledenplatform met weggevers, de Claude-kaart en een Skill Generator.
+
+## Cases
+
+- [Case Renard Bakery](https://asklien.ai/cases/renard-bakery/): hoe één AI auditdag bij een Brusselse bakkerij uitgroeide tot een eigen cijferplatform met dagomzet, verkoopkanalen, een geteste prognose en AI-advies. Van audit tot opvolging, met schermen op demodata.
+- [Alle cases](https://asklien.ai/cases/)
+
+## English
+
+- [AskLien.ai in English](https://asklien.ai/en/): AI audits, custom AI builds and retainers for small and mid-sized businesses, in English or Dutch.
+- [AI audit and builds](https://asklien.ai/en/ai-audit/): AI Audit (one live audit day plus a report with concrete proposals, €1,750, credited against a build), AI Setup (three custom skills and a complete AI workspace, remote, €1,250), custom builds and retainers (from €6,500).
+- [Case study Renard Bakery](https://asklien.ai/en/cases/renard-bakery/): from one audit day to a custom platform a bakery's management opens every day.
+- [Speaking](https://asklien.ai/en/speaker/) · [About Lien](https://asklien.ai/en/about/) · [Contact](https://asklien.ai/en/contact/)
 
 ## Over Lien Pletinckx
 

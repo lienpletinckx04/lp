@@ -7,5 +7,6 @@ Disallow: /bedankt-doe-mee
 Disallow: /bedankt-voorsprong
 Disallow: /bevraging/
 Disallow: /bedankt-bevraging
+Disallow: /en/thank-you
 
 Sitemap: https://asklien.ai/sitemap.xml

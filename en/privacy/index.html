@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#ff4d24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy and cookies | AskLien.ai</title>
+<meta name="description" content="What happens with your data on asklien.ai: analytics and advertising cookies only with your consent, the newsletter, forms and your rights.">
+<link rel="canonical" href="https://asklien.ai/en/privacy/">
+<link rel="alternate" hreflang="nl" href="https://asklien.ai/privacy/">
+<link rel="alternate" hreflang="en" href="https://asklien.ai/en/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://asklien.ai/privacy/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Privacy and cookies | AskLien.ai">
+<meta property="og:description" content="What happens with your data on asklien.ai: analytics and advertising cookies only with your consent, the newsletter, forms and your rights.">
+<meta property="og:url" content="https://asklien.ai/en/privacy/">
+<meta property="og:image" content="https://asklien.ai/media/foto/hero.jpg">
+<meta property="og:site_name" content="AskLien.ai">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nl_BE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=4">
+<style>
+  .kaart { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:22px; }
+  .kaart h2 { margin:0 0 14px; font-family:'Archivo'; font-weight:800; font-size:26px; letter-spacing:-1.2px; line-height:1.12; }
+  .kaart h3 { margin:0 0 10px; font-family:'Archivo'; font-weight:800; font-size:21px; letter-spacing:-.6px; }
+  .kaart p { font-size:16px; line-height:1.8; color:#57534a; }
+  .kaart p:last-child { margin-bottom:0; }
+  .nr { font-family:'Archivo'; font-weight:900; font-size:40px; letter-spacing:-2px; color:#ff4d24; line-height:1; margin-bottom:12px; }
+  .prompt { position:relative; background:#f6f1e7; border-left:3px solid #ff4d24; border-radius:10px; padding:24px; margin:18px 0 0; }
+  .prompt pre { margin:0; white-space:pre-wrap; word-break:break-word; font-family:'Schibsted Grotesk',sans-serif; font-size:15px; line-height:1.7; color:#1c1a1f; }
+  .kopieer { position:absolute; top:14px; right:14px; background:#1c1a1f; color:#f6f1e7; border:none; border-radius:7px; padding:7px 13px; font-family:inherit; font-weight:600; font-size:12px; cursor:pointer; }
+  .kopieer.ok { background:#ff4d24; }
+  .let { background:#fff8ef; border:2px dashed #e6ddcb; border-radius:12px; padding:18px 22px; margin:16px 0 0; }
+  .let p { margin:0; font-size:15px; line-height:1.7; color:#57534a; }
+  .let strong { color:#1c1a1f; }
+  .lijst { margin:12px 0 0; padding:0; list-style:none; }
+  .lijst li { position:relative; padding:0 0 0 22px; margin:0 0 10px; font-size:15.5px; line-height:1.7; color:#57534a; }
+  .lijst li::before { content:''; position:absolute; left:0; top:11px; width:9px; height:9px; border-radius:50%; background:#ff4d24; }
+  .lijst li strong { color:#1c1a1f; }
+  .tijdlijn { margin:6px 0 0; padding:0; list-style:none; border-left:2px solid #e6ddcb; }
+  .tijdlijn li { position:relative; padding:0 0 18px 24px; font-size:15.5px; line-height:1.7; color:#57534a; }
+  .tijdlijn li::before { content:''; position:absolute; left:-7px; top:7px; width:12px; height:12px; border-radius:50%; background:#ff4d24; border:2px solid #fff; }
+  .tijdlijn li:last-child { padding-bottom:0; }
+  .tijdlijn .dag { display:block; font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; margin-bottom:2px; }
+  .tijdlijn strong { color:#1c1a1f; }
+  .modellen { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:18px 0 0; }
+  @media (max-width:760px){ .modellen { grid-template-columns:1fr; } }
+  .model { background:#f6f1e7; border-radius:14px; padding:20px 22px; }
+  .model .naam { font-family:'Archivo'; font-weight:900; font-size:20px; letter-spacing:-.8px; color:#1c1a1f; margin-bottom:4px; }
+  .model .rol { font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#ff4d24; margin-bottom:10px; }
+  .model p { margin:0; font-size:14.5px; line-height:1.7; color:#57534a; }
+  .bron { font-size:13px; color:#8a8378; margin-top:14px !important; }
+  .bron a { color:#8a8378; text-decoration:underline; }
+  .faq details { border-bottom:1px solid #e6ddcb; padding:16px 0; }
+  .faq details:last-child { border-bottom:none; }
+  .faq summary { cursor:pointer; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:-.4px; color:#1c1a1f; list-style:none; display:flex; justify-content:space-between; gap:16px; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:'+'; color:#ff4d24; font-weight:900; font-size:22px; line-height:1; }
+  .faq details[open] summary::after { content:'–'; }
+  .faq details p { margin:12px 0 0; font-size:15px; line-height:1.75; color:#57534a; }
+  @media (max-width:640px){ .kaart{ padding:26px 24px; } .prompt{ padding:20px 18px; } .kopieer{ position:static; display:inline-block; margin-bottom:12px; } }
+  .voorna { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:18px 0 0; }
+  @media (max-width:640px){ .voorna { grid-template-columns:1fr; } }
+  .voorna div { background:#f6f1e7; border-radius:12px; padding:18px 20px; font-size:15px; line-height:1.7; color:#57534a; }
+  .voorna .kop { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; color:#8a8378; margin-bottom:8px; }
+  .aanbod { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:860px){ .aanbod { grid-template-columns:1fr; } }
+  .pakket { background:#fff; border-radius:20px; padding:30px; display:flex; flex-direction:column; gap:12px; }
+  .pakket.top { background:#1c1a1f; color:#f6f1e7; }
+  .pakket .label { font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#ff4d24; }
+  .pakket h3 { margin:0; font-family:'Archivo'; font-weight:900; font-size:26px; letter-spacing:-1px; line-height:1.1; }
+  .pakket p { margin:0; font-size:15px; line-height:1.7; color:#57534a; flex:1; }
+  .pakket.top p { color:#b3ab9e; }
+  .pakket .prijs { font-family:'Archivo'; font-weight:900; font-size:32px; letter-spacing:-1.5px; }
+  .pakket a { font-weight:600; font-size:15px; color:#ff4d24; }
+  .form label { font-size:14px; font-weight:600; }
+  .form input, .form select, .form textarea { padding:12px 14px; border:1px solid #e6ddcb; border-radius:8px; font-size:15px; font-family:inherit; background:#fff; }
+  .foto { width:100%; height:auto; border-radius:18px; display:block; }
+</style>
+
+</head>
+<body id="top">
+
+<nav style="position:sticky; top:0; z-index:50; background:rgba(246,241,231,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/en/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:24px; letter-spacing:-1px;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div class="nav-links" style="display:flex; align-items:center; gap:26px; font-size:15px; font-weight:500;">
+      <a href="/en/#services">Services</a>
+      <a href="/en/cases/">Cases</a>
+      <a href="/en/speaker/">Speaking</a>
+      <a href="/en/about/">About</a>
+      <a href="/en/contact/">Contact</a>
+      <a href="/privacy/" class="taal" hreflang="nl" lang="nl" data-menu-label="Nederlands" title="Nederlands"><span>NL</span><b>EN</b></a>
+      <a href="/en/contact/" class="btn-primary" style="background:#ff4d24; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600;">Let's talk</a>
+    </div>
+  </div>
+</nav>
+
+<header style="max-width:860px; margin:0 auto; padding:72px 32px 8px;">
+  <div style="font-family:'Archivo'; font-weight:800; font-size:13px; letter-spacing:2px; color:#ff4d24; margin-bottom:14px; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both;">PRIVACY</div>
+  <h1 style="margin:0 0 20px; font-family:'Archivo'; font-weight:900; font-size:clamp(34px,5.5vw,56px); letter-spacing:-2.5px; line-height:1.02; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .1s both;">Privacy and cookies<span style="color:#ff4d24;">.</span></h1>
+  <p style="margin:0; font-size:19px; line-height:1.6; color:#57534a; animation:riseIn .7s cubic-bezier(.2,.8,.2,1) .2s both;">Short and without legal padding: this is what happens with your data on this site.</p>
+</header>
+
+<section style="max-width:860px; margin:0 auto; padding:40px 32px 96px;">
+  <div data-reveal class="kaart">
+    <h2>Who I am</h2>
+    <p>This site belongs to <strong>Lien Pletinckx</strong>, AskLien.ai. If you have a question about your data, email <a href="mailto:hello@asklien.ai" style="color:#ff4d24; font-weight:600;">hello@asklien.ai</a> and I'll answer you myself.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <h2>Cookies for visitor statistics</h2>
+    <p>I use Google Analytics to see how many people read my pages and which ones are read most. That tells me what to write more about.</p>
+    <p>This only happens <strong>if you give consent</strong> on your first visit: by ticking "Statistics", or by clicking "Yes, all of it". If you click "No, thanks", nothing is loaded and nothing is tracked. Your choice is stored on your own device.</p>
+    <p>What I see: how many visitors, which pages, which channel they came from, and whether they are on a phone or a laptop. What I don't see: who you are. Your IP address is shortened before it is sent, and I never use these statistics for advertising.</p>
+    <p><strong>Which cookies exactly?</strong> Google places <code>_ga</code> and <code>_ga_&lt;code&gt;</code>, which recognise your device so I can tell returning visitors from new ones. They stay for a maximum of two years. I keep the data itself in Google Analytics for <strong>fourteen months</strong>, after which it is deleted automatically. Google acts as a processor for me, based on the data processing agreement accepted in Google Analytics. Data may be processed on servers outside the European Union, with the European Commission's standard contractual clauses as a safeguard.</p>
+    <p>Want to change your choice? Click <a href="#cookievoorkeuren" style="color:#ff4d24; font-weight:600;">Cookie settings</a> (the link is also at the bottom of every page). If you say no, existing cookies are deleted right away. Your consent expires after six months anyway, and then I ask again.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <h2>Cookies for advertising</h2>
+    <p>I advertise on <strong>Facebook and Instagram</strong>. To know whether those ads work, I use the <strong>Meta Pixel</strong>. It measures which pages you view here after clicking an ad, and lets me show an ad again later to people who already visited my site.</p>
+    <p>This too only happens <strong>if you give separate consent</strong>: by ticking "Advertising", or by clicking "Yes, all of it". If you don't tick it, the pixel is not loaded and Meta doesn't know you were here.</p>
+    <p><strong>Which cookies exactly?</strong> Meta places <code>_fbp</code>, which recognises your browser, and sometimes <code>_fbc</code>, which remembers which ad brought you here. They stay for a maximum of three months.</p>
+    <p>Meta Platforms Ireland is jointly responsible with me for collecting and forwarding that data. What Meta does with it afterwards falls under <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener" style="color:#ff4d24; font-weight:600;">Meta's privacy policy</a>. Data may be processed on servers outside the European Union, with the EU-US Data Privacy Framework and the standard contractual clauses as safeguards.</p>
+    <p>You can withdraw your consent at any time via <a href="#cookievoorkeuren" style="color:#ff4d24; font-weight:600;">Cookie settings</a>. The Meta cookies are then deleted right away.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <h2>YouTube videos</h2>
+    <p>Some guides contain a YouTube video. I use the privacy-friendly version (<code>youtube-nocookie.com</code>): as long as you don't press play, YouTube places no cookies to follow you. If you do press play, the video loads from YouTube (Google) and their rules apply.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <h2>New participants on the site</h2>
+    <p>If you sign up for the Dutch-language challenge, a short notice may appear on the challenge page saying that your first name signed up, and how long ago. Never your last name, email address or town. Rather not? Email <a href="mailto:hello@asklien.ai" style="color:#ff4d24; font-weight:600;">hello@asklien.ai</a> and I'll take your name out.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <h2>The newsletter</h2>
+    <p>If you subscribe, I store your first name and email address with Brevo, the service I use to send my emails. I only use them to send you my newsletter, and I don't sell or share them with anyone. Every email has an unsubscribe link at the bottom, and then you disappear from the list.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <h2>Forms and sign-ups</h2>
+    <p>If you fill in a contact form or a survey, it reaches me through <strong>FormSubmit</strong>. If you pay for the challenge or a membership, that payment goes through <strong>Stripe</strong>. I see your name and email address there, never your card details.</p>
+  </div>
+  <div data-reveal class="kaart">
+    <h2>What you can always ask</h2>
+    <p>You can ask me at any time which data I have about you, have it corrected, or have it deleted completely. Email <a href="mailto:hello@asklien.ai" style="color:#ff4d24; font-weight:600;">hello@asklien.ai</a> and I'll take care of it. If you are not happy with how I handle it, you can turn to the Belgian Data Protection Authority.</p>
+  </div>
+  <p style="font-size:14px; color:#8a8378;">Last updated on 8 October 2026. This is the English translation of the <a href="/privacy/" hreflang="nl" style="color:#8a8378; text-decoration:underline;">Dutch privacy page</a>.</p>
+</section>
+
+<footer style="border-top:1px solid #e6ddcb;">
+  <div style="max-width:1240px; margin:0 auto; padding:28px 32px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:#8a8378; flex-wrap:wrap; gap:12px;">
+    <a href="/en/" class="logo" style="font-family:'Archivo'; font-weight:900; font-size:18px; letter-spacing:-.5px; color:#1c1a1f;">ASK<span style="color:#ff4d24;">LIEN</span><span style="font-weight:400; color:#8a8378;">.ai</span></a>
+    <div style="display:flex; gap:24px; flex-wrap:wrap;"><a href="/en/ai-audit/">AI audit</a><a href="/en/cases/">Cases</a><a href="/en/speaker/">Speaking</a><a href="/en/about/">About</a><a href="https://www.instagram.com/asklien.ai/" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/lien-pletinckx/" target="_blank" rel="noopener">LinkedIn</a></div>
+    <div>© 2026 asklien.ai · Lien Pletinckx · <a href="/en/privacy/">Privacy and cookies</a> · <a href="#cookievoorkeuren">Cookie settings</a></div>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=3"></script>
+<script src="/js/analytics.js?v=7" defer></script>
+<script src="/js/menu.js?v=4" defer></script>
+</body>
+</html>

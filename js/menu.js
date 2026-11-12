@@ -8,9 +8,13 @@
     var links = nav.querySelector('.nav-links');
     if (!links || nav.querySelector('.menu-knop')) return;
 
+    var en = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+    var OPEN = en ? 'Open menu' : 'Menu openen';
+    var DICHT = en ? 'Close menu' : 'Menu sluiten';
+
     var knop = document.createElement('button');
     knop.className = 'menu-knop';
-    knop.setAttribute('aria-label', 'Menu openen');
+    knop.setAttribute('aria-label', OPEN);
     knop.setAttribute('aria-expanded', 'false');
     knop.innerHTML = '<span></span><span></span><span></span>';
 
@@ -24,6 +28,10 @@
       var kopie = a.cloneNode(true);
       kopie.removeAttribute('style');
       kopie.className = a.classList.contains('btn-primary') ? 'menu-cta' : 'menu-link';
+      // De taalschakelaar is in de balk een klein pilletje (NL · EN); in het
+      // menu staat de taal voluit, zodat duidelijk is waar de link heen gaat.
+      var label = a.getAttribute('data-menu-label');
+      if (label) kopie.textContent = label;
       lijst.appendChild(kopie);
     });
     paneel.appendChild(lijst);
@@ -37,7 +45,7 @@
     function zet(nieuw) {
       open = nieuw;
       knop.setAttribute('aria-expanded', String(open));
-      knop.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+      knop.setAttribute('aria-label', open ? DICHT : OPEN);
       knop.classList.toggle('is-open', open);
       paneel.hidden = !open;
       document.body.style.overflow = open ? 'hidden' : '';
