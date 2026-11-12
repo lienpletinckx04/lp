@@ -184,9 +184,9 @@ html, body { overflow-x: hidden; max-width: 100%; }
 .hero2-feiten li { font-size: 13.5px; line-height: 1.45; color: #57534a; }
 .hero2-feiten b { display: block; font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: -.8px; color: #1c1a1f; margin-bottom: 4px; }
 .hero2-beeld { position: relative; height: 540px; }
-.hero2-scherm { position: absolute; left: 0; top: 96px; width: 86%; display: block; }
+.hero2-scherm { position: absolute; left: 0; top: 0; width: 86%; display: block; }
 .hero2-scherm .scherm { box-shadow: 0 24px 60px rgba(28,26,31,.16); }
-.hero2-video { position: absolute; right: 0; bottom: 0; width: 44%; aspect-ratio: 3 / 4; border-radius: 20px; overflow: hidden; border: 6px solid #f6f1e7; box-shadow: 0 24px 60px rgba(28,26,31,.22); background: #1c1a1f; }
+.hero2-video { position: absolute; right: 0; bottom: 0; width: 40%; aspect-ratio: 3 / 4; border-radius: 20px; overflow: hidden; border: 6px solid #f6f1e7; box-shadow: 0 24px 60px rgba(28,26,31,.22); background: #1c1a1f; }
 .hero2-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
 @media (max-width: 960px) {
   .hero2 { grid-template-columns: 1fr; padding: 40px 24px 48px; gap: 36px; }
@@ -196,4 +196,24 @@ html, body { overflow-x: hidden; max-width: 100%; }
   .hero2-scherm { position: static; width: 100%; }
   .hero2-video { position: relative; width: 46%; margin: -18% 0 0 auto; }
   .hero2-cta a { text-align: center; flex: 1 1 100%; }
+}
+
+/* ---------- Agents aan het werk: de dag tikt voorbij ---------- */
+.hero2-log { position: absolute; left: 0; bottom: 0; width: 57%; background: #1c1a1f; color: #f6f1e7; border-radius: 16px; padding: 18px 20px 16px; box-shadow: 0 24px 60px rgba(28,26,31,.28); }
+.hero2-log .kop { display: flex; align-items: center; gap: 9px; font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: 1.8px; color: #ff4d24; margin-bottom: 10px; }
+.hero2-log .kop i { width: 7px; height: 7px; border-radius: 50%; background: #ff4d24; box-shadow: 0 0 0 0 rgba(255,77,36,.6); animation: logpuls 2.2s infinite; flex: none; }
+.hero2-log .kop span { font-family: 'Schibsted Grotesk', sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0; color: #8a8378; margin-left: auto; white-space: nowrap; }
+.hero2-log ol { list-style: none; margin: 0; padding: 0; }
+.hero2-log li { display: grid; grid-template-columns: 62px 1fr 16px; gap: 10px; align-items: start; padding: 8px 0; border-top: 1px solid #2e2b33; font-size: 13.5px; line-height: 1.4; opacity: .28; transition: opacity .45s ease; }
+.hero2-log li time { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .3px; color: #b3ab9e; padding-top: 2px; white-space: nowrap; }
+.hero2-log li::after { content: ''; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #57534a; margin-top: 2px; box-sizing: border-box; transition: all .3s ease; }
+.hero2-log li.bezig { opacity: 1; }
+.hero2-log li.bezig::after { border-color: #ff4d24; border-top-color: transparent; animation: spin .7s linear infinite; }
+.hero2-log li.klaar { opacity: 1; }
+.hero2-log li.klaar::after { border-color: #ff4d24; background: #ff4d24 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3l2.2 2.2 4.6-4.9' fill='none' stroke='%231c1a1f' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/10px no-repeat; }
+.hero2-log .voet { margin-top: 10px; padding-top: 10px; border-top: 1px solid #2e2b33; font-size: 12px; color: #8a8378; }
+@keyframes logpuls { 0% { box-shadow: 0 0 0 0 rgba(255,77,36,.55); } 70%, 100% { box-shadow: 0 0 0 8px rgba(255,77,36,0); } }
+@media (max-width: 960px) {
+  .hero2-log { position: static; width: auto; margin-top: 18px; }
+  .hero2-video { width: 46%; }
 }
