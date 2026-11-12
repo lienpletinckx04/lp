@@ -1,17 +1,19 @@
-/* AskLien.ai — melding linksonder: wie schreef zich recent in voor de challenge.
-   Gegevens komen uit de hub (echte Stripe-betalingen), enkel voornaam en tijdstip.
-   Verschijnt vanaf de eerste inschrijving; meerdere inschrijvingen = meerdere meldingen na elkaar.
+/* AskLien.ai — melding linksonder: wie schreef zich recent in voor de challenge,
+   plus de teller "nog X van de 25 plaatsen vrij" op de pagina.
+   Gegevens komen uit de hub (echte Stripe-betalingen): enkel voornaam, tijdstip
+   en het aantal verkochte plaatsen. Geen cijfers verzonnen: geeft de bron geen
+   getal, dan blijft de teller verborgen.
    Geen cookies, niets bewaard. */
 (function () {
   var BRON = 'https://vgrlwcocnveysurkahuz.supabase.co/functions/v1/challenge-inschrijvingen';
-  var EERSTE_NA_MS = 5000;
+  var EERSTE_NA_MS = 2500;
   var TONEN_MS = 6000;
-  var PAUZE_MS = 9000;
+  var PAUZE_MS = 6000;
   var MAX_MELDINGEN = 8;
 
   var gesloten = false;
   try { gesloten = sessionStorage.getItem('asklien-melding-weg') === '1'; } catch (e) {}
-  if (gesloten || !window.fetch) return;
+  if (!window.fetch) return;
 
   function geleden(iso) {
     var min = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
@@ -25,11 +27,28 @@
     return week === 1 ? 'vorige week' : week + ' weken geleden';
   }
 
+  function plaatsenTekst(vrij, plaatsen) {
+    if (vrij <= 0) return 'Volzet';
+    if (vrij === 1) return 'Nog 1 plaats vrij van de ' + plaatsen;
+    return 'Nog ' + vrij + ' van de ' + plaatsen + ' plaatsen vrij';
+  }
+
+  function toonTeller(vrij, plaatsen) {
+    var tekst = plaatsenTekst(vrij, plaatsen);
+    var els = document.querySelectorAll('[data-plaatsen]');
+    for (var i = 0; i < els.length; i++) {
+      var t = els[i].querySelector('[data-plaatsen-tekst]');
+      if (t) t.textContent = tekst;
+      els[i].style.display = 'inline-flex';
+    }
+    return tekst;
+  }
+
   function maak() {
     var el = document.createElement('div');
     el.setAttribute('role', 'status');
     el.setAttribute('aria-live', 'polite');
-    el.style.cssText = 'position:fixed;left:16px;bottom:16px;z-index:9000;max-width:300px;' +
+    el.style.cssText = 'position:fixed;left:16px;bottom:16px;z-index:9000;max-width:310px;' +
       'background:#fff;color:#1c1a1f;border:1px solid #e6ddcb;border-radius:14px;' +
       'padding:12px 36px 12px 14px;box-shadow:0 8px 28px rgba(0,0,0,.14);' +
       "font-family:'Schibsted Grotesk',system-ui,sans-serif;font-size:14px;line-height:1.45;" +
@@ -40,7 +59,7 @@
       'display:flex;align-items:center;justify-content:center;font-weight:800;font-family:Archivo,sans-serif;">✦</span>' +
       '<span data-tekst></span>' +
       '<button aria-label="Sluiten" style="position:absolute;top:6px;right:6px;width:28px;height:28px;' +
-      'border:none;background:none;color:#8a8378;font-size:18px;line-height:1;cursor:pointer;">×</button>';
+      'border:none;background:none;color:#6b6459;font-size:18px;line-height:1;cursor:pointer;">×</button>';
     el.querySelector('button').addEventListener('click', function () {
       try { sessionStorage.setItem('asklien-melding-weg', '1'); } catch (e) {}
       gesloten = true;
@@ -54,17 +73,19 @@
     return !!document.querySelector('[aria-label="Cookievoorkeuren"]');
   }
 
-  function start(recent) {
+  function start(recent, extra) {
     var el = null;
     var i = 0;
+    var aantal = Math.min(recent.length, MAX_MELDINGEN);
     function volgende() {
-      if (gesloten || i >= Math.min(recent.length, MAX_MELDINGEN)) return;
+      if (gesloten || i >= aantal) return;
       if (bannerOpen()) { setTimeout(volgende, 3000); return; }
       if (!el) el = maak();
       var r = recent[i++];
       var wie = r.voornaam ? '<strong>' + r.voornaam.replace(/[<>&"]/g, '') + '</strong>' : '<strong>Iemand</strong>';
       el.querySelector('[data-tekst]').innerHTML = wie + ' schreef zich in voor de challenge' +
-        '<br><span style="color:#8a8378;font-size:13px;">' + geleden(r.op) + '</span>';
+        '<br><span style="color:#6b6459;font-size:13px;">' + geleden(r.op) +
+        (extra ? ' · <strong style="color:#ff4d24;">' + extra.toLowerCase() + '</strong>' : '') + '</span>';
       el.style.opacity = '1'; el.style.transform = 'none'; el.style.pointerEvents = 'auto';
       setTimeout(function () {
         if (!el) return;
@@ -76,6 +97,9 @@
   }
 
   fetch(BRON).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-    if (d && d.tonen && d.recent && d.recent.length) start(d.recent);
+    if (!d) return;
+    var extra = null;
+    if (typeof d.vrij === 'number' && typeof d.plaatsen === 'number') extra = toonTeller(d.vrij, d.plaatsen);
+    if (!gesloten && d.tonen && d.recent && d.recent.length) start(d.recent, extra);
   }).catch(function () {});
 })();
