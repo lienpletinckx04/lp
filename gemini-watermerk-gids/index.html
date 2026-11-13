@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=14">
+<link rel="stylesheet" href="/css/style.css?v=15">
 <style>
 .regel { background:#fff; border-radius:20px; padding:36px 40px; margin-bottom:20px; }
   .regel-kop { display:flex; align-items:baseline; gap:16px; margin-bottom:10px; }
@@ -142,7 +142,7 @@
   <a href="https://hub.asklien.ai" class="btn-primary" style="display:block; background:#ff4d24; color:#fff; font-weight:600; font-size:14px; padding:13px; border-radius:9px; text-align:center;">Naar de gratis Hub →</a>
   <a href="/challenge/" style="display:block; margin-top:10px; font-size:13px; color:#b3ab9e; text-align:center; text-decoration:underline;">Of bekijk de challenge van 3 november</a>
 </div>
-<script src="/js/site.js?v=3"></script>
+<script src="/js/site.js?v=4"></script>
 <script>
 function copyVak(btn) { var vak = btn.parentElement.cloneNode(true); var b = vak.querySelector('.copy-btn'); if (b) b.remove(); var l = vak.querySelector('.vak-label'); if (l) l.remove(); navigator.clipboard.writeText(vak.innerText.trim()).then(function () { var old = btn.textContent; btn.textContent = 'Gekopieerd!'; setTimeout(function () { btn.textContent = old; }, 1800); }); }
 setTimeout(function () { document.getElementById('ctaPopup').classList.add('show'); }, 15000);

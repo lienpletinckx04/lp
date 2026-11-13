@@ -268,3 +268,9 @@ html, body { overflow-x: hidden; max-width: 100%; }
 @media (max-width: 640px) {
   #lien div[style*="gap:20px 40px"]:has(> div:nth-child(4)) { grid-template-columns: repeat(2, 1fr); gap: 16px 12px !important; }
 }
+
+/* Uitspraakknopje bij de naam (AI-stem, speelt enkel na een klik) */
+.uitspraak { font: inherit; font-size: .82em; font-weight: 600; color: #ff4d24; background: #fff; border: 1px solid #e6ddcb; border-radius: 999px; padding: 3px 12px; margin-left: 4px; cursor: pointer; white-space: nowrap; vertical-align: baseline; }
+.uitspraak:hover { border-color: #ff4d24; }
+.uitspraak:focus-visible { outline: 2px solid #ff4d24; outline-offset: 2px; }
+@media (max-width: 960px) { .uitspraak { min-height: 36px; padding: 6px 14px; } }
