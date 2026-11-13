@@ -61,3 +61,15 @@
   }, { threshold: .6 });
   counters.forEach(function (el) { io2.observe(el); });
 })();
+
+// Uitspraak: speelt het fragment enkel na een klik
+(function () {
+  document.querySelectorAll('.uitspraak').forEach(function (b) {
+    var a;
+    b.addEventListener('click', function () {
+      if (!a) { a = new Audio(b.getAttribute('data-audio')); a.addEventListener('ended', function () { b.innerHTML = '&#9654; Hear it'; }); }
+      if (!a.paused) { a.pause(); a.currentTime = 0; b.innerHTML = '&#9654; Hear it'; return; }
+      a.play(); b.innerHTML = '&#9632; Stop';
+    });
+  });
+})();
