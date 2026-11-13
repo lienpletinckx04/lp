@@ -264,3 +264,7 @@ html, body { overflow-x: hidden; max-width: 100%; }
   #lien [data-count] { font-size: 34px !important; letter-spacing: -1.2px !important; }
   #lien div[style*="gap:20px 40px"] > div > div:last-child { font-size: 13px !important; line-height: 1.35; }
 }
+#lien div[style*="gap:20px 40px"]:has(> div:nth-child(4)) { display: grid !important; grid-template-columns: repeat(2, max-content); gap: 20px 56px !important; }
+@media (max-width: 640px) {
+  #lien div[style*="gap:20px 40px"]:has(> div:nth-child(4)) { grid-template-columns: repeat(2, 1fr); gap: 16px 12px !important; }
+}
