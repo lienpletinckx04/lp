@@ -37,6 +37,12 @@ Taal: Nederlands, met een Engelstalige versie voor bedrijven op https://asklien.
 ## Gratis gidsen (Nederlandstalig)
 
 - [Alle gidsen](https://asklien.ai/gidsen/)
+- [Claude Meetings: Claude als deelnemer in je Google Meet, voor wie en hoe](https://asklien.ai/claude-meetings-gids/)
+- [Black Friday met AI: 10 prompts om slim te kopen en je eigen actie op te zetten](https://asklien.ai/black-friday-met-ai-gids/)
+- [Claude Sheets, Whiteboards en Data: wat ze doen en 6 prompts om te starten](https://asklien.ai/claude-sheets-whiteboards-gids/)
+- [Apps openen in Claude: interactieve connectors met Canva, Asana, Dropbox en meer](https://asklien.ai/apps-in-claude-gids/)
+- [Fable 5.2: wat er verandert en wanneer je het kiest](https://asklien.ai/fable-5-2/)
+- [ChatGPT in november 2026: GIF's, live dicteren, GPT-6.2 en het einde van custom GPT's](https://asklien.ai/chatgpt-november-2026/)
 - [4 gratis GitHub-repo's die je video's monteren met Claude Code](https://asklien.ai/video-monteren-repos-gids/)
 - [12 websites die je AI smaak geven, plus de prompt die er een stijlbrief van maakt](https://asklien.ai/ai-smaak-websites-gids/)
 - [ChatGPT Intelligent UI en GPT-6: 10 dingen om te proberen](https://asklien.ai/chatgpt-intelligent-ui/)
